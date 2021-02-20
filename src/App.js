@@ -1,6 +1,6 @@
 import './App.scss';
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link, Redirect} from 'react-router-dom';
 import {Inicio} from './components/Inicio/Inicio';
 import {Articulos} from './components/Articulos';
 import {Obras} from './components/Obras';
@@ -83,6 +83,9 @@ function App() {
           <Route path='/nosotros/historia' component={Historia} />
           <Route path='/nosotros/conocenos' component={Conocenos} />
           <Route path='/nosotros/proyectos' component={Proyectos} />
+          <Route path="*">
+            <Redirect to="/" />
+          </Route>
         </Switch>
       
 
