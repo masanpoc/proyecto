@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/proyecto/static/css/main.fd877f78.chunk.css",
+    "main.js": "/proyecto/static/js/main.cbfef448.chunk.js",
+    "main.js.map": "/proyecto/static/js/main.cbfef448.chunk.js.map",
+    "runtime-main.js": "/proyecto/static/js/runtime-main.bc2a9d71.js",
+    "runtime-main.js.map": "/proyecto/static/js/runtime-main.bc2a9d71.js.map",
+    "static/js/2.ca8b4b38.chunk.js": "/proyecto/static/js/2.ca8b4b38.chunk.js",
+    "static/js/2.ca8b4b38.chunk.js.map": "/proyecto/static/js/2.ca8b4b38.chunk.js.map",
+    "index.html": "/proyecto/index.html",
+    "static/css/main.fd877f78.chunk.css.map": "/proyecto/static/css/main.fd877f78.chunk.css.map",
+    "static/js/2.ca8b4b38.chunk.js.LICENSE.txt": "/proyecto/static/js/2.ca8b4b38.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/proyecto/static/media/Oswald-Regular.9c992ecd.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bc2a9d71.js",
+    "static/js/2.ca8b4b38.chunk.js",
+    "static/css/main.fd877f78.chunk.css",
+    "static/js/main.cbfef448.chunk.js"
+  ]
+}
