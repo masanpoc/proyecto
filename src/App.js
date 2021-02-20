@@ -76,7 +76,7 @@ function App() {
 
         {/* we start the routing process with a switch --> once exact name is found --> routing stops and react renders the matched component */}
         <Switch>
-          <Route path='' exact component={Inicio} />
+          <Route path='/' exact component={Inicio} />
           <Route path='/articulos' component={Articulos} />
           <Route path='/obras' component={Obras} />
           <Route path='/nosotros' exact component={Nosotros} />
