@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Conocenos = () => {
     return (
-        <div>
+        <div style={{'min-height': '100vh'}}>
             conocenos
             Quienes somos
 Que hacemos

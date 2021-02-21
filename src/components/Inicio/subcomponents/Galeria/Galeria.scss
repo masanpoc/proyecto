@@ -1,0 +1,31 @@
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    // height: 100px;
+    width: 100vw;
+
+}
+
+.slider-content {
+    display: flex;
+
+}
+
+.slide {
+    width: 100vw;
+    height: 75vh;
+    background-repeat: no-repeat;
+    background-size: 100vw auto;
+    background-position: center center;
+    // background-attachment: fixed;
+    // lo de fixed está bien para imagenes de fondo en contenido ver casos UX
+}
+
+.arrow {
+    position: absolute;
+}
+
+.dot {
+    position: absolute;
+}

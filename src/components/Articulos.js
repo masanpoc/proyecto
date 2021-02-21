@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Articulos = () => {
     return (
-        <div>
+        <div style={{'min-height': '100vh'}}>
             articulos
             Cada X tiempo: publicar una noticia sobre música en general. Por ejemplo: escribir un artículo sobre como cuidar un violin, como se sopla la flauta, como 
             explicaciones de instrumentos

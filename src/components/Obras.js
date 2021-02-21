@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Obras = () => {
     return (
-        <div>
+        <div style={{'min-height': '100vh'}}>
             obras
             clasificadas por genero, compositor, temas, 
             en formato lista
