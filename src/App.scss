@@ -138,6 +138,7 @@ a {
         display: none;        
       }
       #menu-mobile {
+        z-index: 2;
         display: flex;
         justify-content: space-around;
         align-items: center;

@@ -32,14 +32,7 @@ export const Galeria = () => {
 
     return (
         <div className='slider'>
-            <SliderContent transition={transition} translate={translate} width={getWidth()} length={images.length} >
-                {/* {images.map((el, i) => (
-                    <Slide key={i} content={el} />
-                ))}  */}
-            </SliderContent>
-            {/* {images.map((el, i) => (
-                    <Slide key={i} content={el} />
-                ))}  */}
+            <SliderContent transition={transition} translate={translate} width={getWidth()} length={images.length} />
             <Arrow />
             <Dots /> 
         </div>
