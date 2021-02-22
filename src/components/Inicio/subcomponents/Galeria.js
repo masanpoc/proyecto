@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../Inicio.scss';
 import {SliderContent} from './Galeria/SliderContent';
 import {Arrow} from './Galeria/Arrow';
@@ -10,7 +10,7 @@ import Pic3 from '../../../Images/pic-3.jpg';
 import Pic4 from '../../../Images/pic-4.jpg';
 
 
-export const Galeria = () => {
+export const Galeria = (props) => {
 
     // variables
     const images = [ Pic1, Pic2, Pic3, Pic4 ];
@@ -21,6 +21,9 @@ export const Galeria = () => {
     const [transition, setTransition] = useState(2.5);
     const [translate, setTranslate] = useState(0);
     const [activeIndex, setActiveIndex] = useState(0);
+
+    // useRef definitions
+    const autoPlayRef = useRef();
     
     // useEffect definitions
     // useEffect(() => {
@@ -30,6 +33,27 @@ export const Galeria = () => {
     // useEffect(() => {
     //     console.log(translate);
     // }, [translate])
+
+    // autoplay
+    useEffect(() => {
+        // storing, through re-renders, the reference to a function that contains the most up-to-date useState variables (activeIndex and translate)
+        autoPlayRef.current = nextSlide
+    })
+    // only running once:
+    useEffect(() => {
+        // encapsulating the call in a function so that it never gets stored:
+        const play = () => {
+            // calling the function nextslide, using the updated useState variables
+            // as there is no reference to autoplayref --> Js will check for it outside the scope (closure)
+            autoPlayRef.current()
+        }
+        if(props.autoPlay !== null){
+            // infinite loop:
+            const interval = setInterval(play, props.autoPlay * 1000)
+            return () => clearInterval(interval)
+        }
+        
+    }, [])
 
     // functions
     const getWidth = () => {
@@ -41,13 +65,13 @@ export const Galeria = () => {
     const nextSlide = () => {
         // last slide case --> go back to first slide
         if(activeIndex===images.length-1) {
-            // setTranslate(0);
-            // setActiveIndex(0);
+            setTranslate(0);
+            setActiveIndex(0);
         }
         // other slides -->
         else {
             setActiveIndex(prevIndex => prevIndex+1); 
-            setTranslate(prevWidth => prevWidth+width);
+            setTranslate(prevWidth => prevWidth+getWidth());
         }
     }
 
@@ -60,16 +84,25 @@ export const Galeria = () => {
         // other slides -->
         else {
             setActiveIndex(prevIndex => prevIndex-1); 
-            setTranslate(prevWidth => prevWidth-width)
+            setTranslate(prevWidth => prevWidth-getWidth())
         }
     }
 
     return (
         <div className='slider'>
             <SliderContent transition={transition} translate={translate} width={getWidth()} length={images.length} />
-            <Arrow direction={'left'}  handleClick={prevSlide}/>
-            <Arrow direction={'right'} handleClick={nextSlide}/>
+            
+            {!props.autoPlay && (
+                <>
+                    <Arrow direction={'left'}  handleClick={prevSlide}/>
+                    <Arrow direction={'right'} handleClick={nextSlide}/>
+                </>
+            )}
             <Dots activeIndex={activeIndex} images={images}/> 
         </div>
     )
+}
+
+Galeria.defaultProps = {
+    autoPlay: null
 }

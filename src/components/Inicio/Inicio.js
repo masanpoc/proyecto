@@ -9,7 +9,7 @@ export const Inicio = () => {
     return (
         <div className='inicio'>
             {/* <Introduccion /> */}
-            <Galeria />
+            <Galeria autoPlay={4} />
             <Feed />
 
         </div>
