@@ -6,7 +6,7 @@ import Pic2 from '../../../../Images/pic-2.jpg';
 import Pic3 from '../../../../Images/pic-3.jpg';
 import Pic4 from '../../../../Images/pic-4.jpg';
 
-export const SliderContent = ({translate, transition, width, length}) => {
+export const SliderContent = ({translate, transition, width, length, slides}) => {
     
     const images = [ Pic1, Pic2, Pic3, Pic4 ];
     
@@ -17,7 +17,7 @@ export const SliderContent = ({translate, transition, width, length}) => {
           'width': `${width*length}px` }}
         >
             {/* transicion {translate} {transition} {width} {length} */}
-            {images.map((el, i) => (
+            {slides.map((el, i) => (
                     <Slide key={i} content={el} />
                 ))}
         </div>

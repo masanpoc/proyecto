@@ -14,16 +14,23 @@ export const Galeria = (props) => {
 
     // variables
     const images = [ Pic1, Pic2, Pic3, Pic4 ];
+
+    const firstSlide = images[0];
+    const secondSlide = images[1];
+    const lastSlide = images[images.length-1];
+
     // ver tema width en las funciones
     const width = window.innerWidth;
 
     // useState definitions
     const [transition, setTransition] = useState(2.5);
-    const [translate, setTranslate] = useState(0);
+    const [translate, setTranslate] = useState(width);
     const [activeIndex, setActiveIndex] = useState(0);
+    const [currentSlides, setCurrentSlides] = useState([lastSlide, firstSlide, secondSlide]);
 
     // useRef definitions
     const autoPlayRef = useRef();
+    const transitionRef = useRef();
     
     // useEffect definitions
     // useEffect(() => {
@@ -38,6 +45,7 @@ export const Galeria = (props) => {
     useEffect(() => {
         // storing, through re-renders, the reference to a function that contains the most up-to-date useState variables (activeIndex and translate)
         autoPlayRef.current = nextSlide
+        transitionRef.current = smoothTransition
     })
     // only running once:
     useEffect(() => {
@@ -47,13 +55,25 @@ export const Galeria = (props) => {
             // as there is no reference to autoplayref --> Js will check for it outside the scope (closure)
             autoPlayRef.current()
         }
+        const smooth = () => {
+            transitionRef.current()
+        }
         if(props.autoPlay !== null){
             // infinite loop:
             const interval = setInterval(play, props.autoPlay * 1000)
-            return () => clearInterval(interval)
+            const transitionEnd = window.addEventListener('transitionend', smooth)
+            
+            return () => {
+                clearInterval(interval)
+                window.removeEventListener('transitionend', transitionEnd)
+            }
         }
         
     }, [])
+
+    useEffect(() => { 
+        if (transition === 0) setTransition(2.5)
+    }, [transition])
 
     // functions
     const getWidth = () => {
@@ -62,35 +82,49 @@ export const Galeria = (props) => {
         )
     }
 
+    
+    const smoothTransition = () => {
+        let _slides = []
+      
+        // We're at the last slide.
+        if (activeIndex === images.length - 1)
+          _slides = [images[images.length - 2], lastSlide, firstSlide]
+        // We're back at the first slide. Just reset to how it was on initial render
+        else if (activeIndex === 0) _slides = [lastSlide, firstSlide, secondSlide]
+        // Create an array of the previous last slide, and the next two slides that follow it.
+        else _slides = images.slice(activeIndex - 1, activeIndex + 2)
+      
+        setCurrentSlides(_slides);
+        setTranslate(getWidth());
+        setTransition(0);
+      }
+
     const nextSlide = () => {
         // last slide case --> go back to first slide
-        if(activeIndex===images.length-1) {
-            setTranslate(0);
-            setActiveIndex(0);
-        }
-        // other slides -->
-        else {
-            setActiveIndex(prevIndex => prevIndex+1); 
-            setTranslate(prevWidth => prevWidth+getWidth());
-        }
+        // if(activeIndex===images.length-1) {
+        //     setTranslate(0);
+        //     setActiveIndex(0);
+        // }
+        // other slides --> else {
+        setActiveIndex(activeIndex === images.length-1 ? 0 : activeIndex + 1); 
+        setTranslate(prevWidth => prevWidth+getWidth());
     }
 
     const prevSlide = () => {
         // last slide case --> go back to first slide
-        if(activeIndex===0) {
-            // setTranslate(images.length-1);
-            // setActiveIndex(images.length-1);
-        }
-        // other slides -->
-        else {
-            setActiveIndex(prevIndex => prevIndex-1); 
-            setTranslate(prevWidth => prevWidth-getWidth())
-        }
+        // if(activeIndex===0) {
+        //     // setTranslate(images.length-1);
+        //     // setActiveIndex(images.length-1);
+        // }
+        // other slides --> else {
+        setActiveIndex(activeIndex === images.length-1 ? 0 : activeIndex + 1); 
+        setTranslate(prevWidth => prevWidth-getWidth())
     }
+
 
     return (
         <div className='slider'>
-            <SliderContent transition={transition} translate={translate} width={getWidth()} length={images.length} />
+            <SliderContent transition={transition} translate={translate} width={getWidth()} length={images.length} slides={currentSlides} />
             
             {!props.autoPlay && (
                 <>
