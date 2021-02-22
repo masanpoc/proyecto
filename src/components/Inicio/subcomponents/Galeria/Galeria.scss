@@ -4,7 +4,7 @@
     overflow: hidden;
     // height: 100px;
     width: 100vw;
-
+    background-color: black;
 }
 
 .slider-content {
@@ -47,7 +47,7 @@
 
     width: 15vw;
     position: absolute;
-    top: 40vh;
+    top: 38vh;
     // con calc hacer left= 50vw-(width/2)
     left: 42.5vw;
     display: flex;
