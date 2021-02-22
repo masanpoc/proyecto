@@ -14,7 +14,7 @@
 
 .slide {
     width: 100vw;
-    height: 75vh;
+    height: 45vh;
     background-repeat: no-repeat;
     background-size: 100vw auto;
     background-position: center center;
@@ -24,8 +24,39 @@
 
 .arrow {
     position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    background-color: gray;
+    top: 22.5vh;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .arrow-icon {
+        height: 24px;
+        width: 24px;
+        color: rgba(0, 0, 0, 0.349);
+    }
 }
 
-.dot {
+
+
+.dots {
+    // background-color: gray;
+
+    width: 15vw;
     position: absolute;
+    top: 40vh;
+    // con calc hacer left= 50vw-(width/2)
+    left: 42.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    .dot {
+        height: 1vh;
+        width: 1vh;
+        border-radius: 10px;       
+    }
 }
