@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/proyecto/static/css/main.be346ad1.chunk.css",
+    "main.css": "/proyecto/static/css/main.27bbfb9b.chunk.css",
     "main.js": "/proyecto/static/js/main.578830ba.chunk.js",
     "main.js.map": "/proyecto/static/js/main.578830ba.chunk.js.map",
     "runtime-main.js": "/proyecto/static/js/runtime-main.bc2a9d71.js",
@@ -8,7 +8,7 @@
     "static/js/2.86201d16.chunk.js": "/proyecto/static/js/2.86201d16.chunk.js",
     "static/js/2.86201d16.chunk.js.map": "/proyecto/static/js/2.86201d16.chunk.js.map",
     "index.html": "/proyecto/index.html",
-    "static/css/main.be346ad1.chunk.css.map": "/proyecto/static/css/main.be346ad1.chunk.css.map",
+    "static/css/main.27bbfb9b.chunk.css.map": "/proyecto/static/css/main.27bbfb9b.chunk.css.map",
     "static/js/2.86201d16.chunk.js.LICENSE.txt": "/proyecto/static/js/2.86201d16.chunk.js.LICENSE.txt",
     "static/media/index.css": "/proyecto/static/media/Oswald-Regular.9c992ecd.woff2",
     "static/media/left.a8670546.svg": "/proyecto/static/media/left.a8670546.svg",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.bc2a9d71.js",
     "static/js/2.86201d16.chunk.js",
-    "static/css/main.be346ad1.chunk.css",
+    "static/css/main.27bbfb9b.chunk.css",
     "static/js/main.578830ba.chunk.js"
   ]
 }
