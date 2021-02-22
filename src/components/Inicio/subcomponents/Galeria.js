@@ -106,7 +106,7 @@ export const Galeria = (props) => {
         //     setActiveIndex(0);
         // }
         // other slides --> else {
-        setActiveIndex(activeIndex === images.length-1 ? 0 : activeIndex + 1); 
+        setActiveIndex(activeIndex === (images.length-1) ? 0 : activeIndex + 1); 
         setTranslate(prevWidth => prevWidth+getWidth());
     }
 
@@ -117,14 +117,14 @@ export const Galeria = (props) => {
         //     // setActiveIndex(images.length-1);
         // }
         // other slides --> else {
-        setActiveIndex(activeIndex === images.length-1 ? 0 : activeIndex + 1); 
-        setTranslate(prevWidth => prevWidth-getWidth())
+        setActiveIndex(activeIndex === (images.length-1) ? 0 : activeIndex - 1); 
+        setTranslate(0)
     }
 
 
     return (
         <div className='slider'>
-            <SliderContent transition={transition} translate={translate} width={getWidth()} length={images.length} slides={currentSlides} />
+            <SliderContent transition={transition} translate={translate} width={getWidth()} length={3} slides={currentSlides} />
             
             {!props.autoPlay && (
                 <>
