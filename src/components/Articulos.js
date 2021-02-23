@@ -10,7 +10,7 @@ export const Articulos = () => {
             videos educativos
             solos
             historia de obras como la primavera: informacion de la obra explicado de forma amena y didactica y entretenida, un poco solo
-
+           
         </div>
     )
 }
