@@ -14,7 +14,7 @@ export const SliderContent = ({translate, transition, width, length, slides}) =>
         <div className='slider-content'
          style={{ 'transform': `translateX(-${translate}px)`,
           'transition': `transform ease-out ${transition}s`,
-          'width': `${width*length}px` }}
+          'width': `${width*length}px`, 'overflow': 'hidden' }}
         >
             {/* transicion {translate} {transition} {width} {length} */}
             {slides.map((el, i) => (

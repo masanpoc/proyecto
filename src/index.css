@@ -20,5 +20,6 @@
 body {
   margin: 0;
   font-family: 'Maven Pro';
+  overflow-x: hidden;
   /* font-family: 'Oswald'; */
 }
