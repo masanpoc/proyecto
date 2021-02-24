@@ -18,6 +18,13 @@
     // z-index: 2;
     background: burlywood;
     min-height: 100vh;
+    .galeria {
+      margin: 0;
+      @include flex-column();
+      height: 45vh;
+      width: 100vw;
+      background-color: white;
+    }
     .feed {
       @include flex-column();
       background: blue;

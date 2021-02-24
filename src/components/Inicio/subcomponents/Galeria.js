@@ -23,7 +23,7 @@ export const Galeria = (props) => {
     const width = window.innerWidth;
 
     // useState definitions
-    const [transition, setTransition] = useState(2.5);
+    const [transition, setTransition] = useState(4);
     const [translate, setTranslate] = useState(width);
     const [activeIndex, setActiveIndex] = useState(0);
     const [currentSlides, setCurrentSlides] = useState([lastSlide, firstSlide, secondSlide]);
@@ -33,9 +33,9 @@ export const Galeria = (props) => {
     const transitionRef = useRef();
     
     // useEffect definitions
-    // useEffect(() => {
-    //     console.log(activeIndex);
-    // }, [activeIndex]);
+    useEffect(() => {
+        console.log(activeIndex+1);
+    }, [activeIndex]);
 
     // useEffect(() => {
     //     console.log(translate);
@@ -55,8 +55,10 @@ export const Galeria = (props) => {
             // as there is no reference to autoplayref --> Js will check for it outside the scope (closure)
             autoPlayRef.current()
         }
-        const smooth = () => {
-            transitionRef.current()
+        const smooth = (e) => {
+            if(e.target.className.includes('slider-content')) {
+                transitionRef.current()
+            }
         }
         if(props.autoPlay !== null){
             // infinite loop:
@@ -72,7 +74,10 @@ export const Galeria = (props) => {
     }, [])
 
     useEffect(() => { 
-        if (transition === 0) setTransition(2.5)
+        if (transition === 0) {
+            setTransition(4);
+            console.log( 'transition', transition)
+        }
     }, [transition])
 
     // functions
@@ -85,7 +90,7 @@ export const Galeria = (props) => {
     
     const smoothTransition = () => {
         let _slides = []
-      
+        console.log('switch')
         // We're at the last slide.
         if (activeIndex === images.length - 1)
           _slides = [images[images.length - 2], lastSlide, firstSlide]
@@ -124,7 +129,7 @@ export const Galeria = (props) => {
 
     return (
         <div className='slider'>
-            <SliderContent transition={transition} translate={translate} width={getWidth()} length={3} slides={currentSlides} />
+            <SliderContent className='slider-content' transition={transition} translate={translate} width={getWidth()} length={3} slides={currentSlides} />
             
             {!props.autoPlay && (
                 <>
