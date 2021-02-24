@@ -22,10 +22,10 @@
       background: blue;
       padding: 10% 0;
       > * {
-        margin: 10% 0;
+        margin: 15% 0;
         background: lightgreen;
         width: 70vw;
-        height: 50vh;
+        height: 80vh;
       }
       .sub-feed {
         @include flex-row();

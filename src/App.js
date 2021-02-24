@@ -92,7 +92,6 @@ function App() {
         {/* footer */}
         <footer className='footer'>
           <li>Logo</li>
-          <li>Menu en mini</li>
           <li>Información de contacto</li>
           <li>Enlace a redes</li>
 
