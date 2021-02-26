@@ -18,12 +18,28 @@
     // z-index: 2;
     background: burlywood;
     min-height: 100vh;
-    .galeria {
-      margin: 0;
-      @include flex-column();
+    .carousel {
       height: 45vh;
       width: 100vw;
       background-color: white;
+      .image-list {
+        display: flex;
+        padding: 0;
+        * {
+          object-fit: cover;
+          width: 100vw;
+          height: 45vh;
+        }
+      }
+      .content-list {
+        position: relative;
+        @include flex-column();
+        > * {
+          position: absolute;
+          top: 0;
+          opacity: 0;
+        }
+      }
     }
     .feed {
       @include flex-column();
@@ -57,6 +73,9 @@
 
 @media (max-width: 760px) {
   .inicio {
+    .carousel {
+      height: 60vh;
+    }
     .feed {
       > * {
         height: 80vh;

@@ -24,17 +24,19 @@ export const Feed = () => {
     useEffect(() => {
         revealRefs.current.forEach((el, index) => {
             gsap.fromTo(el, {
-                autoAlpha:0
+                autoAlpha:0,
+                y: -40
             }, {
                 duration: 1,
                 autoAlpha: 1,
                 ease: 'none',
                 scrollTrigger: {
+                    duration: 3,
                     id: `section-${index+1}`,
                     trigger: el,
                     start: 'top-=100 center',
-                    end: 'top+=200 center',
-                    scrub: true,
+                    // end: 'top+=150 center',
+                    // scrub: true,
                     // markers: true
                 } 
             });
