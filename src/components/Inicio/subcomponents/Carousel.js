@@ -21,13 +21,13 @@ const list = [
     },
     {
         title: '"El músico es tal vez el más modesto de los animales, pero también es el más orgulloso."',
-        author: 'author3',
+        author: 'Erik Satie',
         genre: 'barroque',
         src: Pic3
     },
     {
         title: '"La música es el acto social de comunicación entre personas. Es un gesto de amistad. El más fuerte que existe."',
-        author: 'author4',
+        author: 'Malcolm Arnold',
         genre: 'barroque',
         src: Pic4
     }
@@ -38,6 +38,7 @@ export const Carousel = () => {
     // constant variables
     const vw = (coef) => window.innerWidth * (coef/100)
     const imageWidth=vw(100);
+
     // useRef definitions
     let imageList = useRef();
     let contentList = useRef();
@@ -110,36 +111,68 @@ export const Carousel = () => {
 
     const nextSlide = () => {
         if (imageList.children[0].classList.contains("active")) {
-          setState({ isActive1: false, isActive2: true });
-          //Image transition
-          slideLeft(0, 3);
-          slideLeft(1, 3);
-        //   scale(1, 3);
-          slideLeft(2, 3);
-          slideLeft(2, 0);
-          fadeOut(0, 1);
-          fadeIn(1, 1);
+            setState({ isActive1: false, isActive2: true });
+
+            //Image transition
+            slideRight(3, 0, 0);
+            slideLeft(0, 3);
+            slideLeft(1, 3);
+            slideLeft(2, 3);
+            slideLeft(3, 3);
+
+            //   scale(1, 3);
+
+            fadeOut(0, 1);
+            fadeIn(1, 2);
+
         } else if (imageList.children[1].classList.contains("active")) {
-          setState({ isActive2: false, isActive3: true });
-          //Image transition
-          slideRight(0, 1);
-          slideLeft(1, 3, 2);
-          slideLeft(2, 3, 2);
-        //   scale(2, 3);
-          //content transition
-          fadeOut(1, 1);
-          fadeIn(2, 1);
+            setState({ isActive2: false, isActive3: true });
+
+            //Image transition
+            slideLeft(1, 3, 2);
+            slideLeft(2, 3, 2);
+            slideLeft(3, 3, 2);
+
+            //   scale(2, 3);
+
+            //content transition
+            fadeOut(1, 1);
+            fadeIn(2, 2);
+
         } else if (imageList.children[2].classList.contains("active")) {
-          setState({ isActive1: true, isActive3: false });
-          //Image transition
-          slideLeft(2, 3, 3);
-          slideLeft(0, 3, 0);
-          slideLeft(1, 0, 0);
-        //   scale(0, 3);
-          //content transition
-          fadeOut(2, 1);
-          fadeIn(0, 1);
-        }
+            setState({ isActive3: false, isActive4: true });
+
+            //Image transition
+            
+            slideLeft(2, 3, 3);
+            slideLeft(3, 3, 3);
+            
+            slideRight(0, 0, 1);
+
+            //   scale(0, 3);
+
+            //content transition
+            fadeOut(2, 1);
+            fadeIn(3, 2);
+
+        } else if (imageList.children[3].classList.contains("active")) {
+            setState({ isActive1: true, isActive4: false });
+
+            //Image transition
+            // slideRight(0, 0, 1);
+            slideLeft(3, 3, 4);
+            slideLeft(0, 3, 0);
+            
+            slideRight(1, 0, 0);
+            slideRight(2, 0, 0);
+
+          //   scale(0, 3);
+
+            //content transition
+            fadeOut(3, 1);
+            fadeIn(0, 2);
+
+          }
     };
 
     return (
@@ -158,22 +191,22 @@ export const Carousel = () => {
                             <li className={state.isActive3 && "active"}>
                                 <img src={list[2].src} alt={list[2].title}></img>
                             </li>
-                            {/* <li className={state.isActive4 && "active"}>
+                            <li className={state.isActive4 && "active"}>
                                 <img src={list[3].src} alt={list[3].title}></img>
-                            </li> */}
+                            </li>
                     </ul>
                 </div>
                 
                 <div className='quotes'>
                         <ul ref={el => (contentList = el)} className='content-list'>
-                            <li className={state.isActive1 && "active"}>
+                            <li id='item' className={state.isActive1 && "active"}>
                                 <div className='content-inner'>
                                     <h3>{list[0].title}</h3>
                                     <h4>{list[0].author}</h4>
                                     {/* <h5>{list[0].genre}</h5> */}
                                 </div>
                             </li>
-                            <li className={state.isActive2 && "active"}>
+                            <li id='item' className={state.isActive2 && "active"}>
                                 <div className='content-inner'>
                                     <h3>{list[1].title}</h3>
                                     <h4>{list[1].author}</h4>
@@ -181,7 +214,7 @@ export const Carousel = () => {
                                 </div>
                                 
                             </li>
-                            <li className={state.isActive3 && "active"}>
+                            <li id='item' className={state.isActive3 && "active"}>
                                 <div className='content-inner'>
                                     <h3>{list[2].title}</h3>
                                     <h4>{list[2].author}</h4>
@@ -189,13 +222,13 @@ export const Carousel = () => {
                                 </div>
                                 
                             </li>
-                            {/* <li className={state.isActive4 && "active"}>
+                            <li id='item' className={state.isActive4 && "active"}>
                                 <div className='content-inner'>
                                     <h3>{list[3].title}</h3>
                                     <h4>{list[3].author}</h4>
-                                    <h5>{list[3].genre}</h5>
+                                    {/* <h5>{list[3].genre}</h5> */}
                                 </div>   
-                            </li> */}
+                            </li>
                         </ul>
                 </div>
                 
