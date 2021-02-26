@@ -1,14 +1,47 @@
-import React from 'react'
+import React from 'react';
+import {Obra} from './Obras/Obra';
+import './Obras/Obra.scss';
+
+const lista = [
+    {
+        titulo: 'Beatus Vir',
+        autor: 'Vivaldi',
+        url: '',
+        genero: 'Barroco'
+    },
+    {
+        titulo: 'Gloria',
+        autor: 'Vivaldi',
+        url: '',
+        genero: 'Barroco'
+    },
+    {
+        titulo: 'Concierto en Sol Mayor op.3 no. 3 RV 310 para violín y orquesta',
+        autor: 'Vivaldi',
+        url: '',
+        genero: 'Barroco'
+    },
+    {
+        titulo: 'La Primavera (I. Allegro)',
+        autor: 'Vivaldi',
+        url: '',
+        genero: 'Barroco'
+    }
+
+];
 
 export const Obras = () => {
     return (
-        <div style={{'min-height': '100vh'}}>
-            obras
-            clasificadas por genero, compositor, temas, 
-            en formato lista
-            con opción de buscar
-            En algún momento, se pueden escanear las partituras para tenerlas accesibles para los usuarios (si se hace registro de usuarios)
-
+        <div>
+            <div className='filtros'>Filtros</div>
+            <div className='lista' style={{'min-height': '100vh'}}>
+            
+            {lista.map((el, i) => (
+                <Obra key={el.titulo} obra={el} />
+            ))}
+            </div>
+            <div className='scrolling'>Cargar a medida que se baja más</div>
         </div>
+        
     )
 }

@@ -1,0 +1,50 @@
+
+@mixin flex-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.filtros {
+    height: 20vh;
+    @include flex-row();
+
+}
+
+.lista {
+    // margin: 5%;
+    // width: 80vw;
+    border: 6px solid green;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    // gap: 5vw;
+    .obra {
+        @include flex-column();
+        justify-self: center;
+        height: 40vh;
+        width: 100%;
+        margin: 0 2.5%;
+        border: 1px solid black;
+    }
+}
+
+.scrolling {
+    height: 10vh;
+    @include flex-column();
+}
+
+
+@media (max-width: 760px) {
+
+    .obra {
+
+    }
+
+}
