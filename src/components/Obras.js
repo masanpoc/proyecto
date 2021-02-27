@@ -27,13 +27,6 @@ const lista = [
         url: '',
         genero: 'Barroco'
     },
-    {
-        titulo: 'La Primavera 3 (I. Allegro)',
-        autor: 'Vivaldi',
-        url: '',
-        genero: 'Barroco'
-    }
-
 ];
 
 export const Obras = () => {
