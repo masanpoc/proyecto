@@ -26,6 +26,12 @@ const lista = [
         autor: 'Vivaldi',
         url: '',
         genero: 'Barroco'
+    },
+    {
+        titulo: 'La Primavera 3 (I. Allegro)',
+        autor: 'Vivaldi',
+        url: '',
+        genero: 'Barroco'
     }
 
 ];
