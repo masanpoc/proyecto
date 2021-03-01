@@ -4,7 +4,9 @@ import Pic1 from '../../../Images/pic-1.jpg';
 import Pic2 from '../../../Images/pic-2.jpg';
 import Pic3 from '../../../Images/pic-3.jpg';
 import Pic4 from '../../../Images/pic-4.jpg';
-import { TweenLite, Power3 } from "gsap";
+// import { Power3 } from "gsap";
+import gsap from 'gsap';
+import { TweenLite } from 'gsap';
 
 const list = [ 
     {
@@ -54,6 +56,8 @@ export const Carousel = () => {
     
     // useEffect definitions
     useEffect(() => {
+        // request animation frame
+        gsap.ticker.lagSmoothing(false);
         TweenLite.to(contentList.children[0], 0, {
           opacity: 1
         });
@@ -87,12 +91,12 @@ export const Carousel = () => {
         });
     };
 
-    const scale = (index, duration) => {
-        TweenLite.from(imageList.children[index], duration, {
-        scale: 1.2,
-        ease: Power3.easeOut
-        });
-    };
+    // const scale = (index, duration) => {
+    //     TweenLite.from(imageList.children[index], duration, {
+    //     scale: 1.2,
+    //     ease: Power3.easeOut
+    //     });
+    // };
 
     //Content transition
 
