@@ -26,8 +26,13 @@ const lista = [
         autor: 'Vivaldi',
         url: '',
         genero: 'Barroco'
-    }
-
+    },
+    {
+        titulo: 'Invierno (I. Allegro)',
+        autor: 'Vivaldi',
+        url: '',
+        genero: 'Barroco'
+    },
 ];
 
 export const Obras = () => {
