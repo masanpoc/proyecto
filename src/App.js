@@ -8,12 +8,17 @@ import {Nosotros} from './components/Nosotros/Nosotros';
 import {Historia} from './components/Nosotros/subcomponents/Historia';
 import {Conocenos} from './components/Nosotros/subcomponents/Conocenos';
 import {Proyectos} from './components/Nosotros/subcomponents/Proyectos';
+// import intro_pic from './Images/intro.jpg';
+// import intro_pic2 from './Images/pic-intro2.jpg'; 
+import gsap from 'gsap';
 
 function App() {
    // constant variables
 
    // useRef definitions
-  //  const intro = useRef();
+   let intro = useRef();
+   let introImg = useRef();
+   let introMag = useRef();
 
    // useState definitions
   const [options, setOptions] = useState(false);
@@ -22,20 +27,62 @@ function App() {
    // useEffect definitions
    useEffect(() => {
     console.log('hey');
+    introAnimation();
    }, []);
+
+  // functions
+  function vwToPx(value) {
+    return window.innerWidth * (value/100)
+  }
+
+  function vhToPx(value) {
+    return window.innerHeight * (value/100)
+  }
+
+  const introAnimation = () => {
+    gsap.to(introImg, {
+      x: vwToPx(35),
+      y: vhToPx(15),
+      duration: 3,
+    });
+    gsap.to(introMag, {
+      x:  vwToPx(-35),
+      y: vhToPx(-15),
+      duration: 3,
+    });
+  }
    
   return ( 
     // we use router to render the matching route (handle different pages) 
     <Router >
       <div className="App">
-        
+      <div ref={el => (intro = el)} className='intro'>
+          
+          <div ref={el => (introImg = el)} className='glass'>
+            <div ref={el => (introMag = el)} className='intro-image'></div>
+            {/* <div className='magnifier'></div>  */}
+          </div>
+          
+          <h1 className='titleAnimation'>Título de entrada a la animacion</h1>
+          <h2 className='subtitleAnimation'>Slogan o cualquier otra idea</h2>
+          
+          <div className='authors'>
+            <span>HAENDEL</span>
+            {/* <span>Bach</span>
+            <span>Vivaldi</span>
+            <span>Haydn</span>
+            <span>Mozart</span>
+            <span>Beethoven</span> */}
+          </div>
+
+      </div>
         {/* header */}
         <header className='header'>
           {/* logo */}
           <Link className='link' to='/' id='logo'><span onClick={() => setActive(false)} >logo y nombre (Agrupación Musical Coruña)</span></Link>
           <input className='buscador' placeholder='buscar'></input>
         </header>
-        {/* <div ref={el => (intro = el)} >ddd</div> */}
+        
         {/* navbar */}
         <nav id='navbar'>
           

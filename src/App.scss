@@ -12,6 +12,24 @@
   justify-content: center;
 }
 
+@font-face {
+  font-family: 'EBGaramond';
+  src: url('./fonts/EBGaramond-Regular.woff2') format('woff2'),
+      url('./fonts/EBGaramond-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('./fonts/Lora-Regular.woff2') format('woff2'),
+      url('./fonts/Lora-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 li {
   list-style: none;
 }
@@ -22,6 +40,62 @@ a {
 }
 
 .App {
+  .intro {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    z-index: 4;
+    background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+    .glass {
+      position: absolute;
+      border-radius: 50%;
+      height: 30rem;
+      width: 30rem;
+      overflow: hidden;
+
+      .intro-image {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        // smaller screens -> make height value lower
+        background-image: url('./Images/pic-intro2.jpg');
+        background-position: right center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      // .magnifier {
+      //   // z-index: 7;
+      //   position: absolute;
+      //   top: 20vh;
+      //   left: 20vw;
+      //   height: 50vh;
+      //   width: 50vw;
+      //   border-radius: 50%;
+      //   border: 1px solid white;
+      //   background-color: transparent;
+      //   overflow: hidden;
+      // }
+
+    }
+    
+    .titleAnimation {
+      position: absolute;
+      color: rgba(255, 255, 255, 0.692);
+      font-family: 'Lora';
+    }
+    .subtitleAnimation {
+      position: absolute;
+      color: rgba(255, 255, 255, 0.692);
+      font-family: 'Lora';
+    }
+    .authors {
+      position: absolute;
+      font-size: 4em;
+      letter-spacing: 0.5em;
+      color: rgba(255, 255, 255, 0.692);
+      font-family: 'EBGaramond';
+    }
+  }
   text-align: center;
   .header {
     @include flex-row();
