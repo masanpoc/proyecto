@@ -181,7 +181,6 @@ a {
         position: absolute;
         top: 30vh;
         width: 100vw;
-        // height: 90vh;
         background: black;
         border: 3px solid gray;
         letter-spacing: 2px;
@@ -198,14 +197,16 @@ a {
         .underline {
           text-decoration: underline gray;
         }
-        // >.link:hover, >.link:active {
-         
-        // }
         .nosotros-mobile {
+          @include flex-column();
+          margin: 0 0 12.5% 0;
+          .extra-padding {
+            padding: 6% 0;
+          }
           .desplegable-mobile {
             @include flex-column();
-            height: 25vw;
-            margin: 17% 0 12.5% 0;
+            // height: 25vw;
+            
             .link-2 {
               font-size: 1em;
               color: white;
@@ -215,10 +216,11 @@ a {
               background-color: rgb(85, 84, 84);
               box-shadow: 0 0 1px 0 black;
             }
-            // > .link-2:hover, > .link-2:active {
-            //   background-color: gray;
-            // }
           }
+        }
+        .extra-border {
+          padding-bottom: 7.5%;
+          box-shadow: 0 1.2px 0.1px 0 #80808096;
         }
       }
     }

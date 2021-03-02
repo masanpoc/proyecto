@@ -1,5 +1,5 @@
 import './App.scss';
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link, Redirect} from 'react-router-dom';
 import {Inicio} from './components/Inicio/Inicio';
 import {Articulos} from './components/Articulos';
@@ -10,7 +10,20 @@ import {Conocenos} from './components/Nosotros/subcomponents/Conocenos';
 import {Proyectos} from './components/Nosotros/subcomponents/Proyectos';
 
 function App() {
+   // constant variables
+
+   // useRef definitions
+  //  const intro = useRef();
+
+   // useState definitions
+  const [options, setOptions] = useState(false);
   const [active, setActive] = useState(false);
+
+   // useEffect definitions
+   useEffect(() => {
+    console.log('hey');
+   }, []);
+   
   return ( 
     // we use router to render the matching route (handle different pages) 
     <Router >
@@ -22,7 +35,7 @@ function App() {
           <Link className='link' to='/' id='logo'><span onClick={() => setActive(false)} >logo y nombre (Agrupación Musical Coruña)</span></Link>
           <input className='buscador' placeholder='buscar'></input>
         </header>
-
+        {/* <div ref={el => (intro = el)} >ddd</div> */}
         {/* navbar */}
         <nav id='navbar'>
           
@@ -35,14 +48,14 @@ function App() {
             <span>|</span>
             <Link className='link' to='/obras'><li>Obras</li></Link>
             <span>|</span>
-            <Link to='/nosotros' className='link nosotros'>
-              Sobre Nosotros
-              <div className='desplegable'>
-                <Link className='link' to='/nosotros/historia'>Nuestra historia</Link>
-                <Link className='link' to='/nosotros/conocenos'>Conócenos</Link>
-                <Link className='link' to='/nosotros/proyectos'>Proyectos</Link>
+            <span className='nosotros' onMouseOver={() => setOptions(true)} onClick={() => setOptions(false)} >
+              <Link to='/nosotros' className='link'>Sobre Nosotros</Link>
+              <div className={options ? 'desplegable' : 'none'}>
+                <Link className='link' to='/nosotros/historia' onClick={() => setOptions(false)} >Nuestra historia</Link>
+                <Link className='link' to='/nosotros/conocenos' onClick={() => setOptions(false)} >Conócenos</Link>
+                <Link className='link' to='/nosotros/proyectos' onClick={() => setOptions(false)} >Proyectos</Link>
               </div>
-            </Link>
+            </span>
           </div>
 
           {/* menu de opciones mobile friendly */}
@@ -58,14 +71,19 @@ function App() {
               <Link className='f1 link underline' to='/' onClick={() => setActive(!active)}>Inicio</Link>
               <Link className='f1 link underline' to='/articulos' onClick={() => setActive(!active)}>Artículos</Link>
               <Link className='f1 link underline' to='/obras' onClick={() => setActive(!active)}>Obras</Link>
-              <Link to='/nosotros' className='link nosotros-mobile ' onClick={() => setActive(!active)}>
-                <span className='f1 underline'>Sobre Nosotros</span>
+              <span className='nosotros-mobile extra-border'>
+                <Link to='/nosotros' className='link f1 underline extra-padding' onClick={() => setActive(!active)}>
+                  Sobre Nosotros
+                </Link>
                 <div className='desplegable-mobile'>
                   <Link className='link-2' to='/nosotros/historia' onClick={() => setActive(!active)}>Nuestra historia</Link>
                   <Link className='link-2' to='/nosotros/conocenos' onClick={() => setActive(!active)}>Conócenos</Link>
                   <Link className='link-2' to='/nosotros/proyectos' onClick={() => setActive(!active)}>Proyectos</Link>
                 </div>
-              </Link>
+              </span>
+              
+                
+               
           </div>
 
         </nav>

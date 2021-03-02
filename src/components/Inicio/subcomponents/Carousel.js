@@ -186,16 +186,17 @@ export const Carousel = () => {
                 
                 <div className='slider'>
                     <ul ref={el => (imageList = el)} className='image-list'>
-                            <li className={state.isActive1 && "active"}>
+                    {/* we can't use && in classname because the not true is read as boolean */}
+                            <li className={state.isActive1 ? "active" : "" }>
                                 <img src={list[0].src} alt={list[0].title}></img>
                             </li>
-                            <li className={state.isActive2 && "active"}>
+                            <li className={state.isActive2 ? "active" : "" }>
                                 <img src={list[1].src} alt={list[1].title}></img>
                             </li>
-                            <li className={state.isActive3 && "active"}>
+                            <li className={state.isActive3 ? "active" : "" }>
                                 <img src={list[2].src} alt={list[2].title}></img>
                             </li>
-                            <li className={state.isActive4 && "active"}>
+                            <li className={state.isActive4 ? "active" : "" }>
                                 <img src={list[3].src} alt={list[3].title}></img>
                             </li>
                     </ul>
@@ -203,14 +204,14 @@ export const Carousel = () => {
                 
                 <div className='quotes'>
                         <ul ref={el => (contentList = el)} className='content-list'>
-                            <li id='item' className={state.isActive1 && "active"}>
+                            <li id='item' className={state.isActive1 ? "active" : "" }>
                                 <div className='content-inner'>
                                     <h3>{list[0].title}</h3>
                                     <h4>{list[0].author}</h4>
                                     {/* <h5>{list[0].genre}</h5> */}
                                 </div>
                             </li>
-                            <li id='item' className={state.isActive2 && "active"}>
+                            <li id='item' className={state.isActive2 ? "active" : "" }>
                                 <div className='content-inner'>
                                     <h3>{list[1].title}</h3>
                                     <h4>{list[1].author}</h4>
@@ -218,7 +219,7 @@ export const Carousel = () => {
                                 </div>
                                 
                             </li>
-                            <li id='item' className={state.isActive3 && "active"}>
+                            <li id='item' className={state.isActive3 ? "active" : "" }>
                                 <div className='content-inner'>
                                     <h3>{list[2].title}</h3>
                                     <h4>{list[2].author}</h4>
@@ -226,7 +227,7 @@ export const Carousel = () => {
                                 </div>
                                 
                             </li>
-                            <li id='item' className={state.isActive4 && "active"}>
+                            <li id='item' className={state.isActive4 ? "active" : "" }>
                                 <div className='content-inner'>
                                     <h3>{list[3].title}</h3>
                                     <h4>{list[3].author}</h4>

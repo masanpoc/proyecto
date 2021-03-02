@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Historia = () => {
     return (
-        <div style={{'min-height': '100vh'}}>
+        <div style={{'minHeight': '100vh'}}>
             historia
             Archivo multimedia vease video o linea cronologica del tiempo con 
             Contenido: 

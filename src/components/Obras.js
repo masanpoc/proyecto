@@ -39,7 +39,7 @@ export const Obras = () => {
     return (
         <div>
             <div className='filtros'>Filtros</div>
-            <div className='lista' style={{'min-height': '100vh'}}>
+            <div className='lista' style={{'minHeight': '100vh'}}>
             
             {lista.map((el, i) => (
                 <Obra key={el.titulo} obra={el} />
