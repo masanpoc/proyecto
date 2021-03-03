@@ -6,7 +6,8 @@ import Pic3 from '../../../Images/pic-3.jpg';
 import Pic4 from '../../../Images/pic-4.jpg';
 // import { Power3 } from "gsap";
 import gsap from 'gsap';
-import { TweenLite } from 'gsap';
+// not necessary any Tweenlite since new version works with gsap !!
+// import { TweenLite } from 'gsap';
 
 const list = [ 
     {
@@ -58,7 +59,7 @@ export const Carousel = () => {
     useEffect(() => {
         // request animation frame
         gsap.ticker.lagSmoothing(false);
-        TweenLite.to(contentList.children[0], 0, {
+        gsap.to(contentList.children[0], 0, {
           opacity: 1
         });
         const interval = setInterval(() => {
@@ -78,21 +79,24 @@ export const Carousel = () => {
     // functions
     //Image transition
     const slideLeft = (index, duration, multiplied = 1) => {
-        TweenLite.to(imageList.children[index], duration, {
-        x: -imageWidth * multiplied,
-        ease: 'ease-out'
+        gsap.to(imageList.children[index], {
+            duration: duration,
+            x: -imageWidth * multiplied,
+            ease: 'ease-out'
         });
     };
 
     const slideRight = (index, duration, multiplied = 1) => {
-        TweenLite.to(imageList.children[index], duration, {
-        x: imageWidth * multiplied,
-        ease: 'ease-out'
+        gsap.to(imageList.children[index], {
+            duration: duration,
+            x: imageWidth * multiplied,
+            ease: 'ease-out'
         });
     };
 
     // const scale = (index, duration) => {
-    //     TweenLite.from(imageList.children[index], duration, {
+    //     gsap.from(imageList.children[index], {
+        // duration: duration,
     //     scale: 1.2,
     //     ease: Power3.easeOut
     //     });
@@ -101,15 +105,17 @@ export const Carousel = () => {
     //Content transition
 
     const fadeOut = (index, duration) => {
-        TweenLite.to(contentList.children[index], duration, {
-        opacity: 0
+        gsap.to(contentList.children[index], {
+            duration: duration,
+            opacity: 0
         });
     };
 
     const fadeIn = (index, duration) => {
-        TweenLite.to(contentList.children[index], duration, {
-        opacity: 1,
-        delay: 3
+        gsap.to(contentList.children[index], {
+            duration: duration,
+            opacity: 1,
+            delay: 3
         });
     };
 

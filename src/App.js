@@ -19,6 +19,8 @@ function App() {
    let intro = useRef();
    let introImg = useRef();
    let introMag = useRef();
+   let introTitle = useRef();
+   let introSubtitle = useRef();
 
    // useState definitions
   const [options, setOptions] = useState(false);
@@ -40,16 +42,28 @@ function App() {
   }
 
   const introAnimation = () => {
-    gsap.to(introImg, {
-      x: vwToPx(35),
-      y: vhToPx(15),
-      duration: 3,
-    });
-    gsap.to(introMag, {
-      x:  vwToPx(-35),
-      y: vhToPx(-15),
-      duration: 3,
-    });
+    const timeline = gsap.timeline({duration: 3});
+    timeline
+    .from(introTitle, {
+      autoAlpha: 0,
+      y: 100
+    })
+    .from(introSubtitle, {
+      autoAlpha: 0,
+      y: 200
+    })
+    // gsap.to(introImg, {
+    //   x: vwToPx(35),
+    //   y: vhToPx(15),
+    //   duration: 3,
+    //   delay: 2
+    // });
+    // gsap.to(introMag, {
+    //   x:  vwToPx(-35),
+    //   y: vhToPx(-15),
+    //   duration: 3,
+    //   delay: 2
+    // });
   }
    
   return ( 
@@ -63,8 +77,8 @@ function App() {
             {/* <div className='magnifier'></div>  */}
           </div>
           
-          <h1 className='titleAnimation'>Título de entrada a la animacion</h1>
-          <h2 className='subtitleAnimation'>Slogan o cualquier otra idea</h2>
+          <h1 ref={el => (introTitle = el)}  className='titleAnimation'>Título de entrada a la animacion</h1>
+          <h2 ref={el => (introSubtitle = el)} className='subtitleAnimation'>Slogan o cualquier otra idea</h2>
           
           <div className='authors'>
             <span>HAENDEL</span>
