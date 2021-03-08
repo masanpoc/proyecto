@@ -40,6 +40,10 @@ a {
 }
 
 .App {
+  // esto hay q quitarlo con gsap --> osea solo cambiar la clase App
+  height: 100vh;
+  overflow-y: hidden;
+  // el resto no
   .intro {
     position: relative;
     height: 100vh;

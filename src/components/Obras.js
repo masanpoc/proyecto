@@ -43,7 +43,7 @@ export const Obras = () => {
     // useState definitions
     const [list, setList] = useState(lista);
     const [listValue, setListValue] = useState('');
-    const [listValue2, setListValue2] = useState('');
+    // const [listValue2, setListValue2] = useState('');
     const [searchValue, setSearchValue] = useState('');
 
     // useEffect definitions
@@ -68,10 +68,21 @@ export const Obras = () => {
     // }
 
     const filterList = () => {
-        if(listValue!=='') {
-            setList(lista.filter(el => el.genero === listValue));
-        } else {
-            setList(lista)
+        // solo por epoca
+        if(searchValue==='') {
+            if(listValue==='') {
+                setList(lista)
+            } else {
+            setList(lista.filter(el => el.genero === listValue));}
+        }
+        // por epoca y por palabra clave
+        else {
+            if(listValue==='') {
+                setList(lista.filter(el => el.titulo.toLowerCase().includes(searchValue.toLowerCase()) || el.autor.toLowerCase().includes(searchValue.toLowerCase())));
+            } else {
+                setList(lista.filter(el => el.genero === listValue).filter(el => el.titulo.toLowerCase().includes(searchValue.toLowerCase()) || el.autor.toLowerCase().includes(searchValue.toLowerCase())));
+            }
+            
         }
     }
 

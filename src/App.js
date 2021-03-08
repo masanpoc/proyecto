@@ -1,6 +1,7 @@
 import './App.scss';
 import React, { useState, useRef, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link, Redirect} from 'react-router-dom';
+import {Intro} from './components/Intro/Intro';
 import {Inicio} from './components/Inicio/Inicio';
 import {Articulos} from './components/Articulos';
 import {Obras} from './components/Obras';
@@ -10,7 +11,7 @@ import {Conocenos} from './components/Nosotros/subcomponents/Conocenos';
 import {Proyectos} from './components/Nosotros/subcomponents/Proyectos';
 // import intro_pic from './Images/intro.jpg';
 // import intro_pic2 from './Images/pic-intro2.jpg'; 
-import gsap from 'gsap';
+// import gsap from 'gsap';
 
 function App() {
    // constant variables
@@ -27,68 +28,24 @@ function App() {
   const [active, setActive] = useState(false);
 
    // useEffect definitions
-  //  useEffect(() => {
-  //   console.log('hey');
-    // introAnimation();
-  //  }, []);
+  
 
   // functions
-  function vwToPx(value) {
-    return window.innerWidth * (value/100)
-  }
-
-  function vhToPx(value) {
-    return window.innerHeight * (value/100)
-  }
-
-  // const introAnimation = () => {
-    // const timeline = gsap.timeline({duration: 3});
-    // timeline
-    // .from(introTitle, {
-    //   autoAlpha: 0,
-    //   y: 100
-    // })
-    // .from(introSubtitle, {
-    //   autoAlpha: 0,
-    //   y: 200
-    // })
-    // gsap.to(introImg, {
-    //   x: vwToPx(35),
-    //   y: vhToPx(15),
-    //   duration: 3,
-    //   delay: 2
-    // });
-    // gsap.to(introMag, {
-    //   x:  vwToPx(-35),
-    //   y: vhToPx(-15),
-    //   duration: 3,
-    //   delay: 2
-    // });
+  // function vwToPx(value) {
+  //   return window.innerWidth * (value/100)
   // }
+
+  // function vhToPx(value) {
+  //   return window.innerHeight * (value/100)
+  // }
+
    
   return ( 
     // we use router to render the matching route (handle different pages) 
     <Router >
+      <Intro />
       <div className="App">
-      {/* <div ref={el => (intro = el)} className='intro'>
-          
-          <div ref={el => (introImg = el)} className='glass'>
-            <div ref={el => (introMag = el)} className='intro-image'></div>
-          </div>
-          
-          <h1 ref={el => (introTitle = el)}  className='titleAnimation'>Título de entrada a la animacion</h1>
-          <h2 ref={el => (introSubtitle = el)} className='subtitleAnimation'>Slogan o cualquier otra idea</h2>
-          
-          <div className='authors'>
-            <span>HAENDEL</span>
-            <span>Bach</span>
-            <span>Vivaldi</span>
-            <span>Haydn</span>
-            <span>Mozart</span>
-            <span>Beethoven</span>
-          </div>
-
-      </div> */}
+        
         {/* header */}
         <header className='header'>
           {/* logo */}
