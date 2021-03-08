@@ -27,10 +27,10 @@ function App() {
   const [active, setActive] = useState(false);
 
    // useEffect definitions
-   useEffect(() => {
-    console.log('hey');
-    introAnimation();
-   }, []);
+  //  useEffect(() => {
+  //   console.log('hey');
+    // introAnimation();
+  //  }, []);
 
   // functions
   function vwToPx(value) {
@@ -41,17 +41,17 @@ function App() {
     return window.innerHeight * (value/100)
   }
 
-  const introAnimation = () => {
-    const timeline = gsap.timeline({duration: 3});
-    timeline
-    .from(introTitle, {
-      autoAlpha: 0,
-      y: 100
-    })
-    .from(introSubtitle, {
-      autoAlpha: 0,
-      y: 200
-    })
+  // const introAnimation = () => {
+    // const timeline = gsap.timeline({duration: 3});
+    // timeline
+    // .from(introTitle, {
+    //   autoAlpha: 0,
+    //   y: 100
+    // })
+    // .from(introSubtitle, {
+    //   autoAlpha: 0,
+    //   y: 200
+    // })
     // gsap.to(introImg, {
     //   x: vwToPx(35),
     //   y: vhToPx(15),
@@ -64,17 +64,16 @@ function App() {
     //   duration: 3,
     //   delay: 2
     // });
-  }
+  // }
    
   return ( 
     // we use router to render the matching route (handle different pages) 
     <Router >
       <div className="App">
-      <div ref={el => (intro = el)} className='intro'>
+      {/* <div ref={el => (intro = el)} className='intro'>
           
           <div ref={el => (introImg = el)} className='glass'>
             <div ref={el => (introMag = el)} className='intro-image'></div>
-            {/* <div className='magnifier'></div>  */}
           </div>
           
           <h1 ref={el => (introTitle = el)}  className='titleAnimation'>Título de entrada a la animacion</h1>
@@ -82,14 +81,14 @@ function App() {
           
           <div className='authors'>
             <span>HAENDEL</span>
-            {/* <span>Bach</span>
+            <span>Bach</span>
             <span>Vivaldi</span>
             <span>Haydn</span>
             <span>Mozart</span>
-            <span>Beethoven</span> */}
+            <span>Beethoven</span>
           </div>
 
-      </div>
+      </div> */}
         {/* header */}
         <header className='header'>
           {/* logo */}
