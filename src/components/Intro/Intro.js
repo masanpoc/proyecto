@@ -46,16 +46,14 @@ export const Intro = () => {
     useEffect(() => {
         gsap.to(magnifier, {
             duration: 0, 
-            scale: 2,
             motionPath: {
-              path: [{x:-1200, y:0}],
+              path: [{x:-200, y:-400}],
             }
         })
         gsap.to(image, {
             duration: 0, 
-            scale: 2,
             motionPath: {
-              path: [{x:1200, y:0}],
+              path: [{x:+200, y:400}],
       
             }
         })
@@ -63,11 +61,11 @@ export const Intro = () => {
         const timeline = gsap.timeline({ease: 'bounce-out'})
         timeline
         .to(magnifier, {
-        delay: 1,
+        delay: 2.5,
         scale: 1,
         duration: 3, 
         motionPath: {
-            path: [{x:-20, y:100}],
+            path: [{x:-250, y:0}, {x:-20, y:100}],
             curviness: 2
         }
         })
@@ -75,7 +73,7 @@ export const Intro = () => {
         scale: 1,
         duration: 3, 
         motionPath: {
-            path: [{x:20, y:-100}],
+            path: [{x:250, y:0}, {x:20, y:-100}],
             curviness: 2
         }
         }, '>-3')
@@ -83,162 +81,162 @@ export const Intro = () => {
         scale: 2,
         autoAlpha: 0,
         duration: 2,
-        x: 100,
+        x: -1000,
         y: 200,
         skewX: 50
         }, '>-3')
         .from(letter2, {
         scale: 2,
         autoAlpha: 0,
-        duration: 2,
-        x: 50,
+        duration: 1.5,
+        x: -500,
         y: -100,
         skewX: 70
-        }, '>-2')
+        }, '>-3')
         .from(letter3, {
         scale: 2,
         autoAlpha: 0,
-        duration: 2,
-        x: 200,
+        duration: 3,
+        x: 20,
         y: 400,
         skewY: 30 
-        }, '>-2')
+        }, '>-3')
         .from(letter4, {
         scale: 2,
         autoAlpha: 0,
-        duration: 2,
-        x: 20,
-        y: 700,
+        duration: 1.5,
+        x: -200,
+        y: -700,
         skewX: 45
-        }, '>-2')
+        }, '>-3')
         .from(letter5, {
         scale: 2,
         autoAlpha: 0,
-        duration: 2,
-        x:44 ,
+        duration: 3,
+        x:1400 ,
         y: -402,
         skewY: 36
-        }, '>-2')
+        }, '>-3')
         .from(letter6, {
         scale: 2,
         autoAlpha: 0,
-        duration: 2,
-        x: 587,
+        duration: 3,
+        x: -587,
         y:52 ,
         skewY: 58
-        }, '>-2')
+        }, '>-3')
         .from(letter7, {
         scale: 2,
         autoAlpha: 0,
-        duration: 2,
-        x:25 ,
+        duration: 3,
+        x:205 ,
         y: 547,
         skewX: 45
-        }, '>-2')
+        }, '>-3')
         .from(letter8, {
         scale: 2,
         autoAlpha: 0,
         duration: 2,
         x: 100,
-        y: 200,
+        y: -200,
         skewX: 50
-        }, '>-2')
+        }, '>-3')
         .from(letter9, {
         scale: 2,
         autoAlpha: 0,
         duration: 2,
-        x: 50,
-        y: -100,
+        x: -500,
+        y: 100,
         skewX: 70
-        }, '>-2')
+        }, '>-3')
         .from(letter10, {
         scale: 2,
         autoAlpha: 0,
-        duration: 2,
+        duration: 1.5,
         x: 200,
-        y: 400,
+        y: -400,
         skewY: 30 
-        }, '>-2')
+        }, '>-3')
         .from(letter11, {
         scale: 2,
         autoAlpha: 0,
-        duration: 2,
-        x: 20,
-        y: 700,
+        duration: 3,
+        x: -20,
+        y: 550,
         skewX: 45
-        }, '>-2')
+        }, '>-3')
         .from(letter12, {
         scale: 2,
         autoAlpha: 0,
         duration: 2,
-        x:44 ,
-        y: -402,
+        x:400 ,
+        y: 1220,
         skewY: 36
-        }, '>-2')
+        }, '>-3')
         .from(letter13, {
         scale: 2,
         autoAlpha: 0,
-        duration: 2,
-        x: 587,
+        duration: 3,
+        x: 287,
         y:52 ,
         skewY: 58
-        }, '>-2')
+        }, '>-3')
         .from(letter14, {
         scale: 2,
         autoAlpha: 0,
         duration: 2,
-        x:25 ,
-        y: 547,
+        x:259 ,
+        y: 747,
         skewX: 45
-        }, '>-2')
+        }, '>-3')
         .from(letter15, {
         scale: 2,
         autoAlpha: 0,
-        duration: 2,
-        x: 100,
-        y: 200,
+        duration: 1.5,
+        x: -800,
+        y: 1100,
         skewX: 50
-        }, '>-2')
+        }, '>-3')
         .from(letter16, {
         scale: 2,
         autoAlpha: 0,
-        duration: 2,
+        duration: 3,
         x: 50,
-        y: -100,
+        y: -60,
         skewX: 70
-        }, '>-2')
+        }, '>-3')
         .from(letter17, {
         scale: 2,
         autoAlpha: 0,
         duration: 2,
         x: 200,
-        y: 400,
+        y: 250,
         skewY: 30 
-        }, '>-2')
+        }, '>-3')
         .from(letter18, {
         scale: 2,
         autoAlpha: 0,
-        duration: 2,
+        duration: 3,
         x: 20,
-        y: 700,
+        y: -360,
         skewX: 45
-        }, '>-2')
+        }, '>-3')
         .from(letter19, {
         scale: 2,
         autoAlpha: 0,
-        duration: 2,
-        x:44 ,
-        y: -402,
+        duration: 3,
+        x:445 ,
+        y: -4002,
         skewY: 36
-        }, '>-2')
+        }, '>-3')
         .from(letter20, {
         scale: 2,
         autoAlpha: 0,
-        duration: 2,
-        x: 587,
+        duration: 3,
+        x: -287,
         y:52 ,
         skewY: 58
-        }, '>-2')
+        }, '>-3')
         .from(letter21, {
         scale: 2,
         autoAlpha: 0,
@@ -246,7 +244,7 @@ export const Intro = () => {
         x:25 ,
         y: 547,
         skewX: 45
-        }, '>-2')
+        }, '>-3')
         .from(letter22, {
         scale: 2,
         autoAlpha: 0,
@@ -254,15 +252,15 @@ export const Intro = () => {
         x:44 ,
         y: -402,
         skewY: 36
-        }, '>-2')
+        }, '>-3')
         .from(letter23, {
         scale: 2,
         autoAlpha: 0,
-        duration: 2,
+        duration: 3,
         x: 587,
-        y:52 ,
+        y:1020 ,
         skewY: 58
-        }, '>-2')
+        }, '>-3')
         .from(letter24, {
         scale: 2,
         autoAlpha: 0,
@@ -270,23 +268,23 @@ export const Intro = () => {
         x:25 ,
         y: 547,
         skewX: 45
-        }, '>-2')
+        }, '>-3')
 
         .from(subtitle, {
-        delay: 0.5,
+        delay: 1,
         duration: 1,
         y: 50,
         autoAlpha: 0,
         })
         .from(subtitle2, {
-        delay: 0.5,
+        delay: 1,
         duration: 1,
-        y: 20,
+        y: 50,
         autoAlpha: 0
         })
 
         .to(magnifier, {
-            // delay: 0.5,
+            delay: 3,
             autoAlpha: 0,
             duration: 1
         })
@@ -302,7 +300,7 @@ export const Intro = () => {
             // delay: 1,
             // ease: 'power1.in',
             yPercent: -60,
-            scaleY: 0.1,
+            scaleY: 0,
             autoAlpha: 0,
             duration: 2
         })

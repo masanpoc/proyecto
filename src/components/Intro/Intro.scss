@@ -6,7 +6,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
     .lamina {
         position: absolute;
@@ -21,25 +21,25 @@
     .magnifier {
         z-index: 2;
         border-radius: 50%;
-        height: 350px;
-        width: 350px;
+        height: 450px;
+        width: 450px;
         overflow: hidden;
         position: absolute;
-        right: 0;
-        top: 20px;
+        right: 100px;
+        top: -40px;
         .image {
             position: absolute;
             right: 0;
             z-index: 1;
-            width: 120vw;
-            height: auto;
+            // width: 120vw;
+            height: 90vh;
         }
     }
     .authors {
         display: flex;
         flex-direction: column;
         width: 100vw;
-        margin-top: 5%;
+        margin-top: 7%;
         .wraper {
             z-index: 12;
             display: flex;
@@ -81,34 +81,38 @@
     .sentences {
         display: flex;
         flex-direction: column;
+        margin-top: 7%;
         .subtitle1 {
             z-index: 12;
             font-family: 'Lora';
-            background: -webkit-linear-gradient(90deg,rgba(16, 160, 179, 0.9), rgba(248, 248, 248, 1));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: rgb(120, 155, 180);
+            // background: -webkit-linear-gradient(90deg,rgba(16, 160, 179, 0.9), rgba(248, 248, 248, 1));
+            // -webkit-background-clip: text;
+            // -webkit-text-fill-color: transparent;
             font-weight: lighter;
             font-size: 2.5em;
             // color: white;
             padding: 0;
             display: flex;
-            margin-left: 10%;
-            margin-top: 5%;
+            // margin-left: 4%;
+            
             justify-content: flex-start;
             width: 80vw;
         }
           
         .subtitle2 {
+            z-index: 12;
             font-family: 'Lora';
-            background: -webkit-linear-gradient(90deg, rgba(16, 160, 179, 0.9), rgba(248, 248, 248, 1));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: rgb(105, 149, 180);
+            // background: -webkit-linear-gradient(90deg, rgba(16, 160, 179, 0.9), rgba(248, 248, 248, 1));
+            // -webkit-background-clip: text;
+            // -webkit-text-fill-color: transparent;
             font-weight: lighter;
             font-size: 2.4em;
             // color: white;
             padding: 0;
             display: flex;
-            margin-left: 10%;
+            // margin-left: 4%;
             margin-top: 5%;
             justify-content: flex-start;
             width: 50vw;
@@ -116,8 +120,39 @@
     }
 }
 
-
-
 .none {
     display: none;
+}
+
+@media (max-width: 760px) { 
+    .intro {
+        .authors {
+
+            .align1 {
+                margin: 3% 0;                
+            }
+            .align2 {
+                margin: 3% 0 3% 35%;
+            }
+            .align3 {
+                margin:3% 0 3% 60%;
+            }
+            .align4 {
+                margin: 3% 0;
+            }
+        }
+        .sentences {
+            margin-top: 15%;
+            .subtitle1 {
+                width: 85vw;
+                font-size: 1.9em;
+            }
+            .subtitle2 {
+                margin-top: 15%;
+                width: 85vw;
+                font-size: 1.5em
+            }
+        }
+    }
+   
 }
