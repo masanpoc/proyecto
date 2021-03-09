@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import './Intro.scss';
 import gsap from 'gsap';
-import IntroPic from '../../Images/intro.jpg';
-// import intro_pic2 from './Images/pic-intro2.jpg'; 
+import IntroPic from '../../Images/pic-intro2.jpg';
+// import intro_pic2 from './Images/intro.jpg'; 
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 gsap.registerPlugin(MotionPathPlugin);
 
@@ -11,19 +11,303 @@ export const Intro = () => {
     // useRef definitions 
     let intro = useRef();
     let lamina = useRef();
+    let magnifier = useRef();
+    let image = useRef();
+    let sentences = useRef();
+    let subtitle = useRef();
+    let subtitle2 = useRef();
+    let authors = useRef();
+    let letter1 = useRef();
+    let letter2 = useRef();
+    let letter3 = useRef();
+    let letter4 = useRef();
+    let letter5 = useRef();
+    let letter6 = useRef();
+    let letter7 = useRef();
+    let letter8 = useRef();
+    let letter9 = useRef();
+    let letter10 = useRef();
+    let letter11 = useRef();
+    let letter12 = useRef();
+    let letter13 = useRef();
+    let letter14 = useRef();
+    let letter15 = useRef();
+    let letter16 = useRef();
+    let letter17 = useRef();
+    let letter18 = useRef();
+    let letter19 = useRef();
+    let letter20 = useRef();
+    let letter21 = useRef();
+    let letter22 = useRef();
+    let letter23 = useRef();
+    let letter24 = useRef();
 
     // useEffect definitions
     useEffect(() => {
-        gsap.to(lamina.children, {
-            delay: 2,
+        gsap.to(magnifier, {
+            duration: 0, 
+            scale: 2,
+            motionPath: {
+              path: [{x:-1200, y:0}],
+            }
+        })
+        gsap.to(image, {
+            duration: 0, 
+            scale: 2,
+            motionPath: {
+              path: [{x:1200, y:0}],
+      
+            }
+        })
+
+        const timeline = gsap.timeline({ease: 'bounce-out'})
+        timeline
+        .to(magnifier, {
+        delay: 1,
+        scale: 1,
+        duration: 3, 
+        motionPath: {
+            path: [{x:-20, y:100}],
+            curviness: 2
+        }
+        })
+        .to(image, {
+        scale: 1,
+        duration: 3, 
+        motionPath: {
+            path: [{x:20, y:-100}],
+            curviness: 2
+        }
+        }, '>-3')
+        .from(letter1, {
+        scale: 2,
+        autoAlpha: 0,
+        duration: 2,
+        x: 100,
+        y: 200,
+        skewX: 50
+        }, '>-3')
+        .from(letter2, {
+        scale: 2,
+        autoAlpha: 0,
+        duration: 2,
+        x: 50,
+        y: -100,
+        skewX: 70
+        }, '>-2')
+        .from(letter3, {
+        scale: 2,
+        autoAlpha: 0,
+        duration: 2,
+        x: 200,
+        y: 400,
+        skewY: 30 
+        }, '>-2')
+        .from(letter4, {
+        scale: 2,
+        autoAlpha: 0,
+        duration: 2,
+        x: 20,
+        y: 700,
+        skewX: 45
+        }, '>-2')
+        .from(letter5, {
+        scale: 2,
+        autoAlpha: 0,
+        duration: 2,
+        x:44 ,
+        y: -402,
+        skewY: 36
+        }, '>-2')
+        .from(letter6, {
+        scale: 2,
+        autoAlpha: 0,
+        duration: 2,
+        x: 587,
+        y:52 ,
+        skewY: 58
+        }, '>-2')
+        .from(letter7, {
+        scale: 2,
+        autoAlpha: 0,
+        duration: 2,
+        x:25 ,
+        y: 547,
+        skewX: 45
+        }, '>-2')
+        .from(letter8, {
+        scale: 2,
+        autoAlpha: 0,
+        duration: 2,
+        x: 100,
+        y: 200,
+        skewX: 50
+        }, '>-2')
+        .from(letter9, {
+        scale: 2,
+        autoAlpha: 0,
+        duration: 2,
+        x: 50,
+        y: -100,
+        skewX: 70
+        }, '>-2')
+        .from(letter10, {
+        scale: 2,
+        autoAlpha: 0,
+        duration: 2,
+        x: 200,
+        y: 400,
+        skewY: 30 
+        }, '>-2')
+        .from(letter11, {
+        scale: 2,
+        autoAlpha: 0,
+        duration: 2,
+        x: 20,
+        y: 700,
+        skewX: 45
+        }, '>-2')
+        .from(letter12, {
+        scale: 2,
+        autoAlpha: 0,
+        duration: 2,
+        x:44 ,
+        y: -402,
+        skewY: 36
+        }, '>-2')
+        .from(letter13, {
+        scale: 2,
+        autoAlpha: 0,
+        duration: 2,
+        x: 587,
+        y:52 ,
+        skewY: 58
+        }, '>-2')
+        .from(letter14, {
+        scale: 2,
+        autoAlpha: 0,
+        duration: 2,
+        x:25 ,
+        y: 547,
+        skewX: 45
+        }, '>-2')
+        .from(letter15, {
+        scale: 2,
+        autoAlpha: 0,
+        duration: 2,
+        x: 100,
+        y: 200,
+        skewX: 50
+        }, '>-2')
+        .from(letter16, {
+        scale: 2,
+        autoAlpha: 0,
+        duration: 2,
+        x: 50,
+        y: -100,
+        skewX: 70
+        }, '>-2')
+        .from(letter17, {
+        scale: 2,
+        autoAlpha: 0,
+        duration: 2,
+        x: 200,
+        y: 400,
+        skewY: 30 
+        }, '>-2')
+        .from(letter18, {
+        scale: 2,
+        autoAlpha: 0,
+        duration: 2,
+        x: 20,
+        y: 700,
+        skewX: 45
+        }, '>-2')
+        .from(letter19, {
+        scale: 2,
+        autoAlpha: 0,
+        duration: 2,
+        x:44 ,
+        y: -402,
+        skewY: 36
+        }, '>-2')
+        .from(letter20, {
+        scale: 2,
+        autoAlpha: 0,
+        duration: 2,
+        x: 587,
+        y:52 ,
+        skewY: 58
+        }, '>-2')
+        .from(letter21, {
+        scale: 2,
+        autoAlpha: 0,
+        duration: 2,
+        x:25 ,
+        y: 547,
+        skewX: 45
+        }, '>-2')
+        .from(letter22, {
+        scale: 2,
+        autoAlpha: 0,
+        duration: 2,
+        x:44 ,
+        y: -402,
+        skewY: 36
+        }, '>-2')
+        .from(letter23, {
+        scale: 2,
+        autoAlpha: 0,
+        duration: 2,
+        x: 587,
+        y:52 ,
+        skewY: 58
+        }, '>-2')
+        .from(letter24, {
+        scale: 2,
+        autoAlpha: 0,
+        duration: 2,
+        x:25 ,
+        y: 547,
+        skewX: 45
+        }, '>-2')
+
+        .from(subtitle, {
+        delay: 0.5,
+        duration: 1,
+        y: 50,
+        autoAlpha: 0,
+        })
+        .from(subtitle2, {
+        delay: 0.5,
+        duration: 1,
+        y: 20,
+        autoAlpha: 0
+        })
+
+        .to(magnifier, {
+            // delay: 0.5,
+            autoAlpha: 0,
+            duration: 1
+        })
+        .to(sentences, {
+            autoAlpha: 0,
+            duration: 1
+        }, '>-1')
+        .to(authors, {
+        autoAlpha: 0,
+        duration: 1
+        }, '>-1')
+        .to(lamina.children, {
+            // delay: 1,
             // ease: 'power1.in',
             yPercent: -60,
             scaleY: 0.1,
             autoAlpha: 0,
-            duration: 1.5
+            duration: 2
         })
-        gsap.set(intro, {
-            delay:3.5,
+        .set(intro, {
+            // delay:0.5,
             className: 'none'
         })
         
@@ -76,10 +360,49 @@ export const Intro = () => {
                 <div className='segment'></div>
             </div>
             {/* animacion de efecto lupa */}
-
+            <div ref={el => (magnifier=el)} className='magnifier'>
+                <img ref={el => (image=el)} className='image' src={IntroPic} alt='header' />
+            </div>
             {/* transicion de letras de autores x4 */}
-
+            <div ref={el => (authors=el)} className='authors' >
+                <div className='wraper align1'>
+                    <div ref={el=>(letter1=el)} className='letter'>H</div>
+                    <div ref={el=>(letter2=el)} className='letter'>A</div>
+                    <div ref={el=>(letter3=el)} className='letter'>E</div>
+                    <div ref={el=>(letter4=el)} className='letter'>N</div>
+                    <div ref={el=>(letter5=el)} className='letter'>D</div>
+                    <div ref={el=>(letter6=el)} className='letter'>E</div>
+                    <div ref={el=>(letter7=el)} className='letter'>L</div>
+                </div>
+                <div className='wraper align2'>
+                    <div ref={el=>(letter12=el)} className='letter'>M</div>
+                    <div ref={el=>(letter13=el)} className='letter'>O</div>
+                    <div ref={el=>(letter14=el)} className='letter'>Z</div>
+                    <div ref={el=>(letter15=el)} className='letter'>A</div>
+                    <div ref={el=>(letter16=el)} className='letter'>R</div>
+                    <div ref={el=>(letter17=el)} className='letter'>T</div>
+                </div>
+                <div className='wraper align3'>
+                    <div ref={el=>(letter8=el)} className='letter'>B</div>
+                    <div ref={el=>(letter9=el)} className='letter'>A</div>
+                    <div ref={el=>(letter10=el)} className='letter'>C</div>
+                    <div ref={el=>(letter11=el)} className='letter'>H</div>
+                </div>
+                <div className='wraper align4'>
+                    <div ref={el=>(letter18=el)} className='letter'>V</div>
+                    <div ref={el=>(letter19=el)} className='letter'>I</div>
+                    <div ref={el=>(letter20=el)} className='letter'>V</div>
+                    <div ref={el=>(letter21=el)} className='letter'>A</div>
+                    <div ref={el=>(letter22=el)} className='letter'>L</div>
+                    <div ref={el=>(letter23=el)} className='letter'>D</div>
+                    <div ref={el=>(letter24=el)} className='letter'>I</div>
+                </div>
+            </div>
             {/* transicion de subtitulos 1 y 2 */}
+            <div ref={el => (sentences=el)} className='sentences'>
+                <h3 ref={el => (subtitle=el)} className='subtitle1' >Sientes curiosidad por la música clásica?</h3>
+                <h5 ref={el => (subtitle2=el)} className='subtitle2' >Descubre quiénes somos</h5>
+            </div>
         </div>
     )
 }

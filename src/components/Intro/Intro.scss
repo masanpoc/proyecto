@@ -4,19 +4,120 @@
     height: 100vh;
     width: 100vw;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .lamina {
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        .segment {
+            width: 100vw;
+            height: 2.5vh;
+            background-color: black;
+        }
+    }
+    .magnifier {
+        z-index: 2;
+        border-radius: 50%;
+        height: 350px;
+        width: 350px;
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        top: 20px;
+        .image {
+            position: absolute;
+            right: 0;
+            z-index: 1;
+            width: 120vw;
+            height: auto;
+        }
+    }
+    .authors {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        margin-top: 5%;
+        .wraper {
+            z-index: 12;
+            display: flex;
+            flex-direction: row;
+            gap: 2%;
+            // margin-top: 5%;
+            margin-left: 8%;
+            // padding: 1%;
+            font-size: 3em;
+            .letter {
+                font-family: 'EBGaramond';
+                background: -webkit-linear-gradient(-45deg, rgb(238, 238, 238) 0%, rgb(51, 51, 51) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+          
+        .align1 {
+            margin-left: 20%;
+            // margin-top: 10%;
+        }
+          
+        .align2 {
+            // margin-top: 5%;
+            margin-left: 50%;
+        }
+          
+        .align3 {
+            // margin-top: 5%;
+            margin-left: 15%;
+        }
+          
+        .align4 {
+            // margin-top: 5%;
+            margin-left: 40%;
+        }
+    }
+    
+    .sentences {
+        display: flex;
+        flex-direction: column;
+        .subtitle1 {
+            z-index: 12;
+            font-family: 'Lora';
+            background: -webkit-linear-gradient(90deg,rgba(16, 160, 179, 0.9), rgba(248, 248, 248, 1));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: lighter;
+            font-size: 2.5em;
+            // color: white;
+            padding: 0;
+            display: flex;
+            margin-left: 10%;
+            margin-top: 5%;
+            justify-content: flex-start;
+            width: 80vw;
+        }
+          
+        .subtitle2 {
+            font-family: 'Lora';
+            background: -webkit-linear-gradient(90deg, rgba(16, 160, 179, 0.9), rgba(248, 248, 248, 1));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: lighter;
+            font-size: 2.4em;
+            // color: white;
+            padding: 0;
+            display: flex;
+            margin-left: 10%;
+            margin-top: 5%;
+            justify-content: flex-start;
+            width: 50vw;
+        }
+    }
 }
 
-.lamina {
-    height: 100vh;
-    width: 100vw;
-}
+
 
 .none {
     display: none;
-}
-
-.segment {
-    width: 100vw;
-    height: 2.5vh;
-    background-color: black;
 }
