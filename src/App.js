@@ -9,25 +9,35 @@ import {Nosotros} from './components/Nosotros/Nosotros';
 import {Historia} from './components/Nosotros/subcomponents/Historia';
 import {Conocenos} from './components/Nosotros/subcomponents/Conocenos';
 import {Proyectos} from './components/Nosotros/subcomponents/Proyectos';
-// import intro_pic from './Images/intro.jpg';
-// import intro_pic2 from './Images/pic-intro2.jpg'; 
-// import gsap from 'gsap';
+import gsap from 'gsap';
 
 function App() {
    // constant variables
 
    // useRef definitions
-   let intro = useRef();
-   let introImg = useRef();
-   let introMag = useRef();
-   let introTitle = useRef();
-   let introSubtitle = useRef();
+   let App = useRef();
 
    // useState definitions
   const [options, setOptions] = useState(false);
   const [active, setActive] = useState(false);
 
    // useEffect definitions
+   useEffect(() => {
+     gsap.set(App, {
+       css: {
+         overflow: 'hidden',
+         height: '100vh'
+       }
+     })
+    //  total duration of the intro animation == duration of the delay
+     gsap.set(App, {
+       delay: 3.5,
+      css: {
+        overflow: 'visible',
+        height: 'auto'
+      }
+    })
+   }, [])
   
 
   // functions
@@ -44,7 +54,7 @@ function App() {
     // we use router to render the matching route (handle different pages) 
     <Router >
       <Intro />
-      <div className="App">
+      <div ref={el => (App=el)} className="App">
         
         {/* header */}
         <header className='header'>

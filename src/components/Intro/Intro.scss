@@ -3,10 +3,20 @@
     z-index: 2;
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
+}
+
+.lamina {
+    height: 100vh;
+    width: 100vw;
+}
+
+.none {
+    display: none;
 }
 
 .segment {
     width: 100vw;
-    height: 5vh;
+    height: 2.5vh;
     background-color: black;
 }
