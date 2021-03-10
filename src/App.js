@@ -31,7 +31,7 @@ function App() {
      })
     //  total duration of the intro animation == duration of the delay
      gsap.set(App, {
-       delay: 10,
+       delay: 15.5,
       css: {
         overflow: 'visible',
         height: 'auto'

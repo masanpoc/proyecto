@@ -47,18 +47,20 @@ export const Intro = () => {
         gsap.to(magnifier, {
             duration: 0, 
             motionPath: {
-              path: [{x:-200, y:-400}],
+              path: [{x:-200, y:-500}],
             }
         })
         gsap.to(image, {
             duration: 0, 
             motionPath: {
-              path: [{x:+200, y:400}],
+              path: [{x:+200, y:500}],
       
             }
         })
 
-        const timeline = gsap.timeline({ease: 'bounce-out'})
+        const timeline = gsap.timeline(
+            // {ease: 'bounce-out'}
+            )
         timeline
         .to(magnifier, {
         delay: 2.5,
@@ -92,7 +94,7 @@ export const Intro = () => {
         x: -500,
         y: -100,
         skewX: 70
-        }, '>-3')
+        }, '>-2')
         .from(letter3, {
         scale: 2,
         autoAlpha: 0,
@@ -100,7 +102,7 @@ export const Intro = () => {
         x: 20,
         y: 400,
         skewY: 30 
-        }, '>-3')
+        }, '>-1.5')
         .from(letter4, {
         scale: 2,
         autoAlpha: 0,
@@ -116,7 +118,7 @@ export const Intro = () => {
         x:1400 ,
         y: -402,
         skewY: 36
-        }, '>-3')
+        }, '>-1.5')
         .from(letter6, {
         scale: 2,
         autoAlpha: 0,
@@ -148,7 +150,7 @@ export const Intro = () => {
         x: -500,
         y: 100,
         skewX: 70
-        }, '>-3')
+        }, '>-2')
         .from(letter10, {
         scale: 2,
         autoAlpha: 0,
@@ -156,7 +158,7 @@ export const Intro = () => {
         x: 200,
         y: -400,
         skewY: 30 
-        }, '>-3')
+        }, '>-2')
         .from(letter11, {
         scale: 2,
         autoAlpha: 0,
@@ -164,7 +166,7 @@ export const Intro = () => {
         x: -20,
         y: 550,
         skewX: 45
-        }, '>-3')
+        }, '>-1.5')
         .from(letter12, {
         scale: 2,
         autoAlpha: 0,
@@ -180,7 +182,7 @@ export const Intro = () => {
         x: 287,
         y:52 ,
         skewY: 58
-        }, '>-3')
+        }, '>-2')
         .from(letter14, {
         scale: 2,
         autoAlpha: 0,
@@ -196,7 +198,7 @@ export const Intro = () => {
         x: -800,
         y: 1100,
         skewX: 50
-        }, '>-3')
+        }, '>-2')
         .from(letter16, {
         scale: 2,
         autoAlpha: 0,
@@ -204,7 +206,7 @@ export const Intro = () => {
         x: 50,
         y: -60,
         skewX: 70
-        }, '>-3')
+        }, '>-1.5')
         .from(letter17, {
         scale: 2,
         autoAlpha: 0,
@@ -220,7 +222,7 @@ export const Intro = () => {
         x: 20,
         y: -360,
         skewX: 45
-        }, '>-3')
+        }, '>-2')
         .from(letter19, {
         scale: 2,
         autoAlpha: 0,
@@ -252,7 +254,7 @@ export const Intro = () => {
         x:44 ,
         y: -402,
         skewY: 36
-        }, '>-3')
+        }, '>-2')
         .from(letter23, {
         scale: 2,
         autoAlpha: 0,
@@ -260,7 +262,7 @@ export const Intro = () => {
         x: 587,
         y:1020 ,
         skewY: 58
-        }, '>-3')
+        }, '>-2')
         .from(letter24, {
         scale: 2,
         autoAlpha: 0,
@@ -297,15 +299,12 @@ export const Intro = () => {
         duration: 1
         }, '>-1')
         .to(lamina.children, {
-            // delay: 1,
-            // ease: 'power1.in',
             yPercent: -60,
             scaleY: 0,
             autoAlpha: 0,
             duration: 2
         })
         .set(intro, {
-            // delay:0.5,
             className: 'none'
         })
         
