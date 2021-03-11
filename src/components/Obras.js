@@ -3,6 +3,7 @@ import {Obra} from './Obras/Obra';
 import './Obras/Obra.scss';
 import Vivaldi from './Obras/Images/Vivaldi.jpg';
 import Bach from './Obras/Images/Bach.jpg';
+import {Pagination} from './Obras/Pagination';
 
 const lista = [
     {
@@ -28,7 +29,7 @@ const lista = [
     },
     {
         titulo: 'Prueba filtro',
-        autor: 'bach',
+        autor: 'Bach',
         url: Bach,
         genero: 'Clasicismo',
         play: false
@@ -45,15 +46,31 @@ const lista = [
 export const Obras = () => {
 
     // constant variables
-    // let list = lista;
 
     // useState definitions
     const [list, setList] = useState(lista);
     const [listValue, setListValue] = useState('');
     const [searchValue, setSearchValue] = useState('');
     const [checkValue, setCheckValue] = useState(false);
+    const [orderValue, setOrderValue] = useState('');
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const [songsPerPage] = useState(3);
+
+    
+    // get Current Songs
+    const indexOfLastSong = currentPage*songsPerPage;
+    const indexOfFirstSong = indexOfLastSong-songsPerPage;
+    const currentSongs = list.slice(indexOfFirstSong, indexOfLastSong);
+
+
+    // otra opción crear componente global que tome currentsongs como argumento
     // useEffect definitions
+
+    useEffect(() => {
+        order()
+    }, [orderValue])
+
     useEffect(() => {
         filter()
     }, [listValue])
@@ -67,6 +84,11 @@ export const Obras = () => {
     }, [checkValue])
 
     // functions
+
+    // order
+    const handleOrder = (e) => {
+        setOrderValue(e.target.value);
+    }
 
     // filter: epoca
     const handleChange = (e) => {
@@ -118,7 +140,45 @@ export const Obras = () => {
         }
     }
 
+    // order function
+    const sort = (toSort) => {
+        setList(list.sort((a, b) => (a[toSort] > b[toSort]) 
+            ? 1
+            : (
+                (b[toSort]>a[toSort]) 
+                ? -1
+                : 0
+            ) ));
+        lista.sort((a, b) => (a[toSort] > b[toSort]) 
+            ? 1
+            : (
+                (b[toSort]>a[toSort]) 
+                ? -1
+                : 0
+        ));
+        console.log('sorted', list);
+    }
+
+    // order list
+    const order = () => {
+        if(orderValue==='') {
+            sort('genero');
+        }
+        else if(orderValue==='titulo') {
+            sort('titulo');
+        }
+        else {
+            sort('autor');
+        }
+
+    }
+
     
+    // Change page
+    const paginate = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    }
+
 
     return (
         <div className='wrapper'>
@@ -126,10 +186,16 @@ export const Obras = () => {
                 aqui explciar que se toca de todos generos y epocas etc
             </div>
 
+            <Pagination songsPerPage={songsPerPage}
+                totalSongs={list.length}
+                paginate={paginate}
+             />
+
+            
+
             <div className='filtros'>
                 <label><h4>Encontrar obra:</h4></label>
                 <input onChange={handleText} placeholder='escribe un autor, título...' />
-                {/* <h4>Filtros:</h4> */}
                 <label>
                     <h5>Época</h5>
                     <select value={listValue} onChange={handleChange}>
@@ -143,28 +209,25 @@ export const Obras = () => {
                         <option value='Cine' >Películas y Musicales</option>
                     </select>
                 </label>
+
+                <label>
+                    <h5>Ordenar</h5>
+                    <select value={orderValue} onChange={handleOrder}>
+                        <option value=''>Por época</option>
+                        <option value='titulo' >Por título</option>
+                        <option value='autor' >Por autor</option>
+                    </select>
+                </label>
+
                 <label htmlFor="playable"><h4>Pista disponible para escuchar</h4></label>
                 <input type="checkbox" id="playable" name="playable" onChange={handleCheck} ></input>
-                {/* <label>
-                    <h5>Autor</h5>
-                    <select value={listValue2} onChange={handleChange2}>
-                        <option value='' >Todos</option>
-                        <option value='Vivaldi'>Vivaldi</option>
-                        <option value='Haendel' >Haendel</option>
-                        <option value='Bach' >Bach</option>
-                        <option value='Mozart' >Mozart</option>
-                        <option value='??' >Españoles</option>
-                    </select>
-                </label> */}
             </div>
 
             <div className='lista' style={{'minHeight': '100vh'}}>
-                {list.map((el, i) => (
+                {currentSongs.map((el, i) => (
                     <Obra key={el.titulo} obra={el} />
                 ))}
             </div>
-
-            <div className='scrolling'>Cargar a medida que se baja más</div>
         </div>
         
     )
