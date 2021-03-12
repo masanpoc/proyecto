@@ -11,7 +11,7 @@ export const Pagination = ({ songsPerPage, totalSongs, paginate }) => {
             <ul className='pagination'>
                 {pageNumber.map(number => (
                     <li 
-                        // key={number}
+                        key={number+'item'}
                         className='page-item'
                     >
                         <div 

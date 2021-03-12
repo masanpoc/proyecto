@@ -57,15 +57,27 @@ export const Obras = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [songsPerPage] = useState(3);
 
+    const [indexOfLastSong, setIndexOfLastSong] = useState(currentPage*songsPerPage);
+    const [indexOfFirstSong, setIndexOfFirstSong] = useState(indexOfLastSong-songsPerPage);
     
     // get Current Songs
-    const indexOfLastSong = currentPage*songsPerPage;
-    const indexOfFirstSong = indexOfLastSong-songsPerPage;
-    const currentSongs = list.slice(indexOfFirstSong, indexOfLastSong);
+    // const indexOfLastSong = currentPage*songsPerPage;
+    // const indexOfFirstSong = indexOfLastSong-songsPerPage;
+    const [currentSongs, setCurrentSongs] = useState(list.slice(indexOfFirstSong, indexOfLastSong))
+    // let currentSongs = list.slice(indexOfFirstSong, indexOfLastSong);
 
 
     // otra opción crear componente global que tome currentsongs como argumento
     // useEffect definitions
+
+    useEffect(() => {
+        setCurrentSongs(list.slice(indexOfFirstSong, indexOfLastSong));
+        console.log('sorted1', list);
+    }, [list])
+
+    useEffect(() => {
+        console.log('sorted2', currentSongs);
+    }, [currentSongs])
 
     useEffect(() => {
         order()
@@ -139,6 +151,8 @@ export const Obras = () => {
             }
         }
     }
+    
+    // sorting is not changing any value!!! that's why it's not updating
 
     // order function
     const sort = (toSort) => {
@@ -156,21 +170,63 @@ export const Obras = () => {
                 ? -1
                 : 0
         ));
-        console.log('sorted', list);
+        console.log('sorting');
     }
 
     // order list
     const order = () => {
         if(orderValue==='') {
             sort('genero');
+        //     setList(list.sort((a, b) => (a['genero'] > b['genero']) 
+        //     ? 1
+        //     : (
+        //         (b['genero']>a['genero']) 
+        //         ? -1
+        //         : 0
+        //     ) ));
+        // lista.sort((a, b) => (a['genero'] > b['genero']) 
+        //     ? 1
+        //     : (
+        //         (b['genero']>a['genero']) 
+        //         ? -1
+        //         : 0
+        // ));
         }
         else if(orderValue==='titulo') {
             sort('titulo');
+        //     setList(list.sort((a, b) => (a['titulo'] > b['titulo']) 
+        //     ? 1
+        //     : (
+        //         (b['titulo']>a['titulo']) 
+        //         ? -1
+        //         : 0
+        //     ) ));
+        //     lista.sort((a, b) => (a['titulo'] > b['titulo']) 
+        //     ? 1
+        //     : (
+        //         (b['titulo']>a['titulo']) 
+        //         ? -1
+        //         : 0
+        // ));
         }
         else {
             sort('autor');
+        //     setList(list.sort((a, b) => (a['autor'] > b['autor']) 
+        //     ? 1
+        //     : (
+        //         (b['autor']>a['autor']) 
+        //         ? -1
+        //         : 0
+        //     ) ));
+        // lista.sort((a, b) => (a['autor'] > b['autor']) 
+        //     ? 1
+        //     : (
+        //         (b['autor']>a['autor']) 
+        //         ? -1
+        //         : 0
+        // ));
         }
-
+        console.log(list)
     }
 
     
