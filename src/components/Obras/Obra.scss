@@ -17,6 +17,11 @@
     width: 100%;
 }
 
+$image-height: 180px;
+$image-width: 180px;
+$top-disc: ($image-height)/(2) ;
+$left-disc: ($image-width)/(2) ;
+
 .wrapper {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background: url('./Images/bg-obras.jpg');
@@ -78,6 +83,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         .obra {
+            
             @include flex-column();
             justify-self: center;
             justify-content: flex-start;
@@ -86,13 +92,32 @@
             margin: 0 2.5%;
             border: 1px solid black;
             padding-top: 15%;
-            background-color: gray;
+            background-color: grey;
             border-radius: 5%;
             cursor: pointer;
             .photo {
+                position: relative;
                 height: 25vh;
-                width: 80%;
+                // width: 80%;
+                height: $image-height;
+                width: $image-width;
                 background-size: cover;
+                z-index: 2;
+                .none {
+                    display: none;
+                }
+                .circle-disc {
+                    z-index: 3;
+                    position: absolute;
+                    top: $top-disc;
+                    left: $left-disc;
+                    height: 30px;
+                    width: 30px;
+                    background-color: white;
+                    border: 2px solid rgba(0, 0, 0, 0.623);
+                    border-radius: 50%;
+                    transform: translateY(-50%) translateX(-50%);
+                }
             }
             .titulo {
                 margin-top: 5%;
@@ -101,6 +126,7 @@
             .autor {
                 margin-top: 2%;
             }
+            
         }
         // .obra:hover {
         //     animation: song 1s linear forwards;

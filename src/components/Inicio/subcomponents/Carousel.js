@@ -64,7 +64,7 @@ export const Carousel = () => {
         });
         const interval = setInterval(() => {
             mouse.current.click();
-        }, 10000);
+        }, 8000);
         return () => clearInterval(interval);
         // nextSlide()
         // const interval = setInterval(
