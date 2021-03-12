@@ -12,6 +12,11 @@
     justify-content: center;
 }
 
+@mixin complete {
+    height: 100%;
+    width: 100%;
+}
+
 .wrapper {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background: url('./Images/bg-obras.jpg');
@@ -26,12 +31,49 @@
 
     .filtros {
         color: rgba(255, 255, 255, 0.63);
+        margin: 0 5%;
         height: 20vh;
         @include flex-row();
+        justify-content: space-around;
+        background-color: gray;
+        border-radius: 20px;
+        .finder {
+            @include flex-row();
+            @include complete();
+            gap: 5%;
+            .heading {
+                width: 10vw;
+            }
+            .searcher {
+                width: 15vw;
+            }
+        }
+        .genre {
+            @include flex-column();
+            @include complete();
+            width: 50%;
+        }
+        .sorting {
+            @include flex-column();
+            @include complete();
+            width: 50%;
+        }
+        .available {
+            @include flex-row();
+            @include complete();
+            gap: 5%;
+            width: 80%;
+            .marker-info {
+                width: 16vw;
+            }
+            .playable {
+            }
+        }
     }
     
     .lista {
         margin: 0 5%;
+        // margin-bottom: 5%;
         border: 6px solid green;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -43,7 +85,10 @@
             width: 70%;
             margin: 0 2.5%;
             border: 1px solid black;
+            padding-top: 15%;
             background-color: gray;
+            border-radius: 5%;
+            cursor: pointer;
             .photo {
                 height: 25vh;
                 width: 80%;
@@ -57,27 +102,39 @@
                 margin-top: 2%;
             }
         }
+        // .obra:hover {
+        //     animation: song 1s linear forwards;
+        // }
     }
     
     .scrolling {
         height: 10vh;
         @include flex-column();
     }
-
-    .pagination {
-        display: flex;
-        .page-item {
-            
-            .page-link {
-                cursor: pointer;
-                height: 5vh;
-                width: 5vw;
-                background-color: white;
-                color: black;
-
+    .center {
+        margin: 2.5% 0;
+        @include flex-row();
+        .pagination {
+            @include flex-row();
+            .page-item {
+                .link {
+                    @include flex-column();
+                    cursor: pointer;
+                    height: 25px;
+                    width: 25px;
+                }
+                .page {
+                    background-color: white;
+                    color: black;
+                }
+                .active {
+                    background-color: rgba(128, 128, 128, 0.795);
+                    color: white;
+                }
             }
         }
     }
+    
 }
 
 
@@ -90,3 +147,12 @@
     }
 
 }
+
+// @keyframes song {
+//     from {
+//         transform: scale(1);
+//     }
+//     to {
+//         transform: scale(1.05);
+//     }
+// }

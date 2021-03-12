@@ -57,27 +57,11 @@ export const Obras = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [songsPerPage] = useState(3);
 
-    const [indexOfLastSong, setIndexOfLastSong] = useState(currentPage*songsPerPage);
-    const [indexOfFirstSong, setIndexOfFirstSong] = useState(indexOfLastSong-songsPerPage);
-    
     // get Current Songs
-    // const indexOfLastSong = currentPage*songsPerPage;
-    // const indexOfFirstSong = indexOfLastSong-songsPerPage;
-    const [currentSongs, setCurrentSongs] = useState(list.slice(indexOfFirstSong, indexOfLastSong))
-    // let currentSongs = list.slice(indexOfFirstSong, indexOfLastSong);
+    const indexOfLastSong = currentPage*songsPerPage;
+    const indexOfFirstSong = indexOfLastSong-songsPerPage;
+    const currentSongs = list.slice(indexOfFirstSong, indexOfLastSong);
 
-
-    // otra opción crear componente global que tome currentsongs como argumento
-    // useEffect definitions
-
-    useEffect(() => {
-        setCurrentSongs(list.slice(indexOfFirstSong, indexOfLastSong));
-        console.log('sorted1', list);
-    }, [list])
-
-    useEffect(() => {
-        console.log('sorted2', currentSongs);
-    }, [currentSongs])
 
     useEffect(() => {
         order()
@@ -156,7 +140,7 @@ export const Obras = () => {
 
     // order function
     const sort = (toSort) => {
-        setList(list.sort((a, b) => (a[toSort] > b[toSort]) 
+        setList([...list].sort((a, b) => (a[toSort] > b[toSort]) 
             ? 1
             : (
                 (b[toSort]>a[toSort]) 
@@ -170,63 +154,19 @@ export const Obras = () => {
                 ? -1
                 : 0
         ));
-        console.log('sorting');
     }
 
     // order list
     const order = () => {
         if(orderValue==='') {
             sort('genero');
-        //     setList(list.sort((a, b) => (a['genero'] > b['genero']) 
-        //     ? 1
-        //     : (
-        //         (b['genero']>a['genero']) 
-        //         ? -1
-        //         : 0
-        //     ) ));
-        // lista.sort((a, b) => (a['genero'] > b['genero']) 
-        //     ? 1
-        //     : (
-        //         (b['genero']>a['genero']) 
-        //         ? -1
-        //         : 0
-        // ));
         }
         else if(orderValue==='titulo') {
             sort('titulo');
-        //     setList(list.sort((a, b) => (a['titulo'] > b['titulo']) 
-        //     ? 1
-        //     : (
-        //         (b['titulo']>a['titulo']) 
-        //         ? -1
-        //         : 0
-        //     ) ));
-        //     lista.sort((a, b) => (a['titulo'] > b['titulo']) 
-        //     ? 1
-        //     : (
-        //         (b['titulo']>a['titulo']) 
-        //         ? -1
-        //         : 0
-        // ));
         }
         else {
-            sort('autor');
-        //     setList(list.sort((a, b) => (a['autor'] > b['autor']) 
-        //     ? 1
-        //     : (
-        //         (b['autor']>a['autor']) 
-        //         ? -1
-        //         : 0
-        //     ) ));
-        // lista.sort((a, b) => (a['autor'] > b['autor']) 
-        //     ? 1
-        //     : (
-        //         (b['autor']>a['autor']) 
-        //         ? -1
-        //         : 0
-        // ));
+            sort('autor');  
         }
-        console.log(list)
     }
 
     
@@ -242,17 +182,15 @@ export const Obras = () => {
                 aqui explciar que se toca de todos generos y epocas etc
             </div>
 
-            <Pagination songsPerPage={songsPerPage}
-                totalSongs={list.length}
-                paginate={paginate}
-             />
-
-            
-
             <div className='filtros'>
-                <label><h4>Encontrar obra:</h4></label>
-                <input onChange={handleText} placeholder='escribe un autor, título...' />
-                <label>
+
+                <div className='finder'>
+                    <label><h4 className='heading'>Encontrar obra:</h4></label>
+                    <input className='searcher' onChange={handleText} placeholder='escribe un autor, título...' />
+                </div>
+                
+                
+                <label className='genre'>
                     <h5>Época</h5>
                     <select value={listValue} onChange={handleChange}>
                         <option value='' ></option>
@@ -266,7 +204,7 @@ export const Obras = () => {
                     </select>
                 </label>
 
-                <label>
+                <label className='sorting'>
                     <h5>Ordenar</h5>
                     <select value={orderValue} onChange={handleOrder}>
                         <option value=''>Por época</option>
@@ -275,9 +213,17 @@ export const Obras = () => {
                     </select>
                 </label>
 
-                <label htmlFor="playable"><h4>Pista disponible para escuchar</h4></label>
-                <input type="checkbox" id="playable" name="playable" onChange={handleCheck} ></input>
+                <div className='available'>
+                    <label className='marker-info' htmlFor="playable"><h4>Pista disponible para escuchar</h4></label>
+                    <input className='playable' type="checkbox" id="playable" name="playable" onChange={handleCheck} ></input>
+                </div>
+                
             </div>
+
+            <Pagination songsPerPage={songsPerPage}
+                totalSongs={list.length}
+                paginate={paginate}
+             />
 
             <div className='lista' style={{'minHeight': '100vh'}}>
                 {currentSongs.map((el, i) => (
