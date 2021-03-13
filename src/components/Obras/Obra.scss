@@ -83,7 +83,7 @@ $left-disc: ($image-width)/(2) ;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         .obra {
-            
+            position: relative;
             @include flex-column();
             justify-self: center;
             justify-content: flex-start;
@@ -94,7 +94,7 @@ $left-disc: ($image-width)/(2) ;
             padding-top: 15%;
             background-color: grey;
             border-radius: 5%;
-            cursor: pointer;
+            
             .photo {
                 position: relative;
                 height: 25vh;
@@ -118,6 +118,20 @@ $left-disc: ($image-width)/(2) ;
                     border-radius: 50%;
                     transform: translateY(-50%) translateX(-50%);
                 }
+                .button-to-play {
+                    cursor: pointer;
+                    display: none;
+                    position: absolute;
+                    z-index: 4;
+                    transform: translateY(-50%) translateX(-50%);
+                    top: $top-disc;
+                    left: $left-disc;
+                    .play-figure {
+                        color: rgb(255, 255, 255);
+                        height: 150px;
+                        width: 150px;
+                    }
+                }
             }
             .titulo {
                 margin-top: 5%;
@@ -126,6 +140,7 @@ $left-disc: ($image-width)/(2) ;
             .autor {
                 margin-top: 2%;
             }
+            
             
         }
         // .obra:hover {
@@ -163,7 +178,9 @@ $left-disc: ($image-width)/(2) ;
     
 }
 
-
+.none {
+    display: none;
+}
 
 
 @media (max-width: 760px) {

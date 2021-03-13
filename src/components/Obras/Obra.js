@@ -11,10 +11,12 @@ export const Obra = ({obra}) => {
     // useRef definitions
     let card = useRef();
     let disc = useRef();
-    let circleDisc = useRef();
+    // let circleDisc = useRef();
+    let playButton = useRef();
 
     // useState definitions
     const [hovering, setHovering] = useState(false);
+    const [displaying, setDisplaying] = useState(false);
 
     // useEffect definitions
     useEffect(() => {
@@ -26,6 +28,14 @@ export const Obra = ({obra}) => {
             
         }
     }, [hovering])
+
+    useEffect(() => {
+        if(displaying) {
+            growPlay()
+        } else {
+            shrinkPlay()
+        }
+    }, [displaying])
 
     // functions
     const growCard = () => {
@@ -49,8 +59,17 @@ export const Obra = ({obra}) => {
                 'borderRadius': '50%'
             }
         }, '>-2')
-        .set(circleDisc, {
-            className: 'circle-disc'
+        // .set(circleDisc, {
+        //     className: 'circle-disc'
+        // }, '>-0.5')
+        .from(playButton, {
+            duration:0.5,
+            autoAlpha: 0
+        },'>-0.5')
+        .set(playButton, {
+            css: {
+                display: 'block'
+            }
         }, '>-0.5')
     }
     const shrinkCard = () => {
@@ -74,10 +93,14 @@ export const Obra = ({obra}) => {
                 'borderRadius': '0',
             }
         }, '>-2')
-        .set(circleDisc, {
-            className: 'none'
+        // .set(circleDisc, {
+        //     className: 'none'
+        // }, '>-0.5')
+        .set(playButton, {
+            css: {
+                display: 'none'
+            }
         }, '>-0.5')
-
     }
 
     // const rotateDisc = () => {
@@ -93,10 +116,44 @@ export const Obra = ({obra}) => {
     //     })
     // }
 
+    const growPlay = () => {
+        const timeline = gsap.timeline(
+            // {ease: 'bounce-out'}
+        )
+        timeline
+        .to(playButton, {
+            duration:0.5,
+            scale: 1.2,
+            autoAlpha: 1
+        })
+        
+        
+    }
+
+    const shrinkPlay = () => {
+        const timeline = gsap.timeline(
+            // {ease: 'bounce-out'}
+        )
+        timeline
+        // .to()
+        .to(playButton, {
+            duration:0.5,
+            scale: 1,
+            autoAlpha: 0.5
+        })
+    }
+
     return (
         <div ref={el => (card = el)} className='obra' onMouseOver={()=>setHovering(true)} onMouseLeave={()=>setHovering(false)} >
-            <div ref={el => (disc = el)} className='photo' style={{'backgroundImage': `url(${obra.url})` }}>
-            <div ref={el => (circleDisc = el)} className='none'></div>
+            <div ref={el => (disc = el)} className='photo' style={{'backgroundImage': `url(${obra.url})` }} 
+                onMouseOver={()=>setDisplaying(true)} onMouseLeave={()=>setDisplaying(false)}
+            >
+                {/* <div ref={el => (circleDisc = el)} className='none'></div> */}
+                <button ref={el => (playButton = el)} className='button-to-play' >
+                    <svg className='play-figure' viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
+                    </svg>
+                </button>
             </div>
             <div className='titulo'>{obra.titulo}</div>
             <div className='autor'>{obra.autor}</div>

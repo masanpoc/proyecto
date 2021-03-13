@@ -71,10 +71,6 @@ function App() {
             {/* we have to Link the tags home, about, users... */}
             <Link className='link' to='/'><li>Inicio</li></Link>
             <span>|</span>
-            <Link className='link' to='/articulos'><li>Artículos</li></Link>
-            <span>|</span>
-            <Link className='link' to='/obras'><li>Obras</li></Link>
-            <span>|</span>
             <span className='nosotros' onMouseOver={() => setOptions(true)} onClick={() => setOptions(false)} >
               <Link to='/nosotros' className='link'>Sobre Nosotros</Link>
               <div className={options ? 'desplegable' : 'none'}>
@@ -83,6 +79,12 @@ function App() {
                 <Link className='link' to='/nosotros/proyectos' onClick={() => setOptions(false)} >Proyectos</Link>
               </div>
             </span>
+            <span>|</span>
+            <Link className='link' to='/articulos'><li>Artículos</li></Link>
+            <span>|</span>
+            <Link className='link' to='/obras'><li>Obras</li></Link>
+           
+            
           </div>
 
           {/* menu de opciones mobile friendly */}
