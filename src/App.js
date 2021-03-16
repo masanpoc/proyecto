@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link, Redirect} from 'react-router-dom';
 import {Intro} from './components/Intro/Intro';
 import {Inicio} from './components/Inicio/Inicio';
-import {Articulos} from './components/Articulos';
+import {Articulos} from './components/Articles/Articulos';
 import {Obras} from './components/Obras';
 import {Nosotros} from './components/Nosotros/Nosotros';
 import {Historia} from './components/Nosotros/subcomponents/Historia';
@@ -124,7 +124,7 @@ function App() {
         {/* we start the routing process with a switch --> once exact name is found --> routing stops and react renders the matched component */}
         <Switch>
           <Route path='/' exact component={Inicio} />
-          <Route path='/articulos' component={Articulos} />
+          <Route path='/articulos' exact component={Articulos} />
           <Route path='/obras' component={Obras} />
           <Route path='/nosotros' exact component={Nosotros} />
           <Route path='/nosotros/historia' component={Historia} />
