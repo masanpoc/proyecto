@@ -98,8 +98,6 @@ function App() {
           </div>
           <div className={active ? 'mobile-links' : 'none'} >
               <Link className='f1 link underline' to='/' onClick={() => setActive(!active)}>Inicio</Link>
-              <Link className='f1 link underline' to='/articulos' onClick={() => setActive(!active)}>Artículos</Link>
-              <Link className='f1 link underline' to='/obras' onClick={() => setActive(!active)}>Obras</Link>
               <span className='nosotros-mobile extra-border'>
                 <Link to='/nosotros' className='link f1 underline extra-padding' onClick={() => setActive(!active)}>
                   Sobre Nosotros
@@ -110,6 +108,9 @@ function App() {
                   <Link className='link-2' to='/nosotros/proyectos' onClick={() => setActive(!active)}>Proyectos</Link>
                 </div>
               </span>
+              <Link className='f1 link underline' to='/articulos' onClick={() => setActive(!active)}>Artículos</Link>
+              <Link className='f1 link underline' to='/obras' onClick={() => setActive(!active)}>Obras</Link>
+              
               
                 
                
