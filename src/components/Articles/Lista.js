@@ -9,10 +9,13 @@ export const Lista = () => {
             <div className='intro-articles'>
                 <h1 className='heading'>Artículos sobre música</h1>
                 <p className='description'>Algunos de nuestros miembros han escrito artículos increíbles sobre música clásica</p>
-                <h2 className='info'>Descúbrelos aquí abajo</h2>
-                <svg style={{"width":"24px", "height":"24px"}} viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z" />
-                </svg>
+                <div className='wrap-arrow'>
+                    <h2 className='info'>Descúbrelos aquí abajo</h2>
+                    <svg style={{"width":"24px", "height":"24px"}} viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M9,4H15V12H19.84L12,19.84L4.16,12H9V4Z" />
+                    </svg>
+                </div>
+                
             </div>
 
             {/* articulos --> a medida que se añaden ir poniendo classname 1, 2, 3, 4,... 1, 2, 3, 4-... */}

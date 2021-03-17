@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
         height: 65vh;
         width: 100%;
         @include flex-column();
-        justify-content: space-evenly;
+        justify-content: space-around;
         color: #DDBAFF;
         background: url('./Lista//Fotos/0.jpg');
         background-size: cover;
@@ -47,18 +47,24 @@ h1, h2, h3, h4, h5, h6 {
         box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.356);
         
         .heading {
+            margin-top: 5%;
             font-family: 'Bebas';
-            padding: 20% 0;
+            // padding: 20% 0;
         }
         .description {
-            padding-bottom: 20%;
-            margin: 0 10%;
+            // padding-bottom: 20%;
+            margin: 0 15%;
             text-align: left;
         }
-        .info {
-            font-size: 1.3em;
-            font-family: 'Sansita';
+        .wrap-arrow {
+            
+            .info {
+                margin: 5% 0;
+                font-size: 1.3em;
+                font-family: 'Sansita';
+            }
         }
+        
     }
     .article-1 {
         // margin-top: 40%;
@@ -76,7 +82,7 @@ h1, h2, h3, h4, h5, h6 {
             background: url('./Lista//Fotos/1.jpg');
             background-size: cover;
             background-position: top;
-            box-shadow: inset 0 0 0 1000px rgba(100, 100, 100, 0.356);
+            box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.356);
             * {
                 padding-left:5%;
                 width: 90%;
@@ -92,9 +98,10 @@ h1, h2, h3, h4, h5, h6 {
 
             }
             .link {
-                text-align: right;
-                padding-top: 20%;
-                margin-right: 15%;
+                margin-top: 20%;
+                width: fit-content;
+                padding: 0;
+                margin-left: 40%;
                 color: #f2c94c;
                 text-decoration: underline;
             }
@@ -128,7 +135,7 @@ h1, h2, h3, h4, h5, h6 {
             background: url('./Lista//Fotos/2.jpg');
             background-size: cover;
             background-position: top;
-            box-shadow: inset 0 0 0 1000px rgba(56, 56, 56, 0.556);
+            box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.418);
             * {
                 padding-left:5%;
                 width: 90%;
@@ -144,9 +151,10 @@ h1, h2, h3, h4, h5, h6 {
 
             }
             .link {
-                text-align: right;
-                padding-top: 20%;
-                margin-right: 15%;
+                margin-top: 20%;
+                width: fit-content;
+                padding: 0;
+                margin-left: 50%;
                 color: #f2c94c;
                 text-decoration: underline;
             }
@@ -167,7 +175,7 @@ h1, h2, h3, h4, h5, h6 {
             background: url('./Lista//Fotos/3.jpg');
             background-size: cover;
             background-position: top;
-            box-shadow: inset 0 0 0 1000px rgba(167, 167, 167, 0.2);
+            box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.418);
             * {
                 padding-left:5%;
                 width: 90%;
@@ -183,9 +191,10 @@ h1, h2, h3, h4, h5, h6 {
 
             }
             .link {
-                text-align: right;
-                padding-top: 20%;
-                margin-right: 15%;
+                margin-top: 20%;
+                width: fit-content;
+                padding: 0;
+                margin-left: 40%;
                 color: #f2c94c;
                 text-decoration: underline;
             }
@@ -220,7 +229,7 @@ h1, h2, h3, h4, h5, h6 {
             background: url('./Lista//Fotos/4.jpg');
             background-size: cover;
             background-position: top;
-            box-shadow: inset 0 0 0 1000px rgba(65, 65, 65, 0.523);
+            box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.523);
             * {
                 padding-left:5%;
                 width: 90%;
@@ -236,9 +245,10 @@ h1, h2, h3, h4, h5, h6 {
 
             }
             .link {
-                text-align: right;
-                padding-top: 20%;
-                margin-right: 15%;
+                margin-top: 20%;
+                width: fit-content;
+                padding: 0;
+                margin-left: 50%;
                 color: #f2c94c;
                 text-decoration: underline;
             }
@@ -252,4 +262,149 @@ h1, h2, h3, h4, h5, h6 {
         background-color: rgba(255, 156, 25, 0.623);
     }
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 540px) {
+
+    .lista {
+        
+        .intro-articles {
+           margin: 0;
+            .heading {
+                font-size: 3.2em;
+                letter-spacing: 0.05em;
+            }
+            .description {
+                font-size: 1.3em;
+            }
+            .wrap-arrow {
+                
+                .info {
+                    font-size: 1.6em;
+                }
+            }
+            
+        }
+
+        > * {
+            margin: 20% 0;
+        } 
+
+        .article-1 {
+            width: 70%;
+            align-self: start;
+            .cropped-1 {
+                left: 10%;
+                width: 80%;
+                background-size: cover;
+                background-position: center;
+                .title {
+                    margin: 15% 0 5% 0;
+                }
+                
+                .link {
+                    margin-top: 5%;
+                    width: fit-content;
+                    padding: 0;
+                    margin-left: 50%;
+                }
+            }
+            .shadowing {
+                width: 80%;
+                left: 15%;
+            }
+        }
+
+        .article-2 {
+            height: 50vh;
+            .cropped-2{
+                
+               
+                background: url('./Lista//Fotos/2max.jpg');
+                background-size: cover;
+                background-position: bottom;
+                
+                .title {
+                    margin: 5% 0 5% 0;
+                }
+                .link {
+                    width: 85%;
+                    margin-left: 0;
+                    text-align: left;
+                    margin-top: 5%;
+                }
+            }
+        }
+        
+        .article-3 {
+            width: 70%;
+            align-self: flex-end;
+            .cropped-3 {
+                right: 10%;
+                width: 80%;
+                background-size: cover;
+                background-position: center;
+                
+                .title {
+                    margin: 15% 0 5% 0;
+                }
+                .link {
+                    margin-top: 5%;
+                    width: fit-content;
+                    padding: 0;
+                    margin-left: 50%;
+                }
+            }
+            .shadowing {
+                width: 80%;
+                right: 15%;
+            }
+        }
+
+        .article-4 {
+            height: 50vh;
+            .cropped-4{
+                
+                background: url('./Lista//Fotos/4.jpg');
+                background-size: cover;
+                background-position: top;
+                
+                .title {
+                    margin: 5% 0 5% 0;
+                }
+                .link {
+                    width: 85%;
+                    margin-top: 5%;
+                    text-align: left;
+                    margin-left: 0;
+                }
+            }
+        }
+
+        .loader {
+            margin: 15% 0 0 0;
+            @include flex-column();
+            height: 10vh;
+            width: 100%;
+            background-color: rgba(255, 156, 25, 0.623);
+        }
+    
+    }
 }

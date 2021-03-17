@@ -11,6 +11,7 @@ function _ScrollToTop(props) {
     const { pathname } = useLocation();
     useEffect(() => {
         window.scrollTo(0, 0);
+        // console.log(window.innerWidth);
     }, [pathname]);
     return props.children
 }
@@ -21,18 +22,18 @@ export const Articulos = () => {
     return (
         <Router>
             <div>
-            <ScrollToTop>
-            <Switch>
-                <Route path='/articulos' exact component={Lista} />
-                <Route path='/articulos/1' component={Articulo1} />
-                <Route path='/articulos/2' component={Articulo2} />
-                <Route path='/articulos/3' component={Articulo3} />
-                <Route path='/articulos/4' component={Articulo4} />
-                <Route path="/articulos/*">
-                    <Redirect to="/articulos" />
-                </Route>
-            </Switch>
-            </ScrollToTop>
+                <ScrollToTop>
+                <Switch>
+                    <Route path='/articulos' exact component={Lista} />
+                    <Route path='/articulos/1'  component={Articulo1} />
+                    <Route path='/articulos/2' component={Articulo2} />
+                    <Route path='/articulos/3' component={Articulo3} />
+                    <Route path='/articulos/4' component={Articulo4} />
+                    <Route path="/articulos/*">
+                        <Redirect to="/articulos" />
+                    </Route>
+                </Switch>
+                </ScrollToTop>
             </div>
         </Router>
     )

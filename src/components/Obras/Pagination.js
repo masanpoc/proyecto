@@ -8,7 +8,7 @@ export const Pagination = ({ songsPerPage, totalSongs, paginate }) => {
 
     // useEffect
     useEffect(() => {
-       console.log(currentNumber);
+    //    console.log(currentNumber);
     }, [currentNumber])
 
     for(let i=1; i<=Math.ceil(totalSongs/songsPerPage) ; i++) {
