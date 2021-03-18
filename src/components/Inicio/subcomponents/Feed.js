@@ -39,7 +39,7 @@ export const Feed = () => {
                     end: 'top center+=20%',
                     once: true,
                     scrub: 1.5,
-                    markers: true
+                    // markers: true
                 } 
             });
         });

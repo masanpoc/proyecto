@@ -2,6 +2,8 @@ import React, { useEffect, useState, useRef } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link, Redirect, useLocation } from 'react-router-dom';
 import './Articulos.scss';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 export const Lista = () => {
     // constant variables
@@ -19,41 +21,138 @@ export const Lista = () => {
 
     // useEffect definitions
     useEffect(() => {
-        // scrolling intro animations
-        // gsap.from(crop1, {
-        //     // autoAlpha: 0,
-        //     rotateY: '50deg',
-        //     rotateX: '-15deg',
-        //     // rotateZ: '10deg',
-        //     duration: 1.5
-        // })
-        // gsap.from(crop1.children, {
-        //     stagger: {
-        //         each: 0.1,
-        //         ease: 'circ.out',
-        //         // from: 'edges'
-        //     },
-        //     delay: 2,
-        //     autoAlpha: 0,
-        //     duration: 1
-        // })
-        // gsap.from(shadow1, {
-        //     xPercent: 50,
-        //     duration: 1.5
-        // })
-        // gsap.from(arrow, {
-        //     yPercent: 40,
-        //     yoyo: true,
-        //     repeat:-1,
-        //     duration: 1
-        // })
-        // gsap.from(crop2, {
-        //     delay: 1,
-        //     // scale: 1.2,
-        //     // autoAlpha: 0,
-        //     duration: 1.5,
-        //     yPercent: 30,
-        // })
+        // scrolling intro animations --> no timeline needed, just scrolltriggering
+        
+        gsap.from(arrow, {
+            yPercent: 40,
+            yoyo: true,
+            repeat:-1,
+            duration: 1
+        })
+
+        // first article
+
+        const tl1 = gsap.timeline({
+            scrollTrigger: {
+                trigger: shadow1,
+                start: 'top bottom',
+                end: 'center center+=5%',
+                // markers: true,
+                scrub: 6,
+                once: true
+            }
+        });
+
+        tl1
+        .from(shadow1, {
+            xPercent: 30,
+            autoAlpha: 0,
+            duration: 1.5
+        })
+        .from(crop1, {
+            rotateY: '50deg',
+            rotateX: '-25deg',
+            autoAlpha: 0,
+            duration: 1.5
+        })
+        .from(crop1.children, {
+            stagger: {
+                each: 0.1,
+                ease: 'circ.out'
+            },
+            autoAlpha: 0,
+            duration: 1
+        })
+        
+        // second article
+        const tl2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: crop2,
+                start: 'top bottom',
+                end: 'center center+=5%',
+                // markers: true,
+                scrub: 3,
+                once: true
+            }
+        });
+
+        tl2
+       .from(crop2, {
+            // scale: 1.2,
+            autoAlpha: 0,
+            duration: 1.5,
+            yPercent: 30,
+        })
+        .from(crop2.children, {
+            stagger: {
+                each: 0.1,
+                ease: 'circ.out'
+            },
+            autoAlpha: 0,
+            duration: 2
+        })
+
+        // third article
+        const tl3 = gsap.timeline({
+            scrollTrigger: {
+                trigger: shadow3,
+                start: 'top bottom',
+                end: 'center center+=5%',
+                // markers: true,
+                scrub: 6,
+                once: true
+            }
+        });
+
+        tl3
+        .from(shadow3, {
+            xPercent: -30,
+            autoAlpha: 0,
+            duration: 1.5
+        })
+        .from(crop3, {
+            rotateY: '-50deg',
+            rotateX: '25deg',
+            autoAlpha: 0,
+            duration: 1.5
+        })
+        .from(crop3.children, {
+            stagger: {
+                each: 0.1,
+                ease: 'circ.out'
+            },
+            autoAlpha: 0,
+            duration: 1
+        })
+
+        // fourth article
+        const tl4 = gsap.timeline({
+            scrollTrigger: {
+                trigger: crop4,
+                start: 'top bottom',
+                end: 'center center+=5%',
+                // markers: true,
+                scrub: 3,
+                once: true
+            }
+        });
+
+        tl4
+       .from(crop4, {
+            // scale: 1.2,
+            autoAlpha: 0,
+            duration: 1.5,
+            yPercent: 30,
+        })
+        .from(crop4.children, {
+            stagger: {
+                each: 0.1,
+                ease: 'circ.out'
+            },
+            autoAlpha: 0,
+            duration: 2
+        })
+
     }, [])
 
     // useEffect(() => {
