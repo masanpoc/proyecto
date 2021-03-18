@@ -13,6 +13,8 @@
 }
 
 @mixin article-style {
+    
+    font-family: 'Proza';
     height: 70vh;
     width: 100%;
     position: relative;
@@ -29,7 +31,6 @@ h1, h2, h3, h4, h5, h6 {
     // gap: 100px;
     justify-content: flex-start;
     min-height: 100vh;
-    font-family: 'Proza';
     background-color: black;
     > * {
         margin: 30% 0;
@@ -55,6 +56,7 @@ h1, h2, h3, h4, h5, h6 {
             // padding-bottom: 20%;
             margin: 0 15%;
             text-align: left;
+            font-family: 'Proza';
         }
         .wrap-arrow {
             

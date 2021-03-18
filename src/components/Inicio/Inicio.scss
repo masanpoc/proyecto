@@ -18,9 +18,10 @@ ul {
 
 .inicio {
     overflow-x: hidden;
+    overflow-y: hidden;
     // z-index: 2;
     background: burlywood;
-    min-height: 100vh;
+    // min-height: 100vh;
     .background-carousel {
       background-color: black;
       .carousel {

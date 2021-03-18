@@ -8,41 +8,45 @@ import {Video} from './Feed/Video';
 import {Instrumento} from './Feed/Instrumento';
 import '../Inicio.scss';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 
 
 
 export const Feed = () => {
-    gsap.registerPlugin(ScrollTrigger);
+    
     // constant variables
     // useState definitions
+
     // useRef definitions
     const revealRefs = useRef([]);
-    // revealRefs.current = [];
 
     // useEffect definitions
     useEffect(() => {
         revealRefs.current.forEach((el, index) => {
-            gsap.fromTo(el, {
+            gsap.from(el, {
                 autoAlpha:0,
-                y: -40
-            }, {
-                duration: 1,
-                autoAlpha: 1,
-                ease: 'none',
+                // rotateY: '10deg',
+                yPercent: 20,
+                xPercent: 20,
+                // rotateY: '90deg',
+                // skewY: '40deg',
+                // skewX: '20deg',
                 scrollTrigger: {
-                    duration: 3,
                     id: `section-${index+1}`,
                     trigger: el,
-                    start: 'top-=100 center',
-                    // end: 'top+=150 center',
-                    // scrub: true,
-                    // markers: true
+                    start: 'top bottom',
+                    end: 'top center+=20%',
+                    once: true,
+                    scrub: 1.5,
+                    markers: true
                 } 
             });
         });
         
     }, []);
+
+    
     // functions
     const addToRefs = (el) => {
         if(el && !revealRefs.current.includes(el)){
