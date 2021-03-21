@@ -21,6 +21,35 @@
 }
 
 
+@font-face {
+    font-family: 'Bebas';
+    src: url('../../fonts/BebasNeue-Regular.woff2') format('woff2'),
+        url('../../fonts/BebasNeue-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'Sansita';
+    src: url('../../fonts/Sansita-Regular.woff2') format('woff2'),
+        url('../../fonts/Sansita-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'Proza';
+    src: url('../../fonts/ProzaLibre-Regular.woff2') format('woff2'),
+        url('../../fonts/ProzaLibre-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+
+
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }

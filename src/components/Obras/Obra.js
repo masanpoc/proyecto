@@ -19,6 +19,10 @@ export const Obra = ({obra}) => {
     const [displaying, setDisplaying] = useState(false);
 
     // useEffect definitions
+    // useEffect(() => {
+        
+    // }, [])
+
     useEffect(() => {
         if(hovering) {
             growCard()

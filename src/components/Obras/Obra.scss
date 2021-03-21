@@ -23,6 +23,7 @@ $top-disc: ($image-height)/(2) ;
 $left-disc: ($image-width)/(2) ;
 
 .wrapper {
+    height: 100%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     // background: url('./Images/bg-obras.jpg');
     background: linear-gradient(to bottom, #200122, #6f0000, #200122);
@@ -79,7 +80,7 @@ $left-disc: ($image-width)/(2) ;
     
     .lista {
         background: transparent;
-        margin: 0 5%;
+        margin: 5% 5%;
         // margin-bottom: 5%;
         border: 6px solid green;
         display: grid;

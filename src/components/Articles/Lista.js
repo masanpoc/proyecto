@@ -36,10 +36,7 @@ export const Lista = () => {
             scrollTrigger: {
                 trigger: shadow1,
                 start: 'top bottom',
-                end: 'center center+=5%',
-                // markers: true,
-                scrub: 6,
-                once: true
+                // markers: true
             }
         });
 
@@ -47,11 +44,10 @@ export const Lista = () => {
         .from(shadow1, {
             xPercent: 30,
             autoAlpha: 0,
-            duration: 1.5
+            duration: 1
         })
         .from(crop1, {
             rotateY: '50deg',
-            rotateX: '-25deg',
             autoAlpha: 0,
             duration: 1.5
         })
@@ -68,11 +64,11 @@ export const Lista = () => {
         const tl2 = gsap.timeline({
             scrollTrigger: {
                 trigger: crop2,
-                start: 'top bottom',
-                end: 'center center+=5%',
+                start: 'top center',
+                // end: 'center center+=5%',
                 // markers: true,
-                scrub: 3,
-                once: true
+                // scrub: 3,
+                // once: true
             }
         });
 
@@ -80,8 +76,8 @@ export const Lista = () => {
        .from(crop2, {
             // scale: 1.2,
             autoAlpha: 0,
-            duration: 1.5,
-            yPercent: 30,
+            duration: 1,
+            yPercent: 20,
         })
         .from(crop2.children, {
             stagger: {
@@ -97,10 +93,10 @@ export const Lista = () => {
             scrollTrigger: {
                 trigger: shadow3,
                 start: 'top bottom',
-                end: 'center center+=5%',
+                // end: 'center center+=5%',
                 // markers: true,
-                scrub: 6,
-                once: true
+                // scrub: 6,
+                // once: true
             }
         });
 
@@ -108,11 +104,11 @@ export const Lista = () => {
         .from(shadow3, {
             xPercent: -30,
             autoAlpha: 0,
-            duration: 1.5
+            duration: 1
         })
         .from(crop3, {
             rotateY: '-50deg',
-            rotateX: '25deg',
+            // rotateX: '25deg',
             autoAlpha: 0,
             duration: 1.5
         })
@@ -129,11 +125,11 @@ export const Lista = () => {
         const tl4 = gsap.timeline({
             scrollTrigger: {
                 trigger: crop4,
-                start: 'top bottom',
-                end: 'center center+=5%',
+                start: 'top center-=10%',
+                // end: 'center center+=5%',
                 // markers: true,
-                scrub: 3,
-                once: true
+                // scrub: 3,
+                // once: true
             }
         });
 
@@ -141,8 +137,8 @@ export const Lista = () => {
        .from(crop4, {
             // scale: 1.2,
             autoAlpha: 0,
-            duration: 1.5,
-            yPercent: 30,
+            duration: 1,
+            yPercent: 20,
         })
         .from(crop4.children, {
             stagger: {
@@ -164,7 +160,7 @@ export const Lista = () => {
 
     return (
         <div className='lista'>
-
+            <link rel="preload" as="style" href="./Articulos.scss"></link>
             <div className='intro-articles'>
                 <h1 className='heading'>Artículos sobre música</h1>
                 <p className='description'>Algunos de nuestros miembros han escrito artículos increíbles sobre música clásica</p>

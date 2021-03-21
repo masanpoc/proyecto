@@ -26,6 +26,7 @@ export const Feed = () => {
         revealRefs.current.forEach((el, index) => {
             gsap.from(el, {
                 autoAlpha:0,
+                duration: 1,
                 // rotateY: '10deg',
                 yPercent: 20,
                 xPercent: 20,
@@ -36,9 +37,9 @@ export const Feed = () => {
                     id: `section-${index+1}`,
                     trigger: el,
                     start: 'top bottom',
-                    end: 'top center+=20%',
-                    once: true,
-                    scrub: 1.5,
+                    // end: 'top center+=20%',
+                    // once: true,
+                    // scrub: 1.5,
                     // markers: true
                 } 
             });
