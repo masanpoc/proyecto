@@ -23,23 +23,53 @@ $top-disc: ($image-height)/(2) ;
 $left-disc: ($image-width)/(2) ;
 
 .wrapper {
-    height: 100%;
+    overflow-x: hidden;
+    @include complete();
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    // background: url('./Images/bg-obras.jpg');
-    background: linear-gradient(to bottom, #200122, #6f0000, #200122);
+    background: linear-gradient(to top, #870000, #190a05); 
     background-attachment: fixed;
-    // background-size: cover;
+    @include flex-column();
     .introduction {
-        color: white;
+        background: url('./Images/obras-bg.jpg');
+        width: 100%;
+        // background: yellow;
+        background-size: cover;
+        background-position: center;
+        box-shadow: inset 0 0 1000px 1000px rgba(0, 0, 0, 0.644);
+        padding-top: 5%;
+        padding-bottom: 5%;
+        margin-bottom:10%;
+        color: rgba(255, 255, 255, 0.767);
         @include flex-column();
         height: 40vh;
-        font-size: 2em;
+        // font-size: 2em;
+        font-family: 'Lora';
+        // font-family: fantasy;
+        .songs-header {
+            font-style: italic;
+            font-weight: lighter;
+            font-size: 4em;
+            padding:0 0 5% 0;
+        }
+        .songs-subtitle {
+            font-size: 1.3em;
+        }
     }
+
+    .options {
+        width: 50%;
+        background: white;
+        .songs-filtering {
+            font-size: 1.5em;
+        }
+    }
+    
 
     .filtros {
         color: rgba(255, 255, 255, 0.63);
-        margin: 0 5%;
+        margin: 5% 5%;
         height: 20vh;
+        width: 85%;
         @include flex-row();
         justify-content: space-around;
         background-color: gray;
@@ -79,10 +109,14 @@ $left-disc: ($image-width)/(2) ;
     }
     
     .lista {
+        // @include complete();
+        height: 100%;
         background: transparent;
-        margin: 5% 5%;
+        margin: 5% 5% 20% 5%;
+        overflow-x: hidden;
+        width: 90%;
         // margin-bottom: 5%;
-        border: 6px solid green;
+        // border: 6px solid green;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         .obra {
@@ -92,7 +126,7 @@ $left-disc: ($image-width)/(2) ;
             justify-content: flex-start;
             height: 40vh;
             width: 70%;
-            margin: 0 2.5%;
+            margin: 10% 2.5%;
             border: 1px solid black;
             padding-top: 15%;
             background-color: grey;
@@ -156,7 +190,7 @@ $left-disc: ($image-width)/(2) ;
         @include flex-column();
     }
     .center {
-        margin: 2.5% 0;
+        margin: 5% 0 0 0;
         @include flex-row();
         .pagination {
             @include flex-row();
