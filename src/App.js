@@ -59,8 +59,8 @@ function App() {
         {/* header */}
         <header className='header'>
           {/* logo */}
-          <Link className='link' to='/' id='logo'><span onClick={() => setActive(false)} >logo y nombre (Agrupación Musical Coruña)</span></Link>
-          <input className='buscador' placeholder='buscar'></input>
+          <Link onClick={() => setActive(false)} className='logo' to='/' id='logo'>logo y nombre (Agrupación Musical Coruña)</Link>
+          {/* <input className='buscador' placeholder='buscar'></input> */}
         </header>
         
         {/* navbar */}

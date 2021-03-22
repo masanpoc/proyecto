@@ -71,11 +71,15 @@ a {
   text-align: center;
   .header {
     @include flex-row();
-    justify-content: space-around;
     height: 17.5vh;
+    width: 100%;
     background-color: black;
-    * {
+    .logo {
       color: white;
+      width: 100%;
+      text-align: left;
+      margin-left: 15%;
+
     }
     .buscador {
       height: 4vh;

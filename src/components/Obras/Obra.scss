@@ -17,6 +17,33 @@
     width: 100%;
 }
 
+@mixin paginating {
+    @include flex-row();
+        .pagination {
+            @include flex-row();
+            .page-item {
+                .link {
+                    @include flex-column();
+                    cursor: pointer;
+                    height: 25px;
+                    width: 25px;
+                }
+                .page {
+                    background-color: white;
+                    color: black;
+                }
+                .active {
+                    background-color: rgba(128, 128, 128, 0.795);
+                    color: white;
+                }
+            }
+        }
+}
+
+ul {
+    padding: 0;
+}
+
 $image-height: 180px;
 $image-width: 180px;
 $top-disc: ($image-height)/(2) ;
@@ -52,15 +79,33 @@ $left-disc: ($image-width)/(2) ;
             padding:0 0 5% 0;
         }
         .songs-subtitle {
-            font-size: 1.3em;
+            font-size: 1.5em;
         }
     }
 
     .options {
         width: 50%;
         background: white;
+        @include flex-row();
         .songs-filtering {
             font-size: 1.5em;
+            padding: 0 2.5%;
+        }
+        .sorting {
+            color: black;
+            height: 3vh;
+            width: 2vw;
+            cursor: pointer;
+            border: 1px solid black;
+            transform: rotate(90deg);
+        }
+        .closing {
+            color: gray;
+            height: 3vh;
+            width: 2vw;
+            cursor: pointer;
+            border: 1px solid black;
+            // transform: rotate(90deg);
         }
     }
     
@@ -112,7 +157,7 @@ $left-disc: ($image-width)/(2) ;
         // @include complete();
         height: 100%;
         background: transparent;
-        margin: 5% 5% 20% 5%;
+        margin: 5% 5% 5% 5%;
         overflow-x: hidden;
         width: 90%;
         // margin-bottom: 5%;
@@ -177,7 +222,9 @@ $left-disc: ($image-width)/(2) ;
             .autor {
                 margin-top: 2%;
             }
-            
+            .paginate-2 {
+                margin: 7.5% 0 7.5% 0;
+            }
             
         }
         // .obra:hover {
@@ -191,26 +238,11 @@ $left-disc: ($image-width)/(2) ;
     }
     .center {
         margin: 5% 0 0 0;
-        @include flex-row();
-        .pagination {
-            @include flex-row();
-            .page-item {
-                .link {
-                    @include flex-column();
-                    cursor: pointer;
-                    height: 25px;
-                    width: 25px;
-                }
-                .page {
-                    background-color: white;
-                    color: black;
-                }
-                .active {
-                    background-color: rgba(128, 128, 128, 0.795);
-                    color: white;
-                }
-            }
-        }
+        @include paginating();
+    }
+    .center-2 {
+        margin: 5% 0 20% 0;
+        @include paginating();
     }
     
 }

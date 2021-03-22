@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 
-export const Pagination = ({ songsPerPage, totalSongs, paginate }) => {
+export const Pagination = ({ songsPerPage, totalSongs, paginate, row }) => {
     const pageNumber = [];
 
     // current Number
@@ -15,7 +15,7 @@ export const Pagination = ({ songsPerPage, totalSongs, paginate }) => {
         pageNumber.push(i);
     }
     return (
-        <nav className='center'>
+        <nav className={row}>
             <ul className='pagination'>
                 {pageNumber.map(number => (
                     <li 

@@ -45,7 +45,6 @@ import Brahms from './Obras/Images/Brahms.jpg';
 import Otros from './Obras/Images/Otros.jpg';
 import Cortona from './Obras/Images/Cortona.jpg';
 
-
 const lista = [
     {
         titulo: 'Beatus Vir',
@@ -662,6 +661,7 @@ export const Obras = () => {
 
     // constant variables
 
+
     // useState definitions
     const [list, setList] = useState(lista);
     const [listValue, setListValue] = useState('');
@@ -672,11 +672,14 @@ export const Obras = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [songsPerPage] = useState(12);
 
+    const [filtering, setFiltering] = useState(false);
+
     // get Current Songs
     const indexOfLastSong = currentPage*songsPerPage;
     const indexOfFirstSong = indexOfLastSong-songsPerPage;
     const currentSongs = list.slice(indexOfFirstSong, indexOfLastSong);
 
+    
 
     useEffect(() => {
         order()
@@ -802,9 +805,19 @@ export const Obras = () => {
 
             <div className='options'>
                 <h4 className='songs-filtering'>Filtros</h4>
+                <svg className={filtering ? 'none' : 'sorting'}
+                 onClick={()=>setFiltering(!filtering)}
+                 viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
+                </svg>
+                <svg className={filtering ? 'closing' : 'none'}
+                onClick={()=>setFiltering(!filtering)}
+                 viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+                </svg>
             </div>
 
-            <div className='filtros'>
+            <div className={filtering ? 'filtros' : 'none'}>
             
 
                 <div className='finder'>
@@ -845,7 +858,7 @@ export const Obras = () => {
 
             <Pagination songsPerPage={songsPerPage}
                 totalSongs={list.length}
-                paginate={paginate}
+                paginate={paginate} row={'center'}
              />
 
             <div className='lista' style={{'minHeight': '100vh'}}>
@@ -853,6 +866,11 @@ export const Obras = () => {
                     <Obra key={el.titulo} obra={el} />
                 ))}
             </div>
+
+            <Pagination songsPerPage={songsPerPage}
+                totalSongs={list.length}
+                paginate={paginate} row={'center-2'}
+             />
         </div>
         
     )
