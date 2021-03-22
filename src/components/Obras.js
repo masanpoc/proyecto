@@ -795,82 +795,85 @@ export const Obras = () => {
 
 
     return (
-        <div className='wrapper'>
+        <div className='body-hidden'>
+
             <div className='introduction'>
                 <h1 className='songs-header'>Biblioteca de obras</h1>
                 <h3 className='songs-subtitle'>En esta sección podrás encontrar las distintas piezas que la agrupación ha interpretado a lo largo de los años</h3>
                 {/* <h6>Todas las piezas disponibles para escuchar están libres de copyright</h6> */}
-
             </div>
 
-            <div className='options'>
-                <h4 className='songs-filtering'>Filtros</h4>
-                <svg className={filtering ? 'none' : 'sorting'}
-                 onClick={()=>setFiltering(!filtering)}
-                 viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
-                </svg>
-                <svg className={filtering ? 'closing' : 'none'}
-                onClick={()=>setFiltering(!filtering)}
-                 viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
-                </svg>
-            </div>
+            <div className='wrapper'>   
 
-            <div className={filtering ? 'filtros' : 'none'}>
-            
-
-                <div className='finder'>
-                    <label><h4 className='heading'>Encontrar obra:</h4></label>
-                    <input className='searcher' onChange={handleText} placeholder='escribe un autor, título...' />
+                <div className={filtering ? 'none' : 'options'}>
+                    <h4 className='songs-filtering'>Filtros</h4>
+                    <svg className='sorting'
+                    onClick={()=>setFiltering(!filtering)}
+                    viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
+                    </svg>
+                    
                 </div>
-                
-                
-                <label className='genre'>
-                    <h5>Época</h5>
-                    <select value={listValue} onChange={handleChange}>
-                        <option value='' ></option>
-                        <option value='Barroco'>Barroco</option>
-                        <option value='Clasicismo' >Clasicismo</option>
-                        <option value='Cubanas' >Cubanas</option>
-                        <option value='Tradicionales' >Tradicionales</option>
-                        <option value='Zarzuela' >Zarzuela</option>
-                        <option value='Navidad' >Navidad</option>
-                        <option value='Cine' >Películas y Musicales</option>
-                    </select>
-                </label>
 
-                <label className='sorting'>
-                    <h5>Ordenar</h5>
-                    <select value={orderValue} onChange={handleOrder}>
-                        <option value=''>Por época</option>
-                        <option value='titulo' >Por título</option>
-                        <option value='autor' >Por autor</option>
-                    </select>
-                </label>
+                <div className={filtering ? 'filtros' : 'none'}>
+                
+                    <svg className={filtering ? 'closing' : 'none'}
+                        onClick={()=>setFiltering(!filtering)}
+                        viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
+                    </svg>
+                    <div className='finder'>
+                        <label><h4 className='heading'>Encontrar obra:</h4></label>
+                        <input className='searcher' onChange={handleText} placeholder='escribe un autor, título...' />
+                    </div>
+                    
+                    
+                    <label className='genre'>
+                        <h5>Época</h5>
+                        <select value={listValue} onChange={handleChange}>
+                            <option value='' ></option>
+                            <option value='Barroco'>Barroco</option>
+                            <option value='Clasicismo' >Clasicismo</option>
+                            <option value='Cubanas' >Cubanas</option>
+                            <option value='Tradicionales' >Tradicionales</option>
+                            <option value='Zarzuela' >Zarzuela</option>
+                            <option value='Navidad' >Navidad</option>
+                            <option value='Cine' >Películas y Musicales</option>
+                        </select>
+                    </label>
 
-                <div className='available'>
-                    <label className='marker-info' htmlFor="playable"><h4>Pista disponible para escuchar</h4></label>
-                    <input className='playable' type="checkbox" id="playable" name="playable" onChange={handleCheck} ></input>
+                    <label className='sorting'>
+                        <h5>Ordenar</h5>
+                        <select value={orderValue} onChange={handleOrder}>
+                            <option value=''>Por época</option>
+                            <option value='titulo' >Por título</option>
+                            <option value='autor' >Por autor</option>
+                        </select>
+                    </label>
+
+                    <div className='available'>
+                        <label className='marker-info' htmlFor="playable"><h4>Pista disponible para escuchar</h4></label>
+                        <input className='playable' type="checkbox" id="playable" name="playable" onChange={handleCheck} ></input>
+                    </div>
+                    
                 </div>
-                
+
+                <Pagination songsPerPage={songsPerPage}
+                    totalSongs={list.length}
+                    paginate={paginate} row={'center'}
+                />
+
+                <div className='lista' style={{'minHeight': '100vh'}}>
+                    {currentSongs.map((el, i) => (
+                        <Obra key={el.titulo} obra={el} />
+                    ))}
+                </div>
+
+                <Pagination songsPerPage={songsPerPage}
+                    totalSongs={list.length}
+                    paginate={paginate} row={'center-2'}
+                />
             </div>
-
-            <Pagination songsPerPage={songsPerPage}
-                totalSongs={list.length}
-                paginate={paginate} row={'center'}
-             />
-
-            <div className='lista' style={{'minHeight': '100vh'}}>
-                {currentSongs.map((el, i) => (
-                    <Obra key={el.titulo} obra={el} />
-                ))}
-            </div>
-
-            <Pagination songsPerPage={songsPerPage}
-                totalSongs={list.length}
-                paginate={paginate} row={'center-2'}
-             />
         </div>
         
     )

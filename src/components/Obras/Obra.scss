@@ -49,47 +49,54 @@ $image-width: 180px;
 $top-disc: ($image-height)/(2) ;
 $left-disc: ($image-width)/(2) ;
 
-.wrapper {
+.body-hidden {
     overflow-x: hidden;
+}
+
+.introduction {
+    background: url('./Images/obras-bg.jpg');
+    width: 100%;
+    // background: yellow;
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0 0 1000px 1000px rgba(0, 0, 0, 0.644);
+    padding-top: 5%;
+    padding-bottom: 5%;
+    color: rgba(255, 255, 255, 0.767);
+    @include flex-column();
+    height: 40vh;
+    // font-size: 2em;
+    font-family: 'Lora';
+    // font-family: fantasy;
+    .songs-header {
+        font-style: italic;
+        font-weight: lighter;
+        font-size: 4em;
+        padding:0 0 5% 0;
+    }
+    .songs-subtitle {
+        width: 80%;
+        font-size: 1.5em;
+    }
+}
+
+.wrapper {
+    padding-top: 10%;
     @include complete();
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background: linear-gradient(to top, #870000, #190a05); 
-    background-attachment: fixed;
+    background: linear-gradient(#000000,  #631414 ,#000000 ); 
+    background-attachment: local;
     @include flex-column();
-    .introduction {
-        background: url('./Images/obras-bg.jpg');
-        width: 100%;
-        // background: yellow;
-        background-size: cover;
-        background-position: center;
-        box-shadow: inset 0 0 1000px 1000px rgba(0, 0, 0, 0.644);
-        padding-top: 5%;
-        padding-bottom: 5%;
-        margin-bottom:10%;
-        color: rgba(255, 255, 255, 0.767);
-        @include flex-column();
-        height: 40vh;
-        // font-size: 2em;
-        font-family: 'Lora';
-        // font-family: fantasy;
-        .songs-header {
-            font-style: italic;
-            font-weight: lighter;
-            font-size: 4em;
-            padding:0 0 5% 0;
-        }
-        .songs-subtitle {
-            font-size: 1.5em;
-        }
-    }
+
 
     .options {
-        width: 50%;
-        background: white;
+        width: fit-content;
+        background-color: #A0A0A0;
+        padding: 2.5% 5%;
         @include flex-row();
+        gap: 20px;
         .songs-filtering {
             font-size: 1.5em;
-            padding: 0 2.5%;
         }
         .sorting {
             color: black;
@@ -99,57 +106,69 @@ $left-disc: ($image-width)/(2) ;
             border: 1px solid black;
             transform: rotate(90deg);
         }
-        .closing {
-            color: gray;
-            height: 3vh;
-            width: 2vw;
-            cursor: pointer;
-            border: 1px solid black;
-            // transform: rotate(90deg);
-        }
+       
     }
     
 
     .filtros {
-        color: rgba(255, 255, 255, 0.63);
+        color: black;
         margin: 5% 5%;
-        height: 20vh;
-        width: 85%;
-        @include flex-row();
-        justify-content: space-around;
-        background-color: gray;
-        border-radius: 20px;
+        height: 50vh;
+        width: 50%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 10%;
+        background-color: black;
+        border: 1px solid gray;
+        // border-radius: 20px;
+        padding: 7.5% 0 2.5% 0;
+        position: relative;
+        // > * {
+        //     background-color: #A0A0A0;
+        // }
+        .closing {
+            position: absolute;
+            right: 3%;
+            top: 2.5%;
+            color: #A0A0A0;
+            background: none;
+            height: 4vh;
+            width: 6vw;
+            cursor: pointer;
+            // transform: rotate(90deg);
+        }
         .finder {
-            @include flex-row();
+            @include flex-column();
             @include complete();
             gap: 5%;
-            .heading {
-                width: 10vw;
-            }
-            .searcher {
-                width: 15vw;
-            }
+            background-color: #A0A0A0;
+            // .heading {
+            //     width: 10vw;
+            // }
+            // .searcher {
+            //     width: 15vw;
+            // }
         }
         .genre {
             @include flex-column();
             @include complete();
-            width: 50%;
+            background-color: #A0A0A0;
         }
         .sorting {
             @include flex-column();
             @include complete();
-            width: 50%;
+            background-color: #A0A0A0;
         }
         .available {
             @include flex-row();
             @include complete();
-            gap: 5%;
-            width: 80%;
-            .marker-info {
-                width: 16vw;
-            }
-            .playable {
-            }
+            background-color: #A0A0A0;
+            // gap: 5%;
+            // .marker-info {
+            //     width: 16vw;
+            // }
+            // .playable {
+            // }
         }
     }
     
@@ -252,9 +271,39 @@ $left-disc: ($image-width)/(2) ;
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 760px) {
 
-    .obra {
+    .introduction {
+        .songs-header {
+            font-size: 2em;
+            padding:0 0 10% 0;
+        }
+        .songs-subtitle {
+            font-size: 1em;
+        }
+    }
+    .wrapper {
 
     }
 

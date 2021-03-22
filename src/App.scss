@@ -69,6 +69,7 @@ a {
 
 .App {
   text-align: center;
+  overflow-x: hidden;
   .header {
     @include flex-row();
     height: 17.5vh;
