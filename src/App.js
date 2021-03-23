@@ -22,38 +22,38 @@ function App() {
   const [active, setActive] = useState(false);
 
    // useEffect definitions
-  //  useEffect(() => {
-  //    gsap.set(App, {
-  //      css: {
-  //        overflow: 'hidden',
-  //        height: '100vh'
-  //      }
-  //    })
-  //   //  total duration of the intro animation == duration of the delay
-  //    gsap.set(App, {
-  //      delay: 15.5,
-  //     css: {
-  //       overflow: 'visible',
-  //       height: 'auto'
-  //     }
-  //   })
-  //  }, [])
+   useEffect(() => {
+     gsap.set(App, {
+       css: {
+         overflow: 'hidden',
+         height: '100vh'
+       }
+     })
+    //  total duration of the intro animation == duration of the delay
+     gsap.set(App, {
+       delay: 15.5,
+      css: {
+        overflow: 'visible',
+        height: 'auto'
+      }
+    })
+   }, [])
   
 
   // functions
-  // function vwToPx(value) {
-  //   return window.innerWidth * (value/100)
-  // }
+  function vwToPx(value) {
+    return window.innerWidth * (value/100)
+  }
 
-  // function vhToPx(value) {
-  //   return window.innerHeight * (value/100)
-  // }
+  function vhToPx(value) {
+    return window.innerHeight * (value/100)
+  }
 
    
   return ( 
     // we use router to render the matching route (handle different pages) 
     <Router >
-      {/* <Intro /> */}
+      <Intro />
       <div ref={el => (App=el)} className="App">
         
         {/* header */}

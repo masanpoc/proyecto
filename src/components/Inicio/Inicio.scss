@@ -91,6 +91,132 @@ ul {
           width: 50%;
         }
       }
+
+      .item1 {
+        @include flex-column();
+        .mask {
+          height: 305px;
+          width: 350px;
+          overflow: hidden;
+          position: relative;
+          .bg {
+            position: absolute;
+            background: rgb(56, 56, 56);
+            top: 0;
+            left: 0;
+            z-index: 1;
+            height: 345px;
+            width: 450px;
+          }
+          .info-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            height: 305px;
+            width: auto;
+          }
+        }
+        
+      }
+
+      .item2 {
+        @include flex-column();
+        .mask {
+          height: 305px;
+          width: 350px;
+          overflow: hidden;
+          position: relative;
+          .bg {
+            position: absolute;
+            background: rgb(56, 56, 56);
+            top: 0;
+            left: 0;
+            z-index: 42;
+            height: 345px;
+            width: 450px;
+          }
+          .item2-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 44;
+            height: 305px;
+            width: auto;
+          }
+        }
+      }
+
+      .item4 {
+        @include flex-column();
+        .mask {
+          height: 305px;
+          width: 350px;
+          overflow: hidden;
+          position: relative;
+          .bg {
+            position: absolute;
+            background: rgb(56, 56, 56);
+            top: 0;
+            left: 0;
+            z-index: 42;
+            height: 345px;
+            width: 450px;
+          }
+          .item4-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 44;
+            height: 305px;
+            width: auto;
+          }
+        }
+      }
+
+      .item5 {
+        @include flex-column();
+        .wrap{
+          @include flex-row();
+          position: relative;
+          img {
+            height: 305px;
+            width: auto;
+          }
+          .mask1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            transform: rotate(10deg);
+            height: 305px;
+            width: 150px;
+            overflow: hidden;
+          }
+          .mask2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            transform: rotate(-10deg);
+            overflow: hidden;
+            height: 305px;
+            width: 150px;
+
+          }
+          .mask3 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 4;
+            
+            overflow: hidden;
+            height: 305px;
+            width: 150px;
+
+          }
+        }
+      }
      
     }
 }
