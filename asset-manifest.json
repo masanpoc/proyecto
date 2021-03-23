@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/proyecto/static/css/main.be3ab902.chunk.css",
-    "main.js": "/proyecto/static/js/main.05d4404e.chunk.js",
-    "main.js.map": "/proyecto/static/js/main.05d4404e.chunk.js.map",
+    "main.css": "/proyecto/static/css/main.7b1851f3.chunk.css",
+    "main.js": "/proyecto/static/js/main.ca0f56a5.chunk.js",
+    "main.js.map": "/proyecto/static/js/main.ca0f56a5.chunk.js.map",
     "runtime-main.js": "/proyecto/static/js/runtime-main.bc2a9d71.js",
     "runtime-main.js.map": "/proyecto/static/js/runtime-main.bc2a9d71.js.map",
-    "static/js/2.bfc464ea.chunk.js": "/proyecto/static/js/2.bfc464ea.chunk.js",
-    "static/js/2.bfc464ea.chunk.js.map": "/proyecto/static/js/2.bfc464ea.chunk.js.map",
+    "static/js/2.824aae73.chunk.js": "/proyecto/static/js/2.824aae73.chunk.js",
+    "static/js/2.824aae73.chunk.js.map": "/proyecto/static/js/2.824aae73.chunk.js.map",
     "index.html": "/proyecto/index.html",
-    "static/css/main.be3ab902.chunk.css.map": "/proyecto/static/css/main.be3ab902.chunk.css.map",
-    "static/js/2.bfc464ea.chunk.js.LICENSE.txt": "/proyecto/static/js/2.bfc464ea.chunk.js.LICENSE.txt",
+    "static/css/main.7b1851f3.chunk.css.map": "/proyecto/static/css/main.7b1851f3.chunk.css.map",
+    "static/js/2.824aae73.chunk.js.LICENSE.txt": "/proyecto/static/js/2.824aae73.chunk.js.LICENSE.txt",
     "static/media/Articulos.scss": "/proyecto/static/media/Sansita-Regular.8d9c1bb5.woff",
     "static/media/Adam.90c9a758.jpg": "/proyecto/static/media/Adam.90c9a758.jpg",
     "static/media/Alonso.5f6d4045.jpg": "/proyecto/static/media/Alonso.5f6d4045.jpg",
@@ -52,17 +52,23 @@
     "static/media/Valverde.53e089a0.jpg": "/proyecto/static/media/Valverde.53e089a0.jpg",
     "static/media/Vivaldi.7d5419a9.jpg": "/proyecto/static/media/Vivaldi.7d5419a9.jpg",
     "static/media/Vives.6985ec47.jpg": "/proyecto/static/media/Vives.6985ec47.jpg",
+    "static/media/article.56fe74a7.jpg": "/proyecto/static/media/article.56fe74a7.jpg",
+    "static/media/concert.6252d832.jpg": "/proyecto/static/media/concert.6252d832.jpg",
+    "static/media/genre1.5da035f1.jpg": "/proyecto/static/media/genre1.5da035f1.jpg",
+    "static/media/genre2.ed529f22.jpg": "/proyecto/static/media/genre2.ed529f22.jpg",
+    "static/media/genre3.4f399e39.jpg": "/proyecto/static/media/genre3.4f399e39.jpg",
     "static/media/Obra.scss": "/proyecto/static/media/obras-bg.a55effc7.jpg",
     "static/media/pic-1.f75e82cf.jpg": "/proyecto/static/media/pic-1.f75e82cf.jpg",
     "static/media/pic-2.eedfbfe3.jpg": "/proyecto/static/media/pic-2.eedfbfe3.jpg",
     "static/media/pic-3.0712f164.jpg": "/proyecto/static/media/pic-3.0712f164.jpg",
     "static/media/pic-4.be0be803.jpg": "/proyecto/static/media/pic-4.be0be803.jpg",
-    "static/media/pic-intro2.80893ee6.jpg": "/proyecto/static/media/pic-intro2.80893ee6.jpg"
+    "static/media/pic-intro2.80893ee6.jpg": "/proyecto/static/media/pic-intro2.80893ee6.jpg",
+    "static/media/rehearsal.52691c88.jpg": "/proyecto/static/media/rehearsal.52691c88.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.bc2a9d71.js",
-    "static/js/2.bfc464ea.chunk.js",
-    "static/css/main.be3ab902.chunk.css",
-    "static/js/main.05d4404e.chunk.js"
+    "static/js/2.824aae73.chunk.js",
+    "static/css/main.7b1851f3.chunk.css",
+    "static/js/main.ca0f56a5.chunk.js"
   ]
 }
