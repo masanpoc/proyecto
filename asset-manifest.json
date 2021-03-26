@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/proyecto/static/css/main.7b1851f3.chunk.css",
-    "main.js": "/proyecto/static/js/main.ca0f56a5.chunk.js",
-    "main.js.map": "/proyecto/static/js/main.ca0f56a5.chunk.js.map",
+    "main.css": "/proyecto/static/css/main.265bd7cd.chunk.css",
+    "main.js": "/proyecto/static/js/main.b1812960.chunk.js",
+    "main.js.map": "/proyecto/static/js/main.b1812960.chunk.js.map",
     "runtime-main.js": "/proyecto/static/js/runtime-main.bc2a9d71.js",
     "runtime-main.js.map": "/proyecto/static/js/runtime-main.bc2a9d71.js.map",
     "static/js/2.824aae73.chunk.js": "/proyecto/static/js/2.824aae73.chunk.js",
     "static/js/2.824aae73.chunk.js.map": "/proyecto/static/js/2.824aae73.chunk.js.map",
     "index.html": "/proyecto/index.html",
-    "static/css/main.7b1851f3.chunk.css.map": "/proyecto/static/css/main.7b1851f3.chunk.css.map",
+    "static/css/main.265bd7cd.chunk.css.map": "/proyecto/static/css/main.265bd7cd.chunk.css.map",
     "static/js/2.824aae73.chunk.js.LICENSE.txt": "/proyecto/static/js/2.824aae73.chunk.js.LICENSE.txt",
     "static/media/Articulos.scss": "/proyecto/static/media/Sansita-Regular.8d9c1bb5.woff",
     "static/media/Adam.90c9a758.jpg": "/proyecto/static/media/Adam.90c9a758.jpg",
@@ -68,7 +68,7 @@
   "entrypoints": [
     "static/js/runtime-main.bc2a9d71.js",
     "static/js/2.824aae73.chunk.js",
-    "static/css/main.7b1851f3.chunk.css",
-    "static/js/main.ca0f56a5.chunk.js"
+    "static/css/main.265bd7cd.chunk.css",
+    "static/js/main.b1812960.chunk.js"
   ]
 }
