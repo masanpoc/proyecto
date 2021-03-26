@@ -133,7 +133,7 @@ a {
         }
       }
       .nosotros:hover {
-        
+        cursor: default;
         .desplegable {
           display: flex;
           flex-direction: column;
@@ -192,34 +192,38 @@ a {
       }
       #menu-mobile {
         display: flex;
-        justify-content: space-around;
+        justify-content: flex-start;
         align-items: center;
         width: 100vw;
         position: relative;
-        .svg-menu {
-          width: 30vw;
-          display: flex;
-          justify-content: flex-start;
-          height: 30px;
-          width: 30px;
-          color: rgba(56, 49, 119, 0.74);
-          @include flex-row();
-          border: 2px solid rgba(56, 49, 119, 0.301);
-          border-radius: 5px;
-          padding: 1px;
-          box-shadow: 0 0 2px 0 gray;
+        .mobile-button {
+          margin-left: 5%;
+          .svg-menu {
+            width: 30vw;
+            display: flex;
+            justify-content: flex-start;
+            height: 30px;
+            width: 30px;
+            color: rgba(56, 49, 119, 0.74);
+            @include flex-row();
+            border: 2px solid rgba(56, 49, 119, 0.301);
+            border-radius: 5px;
+            padding: 1px;
+            box-shadow: 0 0 2px 0 gray;
+          }
+          .svg-menu:hover, .svg-menu:active {
+            color: rgba(56, 49, 119, 0.911);
+            border: 2px solid rgba(56, 49, 119, 0.829);
+            box-shadow: 0 0 8px 0 gray;
+            transform: scale(1.05);
+            transition: 0.5s linear;
+          }
+          .buscador {
+            width: 50vw;
+            height: 3.5vh;
+          }
         }
-        .svg-menu:hover, .svg-menu:active {
-          color: rgba(56, 49, 119, 0.911);
-          border: 2px solid rgba(56, 49, 119, 0.829);
-          box-shadow: 0 0 8px 0 gray;
-          transform: scale(1.05);
-          transition: 0.5s linear;
-        }
-        .buscador {
-          width: 50vw;
-          height: 3.5vh;
-        }
+        
         
       }
       .none {

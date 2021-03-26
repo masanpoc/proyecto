@@ -37,15 +37,17 @@ const list = [
 ];
 
 export const Carousel = () => {
-
+    
     // constant variables
     const vw = (coef) => window.innerWidth * (coef/100)
+    // const imageWidth=vw(100);
     const imageWidth=vw(100);
 
     // useRef definitions
     let imageList = useRef();
     let contentList = useRef();
     const mouse = useRef(null);
+    const mouse2 = useRef(null);
 
     // useState definitions
     const [state, setState] = useState({
@@ -54,25 +56,41 @@ export const Carousel = () => {
         isActive3: false,
         isActive4: false
     });
+
+    // const [previousWidth, setPreviousWidth] = useState(window.innerWidth);
     
     // useEffect definitions
     useEffect(() => {
         // request animation frame
         gsap.ticker.lagSmoothing(false);
-        gsap.to(contentList.children[0], 0, {
-          opacity: 1
+        gsap.to(contentList.children[0], {
+          opacity: 1,
+          duration: 0
         });
         const interval = setInterval(() => {
             mouse.current.click();
         }, 10000);
         return () => clearInterval(interval);
-        // nextSlide()
-        // const interval = setInterval(
-        //     // console.log('This will run every second!');
-        //     nextSlide
-        // , 4000);
-        // return () => clearInterval(interval);
     }, []);
+
+    useEffect(() => {
+        // timeoutId for debounce mechanism
+        let timeoutId = null;
+        const resizeListener = () => {
+          // prevent execution of previous setTimeout
+          clearTimeout(timeoutId);
+          // change width from the state object after 150 milliseconds
+          timeoutId = setTimeout(() => mouse.current.click(), 150);
+        };
+        // set resize listener
+        window.addEventListener('resize', resizeListener);
+    
+        // clean up function
+        return () => {
+          // remove resize listener
+          window.removeEventListener('resize', resizeListener);
+        }
+    }, [])
 
 
 
@@ -81,26 +99,19 @@ export const Carousel = () => {
     const slideLeft = (index, duration, multiplied = 1) => {
         gsap.to(imageList.children[index], {
             duration: duration,
-            x: -imageWidth * multiplied,
-            ease: 'ease-out'
+            x: `-=${imageWidth * multiplied}`,
+            ease: 'power1.inOut'
         });
     };
 
-    const slideRight = (index, duration, multiplied = 1) => {
+    const slideRight = (index, duration, multiplied = 1, delayed=0) => {
         gsap.to(imageList.children[index], {
             duration: duration,
-            x: imageWidth * multiplied,
-            ease: 'ease-out'
+            x: `+=${imageWidth * multiplied}`,
+            ease: 'power1.inOut',
+            delay: delayed
         });
     };
-
-    // const scale = (index, duration) => {
-    //     gsap.from(imageList.children[index], {
-        // duration: duration,
-    //     scale: 1.2,
-    //     ease: Power3.easeOut
-    //     });
-    // };
 
     //Content transition
 
@@ -115,7 +126,7 @@ export const Carousel = () => {
         gsap.to(contentList.children[index], {
             duration: duration,
             opacity: 1,
-            delay: 3
+            delay: 4
         });
     };
 
@@ -124,85 +135,93 @@ export const Carousel = () => {
             setState({ isActive1: false, isActive2: true });
 
             //Image transition
-            slideRight(3, 0, 0);
-            slideLeft(0, 3);
-            slideLeft(1, 3);
-            slideLeft(2, 3);
-            slideLeft(3, 3);
+            slideLeft(0, 4);
+            slideLeft(1, 4);
+            slideLeft(2, 0);
+            slideLeft(3, 0);
+            slideRight(0, 0, 3, 5);
 
-            //   scale(1, 3);
-
-            fadeOut(0, 1);
-            fadeIn(1, 2);
+            //content transition
+            fadeOut(0, 0.5);
+            fadeIn(1, 1);
 
         } else if (imageList.children[1].classList.contains("active")) {
             setState({ isActive2: false, isActive3: true });
 
             //Image transition
-            slideLeft(1, 3, 2);
-            slideLeft(2, 3, 2);
-            slideLeft(3, 3, 2);
-
-            //   scale(2, 3);
+            
+            slideLeft(1, 4);
+            slideLeft(2, 4);
+            slideLeft(3, 0);
+            slideRight(1, 0, 3, 5);
 
             //content transition
-            fadeOut(1, 1);
-            fadeIn(2, 2);
+            fadeOut(1, 0.5);
+            fadeIn(2, 1);
 
         } else if (imageList.children[2].classList.contains("active")) {
             setState({ isActive3: false, isActive4: true });
 
             //Image transition
             
-            slideLeft(2, 3, 3);
-            slideLeft(3, 3, 3);
-            
-            slideRight(0, 0, 1);
-
-            //   scale(0, 3);
+            slideLeft(2, 4);
+            slideLeft(3, 4);
+            slideLeft(0, 0);
+            slideRight(2, 0, 3, 5);
 
             //content transition
-            fadeOut(2, 1);
-            fadeIn(3, 2);
+            fadeOut(2, 0.5);
+            fadeIn(3, 1);
 
         } else if (imageList.children[3].classList.contains("active")) {
             setState({ isActive1: true, isActive4: false });
 
             //Image transition
-            // slideRight(0, 0, 1);
-            slideLeft(3, 3, 4);
-            slideLeft(0, 3, 0);
             
-            slideRight(1, 0, 0);
-            slideRight(2, 0, 0);
-
-          //   scale(0, 3);
+            slideLeft(3, 4);
+            slideLeft(0, 4);
+            slideLeft(1, 0);
+            slideRight(3, 0, 4, 5);
 
             //content transition
-            fadeOut(3, 1);
-            fadeIn(0, 2);
-
+            fadeOut(3, 0.5);
+            fadeIn(0, 1);
           }
     };
+
+    // adjust position when resizing
+    const restartPosition = () => {
+
+        // let prevWidth = previousWidth;
+        // setState({ isActive1: true, isActive2: false, isActive3: false, isActive4: false });
+        // for(let i=0; i<4; i++ ) {
+        //     gsap.to(imageList.children[i], {
+        //         duration: 0,
+        //         x: `-=${prevWidth}`,
+        //     });
+        // }
+        // setPreviousWidth(window.innerWidth);
+    }
 
     return (
         <div className='background-carousel'>
             <div className='carousel'>
                 <button ref={mouse} onClick={nextSlide} className='carousel-bttn'>here</button>
+                <button ref={mouse2} onClick={restartPosition} className='carousel-bttn'>here</button>
                 
                 <div className='slider'>
                     <ul ref={el => (imageList = el)} className='image-list'>
                     {/* we can't use && in classname because the not true is read as boolean */}
-                            <li className={state.isActive1 ? "active" : "" }>
+                            <li id='img1' className={state.isActive1 ? "active" : "" }>
                                 <img src={list[0].src} alt={list[0].title}></img>
                             </li>
-                            <li className={state.isActive2 ? "active" : "" }>
+                            <li id='img2' className={state.isActive2 ? "active" : "" }>
                                 <img src={list[1].src} alt={list[1].title}></img>
                             </li>
-                            <li className={state.isActive3 ? "active" : "" }>
+                            <li id='img3' className={state.isActive3 ? "active" : "" }>
                                 <img src={list[2].src} alt={list[2].title}></img>
                             </li>
-                            <li className={state.isActive4 ? "active" : "" }>
+                            <li id='img4' className={state.isActive4 ? "active" : "" }>
                                 <img src={list[3].src} alt={list[3].title}></img>
                             </li>
                     </ul>
@@ -214,14 +233,12 @@ export const Carousel = () => {
                                 <div className='content-inner'>
                                     <h3>{list[0].title}</h3>
                                     <h4>{list[0].author}</h4>
-                                    {/* <h5>{list[0].genre}</h5> */}
                                 </div>
                             </li>
                             <li id='item' className={state.isActive2 ? "active" : "" }>
                                 <div className='content-inner'>
                                     <h3>{list[1].title}</h3>
                                     <h4>{list[1].author}</h4>
-                                    {/* <h5>{list[1].genre}</h5> */}
                                 </div>
                                 
                             </li>
@@ -229,7 +246,6 @@ export const Carousel = () => {
                                 <div className='content-inner'>
                                     <h3>{list[2].title}</h3>
                                     <h4>{list[2].author}</h4>
-                                    {/* <h5>{list[2].genre}</h5> */}
                                 </div>
                                 
                             </li>
@@ -237,7 +253,6 @@ export const Carousel = () => {
                                 <div className='content-inner'>
                                     <h3>{list[3].title}</h3>
                                     <h4>{list[3].author}</h4>
-                                    {/* <h5>{list[3].genre}</h5> */}
                                 </div>   
                             </li>
                         </ul>

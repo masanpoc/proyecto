@@ -23,37 +23,39 @@ function App() {
 
    // useEffect definitions
    useEffect(() => {
-     gsap.set(App, {
-       css: {
-         overflow: 'hidden',
-         height: '100vh'
-       }
-     })
-    //  total duration of the intro animation == duration of the delay
-     gsap.set(App, {
-       delay: 15.5,
-      css: {
-        overflow: 'visible',
-        height: 'auto'
-      }
-    })
+     intro();
    }, [])
   
 
   // functions
-  function vwToPx(value) {
-    return window.innerWidth * (value/100)
-  }
+  // function vwToPx(value) {
+  //   return window.innerWidth * (value/100)
+  // }
 
-  function vhToPx(value) {
-    return window.innerHeight * (value/100)
-  }
-
+  // function vhToPx(value) {
+  //   return window.innerHeight * (value/100)
+  // }
+   const intro = () => {
+    gsap.set(App, {
+      css: {
+        overflow: 'hidden',
+        height: '100vh'
+      }
+    })
+   //  total duration of the intro animation == duration of the delay
+    gsap.set(App, {
+      delay: 15.5,
+     css: {
+       overflow: 'visible',
+       height: 'auto'
+     }
+   })
+   };
    
   return ( 
     // we use router to render the matching route (handle different pages) 
     <Router >
-      <Intro />
+      {/* <Intro /> */}
       <div ref={el => (App=el)} className="App">
         
         {/* header */}
@@ -72,11 +74,12 @@ function App() {
             <Link className='link' to='/'><li>Inicio</li></Link>
             <span>|</span>
             <span className='nosotros' onMouseOver={() => setOptions(true)} onClick={() => setOptions(false)} >
-              <Link to='/nosotros' className='link'>Sobre Nosotros</Link>
+              {/* <Link to='/nosotros' className='link'>Sobre Nosotros</Link> */}
+              <span>Sobre nosotros</span>
               <div className={options ? 'desplegable' : 'none'}>
                 <Link className='link' to='/nosotros/historia' onClick={() => setOptions(false)} >Nuestra historia</Link>
                 <Link className='link' to='/nosotros/conocenos' onClick={() => setOptions(false)} >Conócenos</Link>
-                <Link className='link' to='/nosotros/proyectos' onClick={() => setOptions(false)} >Proyectos</Link>
+                {/* <Link className='link' to='/nosotros/proyectos' onClick={() => setOptions(false)} >Proyectos</Link> */}
               </div>
             </span>
             <span>|</span>
@@ -89,23 +92,24 @@ function App() {
 
           {/* menu de opciones mobile friendly */}
           <div id='menu-mobile'>
-             <button onClick={() => setActive(!active)} >
+             <button className='mobile-button' onClick={() => setActive(!active)} >
                <svg className='svg-menu' viewBox="0 0 24 24">
                   <path fill="currentColor" d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
                </svg>
              </button>
-             <input className='buscador' placeholder='buscar'></input>
+             {/* <input className='buscador' placeholder='buscar'></input> */}
           </div>
           <div className={active ? 'mobile-links' : 'none'} >
               <Link className='f1 link underline' to='/' onClick={() => setActive(!active)}>Inicio</Link>
               <span className='nosotros-mobile extra-border'>
-                <Link to='/nosotros' className='link f1 underline extra-padding' onClick={() => setActive(!active)}>
+                {/* <Link to='/nosotros' className='link f1 underline extra-padding' onClick={() => setActive(!active)}>
                   Sobre Nosotros
-                </Link>
+                </Link> */}
+                <span className='link f1 underline extra-padding' >Sobre Nosotros</span>
                 <div className='desplegable-mobile'>
                   <Link className='link-2' to='/nosotros/historia' onClick={() => setActive(!active)}>Nuestra historia</Link>
                   <Link className='link-2' to='/nosotros/conocenos' onClick={() => setActive(!active)}>Conócenos</Link>
-                  <Link className='link-2' to='/nosotros/proyectos' onClick={() => setActive(!active)}>Proyectos</Link>
+                  {/* <Link className='link-2' to='/nosotros/proyectos' onClick={() => setActive(!active)}>Proyectos</Link> */}
                 </div>
               </span>
               <Link className='f1 link underline' to='/articulos' onClick={() => setActive(!active)}>Artículos</Link>
