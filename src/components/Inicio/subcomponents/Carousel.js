@@ -40,12 +40,13 @@ export const Carousel = () => {
     
     // constant variables
     const vw = (coef) => window.innerWidth * (coef/100)
+    const imageWidth=vw(10);
     // const imageWidth=vw(100);
-    const imageWidth=vw(100);
 
     // useRef definitions
     let imageList = useRef();
     let contentList = useRef();
+    let limits = useRef();
     const mouse = useRef(null);
     const mouse2 = useRef(null);
 
@@ -56,8 +57,6 @@ export const Carousel = () => {
         isActive3: false,
         isActive4: false
     });
-
-    // const [previousWidth, setPreviousWidth] = useState(window.innerWidth);
     
     // useEffect definitions
     useEffect(() => {
@@ -80,7 +79,7 @@ export const Carousel = () => {
           // prevent execution of previous setTimeout
           clearTimeout(timeoutId);
           // change width from the state object after 150 milliseconds
-          timeoutId = setTimeout(() => mouse.current.click(), 150);
+          timeoutId = setTimeout(() => mouse2.current.click(), 150);
         };
         // set resize listener
         window.addEventListener('resize', resizeListener);
@@ -192,15 +191,21 @@ export const Carousel = () => {
     // adjust position when resizing
     const restartPosition = () => {
 
-        // let prevWidth = previousWidth;
-        // setState({ isActive1: true, isActive2: false, isActive3: false, isActive4: false });
-        // for(let i=0; i<4; i++ ) {
-        //     gsap.to(imageList.children[i], {
-        //         duration: 0,
-        //         x: `-=${prevWidth}`,
-        //     });
-        // }
-        // setPreviousWidth(window.innerWidth);
+        setState({ isActive1: true, isActive2: false, isActive3: false, isActive4: false });
+        for(let i=0; i<4; i++) {
+            gsap.to(imageList.children[i], {
+                duration: 1,
+                x: 0
+            })
+        }
+        for(let i=0; i<5; i++ ) {
+            gsap.set(limits.children[i], {
+                css: {
+                    left: (1+i)*(window.innerWidth)/10
+                }
+            });
+        }
+        console.log('resized')
     }
 
     return (
@@ -225,6 +230,13 @@ export const Carousel = () => {
                                 <img src={list[3].src} alt={list[3].title}></img>
                             </li>
                     </ul>
+                    <div ref={el => (limits = el)}>
+                    <div className='limit' id='l0'></div>
+                    <div className='limit' id='l1'></div>
+                    <div className='limit' id='l2'></div>
+                    <div className='limit' id='l3'></div>
+                    <div className='limit' id='l4'></div>
+                    </div>
                 </div>
                 
                 <div className='quotes'>
