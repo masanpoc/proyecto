@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {Obra} from './Obras/Obra';
 import './Obras/Obra.scss';
+import gsap from 'gsap';
 import {Pagination} from './Obras/Pagination';
 import Vivaldi from './Obras/Images/Vivaldi.jpg';
 import Bach from './Obras/Images/Bach.jpg';
@@ -661,6 +662,7 @@ export const Obras = () => {
 
     // constant variables
 
+    // useRef definitions
 
     // useState definitions
     const [list, setList] = useState(lista);
@@ -677,9 +679,7 @@ export const Obras = () => {
     // get Current Songs
     const indexOfLastSong = currentPage*songsPerPage;
     const indexOfFirstSong = indexOfLastSong-songsPerPage;
-    const currentSongs = list.slice(indexOfFirstSong, indexOfLastSong);
-
-    
+    const currentSongs = list.slice(indexOfFirstSong, indexOfLastSong);  
 
     useEffect(() => {
         order()
@@ -698,7 +698,6 @@ export const Obras = () => {
     }, [checkValue])
 
     // functions
-
     // order
     const handleOrder = (e) => {
         setOrderValue(e.target.value);

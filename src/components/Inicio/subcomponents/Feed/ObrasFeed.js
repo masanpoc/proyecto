@@ -49,8 +49,18 @@ export const ObrasFeed = () => {
 
     return (
         <div className='item5'>
-            ObrasFeed
 
+            
+
+            <h2 className='header-2'>Obras que hemos interpretado</h2>
+            
+            <div className='content-2'>
+                <h3>Desde piezas clásicas, hasta canciones navideñas</h3>
+                <div>
+                    <p>iam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim iptione voluptatem sequi nesciunt. </p>
+                    {/* <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p> */}
+                </div>
+            </div>
             <div className='wrap'>
                 <div ref={el=>(img1=el)} className='mask1'>
                     <img  alt='info' src={img_1} className='info-image' />
@@ -62,8 +72,10 @@ export const ObrasFeed = () => {
                     <img  alt='info' src={img_3} className='info-image' />
                 </div>
             </div>
-
-            
+            <span className='link-2'>
+                arrow svg
+                <a href='#none'>Ver selección de obras </a>
+            </span>
         </div>
     )
 }

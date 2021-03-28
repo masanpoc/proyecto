@@ -1,0 +1,73 @@
+
+
+@mixin flex-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @font-face {
+    font-family: 'Bebas';
+    src: url('../../../../fonts/BebasNeue-Regular.woff2') format('woff2'),
+        url('../../../../fonts/BebasNeue-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+.conocenos {
+    background: #C6FFC1;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    // margin: 0;
+    .c-intro {
+        height: 50vh;
+        background: url(../images/intro.jpg);
+        background-size: cover;
+        color: rgba(255, 255, 255, 0.767);
+        background-position: top;
+        @include flex-column();
+        justify-content: flex-end;
+        box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.712);
+        .c-header {
+            font-size: 2.5em;
+            font-family: 'Bebas';
+            letter-spacing: 0.1em;
+            padding-bottom: 10%;
+        }
+        .c-sections {
+            @include flex-row();
+            gap: 5%;
+            font-size: 1.5em;
+            padding-bottom: 10%;
+        }
+    }
+
+    .c-objetivos {
+        border: 5px solid black;
+        .img {
+            height: 30vh;
+            width: auto;
+        }
+    }
+
+    .c-equipo {
+        border: 5px solid black;
+        .img {
+            height: 30vh;
+            width: auto;
+        }
+    }
+
+    .c-actividades {
+        border: 5px solid black;
+    }
+}

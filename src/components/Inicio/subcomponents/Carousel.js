@@ -40,8 +40,8 @@ export const Carousel = () => {
     
     // constant variables
     const vw = (coef) => window.innerWidth * (coef/100)
-    const imageWidth=vw(10);
-    // const imageWidth=vw(100);
+    // const imageWidth=vw(10);
+    const imageWidth=vw(100);
 
     // useRef definitions
     let imageList = useRef();
@@ -68,7 +68,7 @@ export const Carousel = () => {
         });
         const interval = setInterval(() => {
             mouse.current.click();
-        }, 10000);
+        }, 9000);
         return () => clearInterval(interval);
     }, []);
 
@@ -185,27 +185,35 @@ export const Carousel = () => {
             //content transition
             fadeOut(3, 0.5);
             fadeIn(0, 1);
-          }
+        }   else {
+            setState({isActive1: true});
+            for(let i=0; i<4; i++) {
+                gsap.to(imageList.children[i], {
+                    duration: 0,
+                    x: 0
+                })
+            }
+            fadeOut(0, 0.5);
+            fadeOut(1, 0.5);
+            fadeOut(2, 0.5);
+            fadeOut(3, 0.5);
+        }
+
     };
 
     // adjust position when resizing
     const restartPosition = () => {
 
-        setState({ isActive1: true, isActive2: false, isActive3: false, isActive4: false });
-        for(let i=0; i<4; i++) {
-            gsap.to(imageList.children[i], {
-                duration: 1,
-                x: 0
-            })
-        }
-        for(let i=0; i<5; i++ ) {
-            gsap.set(limits.children[i], {
-                css: {
-                    left: (1+i)*(window.innerWidth)/10
-                }
-            });
-        }
-        console.log('resized')
+        setState({ isActive1: false, isActive2: false, isActive3: false, isActive4: false });
+        
+        // for(let i=0; i<5; i++ ) {
+        //     gsap.set(limits.children[i], {
+        //         css: {
+        //             left: (1+i)*(window.innerWidth)/10
+        //         }
+        //     });
+        // }
+        // console.log('resized')
     }
 
     return (
@@ -230,13 +238,13 @@ export const Carousel = () => {
                                 <img src={list[3].src} alt={list[3].title}></img>
                             </li>
                     </ul>
-                    <div ref={el => (limits = el)}>
+                    {/* <div ref={el => (limits = el)}>
                     <div className='limit' id='l0'></div>
                     <div className='limit' id='l1'></div>
                     <div className='limit' id='l2'></div>
                     <div className='limit' id='l3'></div>
                     <div className='limit' id='l4'></div>
-                    </div>
+                    </div> */}
                 </div>
                 
                 <div className='quotes'>

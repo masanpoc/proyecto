@@ -31,11 +31,13 @@ export const Feed = () => {
             {/* ultima noticia de articulos --+enlace*/}
             <div className='info' ><HistoriaFeed  /></div>
             {/* nosotros y obras en breve --+enlaces*/}
-                <ArticuloFeed  />
+            <div  ><ObrasFeed /></div>
+           
             {/* video de nosotros tocando */}
             <div  ><Apuntate /></div>
+            <div><ArticuloFeed  /></div>
             {/* instrumentos +enlace a conocenos */}
-            <div  ><ObrasFeed /></div>
+            
         </div>
     )
 }

@@ -5,7 +5,7 @@ import {Intro} from './components/Intro/Intro';
 import {Inicio} from './components/Inicio/Inicio';
 import {Articulos} from './components/Articles/Articulos';
 import {Obras} from './components/Obras';
-import {Nosotros} from './components/Nosotros/Nosotros';
+// import {Nosotros} from './components/Nosotros/Nosotros';
 import {Historia} from './components/Nosotros/subcomponents/Historia';
 import {Conocenos} from './components/Nosotros/subcomponents/Conocenos';
 import {Proyectos} from './components/Nosotros/subcomponents/Proyectos';
@@ -131,7 +131,7 @@ function App() {
           <Route path='/' exact component={Inicio} />
           <Route path='/articulos' exact component={Articulos} />
           <Route path='/obras' component={Obras} />
-          <Route path='/nosotros' exact component={Nosotros} />
+          {/* <Route path='/nosotros' exact component={Nosotros} /> */}
           <Route path='/nosotros/historia' component={Historia} />
           <Route path='/nosotros/conocenos' component={Conocenos} />
           <Route path='/nosotros/proyectos' component={Proyectos} />
