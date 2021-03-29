@@ -7,16 +7,16 @@ export const HistoriaFeed = () => {
 
 
     // useEffect definitions
-    useEffect(() => {
-        slide();
+    // useEffect(() => {
+    //     slide();
         
-    }, [])
+    // }, [])
 
     // useRef definitions
     let display = useRef();
     let display0 = useRef();
 
-    // useState definitions
+    // useState definitiçons
     
 
     // functions
@@ -37,11 +37,16 @@ export const HistoriaFeed = () => {
     }
  
     return (
-        <div className='item1'>
+        <div className='item-1'>
             <h2 className='header-1'>Agrupación de Orquesta Joven en A Coruña</h2>
             <div className='mask'>
-                <div ref={el=>(display0=el)} className='bg'></div>
-                <img ref={el=>(display=el)} alt='info' src={historia} className='info-image' />
+                <div
+                //  ref={el=>(display0=el)}
+
+                  className='bg'></div>
+                <img 
+                // ref={el=>(display=el)}
+                 alt='info' src={historia} className='info-image' />
             </div>
             <div className='content-1'>
                 <h3>Aprendiendo música juntos desde 200X</h3>

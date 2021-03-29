@@ -13,31 +13,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 export const Feed = () => {
-    
-    // constant variables
-    // useState definitions
-
-    // useRef definitions
-
-    // useEffect definitions
-    
-
-    
-    // functions
-   
-
     return (
         <div className='feed'>
-            {/* ultima noticia de articulos --+enlace*/}
-            <div className='info' ><HistoriaFeed  /></div>
-            {/* nosotros y obras en breve --+enlaces*/}
-            <div  ><ObrasFeed /></div>
-           
-            {/* video de nosotros tocando */}
-            <div  ><Apuntate /></div>
-            <div><ArticuloFeed  /></div>
-            {/* instrumentos +enlace a conocenos */}
-            
+            <HistoriaFeed  />
+            <ObrasFeed />
+            <Apuntate />
+            <ArticuloFeed  />
         </div>
     )
 }
