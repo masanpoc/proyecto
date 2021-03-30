@@ -22,9 +22,10 @@ function App() {
   const [active, setActive] = useState(false);
 
    // useEffect definitions
-   useEffect(() => {
-     intro();
-   }, [])
+  //  commented out this and the <intro /> element
+  //  useEffect(() => {
+  //    intro();
+  //  }, [])
   
 
   // functions
@@ -35,6 +36,7 @@ function App() {
   // function vhToPx(value) {
   //   return window.innerHeight * (value/100)
   // }
+  
    const intro = () => {
     gsap.set(App, {
       css: {

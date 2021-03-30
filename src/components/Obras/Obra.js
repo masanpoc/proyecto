@@ -1,7 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
 import './Obra.scss';
-// import Bach from './Images/Bach.jpg';
-// import Vivaldi from './Images/Vivaldi.jpg';
 import gsap from 'gsap';
 
 export const Obra = ({obra}) => {
