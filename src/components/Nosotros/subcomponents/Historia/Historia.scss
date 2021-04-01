@@ -74,6 +74,8 @@
             @include flex-column();
             // padding: 0 5%;
             // margin: 0 10% 0 0;
+            // overflow: scroll;
+            // y jugar con height, igual poner un div de toda la altura para q funcione para cualquier zona o igual solo ajustar la altura de la historia
         }
     }
 }

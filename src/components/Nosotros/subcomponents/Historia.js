@@ -45,6 +45,25 @@ export const Historia = () => {
         slide()
     }, [])
 
+    useEffect(() => {
+        // timeoutId for debounce mechanism
+        let timeoutId = null;
+        const resizeListener = () => {
+          // prevent execution of previous setTimeout
+          clearTimeout(timeoutId);
+          // change width from the state object after 150 milliseconds
+          timeoutId = setTimeout(() => window.location.reload(false), 150);
+        };
+        // set resize listener
+        window.addEventListener('resize', resizeListener);
+    
+        // clean up function
+        return () => {
+          // remove resize listener
+          window.removeEventListener('resize', resizeListener);
+        }
+    }, [])
+
     // useState definitions
 
 
@@ -79,14 +98,14 @@ export const Historia = () => {
             scrollTrigger: {
                 trigger: wrapper,
                 pin: true,
-                // invalidateOnRefresh: true,
-                // scrub: 1,
-                // markers: true,
+                invalidateOnRefresh: true,
+                scrub: 1,
+                markers: true,
                 // snap: 1 / (sections.length - 1),
                 start: 'top top',
                 // end: 'bottom center',
                 // still have to fix the end
-                end: () => '+=' + (stories.offsetWidth)
+                end: () =>  '+=' + (1.4*stories.offsetWidth - document.documentElement.clientWidth)
             }
         })
         gsap.to(stories, {
@@ -99,17 +118,37 @@ export const Historia = () => {
                 scrub: 1,
                 markers: true,
                 start: 'top top',
-                // snap: 1 / (stories.children.length - 1),
-                end: () => '+=' + stories.offsetWidth
+                snap: 1 / (stories.children.length - 1),
+                // end after scrolling the whole width of stories from the start
+                end: () => '+=' + (stories.offsetWidth),
+                // onEnter: starting(),
+                // onEnterBack: starting(),
+                // onLeave: ending(),
+                // onLeaveBack: ending()
             }
         })
     }
+
+    // const starting = () => {
+    //     gsap.to(sound, {
+    //         duration: 2,
+    //         autoAlpha: 1
+    //     })
+    // }
+
+    // const ending = () => {
+    //     gsap.to(sound, {
+    //         duration: 2,
+    //         autoAlpha: 0
+    //     })
+    // }
 
 
 
     return (
         <div ref={el => (wrapper = el)} className='historia' style={{'minHeight': '100vh'}}>
             {/* cancion del año */}
+
             <div className='sound' ref={el => (sound = el)}>
                 {/* song */}
                 {list.map((el) => (
