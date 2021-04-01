@@ -37,6 +37,7 @@ export const Historia = () => {
     let sound = useRef();
     let stories = useRef();
     let line = useRef();
+    let years = useRef();
     let wrapper = useRef();
 
 
@@ -100,7 +101,7 @@ export const Historia = () => {
                 pin: true,
                 invalidateOnRefresh: true,
                 scrub: 1,
-                markers: true,
+                // markers: true,
                 // snap: 1 / (sections.length - 1),
                 start: 'top top',
                 // end: 'bottom center',
@@ -116,31 +117,85 @@ export const Historia = () => {
                 // pin: true,
                 invalidateOnRefresh: true,
                 scrub: 1,
-                markers: true,
+                // markers: true,
                 start: 'top top',
                 snap: 1 / (stories.children.length - 1),
                 // end after scrolling the whole width of stories from the start
                 end: () => '+=' + (stories.offsetWidth),
-                // onEnter: starting(),
-                // onEnterBack: starting(),
-                // onLeave: ending(),
-                // onLeaveBack: ending()
             }
         })
+        gsap.from(sound.children[0], {
+            duration: 2,
+            autoAlpha: 0,
+            scrollTrigger: {
+                trigger: stories.children[0],
+                start: () => 'top+=' + (stories.scrollWidth / 4) + ' center',
+                end: 'top+=' + (2 * (stories.scrollWidth / 4)) +  ' center',
+                // scrub: 2,
+                markers: true,
+                toggleActions: "play reverse play reverse"
+            }
+        })
+        // loop over sound children
+        // gsap.from(sound.children[1], {
+        //     duration: 2,
+        //     autoAlpha: 0,
+        //     scrollTrigger: {
+        //         trigger: stories.children[0],
+        //         start: 'top+= top',
+        //         end: 'bottom+= top',
+        //         scrub: 2,
+        //         markers: true
+        //     }
+        // })
+        // and now with the circles -
+        // OJO HAY QUE PONER LA POSICION EN ABSOLUTE PARA QUE COJA LA REFERENCIA ANTERIOR!
+        gsap.to(years.children[0], {
+            duration: 5,
+            scale: 0.8,
+            x: '-=100',
+            scrollTrigger: {
+                trigger: stories.children[0],
+                start: () => 'top+=' + (stories.scrollWidth / 4) + ' center',
+                end: 'top+=' + (2 * (stories.scrollWidth / 4)) +  ' center',
+                scrub: true,
+                markers: true,
+                // toggleActions: "play none restart reverse",
+
+            }
+        })
+        gsap.to(years.children[0], {
+            duration: 5,
+            autoAlpha: 0,
+            x: '-=100',
+            scrollTrigger: {
+                trigger: stories.children[0],
+                start: () => 'top+=' + (2.2 * (stories.scrollWidth / 4)) + ' center',
+                end: 'top+=' + (3 * (stories.scrollWidth / 4)) +  ' center',
+                scrub: true,
+                markers: true,
+                // toggleActions: "play none restart reverse",
+
+            }
+        })
+        
     }
 
-    // const starting = () => {
-    //     gsap.to(sound, {
-    //         duration: 2,
-    //         autoAlpha: 1
-    //     })
-    // }
+    
 
-    // const ending = () => {
-    //     gsap.to(sound, {
+
+    // const starting = (i) => {
+    //     gsap.from(sound, {
     //         duration: 2,
     //         autoAlpha: 0
     //     })
+    // }
+
+    // const ending = (i) => {
+        // gsap.to(sound.children[i], {
+        //     duration: 2,
+        //     autoAlpha: 0
+        // })
     // }
 
 
@@ -168,7 +223,7 @@ export const Historia = () => {
             {/* linea de fechas */}
             <div className='line' ref={el => (line = el)}>
             -
-                <div className='years'>
+                <div className='years' ref={el => (years = el)}>
                     {/* <div className='circle'>2009</div> */}
                     {/* <div className='circle'>2010</div>
                     <div className='circle'>2011</div>
