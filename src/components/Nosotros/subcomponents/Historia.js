@@ -136,6 +136,19 @@ export const Historia = () => {
                 toggleActions: "play reverse play reverse"
             }
         })
+        // gsap.to(sound.children[0], {
+        //     duration: 6,
+        //     x: '-' + (window.innerWidth / 5) ,
+        //     repeat: -1,
+        //     scrollTrigger: {
+        //         trigger: stories.children[0],
+        //         start: () => 'top+=' + (stories.scrollWidth / 4) + ' center',
+        //         end: 'top+=' + (2 * (stories.scrollWidth / 4)) +  ' center',
+        //         // scrub: 2,
+        //         markers: true,
+        //         toggleActions: "play reverse play reverse"
+        //     }
+        // })
         // loop over sound children
         // gsap.from(sound.children[1], {
         //     duration: 2,
@@ -159,7 +172,7 @@ export const Historia = () => {
                 start: () => 'top+=' + (stories.scrollWidth / 4) + ' center',
                 end: 'top+=' + (2 * (stories.scrollWidth / 4)) +  ' center',
                 scrub: true,
-                markers: true,
+                // markers: true,
                 // toggleActions: "play none restart reverse",
 
             }
@@ -169,6 +182,7 @@ export const Historia = () => {
             autoAlpha: 0,
             x: '-=100',
             scrollTrigger: {
+                immediateRender: false, 
                 trigger: stories.children[0],
                 start: () => 'top+=' + (2.2 * (stories.scrollWidth / 4)) + ' center',
                 end: 'top+=' + (3 * (stories.scrollWidth / 4)) +  ' center',
@@ -178,7 +192,22 @@ export const Historia = () => {
 
             }
         })
+
+        gsap.from(stories.children[1], {
+            duration: 2,
+            autoAlpha: 0,
+            scrollTrigger: {
+                trigger: stories.children[1],
+                start: () => 'top+=' + (stories.scrollWidth / 4) + ' center',
+                end: 'top+=' + (2 * (stories.scrollWidth / 4)) +  ' center',
+                // scrub: 2,
+                markers: true,
+                toggleActions: "play reverse play reverse"
+            }
+        })
         
+
+
     }
 
     
