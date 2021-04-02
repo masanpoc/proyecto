@@ -9,22 +9,22 @@ gsap.registerPlugin(ScrollTrigger);
 
 const list = [
     {
-        song: 'Vivaldi',
+        song: ' ',
         content: 'lorem ipsum1',
         date: 'May 2015'
     },
     {
-        song: 'Bach',
+        song: '',
         content: 'lorem ipsum',
         date: 'May 2016s'
     },
     {
-        song: 'Vivaldi',
+        song: 'Vivaldi - Las cuatro estaciones (Primavera)',
         content: 'lorem ipsum1',
         date: 'May 2015'
     },
     {
-        song: 'Bach',
+        song: '',
         content: 'lorem ipsum',
         date: 'May 2016s'
     }
@@ -124,15 +124,15 @@ export const Historia = () => {
                 end: () => '+=' + (stories.offsetWidth),
             }
         })
-        gsap.from(sound.children[0], {
+        gsap.from(sound.children[1], {
             duration: 2,
             autoAlpha: 0,
             scrollTrigger: {
-                trigger: stories.children[0],
+                trigger: stories.children[1],
                 start: () => 'top+=' + (stories.scrollWidth / 4) + ' center',
                 end: 'top+=' + (2 * (stories.scrollWidth / 4)) +  ' center',
                 // scrub: 2,
-                markers: true,
+                // markers: true,
                 toggleActions: "play reverse play reverse"
             }
         })
@@ -187,7 +187,7 @@ export const Historia = () => {
                 start: () => 'top+=' + (2.2 * (stories.scrollWidth / 4)) + ' center',
                 end: 'top+=' + (3 * (stories.scrollWidth / 4)) +  ' center',
                 scrub: true,
-                markers: true,
+                // markers: true,
                 // toggleActions: "play none restart reverse",
 
             }
@@ -201,7 +201,7 @@ export const Historia = () => {
                 start: () => 'top+=' + (stories.scrollWidth / 4) + ' center',
                 end: 'top+=' + (2 * (stories.scrollWidth / 4)) +  ' center',
                 // scrub: 2,
-                markers: true,
+                // markers: true,
                 toggleActions: "play reverse play reverse"
             }
         })
@@ -234,6 +234,9 @@ export const Historia = () => {
             {/* cancion del año */}
 
             <div className='sound' ref={el => (sound = el)}>
+                <svg className='note' viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M21,3V15.5A3.5,3.5 0 0,1 17.5,19A3.5,3.5 0 0,1 14,15.5A3.5,3.5 0 0,1 17.5,12C18.04,12 18.55,12.12 19,12.34V6.47L9,8.6V17.5A3.5,3.5 0 0,1 5.5,21A3.5,3.5 0 0,1 2,17.5A3.5,3.5 0 0,1 5.5,14C6.04,14 6.55,14.12 7,14.34V6L21,3Z" />
+                </svg>
                 {/* song */}
                 {list.map((el) => (
                     <Single song={el.song} />
@@ -251,7 +254,7 @@ export const Historia = () => {
 
             {/* linea de fechas */}
             <div className='line' ref={el => (line = el)}>
-            -
+            {/* - */}
                 <div className='years' ref={el => (years = el)}>
                     {/* <div className='circle'>2009</div> */}
                     {/* <div className='circle'>2010</div>

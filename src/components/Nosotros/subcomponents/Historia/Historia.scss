@@ -22,59 +22,84 @@
         color: white;
         // margin-top: 20%;
         position: relative;
-        width: 40vw;
-        height: 2.5vh;
+        width: 100vw;
+        height: 3.5vh;
         background: black;
+        margin: 7.5% 0 7.5% 0;
         // @include flex-column();
         // align-content: flex-start;
         .years {
-            width: 200vw;
+            width: 2000vw;
             position: absolute;
-            left: calc(20vw - 25px);
+            left: calc(50vw - 7.5vw);
             // top: -25px;
-            top: calc(1.25vh - 25px);            
+            top: calc(1.75vh - 7.5vw);            
             // width: auto;
-            border: 1px solid black;
+            // border: 1px solid black;
             @include flex-row();
             // margin-left: 50vw;
             justify-content: flex-start;
             // position: absolute;
             .circle {
-                width: 50px;
-                height: 50px;
+                width: 15vw;
+                height: 15vw;
                 border-radius: 50%;
-                background: blue;
-                margin: 0 5% 0 0;
+                background: black;
+                margin: 0 100vw 0 0;
                 @include flex-column();
                 font-size: 0.8em;
             }
         }
     }
     .sound {
-        background: blueviolet;
-        width: 100vw;
-        @include flex-row();
+        // background: blueviolet;
+        width: 85vw;
+        height: 7.5vw;
+        // border: 1px solid black;
+        position: relative;
+        // background: gray;
+        margin-left: auto;
+        margin-right: 5vw;
+        margin-top: 2.5%;
+        margin-bottom: 2.5%;
+        overflow: hidden;
+        .note {
+            height: 7.5vw;
+            width: 7.5vw;
+            color: black;
+            position: absolute;
+            left: 5vw;
+        }
         .single {
-            border: 1px solid black;
+            @include flex-column();
+            align-items: flex-start;
+            width: 200vw;
+            height: 7.5vw;
+            // border: 1px solid black;
             margin: 0 5% 0 0;
+            position: absolute;
+            // left: 0;
+            left: 15vw;
+            // width: 50vw;
         }
     }
     .stories {
         border: 1px solid black;
         // width: 100%;
         width: 400vw;
-        height: 60vh;
+        height: 80vh;
         @include flex-column();
         align-content: flex-start;
         flex-wrap: wrap;
         .story {
             border: 1px solid black;
-            height: 40vh;
+            height: 80vh;
             width: 100vw;
             @include flex-column();
+            justify-content: flex-start;
+            // overflow-y: scroll;
             // padding: 0 5%;
             // margin: 0 10% 0 0;
-            // overflow: scroll;
             // y jugar con height, igual poner un div de toda la altura para q funcione para cualquier zona o igual solo ajustar la altura de la historia
             .story-img {
                 width: 10vw;
