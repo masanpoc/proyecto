@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/proyecto/static/css/main.7ef12c1f.chunk.css",
-    "main.js": "/proyecto/static/js/main.1a196da3.chunk.js",
-    "main.js.map": "/proyecto/static/js/main.1a196da3.chunk.js.map",
+    "main.css": "/proyecto/static/css/main.dacf42a0.chunk.css",
+    "main.js": "/proyecto/static/js/main.9f5e77c2.chunk.js",
+    "main.js.map": "/proyecto/static/js/main.9f5e77c2.chunk.js.map",
     "runtime-main.js": "/proyecto/static/js/runtime-main.bc2a9d71.js",
     "runtime-main.js.map": "/proyecto/static/js/runtime-main.bc2a9d71.js.map",
     "static/js/2.aaa10017.chunk.js": "/proyecto/static/js/2.aaa10017.chunk.js",
     "static/js/2.aaa10017.chunk.js.map": "/proyecto/static/js/2.aaa10017.chunk.js.map",
     "index.html": "/proyecto/index.html",
-    "static/css/main.7ef12c1f.chunk.css.map": "/proyecto/static/css/main.7ef12c1f.chunk.css.map",
+    "static/css/main.dacf42a0.chunk.css.map": "/proyecto/static/css/main.dacf42a0.chunk.css.map",
     "static/js/2.aaa10017.chunk.js.LICENSE.txt": "/proyecto/static/js/2.aaa10017.chunk.js.LICENSE.txt",
     "static/media/Articulos.scss": "/proyecto/static/media/ProzaLibre-Regular.b009ae5c.woff2",
     "static/media/Adam.90c9a758.jpg": "/proyecto/static/media/Adam.90c9a758.jpg",
@@ -71,7 +71,7 @@
   "entrypoints": [
     "static/js/runtime-main.bc2a9d71.js",
     "static/js/2.aaa10017.chunk.js",
-    "static/css/main.7ef12c1f.chunk.css",
-    "static/js/main.1a196da3.chunk.js"
+    "static/css/main.dacf42a0.chunk.css",
+    "static/js/main.9f5e77c2.chunk.js"
   ]
 }
