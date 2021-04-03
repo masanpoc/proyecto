@@ -12,6 +12,80 @@
     justify-content: center;
   }
 
+@mixin card-style {
+  background: rgba(195, 233, 255, 0.75);
+        width: 100vw;
+        height: 85vh;
+        position: relative;
+}
+
+@mixin header-style {
+  font-weight: lighter;
+          font-size: 1.4em;
+          background: rgba(255, 255, 255, 0.8);
+          position: absolute;
+          top: 3.5vh;
+          margin: 0 10% 0 7.5%;
+}
+
+@mixin mask-style {
+  
+  background: yellow;
+  overflow: hidden;
+  position: absolute;
+  z-index: 2;
+}
+
+@mixin link-style {
+  @include flex-row();
+  position: absolute;
+  background: rgba(255, 255, 255, 0.84);
+  padding: 2% 1% 2% 0;
+  text-decoration: underline;
+  gap: 2%;
+  font-size: 0.9em;
+}
+
+@mixin text-style {
+  font-family: 'Lato';
+  text-align: left;
+  padding:0 2.5% 2.5% 5%;
+}
+
+@mixin head-style {
+  font-size: 1.2em;
+  font-weight: lighter;
+  text-decoration: underline;
+  padding: 5% 5% 0 5%;
+  width: 90%;
+}
+
+@mixin content-style {
+  position: absolute;
+  background: rgba(245, 249, 255, 0.71);
+  padding: 2%;
+  @include flex-column();
+  justify-content: space-around;
+}
+
+  @font-face {
+    font-family: 'Lora';
+    src: url('../../fonts/Lora-Regular.woff2') format('woff2'),
+        url('../../fonts/Lora-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'Lato';
+    src: url('../../fonts/Lato-Light.woff2') format('woff2'),
+        url('../../fonts/Lato-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
 ul {
   margin: 0;
 }
@@ -21,6 +95,7 @@ ul {
     overflow-y: hidden;
     // z-index: 2;
     background: white;
+    
     // min-height: 100vh;
     .background-carousel {
       background-color: black;
@@ -140,27 +215,23 @@ ul {
     .feed {
       @include flex-column();
       background: white;
-     
-
+      font-family: 'Lora';
+      text-align: left;
       .item-1 {
-        @include flex-column();
-        justify-content: space-around;
-        border: 5px solid yellow;
+        @include card-style();
         margin: 30% 0 25% 0;
-        background: rgba(195, 233, 255, 0.75);
-        width: 100vw;
-        height: 80vh;
         .header-1 {
-          border: 1px solid black;
-          background: rgba(255, 255, 255, 0.8);
+          @include header-style();
+          padding: 2.5% 2.5% 2.5% 4%;
+          top: 3.5vh;
+          margin: 0 10% 0 7.5%;
         }
         .mask {
+          @include mask-style();
           height: 20vh;
-          width: 60vw;
-          background: yellow;
-          overflow: hidden;
-          position: relative;
-          border: 5px solid yellow;
+          width: 65vw;
+          top: 15.5vh;
+          right: 5vw;
           .bg {
             position: absolute;
             background: rgb(56, 56, 56);
@@ -172,103 +243,136 @@ ul {
             // bottom: 0;
             left: 0;
             z-index: 2;
-            height: 25vh;
+            height: 30vh;
             width: auto;
           }
         }
         .content-1 {
-          border: 1px solid black;
-          background: rgba(245, 249, 255, 0.71);
+          @include content-style();
+          top: 33vh;
+          // height: 42.5vh;
+          z-index: 3;
+          margin: 0 10% 0 9%;
+          .head {
+            @include head-style();
+          }
+          .text {
+            @include text-style();
+          }
+
         }
         .link-1 {
-          border: 1px solid black;
-          background: rgba(255, 255, 255, 0.84);
+          @include link-style();
+          width: 50vw;
+          z-index: 4;
+          top: 74vh;
+          right: 7.5vw;
         }
       }
 
       .item-2 {
-        @include flex-column();
-        border: 5px solid violet;
-        justify-content: space-around;
         margin: 25% 0 25% 0;
-        background: rgba(195, 233, 255, 0.75);
-        width: 100vw;
-        height: 80vh;
-        position: relative;
+        @include card-style();
+
         .header-2 {
-          border: 1px solid black;
-          background: rgba(255, 255, 255, 0.8);
+          @include header-style();
+          padding: 2.5% 2.5% 2.5% 4%;
         }
         .content-2 {
-          border: 1px solid black;
-          background: rgba(245, 249, 255, 0.71);
-          z-index: 3;
+          z-index: 5;
+          @include content-style();
+          top: 16vh;
+          // height: ;
+          margin: 0 10% 0 9%;
+          .head {
+            @include head-style();
+          }
+          .text {
+            @include text-style();
+          }
         }
         .wrap{
-          @include flex-row();
+          position: absolute;
           z-index: 2;
-          img {
+          top: 45vh;
+          left: 15vw;
+          .mask1 {
+            // background: yellow;
+            z-index: 2;
+            transform: rotate(7.5deg);
+            height: 32.5vh;
+            width: 57.5vw;
+            overflow: hidden;
+            position: absolute;
+            // display: none;
+          }
+          .info-image-1 {
             height: 305px;
             width: auto;
-          }
-          .mask1 {
             position: absolute;
-            bottom: 10%;
-            left: 20%;
-            z-index: 2;
-            transform: rotate(10deg);
-            height: 40vh;
-            width: 60vw;
-            overflow: hidden;
+            left: -10vw;
+            top: -5vh;
           }
           .mask2 {
-            position: absolute;
-            bottom: 10%;
-            left: 20%;
+            // background: yellow;
             z-index: 3;
-            transform: rotate(-10deg);
+            transform: rotate(-5deg);
             overflow: hidden;
-            height: 40vh;
-            width: 60vw;
-
+            height: 32.5vh;
+            width: 57.5vw;
+            position: absolute;
+            // display: none;
+          }
+          .info-image-2 {
+            height: 405px;
+            width: auto;
+            position: absolute;
+            // left: -10vw;
+            top: -10vh;
           }
           .mask3 {
-            position: absolute;
-            bottom: 10%;
-            left: 20%;
-            z-index: 4;
-            
+            // background: yellow;
+            transform: rotate(-5deg);
             overflow: hidden;
-            height: 40vh;
-            width: 60vw;
-
+            height: 32.5vh;
+            width: 57.5vw;
+            z-index: 4;
+            position: absolute;
+            // display: none;
+          }
+          .info-image-3 {
+            height: 355px;
+            width: auto;
+            position: absolute;
+            // left: -10vw;
+            top: -15vh;
           }
         }
         .link-2 {
-          z-index: 3;
-          border: 1px solid black;
+          @include link-style();
+          width: 55vw;
+          top: 67.5vh;
+          right: 7.5vw;
+          z-index: 5;
           background: rgba(255, 255, 255, 0.84);
         }
       }
 
       .item-3 {
-        @include flex-column();
-        border: 5px solid green;
-        justify-content: space-around;
         margin: 25% 0 25% 0;
-        background: rgba(195, 233, 255, 0.75);
-        width: 100vw;
-        height: 80vh;
+        @include card-style();
         .header-3 {
-          border: 1px solid black;
-          background: rgba(255, 255, 255, 0.8);
+          @include header-style();
+          padding: 2.5% 2.5% 2.5% 4%;
+          // border: 1px solid black;
         }
-        
         .mask {
+          @include mask-style();
           height: 20vh;
-          width: 60vw;
-          overflow: hidden;
-          position: relative;
+          width: 65vw;
+          top: 17vh;
+          left: 10vw;
+          z-index: 2;
           .bg {
             position: absolute;
             background: rgb(56, 56, 56);
@@ -288,36 +392,61 @@ ul {
           }
         }
         .content-3 {
-          border: 1px solid black;
+          // border: 1px solid black;
           background: rgba(245, 249, 255, 0.71);
+          @include content-style();
+          top: 39vh;
+          // height: ;
+          margin: 0 12.5% 0 7.5%;
+          z-index: 3;
+          .head {
+            @include head-style();
+          }
+          .text {
+            @include text-style();
+          }
         }
         .link-3 {
-          border: 1px solid black;
+          @include link-style();
+          width: 40vw;
+          top: 74vh;
+          right: 10vw;
+          z-index: 4;
+          // border: 1px solid black;
           background: rgba(255, 255, 255, 0.84);
         }
       }
 
       .item-4 {
-        @include flex-column();
-        border: 5px solid black;
-        justify-content: space-around;
-        margin: 25% 0 25% 0;
-        background: rgba(195, 233, 255, 0.75);
-        width: 100vw;
-        height: 80vh;
+        margin: 25% 0 30% 0;
+        @include card-style();
         .header-4 {
-          border: 1px solid black;
-          background: rgba(255, 255, 255, 0.8);
+          @include header-style();
+          padding: 2.5% 2.5% 2.5% 4%;
+          // border: 1px solid black;
         }
         .content-4 {
-          border: 1px solid black;
+          // border: 1px solid black;
           background: rgba(245, 249, 255, 0.71);
+          @include content-style();
+          top: 17.5vh;
+          // height: ;
+          margin: 0 12.5% 0 7.5%;
+          z-index: 3;
+          .head {
+            @include head-style();
+          }
+          .text {
+            @include text-style();
+          }
         }
         .mask {
-          height: 30vh;
-          width: 70vw;
-          overflow: hidden;
-          position: relative;
+          @include mask-style();
+          height: 25vh;
+          width: 75vw;
+          z-index: 2;
+          top: 56vh;
+          left: 15vw;
           .bg {
             position: absolute;
             background: rgb(56, 56, 56);
@@ -325,7 +454,7 @@ ul {
             left: 0;
             z-index: 42;
             height: 30vh;
-            width: 70vw;
+            width: 75vw;
           }
           .item-4-image {
             position: absolute;
@@ -337,11 +466,20 @@ ul {
           }
         }
         .link-4 {
-          border: 1px solid black;
+          @include link-style();
+          width: 37.5vw;
+          top: 60vh;
+          right: 12.5vw;
+          z-index: 4;
+          // border: 1px solid black;
           background: rgba(255, 255, 255, 0.84);
         }
       }
 
+      .arrow {
+        height: 25px;
+        width: 25px;
+      }
       
      
     }

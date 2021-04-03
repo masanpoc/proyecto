@@ -49,14 +49,16 @@ export const HistoriaFeed = () => {
                  alt='info' src={historia} className='info-image' />
             </div>
             <div className='content-1'>
-                <h3>Aprendiendo música juntos desde 200X</h3>
-                <div>
+                <h3 className='head'>Aprendiendo música juntos desde 200X</h3>
+                <div className='text'>
                     <p>iam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim iptione voluptatem sequi nesciunt. </p>
                     <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>
                 </div>
             </div>
             <span className='link-1'>
-                arrow svg
+                <svg className='arrow' viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" />
+                </svg>
                 <a href='#none'>Ver nuestra historia </a>
             </span>
 
