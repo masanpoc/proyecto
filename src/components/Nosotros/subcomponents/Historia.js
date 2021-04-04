@@ -42,9 +42,9 @@ export const Historia = () => {
 
 
     // useEffect definitions
-    useEffect(() => {
-        slide()
-    }, [])
+    // useEffect(() => {
+    //     slide()
+    // }, [])
 
     useEffect(() => {
         // timeoutId for debounce mechanism
