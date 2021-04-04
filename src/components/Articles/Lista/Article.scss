@@ -1,0 +1,59 @@
+
+@mixin flex-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.article-written {
+    @include flex-column();
+    .intro-article {
+        .info {
+            .date {
+
+            }
+            .time {
+
+            }
+        }
+        .title {
+
+        }
+        .subtitle {
+
+        }
+        .writer {
+
+        }
+        
+
+    }
+
+    .part {
+        .title-2 {
+
+        }
+        .media {
+            .image {
+
+            }
+            .caption {
+
+            }
+        }
+    }
+
+    .content {
+        .paragraph {
+
+        }
+    }
+}
