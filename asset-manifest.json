@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/proyecto/static/css/main.18b9e279.chunk.css",
-    "main.js": "/proyecto/static/js/main.d152c28d.chunk.js",
-    "main.js.map": "/proyecto/static/js/main.d152c28d.chunk.js.map",
+    "main.css": "/proyecto/static/css/main.82d60ab4.chunk.css",
+    "main.js": "/proyecto/static/js/main.94b78bfa.chunk.js",
+    "main.js.map": "/proyecto/static/js/main.94b78bfa.chunk.js.map",
     "runtime-main.js": "/proyecto/static/js/runtime-main.bc2a9d71.js",
     "runtime-main.js.map": "/proyecto/static/js/runtime-main.bc2a9d71.js.map",
     "static/js/2.f00e827a.chunk.js": "/proyecto/static/js/2.f00e827a.chunk.js",
     "static/js/2.f00e827a.chunk.js.map": "/proyecto/static/js/2.f00e827a.chunk.js.map",
     "index.html": "/proyecto/index.html",
-    "static/css/main.18b9e279.chunk.css.map": "/proyecto/static/css/main.18b9e279.chunk.css.map",
+    "static/css/main.82d60ab4.chunk.css.map": "/proyecto/static/css/main.82d60ab4.chunk.css.map",
     "static/js/2.f00e827a.chunk.js.LICENSE.txt": "/proyecto/static/js/2.f00e827a.chunk.js.LICENSE.txt",
     "static/media/Articulos.scss": "/proyecto/static/media/ProzaLibre-Regular.b009ae5c.woff2",
     "static/media/Adam.90c9a758.jpg": "/proyecto/static/media/Adam.90c9a758.jpg",
@@ -29,7 +29,7 @@
     "static/media/Chueca.3cece7a5.jpg": "/proyecto/static/media/Chueca.3cece7a5.jpg",
     "static/media/Corelli.da628606.jpg": "/proyecto/static/media/Corelli.da628606.jpg",
     "static/media/Cortona.476e0455.jpg": "/proyecto/static/media/Cortona.476e0455.jpg",
-    "static/media/App.scss": "/proyecto/static/media/EBGaramond-Regular.4aa586dd.woff2",
+    "static/media/App.scss": "/proyecto/static/media/OpenSans-Regular.403af3bc.woff2",
     "static/media/Gaos.8bf98a06.jpg": "/proyecto/static/media/Gaos.8bf98a06.jpg",
     "static/media/Guerrero.63718479.jpg": "/proyecto/static/media/Guerrero.63718479.jpg",
     "static/media/Haendel.9c0cd203.jpg": "/proyecto/static/media/Haendel.9c0cd203.jpg",
@@ -40,6 +40,7 @@
     "static/media/Morricone.2855ff95.jpg": "/proyecto/static/media/Morricone.2855ff95.jpg",
     "static/media/Mozart.3f125a10.jpg": "/proyecto/static/media/Mozart.3f125a10.jpg",
     "static/media/Otros.3e9d22c6.jpg": "/proyecto/static/media/Otros.3e9d22c6.jpg",
+    "static/media/Inicio.scss": "/proyecto/static/media/PTSerif-Regular.d3ffffbe.woff",
     "static/media/Pachelbel.04c3a655.jpg": "/proyecto/static/media/Pachelbel.04c3a655.jpg",
     "static/media/Penella.e6f201de.jpg": "/proyecto/static/media/Penella.e6f201de.jpg",
     "static/media/Pineiro.07150173.jpg": "/proyecto/static/media/Pineiro.07150173.jpg",
@@ -71,7 +72,7 @@
   "entrypoints": [
     "static/js/runtime-main.bc2a9d71.js",
     "static/js/2.f00e827a.chunk.js",
-    "static/css/main.18b9e279.chunk.css",
-    "static/js/main.d152c28d.chunk.js"
+    "static/css/main.82d60ab4.chunk.css",
+    "static/js/main.94b78bfa.chunk.js"
   ]
 }
