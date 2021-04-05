@@ -12,26 +12,71 @@
     justify-content: center;
 }
 
+@font-face {
+    font-family: 'Exo';
+    src: url('../../../fonts/Exo-Thin.woff2') format('woff2'),
+        url('../../../fonts/Exo-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Arvo';
+    src: url('../../../fonts/Arvo.woff2') format('woff2'),
+        url('../../../fonts/Arvo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../../../fonts/PlayfairDisplay-Regular.woff2') format('woff2'),
+        url('../../../fonts/PlayfairDisplay-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../../../fonts/Lato-Light.woff2') format('woff2'),
+        url('../../../fonts/Lato-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
 
 .article-written {
     @include flex-column();
     .intro-article {
+        
         .info {
+            @include flex-row();
             .date {
-
+                font-family: 'Arvo';
+                font-style: italic;
+                color: #818181;
             }
             .time {
-
+                .estimation {
+                    font-family: 'Lato';
+                    color: #818181;
+                    font-style: italic;
+                }
+               
             }
         }
         .title {
-
+            font-family: 'Playfair Display';
         }
         .subtitle {
-
+            font-family: 'Exo';
         }
         .writer {
-
+            font-family: 'Lato';
+            font-style: italic;
         }
         
 
@@ -39,21 +84,90 @@
 
     .part {
         .title-2 {
-
+            font-family: 'Playfair Display';
         }
         .media {
             .image {
-
+                height: 20vh;
+                width: 80vw;
             }
             .caption {
-
+                font-family: 'Lato';
             }
         }
     }
 
     .content {
         .paragraph {
-
+            font-family: 'Lato';
+            font-weight: lighter;
         }
+    }
+
+    .extra {
+        border: 1px solid gray;
+        .wrapper-1 {
+            .title-3 {
+                font-family: 'Exo';
+            }
+            .subtitle-3 {
+                font-family: 'Lato';
+                font-style: italic;
+                color: #a4a4a4;
+            }
+            .resource {
+                font-family: 'Lato';
+                font-style: italic;
+                color: #969696;
+            }
+        }
+        .wrapper-2 {
+            overflow: hidden;
+            height: 25vh;
+            width: 32vw;
+            box-shadow: inset 0 4px 4px 1000px rgba(99, 99, 99, 0.58);
+            // blur
+            .image-extra {
+                height: 25vh;
+                width: auto;
+            }
+        }
+    }
+
+    .share {
+        @include flex-row();
+        justify-content: flex-end;
+        .icons {
+            width: 20vh;
+            height: 20vh;
+        }
+    }
+
+    .about {
+        border: 1px solid gray;
+        .flexing {
+            @include flex-row();
+            .mask {
+                border-radius: 50%;
+                height: 30vh;
+                width: 30vh;
+            }
+            .writer-line {
+                font-family: 'Lato';
+                font-weight: lighter;
+                font-style: italic;
+            }
+            .name-line {
+                font-family: 'Lato';
+            }
+        }
+        .quote {
+            font-family: 'Lato';
+            font-style: italic;
+        }
+    }
+
+    .link {
+
     }
 }

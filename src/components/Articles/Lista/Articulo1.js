@@ -5,13 +5,13 @@ import { BrowserRouter as Router, Switch, Route, Link, Redirect} from 'react-rou
 export const Articulo1 = () => {
     return (
         <div className='article-written' style={{'minHeight': '100vh'}}>
-            articulo 1
+            
             <div className='intro-article'>
                 <div className='info'>
                     <span className='date'>7 Febrero, 2021</span>
                     <div className='time'>
                         svg
-                        <span>4 min de Lectura</span>
+                        <span className='estimation'>4 min de Lectura</span>
                     </div>
                 </div>
                 <h1 className='title'>
@@ -102,7 +102,7 @@ export const Articulo1 = () => {
                         </span>
                     </div>
                     <div className='wrapper-2'>
-                        <img alt='violin pic' src='' className='image' />
+                        <img alt='violin pic' src='' className='image-extra' />
                     </div>
             </div>
 
@@ -119,7 +119,7 @@ export const Articulo1 = () => {
                         </span>
                     </div>
                     <div className='wrapper-2'>
-                        <img alt='book pic' src='' className='image' />
+                        <img alt='book pic' src='' className='image-extra' />
                     </div>
             </div>
 
