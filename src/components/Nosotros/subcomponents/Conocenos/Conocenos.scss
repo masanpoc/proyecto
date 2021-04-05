@@ -52,8 +52,6 @@
 
 .conocenos {
     overflow-x: hidden;
-    // background: #C6FFC1;
-    background: white;
     display: flex;
     flex-direction: column;
     // gap: 100px;
@@ -109,7 +107,7 @@
     .c-objetivos {
         // border-top: 1px solid black;
         // border-bottom: 1px solid black;
-        background: rgba(255, 255, 255, 0.93);
+        background: white;
         margin: 40% 0 30% 0;
         padding-bottom: 25%; 
         .img {
@@ -125,7 +123,7 @@
     .c-equipo {
         // border-top: 1px solid black;
         // border-bottom: 1px solid black;
-        background: rgba(255, 255, 255, 0.93);
+        background: white;
         margin: 30% 0;
         padding-bottom: 25%; 
         .img-2 {
@@ -144,7 +142,7 @@
         padding-bottom: 25%; 
         // border-top: 1px solid black;
         // border-bottom: 1px solid black;
-        background: rgba(255, 255, 255, 0.93);
+        background: white;
         .img {
             height: 30vh;
             width: auto;
@@ -204,7 +202,7 @@
         .c-objetivos {
             // border-top: 1px solid black;
             // border-bottom: 1px solid black;
-            background: rgba(255, 255, 255, 0.93);
+            background: white;
             // margin: 0 10%;
             padding-bottom: 5%; 
             .img {
@@ -214,7 +212,7 @@
         }
     
         .c-equipo {
-            background: rgba(255, 255, 255, 0.93);
+            background: white;
             // background: yellow;
             .img-2 {
                 height: 20vh;
@@ -225,7 +223,7 @@
         .c-actividades {
             // border-top: 1px solid black;
             // border-bottom: 1px solid black;
-            background: rgba(255, 255, 255, 0.93);
+            background: white;
     
         }
     }
