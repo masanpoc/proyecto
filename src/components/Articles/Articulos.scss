@@ -60,7 +60,8 @@ h1, h2, h3, h4, h5, h6 {
     // gap: 100px;
     justify-content: flex-start;
     min-height: 100vh;
-    background-color: black;
+    background: white;
+    // background-color: black;
     > * {
         margin: 30% 0;
     } 

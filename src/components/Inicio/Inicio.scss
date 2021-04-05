@@ -86,6 +86,24 @@
     font-display: swap;
   }
 
+  @font-face {
+    font-family: 'Milliard';
+    src: url('../../fonts/Milliard-Thin.woff2') format('woff2'),
+        url('../../fonts/Milliard-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PT Serif';
+    src: url('../../fonts/PTSerif-Regular.woff2') format('woff2'),
+        url('../../fonts/PTSerif-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 ul {
   margin: 0;
 }
@@ -93,59 +111,45 @@ ul {
 .inicio {
     overflow-x: hidden;
     overflow-y: hidden;
-    // z-index: 2;
     background: white;
-    
-    // min-height: 100vh;
     .background-carousel {
       background-color: black;
-      // overflow-x: scroll;
       .carousel {
         position: relative;
-        height: 45vh;
+        height: 40vh;
         width: 100vw;
-
+        margin: 5vh 0;
         background-color: black;
         .carousel-bttn {
           display: none;
         }
         .image-list {
-          // display: flex;
-          // padding: 0;
-          // margin: 0;
-          // margin-left: 20%;
           * {
             object-fit: cover;
             object-position: center;
-            // width: 10vw;
-            // height: auto;
             width: 100vw;
-            height: 45vh;
+            height: 40vh;
           }
           
           #img1 {
             position: absolute;
             top: 0;
             left: 0;
-            // left: 20vw;
           }
           #img2 {
             position: absolute;
             top: 0;
-            // left: 30vw;
             left: 100vw;
           }
           #img3 {
             position: absolute;
             top: 0;
             left: 200vw;
-            // left: 40vw;
           }
           #img4 {
             position: absolute;
             top: 0;
             left: 300vw;
-            // left: 50vw;
           }
         }
         .limit {
@@ -154,37 +158,6 @@ ul {
           background: yellowgreen;
           border: 1px solid white;
         }
-        // #l0 {
-        //   position: absolute;
-        //   top: 10vh;
-        //   // left: 0;
-        //   left: 10vw;
-        //   background: yellow;
-        // }
-        // #l1 {
-        //   position: absolute;
-        //   top: 10vh;
-        //   // left: 0;
-        //   left: 20vw;
-        // }
-        // #l2 {
-        //   position: absolute;
-        //   top:10vh;
-        //   // left: 0;
-        //   left: 30vw;
-        // }
-        // #l3 {
-        //   position: absolute;
-        //   top: 10vh;
-        //   // left: 0;
-        //   left: 40vw;
-        // }
-        // #l4 {
-        //   position: absolute;
-        //   top: 10vh;
-        //   // left: 0;
-        //   left: 50vw;
-        // }
         .content-list {
           @include flex-column();
           
@@ -195,17 +168,26 @@ ul {
                 @include flex-column();
               }
               :nth-child(1) {
-                margin-bottom: 5%;
+                margin-bottom: 3%;
+                font-size: 1em;
+                // font-family: 'PT Serif';
+                font-weight: lighter;
+                padding-top: 1%;
+                padding-left: 3%;
+                padding-right: 3%;
+              }
+              :nth-child(2) {
+                font-family: 'Milliard';
+                font-size: 0.8em;
+                padding-bottom: 2%;
               }
               padding: 3% 3%;
-              // border-radius: 10px;
-              width: fit-content;
-              // width: 60vw;
-              background-color: rgba(255, 255, 255, 0.705);
+              width: 100vw;
+              background-color: rgba(255, 255, 255, 0.884);
               position: absolute;
-              top: 15vh;
+              top: 25vh;
               left: 50vw;
-              transform: translateX(-50%);
+              transform: translateX(-50%) translateY(-50%);
             }
           }
         }
@@ -219,7 +201,7 @@ ul {
       text-align: left;
       .item-1 {
         @include card-style();
-        margin: 30% 0 25% 0;
+        margin: 50% 0 35% 0;
         .header-1 {
           @include header-style();
           padding: 2.5% 2.5% 2.5% 4%;
@@ -240,7 +222,6 @@ ul {
           }
           .info-image {
             position: absolute;
-            // bottom: 0;
             left: 0;
             z-index: 2;
             height: 30vh;
@@ -250,7 +231,6 @@ ul {
         .content-1 {
           @include content-style();
           top: 33vh;
-          // height: 42.5vh;
           z-index: 3;
           margin: 0 10% 0 9%;
           .head {
@@ -271,7 +251,7 @@ ul {
       }
 
       .item-2 {
-        margin: 25% 0 25% 0;
+        margin: 35% 0 35% 0;
         @include card-style();
 
         .header-2 {
@@ -297,14 +277,12 @@ ul {
           top: 45vh;
           left: 15vw;
           .mask1 {
-            // background: yellow;
             z-index: 2;
             transform: rotate(7.5deg);
             height: 32.5vh;
             width: 57.5vw;
             overflow: hidden;
             position: absolute;
-            // display: none;
           }
           .info-image-1 {
             height: 305px;
@@ -314,37 +292,31 @@ ul {
             top: -5vh;
           }
           .mask2 {
-            // background: yellow;
             z-index: 3;
             transform: rotate(-5deg);
             overflow: hidden;
             height: 32.5vh;
             width: 57.5vw;
             position: absolute;
-            // display: none;
           }
           .info-image-2 {
             height: 405px;
             width: auto;
             position: absolute;
-            // left: -10vw;
             top: -10vh;
           }
           .mask3 {
-            // background: yellow;
             transform: rotate(-5deg);
             overflow: hidden;
             height: 32.5vh;
             width: 57.5vw;
             z-index: 4;
             position: absolute;
-            // display: none;
           }
           .info-image-3 {
             height: 355px;
             width: auto;
             position: absolute;
-            // left: -10vw;
             top: -15vh;
           }
         }
@@ -359,12 +331,11 @@ ul {
       }
 
       .item-3 {
-        margin: 25% 0 25% 0;
+        margin: 35% 0 35% 0;
         @include card-style();
         .header-3 {
           @include header-style();
           padding: 2.5% 2.5% 2.5% 4%;
-          // border: 1px solid black;
         }
         .mask {
           @include mask-style();
@@ -392,10 +363,9 @@ ul {
           }
         }
         .content-3 {
-          // border: 1px solid black;
           background: rgba(245, 249, 255, 0.71);
           @include content-style();
-          top: 39vh;
+          top: 35vh;
           // height: ;
           margin: 0 12.5% 0 7.5%;
           z-index: 3;
@@ -412,25 +382,21 @@ ul {
           top: 74vh;
           right: 10vw;
           z-index: 4;
-          // border: 1px solid black;
           background: rgba(255, 255, 255, 0.84);
         }
       }
 
       .item-4 {
-        margin: 25% 0 30% 0;
+        margin: 35% 0 100% 0;
         @include card-style();
         .header-4 {
           @include header-style();
           padding: 2.5% 2.5% 2.5% 4%;
-          // border: 1px solid black;
         }
         .content-4 {
-          // border: 1px solid black;
           background: rgba(245, 249, 255, 0.71);
           @include content-style();
-          top: 17.5vh;
-          // height: ;
+          top: 16vh;
           margin: 0 12.5% 0 7.5%;
           z-index: 3;
           .head {
@@ -442,11 +408,11 @@ ul {
         }
         .mask {
           @include mask-style();
-          height: 25vh;
-          width: 75vw;
+          height: 21vh;
+          width: 70vw;
           z-index: 2;
-          top: 56vh;
-          left: 15vw;
+          top: 60vh;
+          left: 20vw;
           .bg {
             position: absolute;
             background: rgb(56, 56, 56);
@@ -468,10 +434,9 @@ ul {
         .link-4 {
           @include link-style();
           width: 37.5vw;
-          top: 60vh;
+          top: 63.5vh;
           right: 12.5vw;
           z-index: 4;
-          // border: 1px solid black;
           background: rgba(255, 255, 255, 0.84);
         }
       }
@@ -498,24 +463,28 @@ h3, h2, h4 {
   .inicio {
     .background-carousel {
       .carousel {
-        margin: 5vh 0;
-        
-        // padding: 200px 0;
-        height: 40vh;
+        margin: 0;
+        height: 45vh;
         .image-list {
           * {
-            height: 40vh;
+            height: 45vh;
           }
         }
         .content-list {
-          // añadir otra classname
           #item {
             left: 0;
             .content-inner {
-              width: 100vw;
+              top: 22.5vh;
+              width: fit-content;
+              padding: 2%;
               :nth-child(1) {
-                margin-bottom: 4%;
-                font-size: 1em;
+                font-size: 1.2em;
+                padding: 0;
+                margin-bottom: 2%;
+              }
+              :nth-child(2) {
+                font-size: 0.9em;
+                padding: 0;
               }
             }
           }

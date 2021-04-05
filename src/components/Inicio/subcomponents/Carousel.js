@@ -12,25 +12,25 @@ import gsap from 'gsap';
 const list = [ 
     {
         title: '"La imaginación crea la realidad."',
-        author: 'Richard Wagner',
+        author: '- RICHARD WAGNER',
         genre: 'barroque',
         src: Pic1
     },
     {
         title: '"Si no fuera por la música, habría más razones para volverse loco."',
-        author: 'Tchaikovski',
+        author: '- TCHAIKOVSKY',
         genre: 'barroque',
         src: Pic2
     },
     {
         title: '"El músico es tal vez el más modesto de los animales, pero también es el más orgulloso."',
-        author: 'Erik Satie',
+        author: '- ERIK SATIE',
         genre: 'barroque',
         src: Pic3
     },
     {
         title: '"La música es el acto social de comunicación entre personas. Es un gesto de amistad. El más fuerte que existe."',
-        author: 'Malcolm Arnold',
+        author: '- MALCOLM ARNOLD',
         genre: 'barroque',
         src: Pic4
     }
