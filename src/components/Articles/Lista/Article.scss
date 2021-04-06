@@ -49,34 +49,65 @@
   }
 
 .article-written {
+    margin-top: 80px;
+    margin-left: 8.5vw;
+    margin-right: 8vw;
+    margin-bottom: 20vh;
+    text-align: left;
     @include flex-column();
     .intro-article {
         
         .info {
             @include flex-row();
+            // border: 1px solid black;
+            justify-content: space-between;
             .date {
                 font-family: 'Arvo';
                 font-style: italic;
                 color: #818181;
+                font-size: 0.9em;
             }
             .time {
-                .estimation {
-                    font-family: 'Lato';
+                @include flex-row();
+                gap: 2px;
+                .clock {
+                    height: 20px;
+                    width: 20px;
                     color: #818181;
+                }
+                .estimation {
+                    font-family: 'Arvo';
                     font-style: italic;
+                    color: #818181;
+                    font-size: 0.9em;
                 }
                
             }
         }
         .title {
             font-family: 'Playfair Display';
+            font-size: 1.4em;
+            margin: 5% 0;
         }
         .subtitle {
             font-family: 'Exo';
         }
         .writer {
-            font-family: 'Lato';
-            font-style: italic;
+            @include flex-row();
+            gap: 5px;
+            justify-content: flex-start;
+            margin: 5% 0 7.5% 0;
+            .pencil {
+                height: 20px;
+                width: 20px;
+
+            }
+            .who {
+                font-family: 'Lato';
+                // font-style: italic;
+                font-weight: lighter;
+            }
+            
         }
         
 
@@ -85,14 +116,39 @@
     .part {
         .title-2 {
             font-family: 'Playfair Display';
+            margin-top: 7.5%;
         }
         .media {
+            @include flex-column();
             .image {
-                height: 20vh;
+                height: auto;
                 width: 80vw;
             }
             .caption {
+                margin-top: 5%;
+                font-size: 0.9em;
                 font-family: 'Lato';
+                font-weight: lighter;
+                color: #555555;
+            }
+        }
+        .list {
+            // border: 1px solid black;
+            .item {
+                font-family: 'Lato';
+                font-weight: lighter;
+                list-style: outside;
+                // margin-left: 10%;
+                margin: 3.5% 0 3.5% 10%;
+                line-height: 125%;
+            }
+        }
+        .content-link {
+            .paragraph {
+                line-height: 140%;
+                background: #b1b1b11c;
+                padding: 5%;
+                border-left: 1px solid black;
             }
         }
     }
@@ -101,73 +157,141 @@
         .paragraph {
             font-family: 'Lato';
             font-weight: lighter;
+            line-height: 165%;
+            margin: 10% 0;
         }
     }
 
+    .hr-1 {
+        width: 90%;
+        border-top: 0.5px solid black;
+        margin-left: 0%;
+    }
+
     .extra {
-        border: 1px solid gray;
+        @include flex-row();
+        border: 1px solid #b1b1b1;
+        margin: 5% 0 15% 0;
+        width: 100%;
         .wrapper-1 {
+            width: 55%;
             .title-3 {
                 font-family: 'Exo';
+                text-decoration: underline;
+                font-size: 1.1em;
+                width: 85%;
+                margin-left: 7.5%;
             }
             .subtitle-3 {
                 font-family: 'Lato';
                 font-style: italic;
                 color: #a4a4a4;
+                width: 85%;
+                margin-left: 7.5%;
+                margin-top: 5%;
+                margin-bottom: 5%;
             }
             .resource {
                 font-family: 'Lato';
                 font-style: italic;
                 color: #969696;
+                width: 85%;
+                margin-left: 7.5%;
             }
         }
         .wrapper-2 {
             overflow: hidden;
             height: 25vh;
-            width: 32vw;
+            width: 45%;
             box-shadow: inset 0 4px 4px 1000px rgba(99, 99, 99, 0.58);
+            position: relative;
             // blur
             .image-extra {
-                height: 25vh;
+                height: 35vh;
                 width: auto;
+                // position: absolute;
+                // left: -20%;
             }
         }
     }
 
     .share {
-        @include flex-row();
-        justify-content: flex-end;
+        width: 100%;
+        .hr-2 {
+            width: 100%;
+            border-top: 0.5px solid black;
+            margin-left: 0%;
+        }
         .icons {
-            width: 20vh;
-            height: 20vh;
+            border: 1px solid #b1b1b1;
+            width: fit-content;
+            // height: 6vh;
+            @include flex-row();
+            justify-content: flex-end;
+            margin-left: auto;
+            margin-top: 5vh;
+            .icon {
+                height: 12.5vw;
+                width: 12.5vw;
+                margin: 0 3.5%;
+            }
         }
     }
 
     .about {
-        border: 1px solid gray;
+        margin-top: 7.5vh;
+        padding: 2% 0;
+        border: 1px solid #b1b1b1;
+        @include flex-column();
         .flexing {
+            width: 100%;
+            // border: 1px solid black;
             @include flex-row();
+            justify-content: space-around;
+            margin: 2.5vh 0;
             .mask {
                 border-radius: 50%;
-                height: 30vh;
-                width: 30vh;
+                height: 15vh;
+                width: 15vh;
+                overflow: hidden;
+                @include flex-column();
+                .author-img {
+                    height: 15vh;
+                    width: auto;
+                }
             }
-            .writer-line {
-                font-family: 'Lato';
-                font-weight: lighter;
-                font-style: italic;
+            
+            .editor {
+                @include flex-column();
+                gap: 1.5vh;
+                width: 50%;
+                align-items: flex-start;
+                // border: 1px solid black;
+                .writer-line {
+                    font-family: 'Lato';
+                    font-weight: lighter;
+                    // font-style: italic;
+                    font-size: 1.1em;
+                }
+                .name-line {
+                    font-family: 'Lato';
+                    font-size: 1.2em;
+                    text-decoration: underline;
+                    // font-weight: lighter;
+                }
             }
-            .name-line {
-                font-family: 'Lato';
-            }
+            
         }
         .quote {
             font-family: 'Lato';
             font-style: italic;
+            margin: 2.5% 5% 7.5% 5%;
         }
     }
 
     .link {
-
+        margin-top: 10vh;
+        font-family: 'Lato';
+        text-decoration: underline;
     }
 }
