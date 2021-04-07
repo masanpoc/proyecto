@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/proyecto/static/css/main.27debe78.chunk.css",
-    "main.js": "/proyecto/static/js/main.c6dba120.chunk.js",
-    "main.js.map": "/proyecto/static/js/main.c6dba120.chunk.js.map",
+    "main.css": "/proyecto/static/css/main.14165d2e.chunk.css",
+    "main.js": "/proyecto/static/js/main.b0c56218.chunk.js",
+    "main.js.map": "/proyecto/static/js/main.b0c56218.chunk.js.map",
     "runtime-main.js": "/proyecto/static/js/runtime-main.bc2a9d71.js",
     "runtime-main.js.map": "/proyecto/static/js/runtime-main.bc2a9d71.js.map",
     "static/js/2.f00e827a.chunk.js": "/proyecto/static/js/2.f00e827a.chunk.js",
     "static/js/2.f00e827a.chunk.js.map": "/proyecto/static/js/2.f00e827a.chunk.js.map",
     "index.html": "/proyecto/index.html",
-    "static/css/main.27debe78.chunk.css.map": "/proyecto/static/css/main.27debe78.chunk.css.map",
+    "static/css/main.14165d2e.chunk.css.map": "/proyecto/static/css/main.14165d2e.chunk.css.map",
     "static/js/2.f00e827a.chunk.js.LICENSE.txt": "/proyecto/static/js/2.f00e827a.chunk.js.LICENSE.txt",
     "static/media/Articulos.scss": "/proyecto/static/media/ProzaLibre-Regular.b009ae5c.woff2",
     "static/media/Adam.90c9a758.jpg": "/proyecto/static/media/Adam.90c9a758.jpg",
@@ -55,6 +55,10 @@
     "static/media/Valverde.53e089a0.jpg": "/proyecto/static/media/Valverde.53e089a0.jpg",
     "static/media/Vivaldi.7d5419a9.jpg": "/proyecto/static/media/Vivaldi.7d5419a9.jpg",
     "static/media/Vives.6985ec47.jpg": "/proyecto/static/media/Vives.6985ec47.jpg",
+    "static/media/art-0.eb5d1973.jpg": "/proyecto/static/media/art-0.eb5d1973.jpg",
+    "static/media/art-1.af1f9597.jpg": "/proyecto/static/media/art-1.af1f9597.jpg",
+    "static/media/art-2.3779e144.jpg": "/proyecto/static/media/art-2.3779e144.jpg",
+    "static/media/art-3.f1f83cc1.jpg": "/proyecto/static/media/art-3.f1f83cc1.jpg",
     "static/media/article.56fe74a7.jpg": "/proyecto/static/media/article.56fe74a7.jpg",
     "static/media/concert.6252d832.jpg": "/proyecto/static/media/concert.6252d832.jpg",
     "static/media/director.c67019bf.jpg": "/proyecto/static/media/director.c67019bf.jpg",
@@ -73,7 +77,7 @@
   "entrypoints": [
     "static/js/runtime-main.bc2a9d71.js",
     "static/js/2.f00e827a.chunk.js",
-    "static/css/main.27debe78.chunk.css",
-    "static/js/main.c6dba120.chunk.js"
+    "static/css/main.14165d2e.chunk.css",
+    "static/js/main.b0c56218.chunk.js"
   ]
 }
