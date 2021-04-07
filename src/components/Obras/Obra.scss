@@ -49,262 +49,246 @@ $image-width: 180px;
 $top-disc: ($image-height)/(2) ;
 $left-disc: ($image-width)/(2) ;
 
+// @media (max-width: 760px) {
 .body-hidden {
     overflow-x: hidden;
-
-
-.introduction {
-    background: url('./Images/obras-bg.jpg');
     width: 100%;
-    // background: yellow;
-    background-size: cover;
-    background-position: center;
-    box-shadow: inset 0 0 1000px 1000px rgba(0, 0, 0, 0.644);
-    padding-top: 5%;
-    padding-bottom: 5%;
-    color: rgba(255, 255, 255, 0.767);
-    @include flex-column();
-    height: 70vh;
-    // font-size: 2em;
-    font-family: 'Lora';
-    // font-family: fantasy;
-    .songs-header {
-        font-style: italic;
-        font-weight: lighter;
-        font-size: 4em;
-        padding:0 0 5% 0;
-    }
-    .songs-subtitle {
-        width: 80%;
-        font-size: 1.5em;
-    }
-}
-
-.wrapper {
-    padding-top: 10%;
-    @include complete();
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    // background: linear-gradient(#000000,  #631414 ,#000000 ); 
-    // background-attachment: local;
-    background: white;
-    @include flex-column();
-
-
-    .options {
-        width: fit-content;
-        background-color: #A0A0A0;
-        padding: 2.5% 5%;
-        @include flex-row();
-        gap: 20px;
-        .songs-filtering {
+    .introduction {
+        background: url('./Images/obras-bg.jpg');
+        width: 100%;
+        // background: yellow;
+        background-size: cover;
+        background-position: center;
+        box-shadow: inset 0 0 1000px 1000px rgba(0, 0, 0, 0.644);
+        // padding-top: 5%;
+        // padding-bottom: 5%;
+        color: rgba(255, 255, 255, 0.767);
+        @include flex-column();
+        height: 70vh;
+        // font-size: 2em;
+        font-family: 'Lora';
+        // font-family: fantasy;
+        .songs-header {
+            font-style: italic;
+            font-weight: lighter;
+            font-size: 4em;
+            padding:0 0 5% 0;
+        }
+        .songs-subtitle {
+            width: 80%;
             font-size: 1.5em;
         }
-        .sorting {
-            color: black;
-            height: 3vh;
-            width: 2vw;
-            cursor: pointer;
-            border: 1px solid black;
-            transform: rotate(90deg);
-        }
-       
     }
-    
 
-    .filtros {
-        color: black;
-        margin: 0 5% 5% 5%;
-        height: 50vh;
-        width: 50%;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 10%;
-        background-color: black;
-        border: 1px solid gray;
-        // border-radius: 20px;
-        padding: 7.5% 0 2.5% 0;
-        position: relative;
-        // > * {
-        //     background-color: #A0A0A0;
-        // }
-        .closing {
-            position: absolute;
-            right: 3%;
-            top: 2.5%;
-            color: #A0A0A0;
-            background: none;
-            height: 4vh;
-            width: 6vw;
-            cursor: pointer;
-            // transform: rotate(90deg);
-        }
-        .finder {
-            @include flex-column();
-            @include complete();
-            gap: 5%;
+    .wrapper {
+        padding-top: 10%;
+        @include complete();
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        // background: linear-gradient(#000000,  #631414 ,#000000 ); 
+        // background-attachment: local;
+        background: white;
+        @include flex-column();
+
+
+        .options {
+            width: fit-content;
             background-color: #A0A0A0;
-            // .heading {
-            //     width: 10vw;
-            // }
-            // .searcher {
-            //     width: 15vw;
-            // }
-        }
-        .genre {
-            @include flex-column();
-            @include complete();
-            background-color: #A0A0A0;
-        }
-        .sorting {
-            @include flex-column();
-            @include complete();
-            background-color: #A0A0A0;
-        }
-        .available {
+            padding: 2.5% 5%;
             @include flex-row();
-            @include complete();
-            background-color: #A0A0A0;
-            // gap: 5%;
-            // .marker-info {
-            //     width: 16vw;
-            // }
-            // .playable {
-            // }
+            gap: 20px;
+            .songs-filtering {
+                font-size: 1.5em;
+            }
+            .sorting {
+                color: black;
+                height: 3vh;
+                width: 2vw;
+                cursor: pointer;
+                border: 1px solid black;
+                transform: rotate(90deg);
+            }
+        
         }
-    }
-    
-    .lista {
-        // @include complete();
-        height: 100%;
-        background: transparent;
-        margin: 5% 5% 5% 5%;
-        overflow-x: hidden;
-        width: 90%;
-        // margin-bottom: 5%;
-        // border: 6px solid green;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        .obra {
+        
+
+        .filtros {
+            color: black;
+            margin: 0 5% 5% 5%;
+            height: 50vh;
+            width: 50%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 10%;
+            background-color: black;
+            border: 1px solid gray;
+            // border-radius: 20px;
+            padding: 7.5% 0 2.5% 0;
             position: relative;
-            @include flex-column();
-            justify-self: center;
-            justify-content: flex-start;
-            height: 40vh;
-            width: 70%;
-            margin: 10% 2.5%;
-            border: 1px solid black;
-            padding-top: 15%;
-            background-color: grey;
-            border-radius: 5%;
-            
-            .photo {
+            // > * {
+            //     background-color: #A0A0A0;
+            // }
+            .closing {
+                position: absolute;
+                right: 3%;
+                top: 2.5%;
+                color: #A0A0A0;
+                background: none;
+                height: 4vh;
+                width: 6vw;
+                cursor: pointer;
+                // transform: rotate(90deg);
+            }
+            .finder {
+                @include flex-column();
+                @include complete();
+                gap: 5%;
+                background-color: #A0A0A0;
+                // .heading {
+                //     width: 10vw;
+                // }
+                // .searcher {
+                //     width: 15vw;
+                // }
+            }
+            .genre {
+                @include flex-column();
+                @include complete();
+                background-color: #A0A0A0;
+            }
+            .sorting {
+                @include flex-column();
+                @include complete();
+                background-color: #A0A0A0;
+            }
+            .available {
+                @include flex-row();
+                @include complete();
+                background-color: #A0A0A0;
+                // gap: 5%;
+                // .marker-info {
+                //     width: 16vw;
+                // }
+                // .playable {
+                // }
+            }
+        }
+        
+        .lista {
+            // @include complete();
+            height: 100%;
+            background: transparent;
+            margin: 5% 5% 5% 5%;
+            overflow-x: hidden;
+            width: 90%;
+            // margin-bottom: 5%;
+            // border: 6px solid green;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            .obra {
                 position: relative;
-                height: 25vh;
-                // width: 80%;
-                height: $image-height;
-                width: $image-width;
-                background-size: cover;
-                z-index: 2;
-                .none {
-                    display: none;
-                }
-                .circle-disc {
-                    z-index: 3;
-                    position: absolute;
-                    top: $top-disc;
-                    left: $left-disc;
-                    height: 30px;
-                    width: 30px;
-                    background-color: white;
-                    border: 2px solid rgba(0, 0, 0, 0.623);
-                    border-radius: 50%;
-                    transform: translateY(-50%) translateX(-50%);
-                }
-                .button-to-play {
-                    cursor: pointer;
-                    display: none;
-                    position: absolute;
-                    z-index: 4;
-                    transform: translateY(-50%) translateX(-50%);
-                    top: $top-disc;
-                    left: $left-disc;
-                    .play-figure {
-                        color: rgb(255, 255, 255);
-                        height: 150px;
-                        width: 150px;
+                @include flex-column();
+                justify-self: center;
+                justify-content: flex-start;
+                height: 40vh;
+                width: 70%;
+                margin: 10% 2.5%;
+                border: 1px solid black;
+                padding-top: 15%;
+                background-color: grey;
+                border-radius: 5%;
+                
+                .photo {
+                    position: relative;
+                    height: 25vh;
+                    // width: 80%;
+                    height: $image-height;
+                    width: $image-width;
+                    background-size: cover;
+                    z-index: 2;
+                    .none {
+                        display: none;
+                    }
+                    .circle-disc {
+                        z-index: 3;
+                        position: absolute;
+                        top: $top-disc;
+                        left: $left-disc;
+                        height: 30px;
+                        width: 30px;
+                        background-color: white;
+                        border: 2px solid rgba(0, 0, 0, 0.623);
+                        border-radius: 50%;
+                        transform: translateY(-50%) translateX(-50%);
+                    }
+                    .button-to-play {
+                        cursor: pointer;
+                        display: none;
+                        position: absolute;
+                        z-index: 4;
+                        transform: translateY(-50%) translateX(-50%);
+                        top: $top-disc;
+                        left: $left-disc;
+                        .play-figure {
+                            color: rgb(255, 255, 255);
+                            height: 150px;
+                            width: 150px;
+                        }
                     }
                 }
+                .titulo {
+                    margin-top: 5%;
+                    font-size: auto;
+                }
+                .autor {
+                    margin-top: 2%;
+                }
+                .paginate-2 {
+                    margin: 7.5% 0 7.5% 0;
+                }
+                
             }
-            .titulo {
-                margin-top: 5%;
-                font-size: auto;
-            }
-            .autor {
-                margin-top: 2%;
-            }
-            .paginate-2 {
-                margin: 7.5% 0 7.5% 0;
-            }
-            
+            // .obra:hover {
+            //     animation: song 1s linear forwards;
+            // }
         }
-        // .obra:hover {
-        //     animation: song 1s linear forwards;
-        // }
+        
+        .scrolling {
+            height: 10vh;
+            @include flex-column();
+        }
+        .center {
+            margin: 5% 0 0 0;
+            @include paginating();
+        }
+        .center-2 {
+            margin: 5% 0 20% 0;
+            @include paginating();
+        }
+        
     }
-    
-    .scrolling {
-        height: 10vh;
-        @include flex-column();
+
+    .none {
+        display: none;
     }
-    .center {
-        margin: 5% 0 0 0;
-        @include paginating();
-    }
-    .center-2 {
-        margin: 5% 0 20% 0;
-        @include paginating();
-    }
-    
 }
-
-.none {
-    display: none;
-}
-}
+// }
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 760px) {
+@media (min-width: 760px) {
     .body-hidden {
-
-    
+        // width: 100%;
+        // background-color: yellow;
         .introduction {
             height: 45vh;
             .songs-header {
-                font-size: 2em;
-                padding:0 0 10% 0;
+                // font-size: 2em;
+                // padding:0 0 10% 0;
             }
             .songs-subtitle {
-                font-size: 1em;
+                // font-size: 1em;
             }
         }
         .wrapper {
@@ -312,12 +296,3 @@ $left-disc: ($image-width)/(2) ;
         }
     }
 }
-
-// @keyframes song {
-//     from {
-//         transform: scale(1);
-//     }
-//     to {
-//         transform: scale(1.05);
-//     }
-// }
