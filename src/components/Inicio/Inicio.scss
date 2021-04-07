@@ -461,6 +461,7 @@ h3, h2, h4 {
 
 @media (min-width: 760px) {
   .inicio {
+    background: #54666c23;
     .background-carousel {
       .carousel {
         margin: 0;
@@ -493,19 +494,193 @@ h3, h2, h4 {
     }
     
     .feed {
-      > * {
-        height: 80vh;
-        width: 95vw;
-      }
-      .sub-feed {
-        @include flex-column();
-        gap: 5%;
-        justify-content: space-around;
-        > * {
-          width: 100%;
-          height: 50%;
+
+      // background: rgba(255, 255, 255, 0.897);
+      .item-1 {
+        margin: 20% 0 20% 0;
+        width: 50vw;
+        .header-1 {
+          top: 5vh;
+          font-size: 1.5em;
+        }
+        .mask {
+          height: 25vh;
+          width: 22.5vw;
+          top: 15vh;
+          right: 3.5vw;
+          .bg {
+            height: 25vh;
+            width: 22.5vw;
+          }
+          .info-image {
+            height: 40vh;
+          }
+        }
+        .content-1 {
+          top: 37.5vh;
+          font-size: 1em;
+        }
+        .link-1 {
+          width: 20vw;
+          top: 70vh;
+          right: 4vw;
+          font-size: 1.3em;
         }
       }
+
+      .item-2 {
+        margin: 10% 0 20% 0;
+        width: 50vw;
+
+        .header-2 {
+          top: 5vh;
+          font-size: 1.5em;
+        }
+        .content-2 {
+          font-size: 1em;
+        }
+        .wrap{
+          position: absolute;
+          z-index: 2;
+          top: 45vh;
+          left: 10vw;
+          .mask1 {
+            z-index: 2;
+            transform: rotate(7.5deg);
+            height: 30vh;
+            width: 20vw;
+            overflow: hidden;
+            position: absolute;
+          }
+          .info-image-1 {
+            height: 305px;
+            width: auto;
+            position: absolute;
+            left: -10vw;
+            top: -5vh;
+          }
+          .mask2 {
+            z-index: 3;
+            transform: rotate(-7.5deg);
+            overflow: hidden;
+            height: 30vh;
+            width: 20vw;
+            position: absolute;
+          }
+          .info-image-2 {
+            height: 405px;
+            width: auto;
+            position: absolute;
+            top: -10vh;
+          }
+          .mask3 {
+            // transform: rotate(-5deg);
+            overflow: hidden;
+            height: 30vh;
+            width: 20vw;
+            z-index: 4;
+            position: absolute;
+          }
+          .info-image-3 {
+            height: 355px;
+            width: auto;
+            position: absolute;
+            top: -15vh;
+          }
+        }
+        .link-2 {
+          width: 22.5vw;
+          top: 62.5vh;
+          right: 5vw;
+          font-size: 1.3em;
+        }
+      }
+
+      .item-3 {
+        margin: 10% 0 20% 0;
+        width: 50vw;
+        .header-3 {
+          top: 5vh;
+          font-size: 1.5em;
+        }
+        .mask {
+          @include mask-style();
+          height: 25vh;
+          width: 22.5vw;
+          top: 17vh;
+          left: 10vw;
+          z-index: 2;
+          .bg {
+            height: 25vh;
+            width: 22.5vw;
+          }
+          .item-3-image {
+            height: 50vh;
+          }
+        }
+        .content-3 {
+          top: 40vh;
+          font-size: 1em;
+        }
+        .link-3 {
+          width: 17.5vw;
+          top: 72vh;
+          right: 5vw;
+          font-size: 1.3em;
+        }
+      }
+
+      .item-4 {
+        margin: 10% 0 20% 0;
+        width: 50vw;
+        .header-4 {
+          top: 5vh;
+          font-size: 1.5em;
+        }
+        .content-4 {
+          background: rgba(245, 249, 255, 0.71);
+          @include content-style();
+          top: 20vh;
+          margin: 0 12.5% 0 7.5%;
+          z-index: 3;
+          font-size: 1em;
+          .head {
+            @include head-style();
+          }
+          .text {
+            @include text-style();
+          }
+        }
+        .mask {
+          height: 22.5vh;
+          width: 22.5vw;
+          top: 47.5vh;
+          left: 5vw;
+          .bg {
+            height: 27.5vh;
+            width: 22.5vw;
+          }
+          .item-4-image {
+            height: 50vh;
+          }
+        }
+        .link-4 {
+          @include link-style();
+          width: 17.5vw;
+          font-size: 1.3em;
+          top: 67.5vh;
+          right: 6vw;
+          z-index: 4;
+          background: rgba(255, 255, 255, 0.84);
+        }
+      }
+
+      .arrow {
+        height: 25px;
+        width: 25px;
+      }
+      
+     
     }
   }
   
