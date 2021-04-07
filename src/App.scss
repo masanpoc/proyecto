@@ -240,13 +240,13 @@ html {
             padding: 1px;
             box-shadow: 0 0 2px 0 gray;
           }
-          .svg-menu:hover, .svg-menu:active {
-            color: rgba(56, 49, 119, 0.911);
-            border: 2px solid rgba(56, 49, 119, 0.829);
-            box-shadow: 0 0 8px 0 gray;
-            transform: scale(1.05);
-            transition: 0.5s linear;
-          }
+          // .svg-menu:hover, .svg-menu:active {
+          //   color: rgba(56, 49, 119, 0.911);
+          //   border: 2px solid rgba(56, 49, 119, 0.829);
+          //   box-shadow: 0 0 8px 0 gray;
+          //   transform: scale(1.05);
+          //   transition: 0.5s linear;
+          // }
           .buscador {
             width: 50vw;
             height: 3.5vh;
@@ -261,63 +261,38 @@ html {
       .mobile-links {
         z-index: 3;
         @include flex-column();
-        // justify-content: flex-start;
+        gap: 3.5vh;
         position: absolute;
         top: 30vh;
         width: 100vw;
         height: 70vh;
-        background: black;
-        border-top: 1px solid black;
-        // letter-spacing: 2px;
+        // background: rgb(0, 0, 0);
+        .glassy {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          background: black;
+          // background: rgba(0, 0, 0, 0.637);
+          // backdrop-filter: blur(30px);
+          z-index: -1;
+        }
         .link {
-          width: 100vw;
-          padding: 5% 0;
-          background-color: white;
-          border-bottom: 1px solid black;
-          // box-shadow: inset 0 0 3px 0.25px black;
-        }
-        .f1 {
-          font-size: 1em;
-          
-        }
-        .underline {
-          text-decoration: underline;
-        }
-        .nosotros-mobile {
+          box-shadow: inset  0 0 5px 0px black;
+          // box-shadow: 1px 1px 4px 0px rgb(136, 136, 136);
+          // box-shadow: 0 0 10px 0px gray;
+          width: 75vw;
+          height: 9vh;
+          font-family: 'Lato';
+          font-family: 'Gilroy';
+          // border: 2px solid black;
+          font-size: 1.05em;
+          font-weight: bold;
           @include flex-column();
-          // margin: 0 0 12.5% 0;
-          .extra-padding {
-            padding: 6% 0;
-            background: linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%);
-            font-size: 0.95em;
-            text-decoration: none;
-            // font-style: italic;
-          }
-          .desplegable-mobile {
-            @include flex-column();
-            // height: 25vw;
-            
-            .link-2 {
-              font-size: 1em;
-              // color: white;
-              padding: 5% 0;
-              // font-style: italic;
-              text-decoration: underline;
-              // box-shadow: inset 0 -20px 0 0 yellow, inset 0 -21px 0 0 black;
-              width: 100vw;
-              // background-color: rgb(85, 84, 84);
-              background: white;
-              border-bottom: 1px solid black;
-              // box-shadow: inset 0 0 3px 0.25px black;
-            }
-          }
-        }
-        .extra-border {
-          padding-bottom: 7.5%;
+          border-radius: 10px;
+          background: #a1c4fd;
           background: linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%);
-          border-bottom: 1px solid black;
           // box-shadow: inset 0 0 3px 0.25px black;
-        }
+        }        
       }
     }
     .footer {

@@ -51,7 +51,7 @@ $left-disc: ($image-width)/(2) ;
 
 .body-hidden {
     overflow-x: hidden;
-}
+
 
 .introduction {
     background: url('./Images/obras-bg.jpg');
@@ -64,7 +64,7 @@ $left-disc: ($image-width)/(2) ;
     padding-bottom: 5%;
     color: rgba(255, 255, 255, 0.767);
     @include flex-column();
-    height: 40vh;
+    height: 70vh;
     // font-size: 2em;
     font-family: 'Lora';
     // font-family: fantasy;
@@ -270,7 +270,7 @@ $left-disc: ($image-width)/(2) ;
 .none {
     display: none;
 }
-
+}
 
 
 
@@ -294,20 +294,23 @@ $left-disc: ($image-width)/(2) ;
 
 
 @media (max-width: 760px) {
+    .body-hidden {
 
-    .introduction {
-        .songs-header {
-            font-size: 2em;
-            padding:0 0 10% 0;
+    
+        .introduction {
+            height: 45vh;
+            .songs-header {
+                font-size: 2em;
+                padding:0 0 10% 0;
+            }
+            .songs-subtitle {
+                font-size: 1em;
+            }
         }
-        .songs-subtitle {
-            font-size: 1em;
+        .wrapper {
+
         }
     }
-    .wrapper {
-
-    }
-
 }
 
 // @keyframes song {

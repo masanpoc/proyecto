@@ -224,6 +224,8 @@ export const Historia = () => {
 
 
     return (
+        <div className='wrapping'>
+        <div className='intro-historia'>historia con foto</div>
         <div 
         // ref={el => (wrapper = el)}
          className='historia' style={{'minHeight': '100vh'}}>
@@ -257,6 +259,7 @@ export const Historia = () => {
                     ))}
                 </div>
             </div>
+        </div>
         </div>
     )
 }

@@ -67,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
     } 
     .intro-articles {
         margin: 0 0 20% 0;
-        height: 65vh;
+        height: 70vh;
         width: 100%;
         @include flex-column();
         justify-content: space-around;
@@ -145,6 +145,7 @@ h1, h2, h3, h4, h5, h6 {
             left: 10%;
             z-index: 3;
             top: -5%;
+            // background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);;
             background-color: rgb(124, 124, 124);
         }
     }
@@ -319,6 +320,7 @@ h1, h2, h3, h4, h5, h6 {
         
         .intro-articles {
            margin: 0;
+           height: 45vh;
             .heading {
                 font-size: 3.2em;
                 letter-spacing: 0.05em;

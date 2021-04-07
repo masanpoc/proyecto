@@ -102,24 +102,12 @@ function App() {
              {/* <input className='buscador' placeholder='buscar'></input> */}
           </div>
           <div className={active ? 'mobile-links' : 'none'} >
-              <Link className='f1 link underline' to='/' onClick={() => setActive(!active)}>Inicio</Link>
-              <span className='nosotros-mobile extra-border'>
-                {/* <Link to='/nosotros' className='link f1 underline extra-padding' onClick={() => setActive(!active)}>
-                  Sobre Nosotros
-                </Link> */}
-                <span className='link f1 underline extra-padding' >Sobre Nosotros</span>
-                <div className='desplegable-mobile'>
-                  <Link className='link-2' to='/nosotros/historia' onClick={() => setActive(!active)}>Nuestra historia</Link>
-                  <Link className='link-2' to='/nosotros/conocenos' onClick={() => setActive(!active)}>Conócenos</Link>
-                  {/* <Link className='link-2' to='/nosotros/proyectos' onClick={() => setActive(!active)}>Proyectos</Link> */}
-                </div>
-              </span>
-              <Link className='f1 link underline' to='/articulos' onClick={() => setActive(!active)}>Artículos</Link>
-              <Link className='f1 link underline' to='/obras' onClick={() => setActive(!active)}>Obras</Link>
-              
-              
-                
-               
+              <div className='glassy'></div>
+              <Link className='link' to='/' onClick={() => setActive(!active)}>Inicio</Link>
+              <Link className='link' to='/nosotros/historia' onClick={() => setActive(!active)}>Nuestra historia</Link>
+              <Link className='link' to='/nosotros/conocenos' onClick={() => setActive(!active)}>Conócenos</Link>
+              <Link className='link' to='/articulos' onClick={() => setActive(!active)}>Artículos</Link>
+              <Link className='link' to='/obras' onClick={() => setActive(!active)}>Obras</Link>
           </div>
 
         </nav>
