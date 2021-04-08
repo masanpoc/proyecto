@@ -18,10 +18,10 @@ const list = [
         story: {
             title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque nisl leo molestie ipsum, lacus. Curabitur donec cras.',
             paragraph: [
-                ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum maecenas consectetur amet purus accumsan viverra viverra. Dui lorem nibh dis eget fermentum. Elementum vulputate magna vitae, ut sollicitudin enim sed.<b> Aliquam sit eu sit in ac, eget cursus luctus. In sed venenatis, sagittis adipiscing semper sit eu ornare. </b>',
+                ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum maecenas consectetur amet purus accumsan viverra viverra. Dui lorem nibh dis eget fermentum. Elementum vulputate magna vitae, ut sollicitudin enim sed. Aliquam sit eu sit in ac, eget cursus luctus. In sed venenatis, sagittis adipiscing semper sit eu ornare.',
                 'Augue sed lectus phasellus erat. Ipsum euismod felis tortor, porttitor sit gravida. Vel viverra est lorem quisque mattis ac penatibus mauris. Auctor 1989 mattis pharetra in adipiscing tellus sed massa id. Egestas potenti enim ut adipiscing purus scelerisque.',
-                'Amet, consequat mi morbi sagittis id vestibulum suspendisse nec. Curabitur quam pharetra sit tincidunt tincidunt. <b> Quam odio rhoncus malesuada aliquam arcu amet </b> vulputate nibh est. Fermentum urna, id nunc eget. Lec',
-                'Tus tellus lacus consectetur bibendum vitae. Et <b><i> “purus sed tellus sed” </i></b> suspendisse faucibus leo at. Id molestie auctor urna feugiat enim varius in quis nulla. Amet, feugiat leo lacus eget. Auctor amet mattis facilisis ut sit. Tortor magna quisque adipiscing integer ultrices. Purus turpis blandit nunc.'
+                'Amet, consequat mi morbi sagittis id vestibulum suspendisse nec. Curabitur quam pharetra sit tincidunt tincidunt.  Quam odio rhoncus malesuada aliquam arcu amet vulputate nibh est. Fermentum urna, id nunc eget. Lec',
+                'Tus tellus lacus consectetur bibendum vitae. Et “purus sed tellus sed”  suspendisse faucibus leo at. Id molestie auctor urna feugiat enim varius in quis nulla. Amet, feugiat leo lacus eget. Auctor amet mattis facilisis ut sit. Tortor magna quisque adipiscing integer ultrices. Purus turpis blandit nunc.'
             ],
             image: intro
         },
@@ -32,10 +32,10 @@ const list = [
         story: {
             title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque nisl leo molestie ipsum, lacus. Curabitur donec cras.',
             paragraph: [
-                ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum maecenas consectetur amet purus accumsan viverra viverra. Dui lorem nibh dis eget fermentum. Elementum vulputate magna vitae, ut sollicitudin enim sed.<b> Aliquam sit eu sit in ac, eget cursus luctus. In sed venenatis, sagittis adipiscing semper sit eu ornare. </b>',
+                ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum maecenas consectetur amet purus accumsan viverra viverra. Dui lorem nibh dis eget fermentum. Elementum vulputate magna vitae, ut sollicitudin enim sed. Aliquam sit eu sit in ac, eget cursus luctus. In sed venenatis, sagittis adipiscing semper sit eu ornare.',
                 'Augue sed lectus phasellus erat. Ipsum euismod felis tortor, porttitor sit gravida. Vel viverra est lorem quisque mattis ac penatibus mauris. Auctor 1989 mattis pharetra in adipiscing tellus sed massa id. Egestas potenti enim ut adipiscing purus scelerisque.',
-                'Amet, consequat mi morbi sagittis id vestibulum suspendisse nec. Curabitur quam pharetra sit tincidunt tincidunt. <b> Quam odio rhoncus malesuada aliquam arcu amet </b> vulputate nibh est. Fermentum urna, id nunc eget. Lec',
-                'Tus tellus lacus consectetur bibendum vitae. Et <b><i> “purus sed tellus sed” </i></b> suspendisse faucibus leo at. Id molestie auctor urna feugiat enim varius in quis nulla. Amet, feugiat leo lacus eget. Auctor amet mattis facilisis ut sit. Tortor magna quisque adipiscing integer ultrices. Purus turpis blandit nunc.'
+                'Amet, consequat mi morbi sagittis id vestibulum suspendisse nec. Curabitur quam pharetra sit tincidunt tincidunt.  Quam odio rhoncus malesuada aliquam arcu amet vulputate nibh est. Fermentum urna, id nunc eget. Lec',
+                'Tus tellus lacus consectetur bibendum vitae. Et “purus sed tellus sed”  suspendisse faucibus leo at. Id molestie auctor urna feugiat enim varius in quis nulla. Amet, feugiat leo lacus eget. Auctor amet mattis facilisis ut sit. Tortor magna quisque adipiscing integer ultrices. Purus turpis blandit nunc.'
             ],
             image: '../images/intro.jpg'
         },
@@ -46,10 +46,10 @@ const list = [
         story: {
             title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque nisl leo molestie ipsum, lacus. Curabitur donec cras.',
             paragraph: [
-                ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum maecenas consectetur amet purus accumsan viverra viverra. Dui lorem nibh dis eget fermentum. Elementum vulputate magna vitae, ut sollicitudin enim sed.<b> Aliquam sit eu sit in ac, eget cursus luctus. In sed venenatis, sagittis adipiscing semper sit eu ornare. </b>',
+                ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum maecenas consectetur amet purus accumsan viverra viverra. Dui lorem nibh dis eget fermentum. Elementum vulputate magna vitae, ut sollicitudin enim sed. Aliquam sit eu sit in ac, eget cursus luctus. In sed venenatis, sagittis adipiscing semper sit eu ornare.',
                 'Augue sed lectus phasellus erat. Ipsum euismod felis tortor, porttitor sit gravida. Vel viverra est lorem quisque mattis ac penatibus mauris. Auctor 1989 mattis pharetra in adipiscing tellus sed massa id. Egestas potenti enim ut adipiscing purus scelerisque.',
-                'Amet, consequat mi morbi sagittis id vestibulum suspendisse nec. Curabitur quam pharetra sit tincidunt tincidunt. <b> Quam odio rhoncus malesuada aliquam arcu amet </b> vulputate nibh est. Fermentum urna, id nunc eget. Lec',
-                'Tus tellus lacus consectetur bibendum vitae. Et <b><i> “purus sed tellus sed” </i></b> suspendisse faucibus leo at. Id molestie auctor urna feugiat enim varius in quis nulla. Amet, feugiat leo lacus eget. Auctor amet mattis facilisis ut sit. Tortor magna quisque adipiscing integer ultrices. Purus turpis blandit nunc.'
+                'Amet, consequat mi morbi sagittis id vestibulum suspendisse nec. Curabitur quam pharetra sit tincidunt tincidunt.  Quam odio rhoncus malesuada aliquam arcu amet vulputate nibh est. Fermentum urna, id nunc eget. Lec',
+                'Tus tellus lacus consectetur bibendum vitae. Et “purus sed tellus sed”  suspendisse faucibus leo at. Id molestie auctor urna feugiat enim varius in quis nulla. Amet, feugiat leo lacus eget. Auctor amet mattis facilisis ut sit. Tortor magna quisque adipiscing integer ultrices. Purus turpis blandit nunc.'
             ],
             image: '../images/intro.jpg'
         },
@@ -60,10 +60,10 @@ const list = [
         story: {
             title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque nisl leo molestie ipsum, lacus. Curabitur donec cras.',
             paragraph: [
-                ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum maecenas consectetur amet purus accumsan viverra viverra. Dui lorem nibh dis eget fermentum. Elementum vulputate magna vitae, ut sollicitudin enim sed.<b> Aliquam sit eu sit in ac, eget cursus luctus. In sed venenatis, sagittis adipiscing semper sit eu ornare. </b>',
+                ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum maecenas consectetur amet purus accumsan viverra viverra. Dui lorem nibh dis eget fermentum. Elementum vulputate magna vitae, ut sollicitudin enim sed. Aliquam sit eu sit in ac, eget cursus luctus. In sed venenatis, sagittis adipiscing semper sit eu ornare.',
                 'Augue sed lectus phasellus erat. Ipsum euismod felis tortor, porttitor sit gravida. Vel viverra est lorem quisque mattis ac penatibus mauris. Auctor 1989 mattis pharetra in adipiscing tellus sed massa id. Egestas potenti enim ut adipiscing purus scelerisque.',
-                'Amet, consequat mi morbi sagittis id vestibulum suspendisse nec. Curabitur quam pharetra sit tincidunt tincidunt. <b> Quam odio rhoncus malesuada aliquam arcu amet </b> vulputate nibh est. Fermentum urna, id nunc eget. Lec',
-                'Tus tellus lacus consectetur bibendum vitae. Et <b><i> “purus sed tellus sed” </i></b> suspendisse faucibus leo at. Id molestie auctor urna feugiat enim varius in quis nulla. Amet, feugiat leo lacus eget. Auctor amet mattis facilisis ut sit. Tortor magna quisque adipiscing integer ultrices. Purus turpis blandit nunc.'
+                'Amet, consequat mi morbi sagittis id vestibulum suspendisse nec. Curabitur quam pharetra sit tincidunt tincidunt.  Quam odio rhoncus malesuada aliquam arcu amet vulputate nibh est. Fermentum urna, id nunc eget. Lec',
+                'Tus tellus lacus consectetur bibendum vitae. Et “purus sed tellus sed”  suspendisse faucibus leo at. Id molestie auctor urna feugiat enim varius in quis nulla. Amet, feugiat leo lacus eget. Auctor amet mattis facilisis ut sit. Tortor magna quisque adipiscing integer ultrices. Purus turpis blandit nunc.'
             ],
             image: '../images/intro.jpg'
         },
@@ -133,13 +133,13 @@ export const Historia = () => {
         // scrolling down current story
         // gsap.to(stories.children[0].children, {
         //     duration: 2,
-        //     y: -200,
+        //     y: -800,
         //     scrollTrigger: {
         //         trigger: stories,
         //         markers: true,
         //         start: 'center-=100 center', 
-        //         end: 'bottom-=200 center', 
-        //         scrub: 2
+        //         end: 'bottom-=100 center', 
+        //         scrub: 1
         //     }
         // })
 
@@ -278,7 +278,10 @@ export const Historia = () => {
 
     return (
         <div className='wrapping'>
-        <div className='intro-historia'>historia con foto</div>
+        <div className='intro-historia'>
+            <h2 className='intro-title'>Nuestra historia</h2>
+            <h3 className='intro-subtitle'>Descubre algunos de los eventos que hemos llevado a cabo a lo largo de la agrupación </h3>
+        </div>
         <div 
         // ref={el => (wrapper = el)}
          className='historia' style={{'minHeight': '100vh'}}>

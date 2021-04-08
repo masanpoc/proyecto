@@ -13,10 +13,12 @@
   }
 
 @mixin card-style {
-  background: rgba(195, 233, 255, 0.75);
+  // background: rgba(195, 233, 255, 0.75);
+  background: white;
         width: 100vw;
         height: 85vh;
         position: relative;
+        box-shadow: inset 0px 0px 2px 0 grey;
 }
 
 @mixin header-style {
@@ -196,7 +198,8 @@ ul {
     
     .feed {
       @include flex-column();
-      background: white;
+      // background: white;
+      background: rgba(195, 233, 255, 0.75);
       font-family: 'Lora';
       text-align: left;
       .item-1 {
@@ -461,7 +464,7 @@ h3, h2, h4 {
 
 @media (min-width: 760px) {
   .inicio {
-    background: #54666c23;
+    background: #54666c13;
     .background-carousel {
       .carousel {
         margin: 0;

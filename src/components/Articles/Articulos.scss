@@ -71,12 +71,13 @@ h1, h2, h3, h4, h5, h6 {
         width: 100%;
         @include flex-column();
         justify-content: space-around;
-        color: #DDBAFF;
+        // color: #DDBAFF;
         background: url('./Lista//Fotos/0.jpg');
         background-size: cover;
         background-position: top;
-        box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.356);
-        
+        // box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.356);
+        color: rgba(255, 255, 255, 0.767);
+        box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.548);
         .heading {
             margin-top: 5%;
             font-family: 'Bebas';

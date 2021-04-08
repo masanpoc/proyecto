@@ -1,4 +1,50 @@
 
+@font-face {
+    font-family: 'Rufina';
+    src: url('../../../../fonts/Rufina-Regular.woff2') format('woff2'),
+        url('../../../../fonts/Rufina-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../../../../fonts/Roboto-Regular.woff2') format('woff2'),
+        url('../../../../fonts/Roboto-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('../../../../fonts/JosefinSans-Thin.woff2') format('woff2'),
+        url('../../../../fonts/JosefinSans-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bebas';
+    src: url('../../../../fonts/BebasNeue-Regular.woff2') format('woff2'),
+        url('../../../../fonts/BebasNeue-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+@font-face {
+    font-family: 'Sansita';
+    src: url('../../../../fonts/Sansita-Regular.woff2') format('woff2'),
+        url('../../../../fonts/Sansita-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+
 @mixin flex-row {
     display: flex;
     justify-content: center;
@@ -15,12 +61,32 @@
 .wrapping {
     .intro-historia {
         height: 70vh;
-        background: black;
+        @include flex-column();
+        background: url(../images/historia.jpg);
+        background-size: cover;
+        color: rgba(255, 255, 255, 0.767);
+        background-position: center;
+        justify-content: flex-start;
+        box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.582);
         width: 100vw;
+        .intro-title {
+            margin-top: 40%;
+            font-size: 2.5em;
+            font-family: 'Bebas';
+            letter-spacing: 0.1em;
+            // padding-bottom: 20%;
+        }
+        .intro-subtitle {
+            margin-top: 35%;
+            font-size: 1.1em;
+            font-family: 'Sansita';
+        }
+       
     }
     .historia {
-        // overflow: scroll;
         margin: 20vh 0;
+        // background: gray;
+        height: 100vh;
         border-top: 2px solid black;
         border-bottom: 2px solid black;
         display: flex;
@@ -31,7 +97,7 @@
             // margin-top: 20%;
             position: relative;
             width: 100vw;
-            height: 3.5vh;
+            height: 5vh;
             background: black;
             margin: 7.5% 0 7.5% 0;
             // @include flex-column();
@@ -39,9 +105,11 @@
             .years {
                 width: 2000vw;
                 position: absolute;
-                left: calc(50vw - 7.5vw);
+                font-family: 'Rufina';
+                // font-size: 1.4em;
+                left: calc(50vw - 10vw);
                 // top: -25px;
-                top: calc(1.75vh - 7.5vw);            
+                top: calc(2.5vh - 10vw);            
                 // width: auto;
                 // border: 1px solid black;
                 @include flex-row();
@@ -49,8 +117,8 @@
                 justify-content: flex-start;
                 // position: absolute;
                 .circle {
-                    width: 15vw;
-                    height: 15vw;
+                    width: 20vw;
+                    height: 20vw;
                     border-radius: 50%;
                     background: black;
                     margin: 0 100vw 0 0;
@@ -61,69 +129,88 @@
         }
         .sound {
             // background: blueviolet;
-            width: 85vw;
+            width: 60vw;
             height: 7.5vw;
             // border: 1px solid black;
             position: relative;
             // background: gray;
             margin-left: auto;
-            margin-right: 5vw;
+            margin-right: 4vw;
             margin-top: 2.5%;
             margin-bottom: 2.5%;
             overflow: hidden;
             .note {
-                height: 7.5vw;
-                width: 7.5vw;
+                height: 5vw;
+                width: 5vw;
                 color: black;
                 position: absolute;
-                left: 5vw;
+                left: 3.5vw;
+                top: 1vw
             }
             .single {
                 @include flex-column();
+                font-family: 'Roboto';
                 align-items: flex-start;
                 width: 200vw;
+                font-size: 0.8em;
                 height: 7.5vw;
                 // border: 1px solid black;
                 margin: 0 5% 0 0;
                 position: absolute;
                 // left: 0;
-                left: 15vw;
+                left: 11vw;
                 // width: 50vw;
             }
         }
         .stories {
             
-            background: lightseagreen;
-            border: 1px solid black;
+            // background: lightseagreen;
+            // border: 1px solid black;
             // width: 100%;
             width: 400vw;
-            height: 80vh;
+            height: 65vh;
             @include flex-column();
             align-content: flex-start;
             flex-wrap: wrap;
             .story {
-                border: 1px solid black;
+                // border: 1px solid black;
                 height: 80vh;
                 width: 100vw;
                 @include flex-column();
                 justify-content: flex-start;
                 overflow: hidden;
+                text-align: left;
                 // overflow-y: scroll;
                 // padding: 0 5%;
                 // margin: 0 10% 0 0;
                 // y jugar con height, igual poner un div de toda la altura para q funcione para cualquier zona o igual solo ajustar la altura de la historia
                 .story-img {
-                    width: 10vw;
+                    width: 65vw;
                     height: auto;
+                    // display: none;
+                }
+                .story-title {
+                    // display: none;
+                    font-family: 'Josefin Sans';
+                    font-weight: bold;
+                    font-size: 1.5em;
+                    margin: 0 5% 0 5%;
+                    padding: 5% 0 0 7.5%;
+                    background: rgba(195, 233, 255, 0.5);
+                }
+                .content {
+                    // display: none;
+                    margin: 5% 7.5% 0 10%;
+                    .paragraph {
+                        line-height: 165%;
+                        font-family: 'Lato';
+                    }
                 }
             }
             .dark {
                 background: black;
             }
         }
-    }
-    .dark {
-        background: black;
     }
 }
 
