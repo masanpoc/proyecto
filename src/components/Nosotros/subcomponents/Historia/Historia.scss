@@ -92,6 +92,8 @@
             }
         }
         .stories {
+            
+            background: lightseagreen;
             border: 1px solid black;
             // width: 100%;
             width: 400vw;
@@ -105,6 +107,7 @@
                 width: 100vw;
                 @include flex-column();
                 justify-content: flex-start;
+                overflow: hidden;
                 // overflow-y: scroll;
                 // padding: 0 5%;
                 // margin: 0 10% 0 0;

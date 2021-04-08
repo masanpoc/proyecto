@@ -4,6 +4,9 @@ import gsap from 'gsap';
 import { Single } from './Historia/Single';
 import { Story } from './Historia/Story';
 import { Date } from './Historia/Date';
+
+import intro from './images/intro.jpg';
+
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 gsap.registerPlugin(ScrollTrigger);
@@ -12,22 +15,58 @@ gsap.registerPlugin(ScrollToPlugin);
 const list = [
     {
         song: ' ',
-        content: 'lorem ipsum1',
+        story: {
+            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque nisl leo molestie ipsum, lacus. Curabitur donec cras.',
+            paragraph: [
+                ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum maecenas consectetur amet purus accumsan viverra viverra. Dui lorem nibh dis eget fermentum. Elementum vulputate magna vitae, ut sollicitudin enim sed.<b> Aliquam sit eu sit in ac, eget cursus luctus. In sed venenatis, sagittis adipiscing semper sit eu ornare. </b>',
+                'Augue sed lectus phasellus erat. Ipsum euismod felis tortor, porttitor sit gravida. Vel viverra est lorem quisque mattis ac penatibus mauris. Auctor 1989 mattis pharetra in adipiscing tellus sed massa id. Egestas potenti enim ut adipiscing purus scelerisque.',
+                'Amet, consequat mi morbi sagittis id vestibulum suspendisse nec. Curabitur quam pharetra sit tincidunt tincidunt. <b> Quam odio rhoncus malesuada aliquam arcu amet </b> vulputate nibh est. Fermentum urna, id nunc eget. Lec',
+                'Tus tellus lacus consectetur bibendum vitae. Et <b><i> “purus sed tellus sed” </i></b> suspendisse faucibus leo at. Id molestie auctor urna feugiat enim varius in quis nulla. Amet, feugiat leo lacus eget. Auctor amet mattis facilisis ut sit. Tortor magna quisque adipiscing integer ultrices. Purus turpis blandit nunc.'
+            ],
+            image: intro
+        },
         date: 'May 2015'
     },
     {
         song: '',
-        content: 'lorem ipsum',
+        story: {
+            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque nisl leo molestie ipsum, lacus. Curabitur donec cras.',
+            paragraph: [
+                ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum maecenas consectetur amet purus accumsan viverra viverra. Dui lorem nibh dis eget fermentum. Elementum vulputate magna vitae, ut sollicitudin enim sed.<b> Aliquam sit eu sit in ac, eget cursus luctus. In sed venenatis, sagittis adipiscing semper sit eu ornare. </b>',
+                'Augue sed lectus phasellus erat. Ipsum euismod felis tortor, porttitor sit gravida. Vel viverra est lorem quisque mattis ac penatibus mauris. Auctor 1989 mattis pharetra in adipiscing tellus sed massa id. Egestas potenti enim ut adipiscing purus scelerisque.',
+                'Amet, consequat mi morbi sagittis id vestibulum suspendisse nec. Curabitur quam pharetra sit tincidunt tincidunt. <b> Quam odio rhoncus malesuada aliquam arcu amet </b> vulputate nibh est. Fermentum urna, id nunc eget. Lec',
+                'Tus tellus lacus consectetur bibendum vitae. Et <b><i> “purus sed tellus sed” </i></b> suspendisse faucibus leo at. Id molestie auctor urna feugiat enim varius in quis nulla. Amet, feugiat leo lacus eget. Auctor amet mattis facilisis ut sit. Tortor magna quisque adipiscing integer ultrices. Purus turpis blandit nunc.'
+            ],
+            image: '../images/intro.jpg'
+        },
         date: 'May 2016s'
     },
     {
         song: 'Vivaldi - Las cuatro estaciones (Primavera)',
-        content: 'lorem ipsum1',
+        story: {
+            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque nisl leo molestie ipsum, lacus. Curabitur donec cras.',
+            paragraph: [
+                ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum maecenas consectetur amet purus accumsan viverra viverra. Dui lorem nibh dis eget fermentum. Elementum vulputate magna vitae, ut sollicitudin enim sed.<b> Aliquam sit eu sit in ac, eget cursus luctus. In sed venenatis, sagittis adipiscing semper sit eu ornare. </b>',
+                'Augue sed lectus phasellus erat. Ipsum euismod felis tortor, porttitor sit gravida. Vel viverra est lorem quisque mattis ac penatibus mauris. Auctor 1989 mattis pharetra in adipiscing tellus sed massa id. Egestas potenti enim ut adipiscing purus scelerisque.',
+                'Amet, consequat mi morbi sagittis id vestibulum suspendisse nec. Curabitur quam pharetra sit tincidunt tincidunt. <b> Quam odio rhoncus malesuada aliquam arcu amet </b> vulputate nibh est. Fermentum urna, id nunc eget. Lec',
+                'Tus tellus lacus consectetur bibendum vitae. Et <b><i> “purus sed tellus sed” </i></b> suspendisse faucibus leo at. Id molestie auctor urna feugiat enim varius in quis nulla. Amet, feugiat leo lacus eget. Auctor amet mattis facilisis ut sit. Tortor magna quisque adipiscing integer ultrices. Purus turpis blandit nunc.'
+            ],
+            image: '../images/intro.jpg'
+        },
         date: 'May 2015'
     },
     {
         song: '',
-        content: 'lorem ipsum',
+        story: {
+            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque nisl leo molestie ipsum, lacus. Curabitur donec cras.',
+            paragraph: [
+                ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum maecenas consectetur amet purus accumsan viverra viverra. Dui lorem nibh dis eget fermentum. Elementum vulputate magna vitae, ut sollicitudin enim sed.<b> Aliquam sit eu sit in ac, eget cursus luctus. In sed venenatis, sagittis adipiscing semper sit eu ornare. </b>',
+                'Augue sed lectus phasellus erat. Ipsum euismod felis tortor, porttitor sit gravida. Vel viverra est lorem quisque mattis ac penatibus mauris. Auctor 1989 mattis pharetra in adipiscing tellus sed massa id. Egestas potenti enim ut adipiscing purus scelerisque.',
+                'Amet, consequat mi morbi sagittis id vestibulum suspendisse nec. Curabitur quam pharetra sit tincidunt tincidunt. <b> Quam odio rhoncus malesuada aliquam arcu amet </b> vulputate nibh est. Fermentum urna, id nunc eget. Lec',
+                'Tus tellus lacus consectetur bibendum vitae. Et <b><i> “purus sed tellus sed” </i></b> suspendisse faucibus leo at. Id molestie auctor urna feugiat enim varius in quis nulla. Amet, feugiat leo lacus eget. Auctor amet mattis facilisis ut sit. Tortor magna quisque adipiscing integer ultrices. Purus turpis blandit nunc.'
+            ],
+            image: '../images/intro.jpg'
+        },
         date: 'May 2016s'
     }
 ]
@@ -87,6 +126,20 @@ export const Historia = () => {
         //         trigger: sound,
         //         pin: true,
         //         markers: true
+        //     }
+        // })
+
+
+        // scrolling down current story
+        // gsap.to(stories.children[0].children, {
+        //     duration: 2,
+        //     y: -200,
+        //     scrollTrigger: {
+        //         trigger: stories,
+        //         markers: true,
+        //         start: 'center-=100 center', 
+        //         end: 'bottom-=200 center', 
+        //         scrub: 2
         //     }
         // })
 
@@ -244,7 +297,7 @@ export const Historia = () => {
             {/* para cada fecha */}
             <div className='stories' ref={el => (stories = el)}>
                 {list.map((el) => (
-                    <Story story={el.content} />
+                    <Story title={el.story.title} paragraph={el.story.paragraph} image={el.story.image}/>
                 ))}
             </div>
 
