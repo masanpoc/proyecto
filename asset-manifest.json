@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/proyecto/static/css/main.14165d2e.chunk.css",
-    "main.js": "/proyecto/static/js/main.b0c56218.chunk.js",
-    "main.js.map": "/proyecto/static/js/main.b0c56218.chunk.js.map",
+    "main.css": "/proyecto/static/css/main.b06b1f62.chunk.css",
+    "main.js": "/proyecto/static/js/main.de0a9f9f.chunk.js",
+    "main.js.map": "/proyecto/static/js/main.de0a9f9f.chunk.js.map",
     "runtime-main.js": "/proyecto/static/js/runtime-main.bc2a9d71.js",
     "runtime-main.js.map": "/proyecto/static/js/runtime-main.bc2a9d71.js.map",
-    "static/js/2.f00e827a.chunk.js": "/proyecto/static/js/2.f00e827a.chunk.js",
-    "static/js/2.f00e827a.chunk.js.map": "/proyecto/static/js/2.f00e827a.chunk.js.map",
+    "static/js/2.2424965c.chunk.js": "/proyecto/static/js/2.2424965c.chunk.js",
+    "static/js/2.2424965c.chunk.js.map": "/proyecto/static/js/2.2424965c.chunk.js.map",
     "index.html": "/proyecto/index.html",
-    "static/css/main.14165d2e.chunk.css.map": "/proyecto/static/css/main.14165d2e.chunk.css.map",
-    "static/js/2.f00e827a.chunk.js.LICENSE.txt": "/proyecto/static/js/2.f00e827a.chunk.js.LICENSE.txt",
+    "static/css/main.b06b1f62.chunk.css.map": "/proyecto/static/css/main.b06b1f62.chunk.css.map",
+    "static/js/2.2424965c.chunk.js.LICENSE.txt": "/proyecto/static/js/2.2424965c.chunk.js.LICENSE.txt",
     "static/media/Articulos.scss": "/proyecto/static/media/ProzaLibre-Regular.b009ae5c.woff2",
     "static/media/Adam.90c9a758.jpg": "/proyecto/static/media/Adam.90c9a758.jpg",
     "static/media/Alonso.5f6d4045.jpg": "/proyecto/static/media/Alonso.5f6d4045.jpg",
@@ -35,6 +35,7 @@
     "static/media/Guerrero.63718479.jpg": "/proyecto/static/media/Guerrero.63718479.jpg",
     "static/media/Haendel.9c0cd203.jpg": "/proyecto/static/media/Haendel.9c0cd203.jpg",
     "static/media/Herbeck.cdf6ae49.jpg": "/proyecto/static/media/Herbeck.cdf6ae49.jpg",
+    "static/media/Historia.scss": "/proyecto/static/media/historia.535c9472.jpg",
     "static/media/Lecuona.0b24f379.jpg": "/proyecto/static/media/Lecuona.0b24f379.jpg",
     "static/media/Lully.ce23b89b.jpg": "/proyecto/static/media/Lully.ce23b89b.jpg",
     "static/media/index.css": "/proyecto/static/media/Oswald-Regular.9c992ecd.woff2",
@@ -76,8 +77,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.bc2a9d71.js",
-    "static/js/2.f00e827a.chunk.js",
-    "static/css/main.14165d2e.chunk.css",
-    "static/js/main.b0c56218.chunk.js"
+    "static/js/2.2424965c.chunk.js",
+    "static/css/main.b06b1f62.chunk.css",
+    "static/js/main.de0a9f9f.chunk.js"
   ]
 }
