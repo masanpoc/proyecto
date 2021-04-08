@@ -25,7 +25,10 @@ export const Conocenos = () => {
                             Dar a conocer la música, fomentar la formación de los jóvenes en música clásica, ... 
                         </p>
                     </div>
-                    <img className='img' alt='img-objetivos' src={obj} />
+                    <div className='img-group'>
+                        <img className='img' alt='img-objetivos' src={obj} />
+                        <figcaption className='img-caption'>Concierto, directora, violinistas... Febrero 2020, Oviedo</figcaption>
+                    </div>
                     <div className='content'>
                         <p className='p-content'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh viverra tempus gravida euismod et massa imperdiet at. Rutrum aliquet id quam maecenas urna nunc semper. Lacus morbi nibh eu placerat quis habitasse quam pellentesque </p>
                         <p className='p-content'>accumsan. Posuere ut diam arcu neque accumsan nisi. Amet duis feugiat id massa. Diam risus habitasse dis donec ac quam amet. Ultrices ut amet nec, et mauris. Donec sapien ut odio malesuada risus. </p>
@@ -33,7 +36,10 @@ export const Conocenos = () => {
                                 Sapien tellus diam adipiscing ut mattis. Sapien egestas lobortis pellentesque.
                         </p>
                     </div>
-                    <img className='img' alt='img-objetivos' src={obj}></img>
+                    <div className='img-group'>
+                        <img className='img' alt='img-objetivos' src={obj} />
+                        <figcaption className='img-caption'>Concierto, directora, violinistas... Febrero 2020, Oviedo</figcaption>
+                    </div>
                     <div className='content'>
                         <p className='p-content'>Posuere ut diam arcu neque accumsan nisi. Amet duis feugiat id massa. Diam risus habitasse dis donec ac quam amet. Ultrices ut amet nec, et mauris. Donec sapien ut odio malesuada risus. </p>
                         <p className='p-content'>Ultricies ultrices nunc dignissim pretium, adipiscing dui. <br />
@@ -57,7 +63,11 @@ export const Conocenos = () => {
                             Posuere ut diam arcu neque accumsan nisi. Amet duis feugiat id massa. Diam risus habitasse dis donec ac quam amet. Ultrices ut amet nec, et mauris. Donec sapien ut odio malesuada risus. 
                         </p>
                     </div>
-                    <img className='img-2' src={directora} alt='directora' />
+                    <div className='img-group'>
+                        <img className='img-2' src={directora} alt='directora' />
+                        <figcaption className='img-caption'>Concierto, directora, violinistas... Febrero 2020, Oviedo</figcaption>
+                    </div>
+                    
                     <div className='content'>
                         <p className='p-content'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh viverra tempus gravida euismod et massa imperdiet at. Rutrum aliquet id quam maecenas urna nunc semper. Lacus morbi nibh eu placerat quis habitasse quam pellentesque  </p>
                         <p className='p-content'>Ultricies ultrices nunc dignissim pretium, adipiscing dui. <br />
@@ -70,7 +80,11 @@ export const Conocenos = () => {
                                     Sapien tellus diam adipiscing ut mattis. Sapien egestas lobortis pellentesque.
                         </p>
                     </div>
-                    <img className='img-2' alt='img-musicos' src={intro} />
+                    <div className='img-group'>
+                        <img className='img-2' alt='img-musicos' src={intro} />
+                        <figcaption className='img-caption'>Concierto, directora, violinistas... Febrero 2020, Oviedo</figcaption>
+                    </div>
+                    
                     <div className='content'>
                         <p className='p-content'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nibh viverra tempus gravida euismod et massa imperdiet at. Rutrum aliquet id quam maecenas urna nunc semper. Lacus morbi nibh eu placerat quis habitasse quam pellentesque  </p>
                         <p className='p-content'>
@@ -90,14 +104,22 @@ export const Conocenos = () => {
                                 Sapien tellus diam adipiscing ut mattis. Sapien egestas lobortis pellentesque.
                         </p>
                     </div>
-                    <img className='img' alt='img-actividad-1' src={obj} ></img>
+                    <div className='img-group'>
+                        <img className='img' alt='img-actividad-1' src={obj} ></img>
+                        <figcaption className='img-caption'>Concierto, directora, violinistas... Febrero 2020, Oviedo</figcaption>
+                    </div>
+                    
                     <div className='content'>
                         <p className='p-content'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Odio quis enim vestibulum velit, nec. Dui quis cras condimentum urna turpis a. Tincidunt cursus mauris diam eu tortor. Malesuada tempor consectetur urna, eu urna, consequat mi, pellentesque habitant. Iaculis </p>
                         <p className='p-content'> Tristique lobortis a sollicitudin cras. Ultrices ultrices sit in eleifend leo nulla augue. Non egestas sodales hac blandit orci duis et, neque mattis. Urna, at a placerat porta eleifend magna porttitor. Fames adipiscing facilisis molestie tempor mus morbi pulvinar porta. Magna orci, rutrum nibh vestibulum. Amet, arcu euismod faucibus viverra nunc aliquet. Posuere ut facilisi mi volutpat. </p>
                         <p className='p-content'>Faucibus ullamcorper turpis amet duis felis. Mi dictum volutpat, imperdiet turpis turpis pellentesque. Dui dolor mauris eu nulla. Egestas a ut leo eu tincidunt leo massa nisl. Volutpat pulvinar nec quam mi. Odio tortor morbi mattis vel augue amet </p>
                         <p className='p-content'>Augue cursus. Posuere turpis et habitant turpis odio mus augue nullam amet. Parturient tempor, lectus placerat scelerisque sollicitudin adipiscing eleifend. Ut ut sagittis adipiscing id orci volutpat platea lacus. Et, laoreet ipsum fermentum purus viverra auctor.  </p>
                     </div>
-                    <img className='img' alt='img-actividad-2' src={directora} ></img>
+                    <div className='img-group'>
+                        <img className='img' alt='img-actividad-2' src={directora} ></img>
+                        <figcaption className='img-caption'>Concierto, directora, violinistas... Febrero 2020, Oviedo</figcaption>
+                    </div>
+                    
                     <div className='content'>
                         <p className='p-content'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus amet ornare et commodo. Proin at tellus posuere v </p>
                         <p className='p-content'> Convallis dictum. Tellus et, amet eros, amet morbi posuere enim, quis.Auctor enim cursus vel sociis ultricies magna libero eget. Commodo vitae sit leo pellentesque proin habitant. Elementum sed tincidunt curabitur. </p>

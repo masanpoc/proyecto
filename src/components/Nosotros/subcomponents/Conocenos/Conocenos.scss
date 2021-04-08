@@ -109,10 +109,20 @@
             margin: 40% 0 30% 0;
             padding-bottom: 25%; 
             box-shadow: 0 0 2px 0 grey;
-            .img {
-                height: 40vh;
-                width: auto;
-                margin: 5% 0;
+            .img-group {
+                .img {
+                    height: 40vh;
+                    width: auto;
+                    margin: 5% 0 0 0;
+                }
+                .img-caption {
+                    font-size: 0.9em;
+                    font-family: 'Lato';
+                    font-weight: lighter;
+                    color: #555555;
+                    // width: 100%;
+                    margin: 5% 7.5% 7.5% 7.5%;
+                }
             }
             .content {
                 margin: 5% 0;
@@ -124,10 +134,21 @@
             margin: 30% 0;
             padding-bottom: 25%; 
             box-shadow: 0 0 2px 0 grey;
-            .img-2 {
-                height: auto;
-                margin: 5% 0;
-                width: 85vw;
+            
+            .img-group {
+                .img-2 {
+                    height: auto;
+                    margin: 5% 0 0 0;
+                    width: 85vw;
+                }
+                .img-caption {
+                    font-size: 0.9em;
+                    font-family: 'Lato';
+                    font-weight: lighter;
+                    color: #555555;
+                    // width: 100%;
+                    margin: 5% 7.5% 7.5% 7.5%;
+                }
             }
             .content {
                 margin: 5% 0;
@@ -140,10 +161,20 @@
             background: white;
             color: rgba(0, 0, 0, 0.795);
             box-shadow: 0 0 2px 0 grey;
-            .img {
-                height: 30vh;
-                width: auto;
-                margin: 5% 0;
+            .img-group {
+                .img {
+                    height: 30vh;
+                    width: auto;
+                    margin: 5% 0 0 0;
+                }
+                .img-caption {
+                    font-size: 0.9em;
+                    font-family: 'Lato';
+                    font-weight: lighter;
+                    color: #555555;
+                    // width: 100%;
+                    margin: 5% 7.5% 7.5% 7.5%;
+                }
             }
             .content {
                 margin: 5% 0;
@@ -157,26 +188,30 @@
     .conocenos {
         background: #54666c13;
         // margin: 0;
+        p {
+            margin: 0 7.5% 0 7.5%;
+            padding: 2.5% 0;
+        }
         .c-header {
             font-size: 1.9em;
-            margin: 5% 0;
+            margin: 12.5% 7.5% 2.5% 7.5%;
         }
         .c-subheading {
             font-size: 1.7em;
-            font-weight: bold;
+            margin: 5% 7.5% 2.5% 7.5%;
         }
         .c-intro {
             height: 45vh;
             .c-title {
-                font-size: 2.5em;
+                margin-top: 2%;
+                font-size: 3.4em;
                 letter-spacing: 0.1em;
-                padding-bottom: 10%;
+                padding-bottom: 5%;
             }
             .c-sections {
                 @include flex-row();
                 gap: 5%;
-                font-size: 1.5em;
-                padding-bottom: 10%;
+                font-size: 2em;
             }
         }
 
@@ -185,25 +220,56 @@
             background: rgba(195, 233, 255, 0.75);
             .c-objetivos {
                 background: white;
-                padding-bottom: 5%; 
+                padding-bottom: 15%; 
                 margin: 20% 0;
-                .img {
-                    height: 30vh;
-                    width: auto;
+                .img-group {
+                    .img {
+                        height: 40vh;
+                        width: auto;
+                        margin: 2.5% 0;
+                    }
+                    .img-caption {
+                        margin-top: 1.25%;
+                    }
+                }
+                .content {
+                    margin: 2.5% 0;
                 }
             }
         
             .c-equipo {
                 background: white;
-                .img-2 {
-                    height: 20vh;
-                    width: auto;
+                padding-bottom: 15%; 
+                .img-group {
+                    .img-2 {
+                        height: 30vh;
+                        width: auto;
+                        margin: 2.5% 0;
+                    }
+                    .img-caption {
+                        margin-top: 1.25%;
+                    }
+                }
+                .content {
+                    margin: 2.5% 0;
                 }
             }
         
             .c-actividades {
                 background: white;
-        
+                padding-bottom: 7.5%; 
+                .content {
+                    margin: 2.5% 0;
+                }
+                .img-group {
+                    .img {
+                        margin: 2.5% 0;
+                        height: 30vh;
+                    }
+                    .img-caption {
+                        margin-top: 1.25%;
+                    }
+                }
             }
         }
     
