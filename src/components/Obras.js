@@ -798,7 +798,7 @@ export const Obras = () => {
 
             <div className='introduction'>
                 <h1 className='songs-header'>Biblioteca de obras</h1>
-                <h3 className='songs-subtitle'>En esta sección podrás encontrar las distintas piezas que la agrupación ha interpretado a lo largo de los años</h3>
+                <h3 className='songs-subtitle'>Encuentra aquí las piezas que hemos interpretado</h3>
                 {/* <h6>Todas las piezas disponibles para escuchar están libres de copyright</h6> */}
             </div>
 

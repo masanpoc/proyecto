@@ -52,7 +52,7 @@ export const Obra = ({obra}) => {
         .to(card, {
             duration: 2,
             css: {
-                background: 'white'
+                background: 'black'
             }
         }, '>-0.5')
         .to(disc, {
@@ -86,7 +86,7 @@ export const Obra = ({obra}) => {
         .to(card, {
             duration: 2,
             css: {
-                background: 'gray'
+                background: 'black'
             }
         }, '>-0.5')
         .to(disc, {

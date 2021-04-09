@@ -53,14 +53,15 @@
                     @include flex-column();
                     cursor: pointer;
                     height: 25px;
-                    width: 25px;
+                    width: 26px;
+                    padding-top: 2px;
                 }
                 .page {
-                    background-color: white;
-                    color: black;
+                    background-color: black;
+                    color: white;
                 }
                 .active {
-                    background-color: rgba(128, 128, 128, 0.795);
+                    background-color: rgba(122, 121, 121, 0.842);
                     color: white;
                 }
             }
@@ -94,7 +95,6 @@ $left-disc: ($image-width)/(2) ;
         justify-content: flex-end;
         height: 70vh;
         // font-size: 2em;
-        text-align: left;
         // font-family: fantasy;
         .songs-header {
             // border: 1px solid yellow;
@@ -103,14 +103,16 @@ $left-disc: ($image-width)/(2) ;
             font-family: 'Bebas';
             font-size: 2em;
             letter-spacing: 0.05em;
-            padding:0 0 15% 0;
+            padding:0 0 35% 0;
         }
         .songs-subtitle {
             // border: 1px solid green;
             width: 60%;
-            font-size: 1em;
-            font-family: 'Proza';
-            padding-bottom: 30%;
+            font-size: 1.3em;
+            text-align: center;
+            // font-family: 'Proza';
+            font-family: 'Sansita';
+            padding-bottom: 15%;
             padding-left: 10%;
             padding-right: 10%;
             font-weight: lighter;
@@ -118,31 +120,36 @@ $left-disc: ($image-width)/(2) ;
     }
 
     .wrapper {
-        padding-top: 10%;
         @include complete();
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-family: 'Proza';
         // background: linear-gradient(#000000,  #631414 ,#000000 ); 
         // background-attachment: local;
-        background: white;
+        // background: white;
+        background: black;
         @include flex-column();
 
 
         .options {
             width: fit-content;
-            background-color: #A0A0A0;
+            background-color: #BFE4FF;
             padding: 2.5% 5%;
+            margin-top: 15vh;
+            margin-right: auto;
+            margin-left: 15%;
             @include flex-row();
-            gap: 20px;
+            gap: 24px;
+            box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.473);
             .songs-filtering {
-                font-size: 1.5em;
+                font-size: 1.3em;
+                font-weight: lighter;
             }
             .sorting {
-                color: black;
-                height: 3vh;
-                width: 2vw;
+                color: #BFE4FF;
+                height: 25px;
+                width: 12.5px;
                 cursor: pointer;
-                border: 1px solid black;
                 transform: rotate(90deg);
+                background: black;
             }
         
         }
@@ -214,7 +221,7 @@ $left-disc: ($image-width)/(2) ;
             // @include complete();
             height: 100%;
             background: transparent;
-            margin: 5% 5% 5% 5%;
+            margin: 15% 5% 15% 5%;
             overflow-x: hidden;
             width: 90%;
             // margin-bottom: 5%;
@@ -226,20 +233,22 @@ $left-disc: ($image-width)/(2) ;
                 @include flex-column();
                 justify-self: center;
                 justify-content: flex-start;
-                height: 40vh;
+                // height: 40vh;
                 width: 70%;
                 margin: 10% 2.5%;
-                border: 1px solid black;
-                padding-top: 15%;
-                background-color: grey;
-                border-radius: 5%;
+                // border: 1px solid black;
+                // padding-top: 15%;
+                // background-color: grey;
+                // border-radius: 5%;
                 
                 .photo {
                     position: relative;
                     height: 25vh;
                     // width: 80%;
-                    height: $image-height;
-                    width: $image-width;
+                    // height: $image-height;
+                    // width: $image-width;
+                    height: 25vh;
+                    width: 25vh;
                     background-size: cover;
                     z-index: 2;
                     .none {
@@ -273,20 +282,24 @@ $left-disc: ($image-width)/(2) ;
                     }
                 }
                 .titulo {
-                    margin-top: 5%;
-                    font-size: auto;
+                    margin-top: 7.5%;
+                    font-size: 1em;
+                    width: 25vh;
+                    color: white;
+                    // text-align: left;
                 }
                 .autor {
-                    margin-top: 2%;
+                    margin-top: 2.5%;
+                    // text-align: left;
+                    width: 25vh;
+                    color: #b3b3b3;
+                    font-size: 0.9em;
                 }
                 .paginate-2 {
                     margin: 7.5% 0 7.5% 0;
                 }
                 
             }
-            // .obra:hover {
-            //     animation: song 1s linear forwards;
-            // }
         }
         
         .scrolling {
@@ -294,11 +307,11 @@ $left-disc: ($image-width)/(2) ;
             @include flex-column();
         }
         .center {
-            margin: 5% 0 0 0;
+            margin: 15vh 0 0 0;
             @include paginating();
         }
         .center-2 {
-            margin: 5% 0 20% 0;
+            margin: 0 0 30vh 0;
             @include paginating();
         }
         
@@ -317,21 +330,54 @@ $left-disc: ($image-width)/(2) ;
 @media (min-width: 760px) {
     .body-hidden {
         // width: 100%;
-        // background-color: yellow;
+        // background: rgba(84, 102, 108, 0.075);
+        background: black;
         .introduction {
             height: 45vh;
+            justify-content: center;
             .songs-header {
                 font-size: 3.2em;
                 letter-spacing: 0.05em;
+                padding: 0;
                 // font-size: 2em;
                 // padding:0 0 10% 0;
             }
             .songs-subtitle {
+                text-align: center;
                 font-size: 1.6em;
+                padding: 0;
+                width: 60%;
+                padding: 5% 0 0 0;
+                // border: 1px solid yellow;
             }
         }
         .wrapper {
-
+            margin: 0 15%;
+            width: auto;
+            .options {
+                padding: 1% 2%;
+                margin-top: 7.5vh;
+                margin-right: auto;
+                margin-left: 15%;
+                gap: 24px;
+                .songs-filtering {
+                    font-size: 1.1em;
+                }
+            }
+            .center {
+                margin: 10vh 0 0 0;
+                @include paginating();
+                // display: none;
+            }
+            .center-2 {
+                margin: 0 0 25vh 0;
+                @include paginating();
+            }
+            .lista {
+                margin-top: 5%;
+                margin-bottom: 5%;
+                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            }
         }
     }
 }
