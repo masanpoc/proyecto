@@ -1,4 +1,31 @@
 
+@font-face {
+    font-family: 'Bebas';
+    src: url('../../fonts/BebasNeue-Regular.woff2') format('woff2'),
+        url('../../fonts/BebasNeue-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Sansita';
+    src: url('../../fonts/Sansita-Regular.woff2') format('woff2'),
+        url('../../fonts/Sansita-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Proza';
+    src: url('../../fonts/ProzaLibre-Regular.woff2') format('woff2'),
+        url('../../fonts/ProzaLibre-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
 @mixin flex-row {
     display: flex;
     justify-content: center;
@@ -64,19 +91,29 @@ $left-disc: ($image-width)/(2) ;
         // padding-bottom: 5%;
         color: rgba(255, 255, 255, 0.767);
         @include flex-column();
+        justify-content: flex-end;
         height: 70vh;
         // font-size: 2em;
-        font-family: 'Lora';
+        text-align: left;
         // font-family: fantasy;
         .songs-header {
-            font-style: italic;
-            font-weight: lighter;
-            font-size: 4em;
-            padding:0 0 5% 0;
+            // border: 1px solid yellow;
+            width: 80%;
+            text-align: center;
+            font-family: 'Bebas';
+            font-size: 2em;
+            letter-spacing: 0.05em;
+            padding:0 0 15% 0;
         }
         .songs-subtitle {
-            width: 80%;
-            font-size: 1.5em;
+            // border: 1px solid green;
+            width: 60%;
+            font-size: 1em;
+            font-family: 'Proza';
+            padding-bottom: 30%;
+            padding-left: 10%;
+            padding-right: 10%;
+            font-weight: lighter;
         }
     }
 
@@ -284,11 +321,13 @@ $left-disc: ($image-width)/(2) ;
         .introduction {
             height: 45vh;
             .songs-header {
+                font-size: 3.2em;
+                letter-spacing: 0.05em;
                 // font-size: 2em;
                 // padding:0 0 10% 0;
             }
             .songs-subtitle {
-                // font-size: 1em;
+                font-size: 1.6em;
             }
         }
         .wrapper {

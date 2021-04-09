@@ -23,6 +23,15 @@
   }
 
   @font-face {
+    font-family: 'Sansita';
+    src: url('../../../../fonts/Sansita-Regular.woff2') format('woff2'),
+        url('../../../../fonts/Sansita-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
     font-family: 'Lato';
     src: url('../../../../fonts/Lato-Light.woff2') format('woff2'),
         url('../../../../fonts/Lato-Light.woff') format('woff');
@@ -41,14 +50,7 @@
     font-display: swap;
   }
   
-  @font-face {
-    font-family: 'Sansita';
-    src: url('../../../../fonts/Sansita-Regular.woff2') format('woff2'),
-        url('../../../../fonts/Sansita-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
+  
 
 .conocenos {
     background: rgba(195, 233, 255, 0.75);
@@ -89,7 +91,7 @@
             margin-top: 20%;
             font-size: 2.5em;
             font-family: 'Bebas';
-            letter-spacing: 0.1em;
+            letter-spacing: 0.05em;
             padding-bottom: 10%;
         }
         .c-sections {

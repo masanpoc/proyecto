@@ -81,6 +81,8 @@ h1, h2, h3, h4, h5, h6 {
         .heading {
             margin-top: 5%;
             font-family: 'Bebas';
+            font-size: 2em;
+            letter-spacing: 0.05em;
             // padding: 20% 0;
         }
         .description {
@@ -324,7 +326,6 @@ h1, h2, h3, h4, h5, h6 {
            height: 45vh;
             .heading {
                 font-size: 3.2em;
-                letter-spacing: 0.05em;
             }
             .description {
                 font-size: 1.3em;

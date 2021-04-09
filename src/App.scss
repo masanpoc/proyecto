@@ -291,26 +291,29 @@ html {
           position: absolute;
           height: 100%;
           width: 100%;
-          background: black;
-          // background: rgba(0, 0, 0, 0.637);
-          // backdrop-filter: blur(30px);
+          // background: black;
+          background: rgba(84, 102, 108, 0.664);
+          backdrop-filter: blur(10px);
           z-index: -1;
         }
         .link {
-          box-shadow: inset  0 0 28px -12px black;
+          box-shadow: inset  0 0 1px 0px rgb(0, 0, 0), 2px 2px 1px 0 rgba(0, 0, 0, 0.479);
           // box-shadow: 1px 1px 4px 0px rgb(136, 136, 136);
           // box-shadow: 0 0 10px 0px gray;
-          width: 75vw;
-          height: 9vh;
-          font-family: 'Lato';
+          width: 70vw;
+          height: 8vh;
+          // font-family: 'Lato';
           font-family: 'Gilroy';
           // border: 2px solid black;
-          font-size: 1.05em;
+          color: rgb(0, 0, 0);
+          font-size: 1em;
+          letter-spacing: 0.05em;
           font-weight: bold;
+          // font-style: italic;
           @include flex-column();
           border-radius: 10px;
           background: #a1c4fd;
-          background: linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%);
+          background: linear-gradient(90deg, rgb(161, 196, 253) 0%, rgb(194, 233, 251) 100%);
           // box-shadow: inset 0 0 3px 0.25px black;
         }        
       }
