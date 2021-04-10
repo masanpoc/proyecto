@@ -80,6 +80,7 @@
             margin-top: 35%;
             font-size: 1.1em;
             font-family: 'Sansita';
+            font-weight: lighter;
         }
        
     }
@@ -184,11 +185,25 @@
                 // padding: 0 5%;
                 // margin: 0 10% 0 0;
                 // y jugar con height, igual poner un div de toda la altura para q funcione para cualquier zona o igual solo ajustar la altura de la historia
-                .story-img {
-                    width: 65vw;
-                    height: auto;
-                    // display: none;
+                .img-group {
+                    @include flex-column();
+                    padding: 2.5vh 0;
+                    gap: 2vh;
+                    .img-story {
+                        width: 65vw;
+                        height: auto;
+                        // display: none;
+                    }
+                    .caption-story {
+                        color: #555555;
+                        font-size: 0.9em;
+                        font-family: 'Lato';
+                        font-weight: lighter;
+                        width: 60vw;
+                        text-align: center;
+                    }
                 }
+                
                 .story-title {
                     // display: none;
                     font-family: 'Josefin Sans';
@@ -218,6 +233,21 @@
     .wrapping {
         .intro-historia {
             height: 45vh;
+            justify-content: center;
+            .intro-title {
+                margin: 0;
+                font-size: 3.2em;
+                padding-top: 5%;
+            }
+            .intro-subtitle {
+                margin: 0;
+                text-align: center;
+                font-size: 1.6em;
+                padding: 0;
+                width: 70%;
+                padding: 5% 0 0 0;
+                
+            }
         }
     }
 }

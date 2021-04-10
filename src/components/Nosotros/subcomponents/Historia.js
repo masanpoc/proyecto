@@ -4,6 +4,7 @@ import gsap from 'gsap';
 import { Single } from './Historia/Single';
 import { Story } from './Historia/Story';
 import { Date } from './Historia/Date';
+import { Content1, Content2, Content3, Content4 } from './Historia/Content';
 
 import intro from './images/intro.jpg';
 
@@ -17,13 +18,10 @@ const list = [
         song: ' ',
         story: {
             title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque nisl leo molestie ipsum, lacus. Curabitur donec cras.',
-            paragraph: [
-                ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum maecenas consectetur amet purus accumsan viverra viverra. Dui lorem nibh dis eget fermentum. Elementum vulputate magna vitae, ut sollicitudin enim sed. Aliquam sit eu sit in ac, eget cursus luctus. In sed venenatis, sagittis adipiscing semper sit eu ornare.',
-                'Augue sed lectus phasellus erat. Ipsum euismod felis tortor, porttitor sit gravida. Vel viverra est lorem quisque mattis ac penatibus mauris. Auctor 1989 mattis pharetra in adipiscing tellus sed massa id. Egestas potenti enim ut adipiscing purus scelerisque.',
-                'Amet, consequat mi morbi sagittis id vestibulum suspendisse nec. Curabitur quam pharetra sit tincidunt tincidunt.  Quam odio rhoncus malesuada aliquam arcu amet vulputate nibh est. Fermentum urna, id nunc eget. Lec',
-                'Tus tellus lacus consectetur bibendum vitae. Et “purus sed tellus sed”  suspendisse faucibus leo at. Id molestie auctor urna feugiat enim varius in quis nulla. Amet, feugiat leo lacus eget. Auctor amet mattis facilisis ut sit. Tortor magna quisque adipiscing integer ultrices. Purus turpis blandit nunc.'
-            ],
-            image: intro
+            image: {
+                reference: intro,
+                caption: 'Foto de concierto en el 20XX'
+            }
         },
         date: 'May 2015'
     },
@@ -31,13 +29,10 @@ const list = [
         song: '',
         story: {
             title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque nisl leo molestie ipsum, lacus. Curabitur donec cras.',
-            paragraph: [
-                ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum maecenas consectetur amet purus accumsan viverra viverra. Dui lorem nibh dis eget fermentum. Elementum vulputate magna vitae, ut sollicitudin enim sed. Aliquam sit eu sit in ac, eget cursus luctus. In sed venenatis, sagittis adipiscing semper sit eu ornare.',
-                'Augue sed lectus phasellus erat. Ipsum euismod felis tortor, porttitor sit gravida. Vel viverra est lorem quisque mattis ac penatibus mauris. Auctor 1989 mattis pharetra in adipiscing tellus sed massa id. Egestas potenti enim ut adipiscing purus scelerisque.',
-                'Amet, consequat mi morbi sagittis id vestibulum suspendisse nec. Curabitur quam pharetra sit tincidunt tincidunt.  Quam odio rhoncus malesuada aliquam arcu amet vulputate nibh est. Fermentum urna, id nunc eget. Lec',
-                'Tus tellus lacus consectetur bibendum vitae. Et “purus sed tellus sed”  suspendisse faucibus leo at. Id molestie auctor urna feugiat enim varius in quis nulla. Amet, feugiat leo lacus eget. Auctor amet mattis facilisis ut sit. Tortor magna quisque adipiscing integer ultrices. Purus turpis blandit nunc.'
-            ],
-            image: '../images/intro.jpg'
+            image: {
+                reference: intro,
+                caption: 'Foto de concierto en el 20XX'
+            }
         },
         date: 'May 2016s'
     },
@@ -45,13 +40,10 @@ const list = [
         song: 'Vivaldi - Las cuatro estaciones (Primavera)',
         story: {
             title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque nisl leo molestie ipsum, lacus. Curabitur donec cras.',
-            paragraph: [
-                ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum maecenas consectetur amet purus accumsan viverra viverra. Dui lorem nibh dis eget fermentum. Elementum vulputate magna vitae, ut sollicitudin enim sed. Aliquam sit eu sit in ac, eget cursus luctus. In sed venenatis, sagittis adipiscing semper sit eu ornare.',
-                'Augue sed lectus phasellus erat. Ipsum euismod felis tortor, porttitor sit gravida. Vel viverra est lorem quisque mattis ac penatibus mauris. Auctor 1989 mattis pharetra in adipiscing tellus sed massa id. Egestas potenti enim ut adipiscing purus scelerisque.',
-                'Amet, consequat mi morbi sagittis id vestibulum suspendisse nec. Curabitur quam pharetra sit tincidunt tincidunt.  Quam odio rhoncus malesuada aliquam arcu amet vulputate nibh est. Fermentum urna, id nunc eget. Lec',
-                'Tus tellus lacus consectetur bibendum vitae. Et “purus sed tellus sed”  suspendisse faucibus leo at. Id molestie auctor urna feugiat enim varius in quis nulla. Amet, feugiat leo lacus eget. Auctor amet mattis facilisis ut sit. Tortor magna quisque adipiscing integer ultrices. Purus turpis blandit nunc.'
-            ],
-            image: '../images/intro.jpg'
+            image: {
+                reference: intro,
+                caption: 'Foto de concierto en el 20XX'
+            }
         },
         date: 'May 2015'
     },
@@ -59,17 +51,15 @@ const list = [
         song: '',
         story: {
             title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque nisl leo molestie ipsum, lacus. Curabitur donec cras.',
-            paragraph: [
-                ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum maecenas consectetur amet purus accumsan viverra viverra. Dui lorem nibh dis eget fermentum. Elementum vulputate magna vitae, ut sollicitudin enim sed. Aliquam sit eu sit in ac, eget cursus luctus. In sed venenatis, sagittis adipiscing semper sit eu ornare.',
-                'Augue sed lectus phasellus erat. Ipsum euismod felis tortor, porttitor sit gravida. Vel viverra est lorem quisque mattis ac penatibus mauris. Auctor 1989 mattis pharetra in adipiscing tellus sed massa id. Egestas potenti enim ut adipiscing purus scelerisque.',
-                'Amet, consequat mi morbi sagittis id vestibulum suspendisse nec. Curabitur quam pharetra sit tincidunt tincidunt.  Quam odio rhoncus malesuada aliquam arcu amet vulputate nibh est. Fermentum urna, id nunc eget. Lec',
-                'Tus tellus lacus consectetur bibendum vitae. Et “purus sed tellus sed”  suspendisse faucibus leo at. Id molestie auctor urna feugiat enim varius in quis nulla. Amet, feugiat leo lacus eget. Auctor amet mattis facilisis ut sit. Tortor magna quisque adipiscing integer ultrices. Purus turpis blandit nunc.'
-            ],
-            image: '../images/intro.jpg'
+            image: {
+                reference: intro,
+                caption: 'Foto de concierto en el 20XX'
+            }
         },
         date: 'May 2016s'
     }
 ]
+
 
 export const Historia = () => {
     // constant definitions
@@ -299,9 +289,10 @@ export const Historia = () => {
 
             {/* para cada fecha */}
             <div className='stories' ref={el => (stories = el)}>
-                {list.map((el) => (
-                    <Story title={el.story.title} paragraph={el.story.paragraph} image={el.story.image}/>
-                ))}
+                <Story title={list[0].story.title} paragraph={<Content1 />} image={list[0].story.image} />
+                <Story title={list[1].story.title} paragraph={<Content2 />} image={list[1].story.image} />
+                <Story title={list[2].story.title} paragraph={<Content3 />} image={list[2].story.image} />
+                <Story title={list[3].story.title} paragraph={<Content4 />} image={list[3].story.image} />
             </div>
 
             {/* linea de fechas */}
