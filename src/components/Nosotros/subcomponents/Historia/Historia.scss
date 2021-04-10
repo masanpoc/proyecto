@@ -67,7 +67,7 @@
         color: rgba(255, 255, 255, 0.767);
         background-position: center;
         justify-content: flex-start;
-        box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.582);
+        box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.699);
         width: 100vw;
         .intro-title {
             margin-top: 40%;
@@ -247,6 +247,174 @@
                 width: 70%;
                 padding: 5% 0 0 0;
                 
+            }
+        }
+        .historia {
+            margin: 20vh 0;
+            // background: gray;
+            // height: 100vh;
+            height: auto;
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+            display: flex;
+            border: none;
+            flex-direction: column;
+            justify-content: space-around;
+            .line {
+                color: white;
+                // margin-top: 20%;
+                position: relative;
+                width: 100vw;
+                height: 5vh;
+                background: black;
+                margin: -8% 0 0 0;
+                // @include flex-column();
+                // align-content: flex-start;
+                .years {
+                    width: 2000vw;
+                    position: absolute;
+                    font-family: 'Rufina';
+                    // font-size: 1.4em;
+                    left: calc(50vw - 3vw);
+                    // top: -25px;
+                    top: calc(2.5vh - 3vw);            
+                    // width: auto;
+                    // border: 1px solid black;
+                    @include flex-row();
+                    // margin-left: 50vw;
+                    justify-content: flex-start;
+                    // position: absolute;
+                    .circle {
+                        width: 6vw;
+                        height: 6vw;
+                        border-radius: 50%;
+                        background: black;
+                        margin: 0 100vw 0 0;
+                        @include flex-column();
+                        font-size: 0.8em;
+                    }
+                }
+            }
+            .sound {
+                // background: blueviolet;
+                width: 40vw;
+                height: 2.5vw;
+                // border: 1px solid black;
+                position: relative;
+                // background: gray;
+                margin-left: auto;
+                margin-right: 0;
+                margin-top: -2.5%;
+                margin-bottom: -7.5%;
+                overflow: hidden;
+                .note {
+                    height: 2.5vw;
+                    width: 2.5vw;
+                    color: black;
+                    position: absolute;
+                    left: 15.5vw;
+                    top: 0;
+                }
+                .single {
+                    @include flex-column();
+                    font-family: 'Roboto';
+                    align-items: flex-start;
+                    width: 200vw;
+                    font-size: 0.8em;
+                    height: 2.5vw;
+                    // border: 1px solid black;
+                    margin: 0 5% 0 0;
+                    position: absolute;
+                    // left: 0;
+                    left: 19vw;
+                    // width: 50vw;
+                }
+            }
+            .stories {
+                
+                // background: lightseagreen;
+                // border: 1px solid black;
+                // width: 100%;
+                width: 400vw;
+                height: 80vh;
+                @include flex-column();
+                align-content: flex-start;
+                flex-wrap: wrap;
+                .story {
+                    border: none;
+                    // border: 1px solid black;
+                    height: 80vh;
+                    width: 80vw;
+                    margin: 0 10vw;
+                    @include flex-column();
+                    justify-content: flex-start;
+                    overflow: hidden;
+                    text-align: left;
+                    position: relative;
+                    // overflow-y: scroll;
+                    // padding: 0 5%;
+                    // margin: 0 10% 0 0;
+                    // y jugar con height, igual poner un div de toda la altura para q funcione para cualquier zona o igual solo ajustar la altura de la historia
+                    .img-group {
+                        @include flex-column();
+                        width: 30vw;
+                        // padding: 2.5vh 0;
+                        padding: 0;
+                        gap: 2vh;
+                        position: absolute;
+                        top: 27.5vh;
+                        left: 0;
+                        .img-story {
+                            // box-shadow:   0 0 1px 1000px rgb(0, 0, 0);
+                            width: 30vw;
+                            height: auto;
+                            // display: none;
+                        }
+                        .caption-story {
+                            color: #555555;
+                            font-size: 0.9em;
+                            font-family: 'Lato';
+                            font-weight: lighter;
+                            width: 30vw;
+                            text-align: center;
+                        }
+                    }
+                    
+                    .story-title {
+                        // display: none;
+                        font-family: 'Josefin Sans';
+                        font-weight: bold;
+                        font-size: 2.5em;
+                        margin: 2.5% 0 0 5%;
+                        z-index: 2;
+                        padding: 0;
+                        // margin: 0 5% 0 5%;
+                        // padding: 5% 0 0 7.5%;
+                        background: none;
+                        // background: rgba(195, 233, 255, 0.5);
+                    }
+                    .content {
+                        position: absolute;
+                        // display: none;
+                        width: 40vw;
+                        right: 0vw;
+                        top: 10vh;
+                        font-size: 0.9em;
+                        background: rgba(195, 233, 255, 0.5);
+                        
+                        padding: 10vh 2.5vw 5vh 12.5vw ;
+                        // margin: 5% 7.5% 0 10%;
+                        margin: 0;
+
+                        .paragraph {
+                            line-height: 135%;
+                            font-family: 'Lato';
+                        }
+                    }
+                }
+                .dark {
+                    background: black;
+                }
             }
         }
     }
