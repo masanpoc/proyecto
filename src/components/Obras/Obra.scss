@@ -57,8 +57,8 @@
                     padding-top: 2px;
                 }
                 .page {
-                    background-color: black;
-                    color: white;
+                    // background-color: black;
+                    color: rgba(255, 255, 255, 0.8);
                 }
                 .active {
                     background-color: rgba(122, 121, 121, 0.842);
@@ -125,22 +125,23 @@ $left-disc: ($image-width)/(2) ;
         // background: linear-gradient(#000000,  #631414 ,#000000 ); 
         // background-attachment: local;
         // background: white;
-        background: black;
+        background: linear-gradient(180deg, grey -150%, black 50%, grey 200%);
         @include flex-column();
 
 
         .options {
             width: fit-content;
             background-color: #BFE4FF;
-            padding: 2.5% 5%;
+            padding: 2.5% 6%;
             margin-top: 15vh;
             margin-right: auto;
             margin-left: 15%;
             @include flex-row();
             gap: 24px;
-            box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.473);
+            box-shadow: inset 0 0 2px 2px rgba(121, 121, 121, 0.774);
+            border-radius: 10px;
             .songs-filtering {
-                font-size: 1.3em;
+                font-size: 1.25em;
                 font-weight: lighter;
             }
             .sorting {
@@ -158,62 +159,118 @@ $left-disc: ($image-width)/(2) ;
         .filtros {
             color: black;
             margin: 0 5% 5% 5%;
-            height: 50vh;
+            height: 200px;
             width: 50%;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            border-radius: 10px;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             gap: 10%;
-            background-color: black;
-            border: 1px solid gray;
-            // border-radius: 20px;
-            padding: 7.5% 0 2.5% 0;
+            background-color: #BFE4FF;
+            box-shadow: inset 0 0 2px 2px rgba(121, 121, 121, 0.774);
+            padding: 7% 7.5% 7% 7.5%;
             position: relative;
-            // > * {
-            //     background-color: #A0A0A0;
-            // }
+            > * {
+                font-weight: lighter;
+            }
             .closing {
                 position: absolute;
-                right: 3%;
-                top: 2.5%;
-                color: #A0A0A0;
+                right: 3.5%;
+                top: 3.5%;
+                color: black;
                 background: none;
-                height: 4vh;
-                width: 6vw;
+                height: 20px;
+                width: 20px;
                 cursor: pointer;
+                // display: none;
+                // border: 1px solid black;
                 // transform: rotate(90deg);
+                
             }
             .finder {
                 @include flex-column();
+                align-items: flex-start;
                 @include complete();
-                gap: 5%;
-                background-color: #A0A0A0;
-                // .heading {
-                //     width: 10vw;
-                // }
-                // .searcher {
-                //     width: 15vw;
-                // }
+                // border: 1px solid black;
+                gap: 10px;
+                .heading {
+                    width: 100%;
+                    font-weight: lighter;
+                    // border: 1px solid black;
+                    text-align: left;
+                }
+                .searcher {
+                    border: none;
+                    border-radius: 2.5px;
+                    padding: 1% 2%;
+                    // width: 100%;
+                    box-shadow: 0 0 2px 0 gray;
+                }
             }
             .genre {
-                @include flex-column();
+                // @include flex-column();
+                // align-items: flex-start;
+                
+                @include flex-row();
+                justify-content: flex-start;
+                gap: 10px;
                 @include complete();
-                background-color: #A0A0A0;
+                // border: 1px solid black;
+                .genre-head {
+                    font-weight: lighter;
+                    // border: 1px solid black;
+                    width: 60px;
+                    text-align: left;
+                }
+                .genre-option {
+                    width: 50%;
+                    border: none;
+                    border-radius: 2.5px;
+                    padding: 1% 2%;
+                    box-shadow: 0 0 2px 0 gray;
+                }
             }
             .sorting {
-                @include flex-column();
+                // @include flex-column();
+                // align-items: flex-start;
+                
+                @include flex-row();
+                justify-content: flex-start;
+                gap: 10px;
                 @include complete();
-                background-color: #A0A0A0;
+                // border: 1px solid black;
+                .sorting-head {
+                    font-weight: lighter;
+                    // border: 1px solid black;
+                    width: 60px;
+                    text-align: left;
+                }
+                .sorting-option {
+                    width: 50%;
+                    border: none;
+                    border-radius: 2.5px;
+                    padding: 1% 2%;
+                    box-shadow: 0 0 2px 0 gray;
+                }
             }
             .available {
                 @include flex-row();
+                justify-content: flex-start;
                 @include complete();
-                background-color: #A0A0A0;
+                // border: 1px solid black;
+                gap: 15px;
+                // background-color: #A0A0A0;
                 // gap: 5%;
-                // .marker-info {
-                //     width: 16vw;
-                // }
-                // .playable {
-                // }
+                .marker-info {
+                    * {
+                        font-weight: lighter;
+                    }
+                    text-align: left;
+                    width: fit-content;
+                    // border: 1px solid black;
+                }
+                .playable {
+                    
+                }
             }
         }
         
@@ -285,7 +342,7 @@ $left-disc: ($image-width)/(2) ;
                     margin-top: 7.5%;
                     font-size: 1em;
                     width: 25vh;
-                    color: white;
+                    color: rgba(255, 255, 255, 0.9);
                     // text-align: left;
                 }
                 .autor {
@@ -330,8 +387,8 @@ $left-disc: ($image-width)/(2) ;
 @media (min-width: 760px) {
     .body-hidden {
         // width: 100%;
-        // background: rgba(84, 102, 108, 0.075);
-        background: black;
+        background: rgba(84, 102, 108, 0.075);
+        // background: black;
         .introduction {
             height: 45vh;
             justify-content: center;
@@ -354,6 +411,7 @@ $left-disc: ($image-width)/(2) ;
         .wrapper {
             margin: 0 15%;
             width: auto;
+            // background: linear-gradient(180deg, grey -80%, black 30%, grey 180%)
             .options {
                 padding: 1% 2%;
                 margin-top: 7.5vh;
@@ -377,6 +435,75 @@ $left-disc: ($image-width)/(2) ;
                 margin-top: 5%;
                 margin-bottom: 5%;
                 grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            }
+            .filtros {
+                // margin: 0 5% 5% 5%;
+                // padding: 7% 7.5% 7% 7.5%;
+                margin: 5% 0 5% 0;
+                padding:0;
+                height: 70px;
+                width: 70%;
+                gap: 10%;
+                display: flex;
+                > * {
+                    font-weight: lighter;
+                }
+                .closing {
+                    right: 3.5%;
+                    top: 3.5%;
+                    height: 20px;
+                    width: 20px;
+                    display: none;
+                    border: 1px solid black;
+                    
+                }
+                .finder {
+                    border: 1px solid black;
+                    gap: 10px;
+                    .heading {
+                        width: 100%;
+                        // border: 1px solid black;
+                    }
+                    .searcher {
+                    }
+                }
+                .genre {
+                    @include flex-column();
+                    align-items: flex-start;
+                    gap: 10px;
+                    border: 1px solid black;
+                    .genre-head {
+                        border: 1px solid black;
+                        width: 60px;
+                    }
+                    .genre-option {
+                        width: 50%;
+                    }
+                }
+                .sorting {
+                    @include flex-column();
+                    align-items: flex-start;
+                    gap: 10px;
+                    border: 1px solid black;
+                    .sorting-head {
+                        // border: 1px solid black;
+                        width: 60px;
+                    }
+                    .sorting-option {
+                        width: 50%;
+                    }
+                }
+                .available {
+                    gap: 15px;
+                    border: 1px solid black;
+                    .marker-info {
+                        width: fit-content;
+                        // border: 1px solid black;
+                    }
+                    .playable {
+                        
+                    }
+                }
             }
         }
     }

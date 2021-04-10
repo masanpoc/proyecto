@@ -822,14 +822,22 @@ export const Obras = () => {
                             <path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
                     </svg>
                     <div className='finder'>
-                        <label><h4 className='heading'>Encontrar obra:</h4></label>
+                        <label><h5 className='heading'>Encontrar obra:</h5></label>
                         <input className='searcher' onChange={handleText} placeholder='escribe un autor, título...' />
                     </div>
-                    
+
+                    <label className='sorting'>
+                        <h5 className='sorting-head'>Ordenar</h5>
+                        <select className='sorting-option' value={orderValue} onChange={handleOrder}>
+                            <option value=''>Por época</option>
+                            <option value='titulo' >Por título</option>
+                            <option value='autor' >Por autor</option>
+                        </select>
+                    </label>
                     
                     <label className='genre'>
-                        <h5>Época</h5>
-                        <select value={listValue} onChange={handleChange}>
+                        <h5 className='genre-head'>Época</h5>
+                        <select className='genre-option' value={listValue} onChange={handleChange}>
                             <option value='' ></option>
                             <option value='Barroco'>Barroco</option>
                             <option value='Clasicismo' >Clasicismo</option>
@@ -841,17 +849,10 @@ export const Obras = () => {
                         </select>
                     </label>
 
-                    <label className='sorting'>
-                        <h5>Ordenar</h5>
-                        <select value={orderValue} onChange={handleOrder}>
-                            <option value=''>Por época</option>
-                            <option value='titulo' >Por título</option>
-                            <option value='autor' >Por autor</option>
-                        </select>
-                    </label>
+                    
 
                     <div className='available'>
-                        <label className='marker-info' htmlFor="playable"><h4>Pista disponible para escuchar</h4></label>
+                        <label className='marker-info' htmlFor="playable"><h5>Pista disponible</h5></label>
                         <input className='playable' type="checkbox" id="playable" name="playable" onChange={handleCheck} ></input>
                     </div>
                     
