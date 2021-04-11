@@ -332,7 +332,7 @@
                             font-family: 'Arvo';
                             font-style: italic;
                             color: #818181;
-                            font-size: 0.9em;
+                            font-size: 1.1em;
                         }
                         .time {
                             @include flex-row();
@@ -346,18 +346,19 @@
                                 font-family: 'Arvo';
                                 font-style: italic;
                                 color: #818181;
-                                font-size: 0.9em;
+                                font-size: 1.1em;
                             }
                         
                         }
                     }
                     .title {
                         font-family: 'Playfair Display';
-                        font-size: 1.4em;
+                        font-size: 2em;
                         margin: 5% 0;
                     }
                     .subtitle {
                         font-family: 'Exo';
+                        font-size: 1.7em;
                     }
                     .writer {
                         @include flex-row();
@@ -371,6 +372,7 @@
                         }
                         .who {
                             font-family: 'Lato';
+                            font-size: 1.2em;
                             // font-style: italic;
                             font-weight: lighter;
                         }
@@ -384,6 +386,7 @@
                     .title-2 {
                         font-family: 'Playfair Display';
                         margin-top: 7.5%;
+                        font-size: 1.9em;
                     }
                     .media {
                         @include flex-column();
@@ -405,6 +408,7 @@
                             font-family: 'Lato';
                             font-weight: lighter;
                             list-style: outside;
+                            font-size: 1.25em;
                             // margin-left: 10%;
                             margin: 3.5% 0 3.5% 10%;
                             line-height: 125%;
@@ -426,6 +430,7 @@
                         font-weight: lighter;
                         line-height: 165%;
                         margin: 10% 0;
+                        font-size: 1.25em;
                     }
                 }
 
@@ -445,7 +450,7 @@
                         .title-3 {
                             font-family: 'Exo';
                             text-decoration: underline;
-                            font-size: 1.1em;
+                            font-size: 1.7em;
                             width: 85%;
                             margin-left: 7.5%;
                         }
@@ -454,6 +459,7 @@
                             font-style: italic;
                             color: #a4a4a4;
                             width: 85%;
+                            font-size: 1.4em;
                             margin-left: 7.5%;
                             margin-top: 5%;
                             margin-bottom: 5%;
@@ -462,13 +468,14 @@
                             font-family: 'Lato';
                             font-style: italic;
                             color: #969696;
+                            font-size: 1.2em;
                             width: 85%;
                             margin-left: 7.5%;
                         }
                     }
                     .wrapper-2 {
                         overflow: hidden;
-                        height: 25vh;
+                        height: 30vh;
                         width: 45%;
                         box-shadow: inset 0 4px 4px 1000px rgba(99, 99, 99, 0.58);
                         position: relative;
@@ -541,11 +548,11 @@
                                 font-family: 'Lato';
                                 font-weight: lighter;
                                 // font-style: italic;
-                                font-size: 1.1em;
+                                font-size: 1.2em;
                             }
                             .name-line {
                                 font-family: 'Lato';
-                                font-size: 1.2em;
+                                font-size: 1.6em;
                                 text-decoration: underline;
                                 // font-weight: lighter;
                             }
@@ -555,12 +562,14 @@
                     .quote {
                         font-family: 'Lato';
                         font-style: italic;
+                        font-size: 1.25em;
                         margin: 2.5% 5% 7.5% 5%;
                     }
                 }
 
                 .link {
                     margin-top: 10vh;
+                    font-size: 1.3em;
                     font-family: 'Lato';
                     text-decoration: underline;
                 }

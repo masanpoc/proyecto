@@ -7,10 +7,10 @@ export const HistoriaFeed = () => {
 
 
     // useEffect definitions
-    // useEffect(() => {
-    //     slide();
+    useEffect(() => {
+        slide();
         
-    // }, [])
+    }, [])
 
     // useRef definitions
     let display = useRef();
@@ -41,11 +41,11 @@ export const HistoriaFeed = () => {
             <h2 className='header-1'>Agrupación de Orquesta Joven en A Coruña</h2>
             <div className='mask'>
                 <div
-                //  ref={el=>(display0=el)}
+                 ref={el=>(display0=el)}
 
                   className='bg'></div>
                 <img 
-                // ref={el=>(display=el)}
+                ref={el=>(display=el)}
                  alt='info' src={historia} className='info-image' />
             </div>
             <div className='content-1'>

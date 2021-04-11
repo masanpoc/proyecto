@@ -24,7 +24,9 @@
 @mixin header-style {
   font-weight: lighter;
           font-size: 1.4em;
-          background: rgba(255, 255, 255, 0.8);
+          background: rgba(195, 233, 255, 0.192);
+          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.123);
+          // background: rgba(255, 255, 255, 0.8);
           position: absolute;
           top: 3.5vh;
           margin: 0 10% 0 7.5%;
@@ -46,6 +48,7 @@
   text-decoration: underline;
   gap: 2%;
   font-size: 0.9em;
+  box-shadow:  0 0 5px 0 rgba(0, 0, 0, 0.192);
 }
 
 @mixin text-style {
@@ -64,7 +67,9 @@
 
 @mixin content-style {
   position: absolute;
-  background: rgba(245, 249, 255, 0.71);
+  // background: rgba(245, 249, 255, 0.71);
+  background: rgba(233, 247, 255, 0.6);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.123);
   padding: 2%;
   @include flex-column();
   justify-content: space-around;
@@ -250,6 +255,7 @@ ul {
           z-index: 4;
           top: 74vh;
           right: 7.5vw;
+          
         }
       }
 
@@ -524,7 +530,7 @@ h3, h2, h4 {
           font-size: 1em;
         }
         .link-1 {
-          width: 20vw;
+          width: 16vw;
           top: 70vh;
           right: 4vw;
           font-size: 1.3em;
@@ -592,7 +598,7 @@ h3, h2, h4 {
           }
         }
         .link-2 {
-          width: 22.5vw;
+          width: 18.5vw;
           top: 62.5vh;
           right: 5vw;
           font-size: 1.3em;
@@ -626,7 +632,7 @@ h3, h2, h4 {
           font-size: 1em;
         }
         .link-3 {
-          width: 17.5vw;
+          width: 14.5vw;
           top: 72vh;
           right: 5vw;
           font-size: 1.3em;
@@ -669,7 +675,7 @@ h3, h2, h4 {
         }
         .link-4 {
           @include link-style();
-          width: 17.5vw;
+          width: 12.5vw;
           font-size: 1.3em;
           top: 67.5vh;
           right: 6vw;

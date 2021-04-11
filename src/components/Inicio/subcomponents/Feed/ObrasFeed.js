@@ -8,10 +8,10 @@ import gsap from 'gsap';
 export const ObrasFeed = () => {
     
     // useEffect definitions
-    // useEffect(() => {
-    //     slide();
+    useEffect(() => {
+        slide();
         
-    // }, [])
+    }, [])
 
     // useRef definitions
     let img1 = useRef();

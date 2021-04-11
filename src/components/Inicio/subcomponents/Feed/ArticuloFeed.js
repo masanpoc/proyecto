@@ -5,6 +5,38 @@ import gsap from 'gsap';
 
 
 export const ArticuloFeed = () => {
+
+    
+    // useEffect definitions
+    useEffect(() => {
+        slide();
+        
+    }, [])
+
+    // useRef definitions
+    let display = useRef();
+    let display0 = useRef();
+
+    // useState definitiçons
+    
+
+    // functions
+    const slide = () => {
+        const slidetl = gsap.timeline();
+        slidetl
+        .from(display0, {
+            yPercent: -110,
+            ease: 'power1.in',
+            duration: 1
+        })
+        .from(display, {
+            scale: 1.5,
+            yPercent: -150,
+            ease: 'power2.in',
+            duration: 1.5
+        }, '>-0.5')
+    }
+
     return (
         <div className='item-4'>
             <h2 className='header-4'>Echa un vistazo a nuestro último artículo publicado</h2>
@@ -19,11 +51,11 @@ export const ArticuloFeed = () => {
             
             <div className='mask'>
                 <div 
-                // ref={el=>(display0=el)}
+                ref={el=>(display0=el)}
 
                  className='bg'></div>
                 <img 
-                // ref={el=>(display=el)}
+                ref={el=>(display=el)}
                  alt='info' src={articulo} className='item-4-image' />
             </div>
             <span className='link-4'>

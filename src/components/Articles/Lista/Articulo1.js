@@ -188,7 +188,7 @@ export const Articulo1 = () => {
                     </div>
                     
 
-                    <Link className='link' to='/articulos'>Go back</Link>
+                    <Link className='link' to='/articulos'>Volver</Link>
                 </div>
             </div>
         </div>
