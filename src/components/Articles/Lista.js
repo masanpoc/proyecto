@@ -174,42 +174,42 @@ export const Lista = () => {
             </div>
 
             {/* articulos --> a medida que se añaden ir poniendo classname 1, 2, 3, 4,... 1, 2, 3, 4-... */}
-            <div className='article-1'>
-                <div ref={el=>(crop1=el)} className='cropped-1'>
-                    <h3 className='title'>Titulo que sea sobre orquesta por ejemplo</h3>
-                    <p className='abstract-0'>Resumen:</p>
-                    <p className='abstract' >Algunos de nuestros miembros han escrito artículos increíbles sobre música clásica</p>
-                    <Link className='link' to='/articulos/1'> {'>> '}Leer artículo</Link>
+            <div className='articles-wrapper'>
+                <div className='article-1'>
+                    <div ref={el=>(crop1=el)} className='cropped-1'>
+                        <h3 className='title'>Titulo que sea sobre orquesta por ejemplo</h3>
+                        <p className='abstract-0'>Resumen:</p>
+                        <p className='abstract' >Algunos de nuestros miembros han escrito artículos increíbles sobre música clásica</p>
+                        <Link className='link' to='/articulos/1'> {'>> '}Leer artículo</Link>
+                    </div>
+                    <div ref={el=>(shadow1=el)} className='shadowing'></div>
                 </div>
-                <div ref={el=>(shadow1=el)} className='shadowing'></div>
-            </div>
-            <div className='article-2'>
-                <div ref={el=>(crop2=el)} className='cropped-2'>
-                    <h3 className='title'>Titulo que sea sobre orquesta por ejemplo</h3>
-                    <p className='abstract-0'>Resumen</p>
-                    <p className='abstract' >Algunos de nuestros miembros han escrito artículos increíbles sobre música clásica</p>
-                    <Link className='link' to='/articulos/2'>{'>> '}Leer artículo</Link>
+                <div className='article-2'>
+                    <div ref={el=>(crop2=el)} className='cropped-2'>
+                        <h3 className='title'>Titulo que sea sobre orquesta por ejemplo</h3>
+                        <p className='abstract-0'>Resumen</p>
+                        <p className='abstract' >Algunos de nuestros miembros han escrito artículos increíbles sobre música clásica</p>
+                        <Link className='link' to='/articulos/2'>{'>> '}Leer artículo</Link>
+                    </div>
+                </div>
+                <div className='article-3'>
+                    <div ref={el=>(crop3=el)} className='cropped-3'>
+                        <h3 className='title'>Titulo que sea sobre orquesta por ejemplo</h3>
+                        <p className='abstract-0'>Resumen</p>
+                        <p className='abstract' >Algunos de nuestros miembros han escrito artículos increíbles sobre música clásica</p>
+                        <Link className='link' to='/articulos/3'>{'>> '}Leer artículo</Link>
+                    </div>
+                    <div ref={el=>(shadow3=el)} className='shadowing'></div>
+                </div>
+                <div className='article-4'>
+                    <div ref={el=>(crop4=el)} className='cropped-4'>
+                        <h3 className='title'>Titulo que sea sobre orquesta por ejemplo</h3>
+                        <p className='abstract-0'>Resumen</p>
+                        <p className='abstract' >Algunos de nuestros miembros han escrito artículos increíbles sobre música clásica</p>
+                        <Link className='link' to='/articulos/4'>{'>> '}Leer artículo</Link>
+                    </div>
                 </div>
             </div>
-            <div className='article-3'>
-                <div ref={el=>(crop3=el)} className='cropped-3'>
-                    <h3 className='title'>Titulo que sea sobre orquesta por ejemplo</h3>
-                    <p className='abstract-0'>Resumen</p>
-                    <p className='abstract' >Algunos de nuestros miembros han escrito artículos increíbles sobre música clásica</p>
-                    <Link className='link' to='/articulos/3'>{'>> '}Leer artículo</Link>
-                </div>
-                <div ref={el=>(shadow3=el)} className='shadowing'></div>
-            </div>
-            <div className='article-4'>
-                <div ref={el=>(crop4=el)} className='cropped-4'>
-                    <h3 className='title'>Titulo que sea sobre orquesta por ejemplo</h3>
-                    <p className='abstract-0'>Resumen</p>
-                    <p className='abstract' >Algunos de nuestros miembros han escrito artículos increíbles sobre música clásica</p>
-                    <Link className='link' to='/articulos/4'>{'>> '}Leer artículo</Link>
-                </div>
-            </div>
-
-            
             {/* <div className='loader'>
                 Botón de cargar más (aparece si hay más)
             </div> */}

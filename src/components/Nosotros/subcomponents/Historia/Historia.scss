@@ -59,6 +59,9 @@
   }
 
 .wrapping {
+    display: flex;
+    flex-direction: column;
+    background: #54666c13;
     .intro-historia {
         height: 70vh;
         @include flex-column();
@@ -86,13 +89,15 @@
     }
     .historia {
         margin: 20vh 0;
-        // background: gray;
-        height: 100vh;
-        border-top: 2px solid black;
-        border-bottom: 2px solid black;
+        background: white;
+        // height: 80vh;
+        // border-top: 2px solid black;
+        // border-bottom: 2px solid black;
+        box-shadow: 0 0 2px 0 grey;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        // justify-content: space-around;
+        justify-content: center;
         .line {
             color: white;
             // margin-top: 20%;
@@ -100,7 +105,7 @@
             width: 100vw;
             height: 5vh;
             background: black;
-            margin: 7.5% 0 7.5% 0;
+            margin: 12.5% 0 7.5% 0;
             // @include flex-column();
             // align-content: flex-start;
             .years {
@@ -131,14 +136,14 @@
         .sound {
             // background: blueviolet;
             width: 60vw;
-            height: 7.5vw;
+            height: 5vh;
             // border: 1px solid black;
             position: relative;
             // background: gray;
             margin-left: auto;
             margin-right: 4vw;
-            margin-top: 2.5%;
-            margin-bottom: 2.5%;
+            margin-top: 1vh;
+            margin-bottom: 2vh;
             overflow: hidden;
             .note {
                 height: 5vw;
@@ -175,12 +180,14 @@
             flex-wrap: wrap;
             .story {
                 // border: 1px solid black;
-                height: 80vh;
+                height: 65vh;
                 width: 100vw;
                 @include flex-column();
                 justify-content: flex-start;
                 overflow: hidden;
                 text-align: left;
+                margin: 2.5vh 0 3vh 0;
+                // margin: 2.5vh 0;
                 // overflow-y: scroll;
                 // padding: 0 5%;
                 // margin: 0 10% 0 0;
@@ -245,7 +252,7 @@
                 font-size: 1.6em;
                 padding: 0;
                 width: 70%;
-                padding: 5% 0 0 0;
+                padding: 5% 0 2.5% 0;
                 
             }
         }
@@ -259,7 +266,7 @@
             display: flex;
             border: none;
             flex-direction: column;
-            justify-content: space-around;
+            justify-content: flex-start;
             .line {
                 color: white;
                 // margin-top: 20%;
@@ -267,7 +274,7 @@
                 width: 100vw;
                 height: 5vh;
                 background: black;
-                margin: -8% 0 0 0;
+                margin: 8.5vh 0 0 0;
                 // @include flex-column();
                 // align-content: flex-start;
                 .years {
@@ -303,9 +310,10 @@
                 position: relative;
                 // background: gray;
                 margin-left: auto;
-                margin-right: 0;
-                margin-top: -2.5%;
-                margin-bottom: -7.5%;
+                margin-right: 7.5vw;
+                margin-bottom: 0;
+                margin-top: 7.5vh;
+                // margin-bottom: -7.5%;
                 overflow: hidden;
                 .note {
                     height: 2.5vw;
@@ -336,16 +344,17 @@
                 // border: 1px solid black;
                 // width: 100%;
                 width: 400vw;
-                height: 80vh;
+                height: 60vh;
                 @include flex-column();
+                margin: 4vh 0 0 0;
                 align-content: flex-start;
                 flex-wrap: wrap;
                 .story {
                     border: none;
                     // border: 1px solid black;
-                    height: 80vh;
-                    width: 80vw;
-                    margin: 0 10vw;
+                    height: 60vh;
+                    width: 65vw;
+                    margin: 0 17.5vw;
                     @include flex-column();
                     justify-content: flex-start;
                     overflow: hidden;
@@ -357,16 +366,16 @@
                     // y jugar con height, igual poner un div de toda la altura para q funcione para cualquier zona o igual solo ajustar la altura de la historia
                     .img-group {
                         @include flex-column();
-                        width: 30vw;
+                        width: 25vw;
                         // padding: 2.5vh 0;
                         padding: 0;
                         gap: 2vh;
                         position: absolute;
-                        top: 27.5vh;
+                        top: 20vh;
                         left: 0;
                         .img-story {
                             // box-shadow:   0 0 1px 1000px rgb(0, 0, 0);
-                            width: 30vw;
+                            width: 25vw;
                             height: auto;
                             // display: none;
                         }
@@ -375,7 +384,7 @@
                             font-size: 0.9em;
                             font-family: 'Lato';
                             font-weight: lighter;
-                            width: 30vw;
+                            width: 25vw;
                             text-align: center;
                         }
                     }
@@ -384,10 +393,11 @@
                         // display: none;
                         font-family: 'Josefin Sans';
                         font-weight: bold;
-                        font-size: 2.5em;
-                        margin: 2.5% 0 0 5%;
+                        font-size: 2em;
+                        margin: 0;
                         z-index: 2;
-                        padding: 0;
+                        padding: 2.5% 0 0 5%;
+                        // border: 1px solid black;
                         // margin: 0 5% 0 5%;
                         // padding: 5% 0 0 7.5%;
                         background: none;
@@ -396,24 +406,21 @@
                     .content {
                         position: absolute;
                         // display: none;
-                        width: 40vw;
-                        right: 0vw;
-                        top: 10vh;
-                        font-size: 0.9em;
+                        width: 34vw;
+                        right: -1vw;
+                        top: 8vh;
+                        font-size: 0.8em;
                         background: rgba(195, 233, 255, 0.5);
                         
-                        padding: 10vh 2.5vw 5vh 12.5vw ;
+                        padding: 5% 4% 2% 12.5% ;
                         // margin: 5% 7.5% 0 10%;
                         margin: 0;
 
                         .paragraph {
-                            line-height: 135%;
+                            line-height: 145%;
                             font-family: 'Lato';
                         }
                     }
-                }
-                .dark {
-                    background: black;
                 }
             }
         }

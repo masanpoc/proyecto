@@ -125,7 +125,7 @@ $left-disc: ($image-width)/(2) ;
         // background: linear-gradient(#000000,  #631414 ,#000000 ); 
         // background-attachment: local;
         // background: white;
-        background: linear-gradient(180deg, grey -150%, black 50%, grey 200%);
+        background: linear-gradient(180deg, #444444, #3e3e3e, #383838, #323232, #2d2d2d, #272727, #222222, #1c1c1c, #171717, #111111, #0a0a0a, #000000, #0a0a0a, #111111, #171717, #1c1c1c, #222222, #272727, #2d2d2d, #323232, #383838, #3e3e3e, #444444);
         @include flex-column();
 
 
