@@ -1,6 +1,6 @@
 import './App.scss';
 import React, { useState, useRef, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link, Redirect} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link, Redirect, useLocation, withRouter} from 'react-router-dom';
 import {Intro} from './components/Intro/Intro';
 import {Inicio} from './components/Inicio/Inicio';
 import {Articulos} from './components/Articles/Articulos';
@@ -10,6 +10,8 @@ import {Historia} from './components/Nosotros/subcomponents/Historia';
 import {Conocenos} from './components/Nosotros/subcomponents/Conocenos';
 import {Proyectos} from './components/Nosotros/subcomponents/Proyectos';
 import gsap from 'gsap';
+
+
 
 function App() {
    // constant variables
@@ -36,6 +38,15 @@ function App() {
   // function vhToPx(value) {
   //   return window.innerHeight * (value/100)
   // }
+  function _ScrollToTop(props) {
+    const { pathname } = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        // console.log(window.innerWidth);
+    }, [pathname]);
+    return props.children
+  }
+  const ScrollToTop = withRouter(_ScrollToTop);
   
    const intro = () => {
     gsap.set(App, {
@@ -53,6 +64,8 @@ function App() {
      }
    })
    };
+
+   
    
   return ( 
     // we use router to render the matching route (handle different pages) 
@@ -118,6 +131,7 @@ function App() {
 
         {/* we start the routing process with a switch --> once exact name is found --> routing stops and react renders the matched component */}
         <Switch>
+          {/* <ScrollToTop> */}
           <Route path='/' exact component={Inicio} />
           <Route path='/articulos' exact component={Articulos} />
           <Route path='/obras' component={Obras} />
@@ -128,6 +142,7 @@ function App() {
           <Route path="*">
             <Redirect to="/" />
           </Route>
+          {/* </ScrollToTop> */}
         </Switch>
       
 

@@ -34,7 +34,7 @@
 
 @mixin mask-style {
   
-  background: yellow;
+  // background: yellow;
   overflow: hidden;
   position: absolute;
   z-index: 2;
@@ -215,6 +215,7 @@ ul {
           padding: 2.5% 2.5% 2.5% 4%;
           top: 3.5vh;
           margin: 0 10% 0 7.5%;
+          z-index: 3;
         }
         .mask {
           @include mask-style();
@@ -530,7 +531,7 @@ h3, h2, h4 {
           font-size: 1em;
         }
         .link-1 {
-          width: 16vw;
+          width: 18vw;
           top: 70vh;
           right: 4vw;
           font-size: 1.3em;
@@ -598,7 +599,7 @@ h3, h2, h4 {
           }
         }
         .link-2 {
-          width: 18.5vw;
+          width: 20vw;
           top: 62.5vh;
           right: 5vw;
           font-size: 1.3em;
