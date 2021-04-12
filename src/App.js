@@ -130,8 +130,9 @@ function App() {
      
 
         {/* we start the routing process with a switch --> once exact name is found --> routing stops and react renders the matched component */}
+      <ScrollToTop>
         <Switch>
-          {/* <ScrollToTop> */}
+         
           <Route path='/' exact component={Inicio} />
           <Route path='/articulos' exact component={Articulos} />
           <Route path='/obras' component={Obras} />
@@ -142,9 +143,9 @@ function App() {
           <Route path="*">
             <Redirect to="/" />
           </Route>
-          {/* </ScrollToTop> */}
+          
         </Switch>
-      
+      </ScrollToTop>
 
         {/* footer */}
         <footer className='footer'>

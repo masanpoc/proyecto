@@ -65,7 +65,8 @@ export const Historia = () => {
     // constant definitions
 
     // useRef definitions
-    // let wrapper = useRef();
+    let wrapper = useRef();
+    let wrapper2 = useRef();
     let sound = useRef();
     let stories = useRef();
     let line = useRef();
@@ -102,13 +103,17 @@ export const Historia = () => {
 
     // functions
     const slide = () => {
+
+        console.log(stories.offsetWidth);
+
         // testing
         // gsap.to(line, {
         //     duration: 3,
         //     x: 550,
         //     scrollTrigger: {
         //         trigger: line,
-        //         markers: true
+        //         markers: true,
+        //         end: '+=9000'
         //     }
         // })
         // gsap.to(sound, {
@@ -123,7 +128,7 @@ export const Historia = () => {
         // scrolling down current story
         // gsap.to(stories.children[0].children, {
         //     duration: 2,
-        //     y: -800,
+        //     y: -900,
         //     scrollTrigger: {
         //         trigger: stories,
         //         markers: true,
@@ -160,38 +165,41 @@ export const Historia = () => {
             //     scrollTrigger: {
             //         trigger: wrapper,
             //         pin: true,
-                    // invalidateOnRefresh: true,
-                    // scrub: 1,
-                    // start: 'top top',
-                    // end: '+=800'
-                    // end: () =>  '+=' + ((1.4 * (stories.offsetWidth)) - document.documentElement.clientWidth)
-            //     }
-            // })
-            // gsap.to(wrapper, {
-            //     scrollTrigger: {
-            //         trigger: wrapper,
-            //         pin: true,
-            //         markers: true
-            //     }
-            // })
-
-        // fadeIn/Out + move the stories as we scroll
-            // move stories
-            // gsap.to(stories, {
-            //     x: () => -((stories.scrollWidth) - document.documentElement.clientWidth) + "px",
-            //     ease: 'none',
-            //     scrollTrigger: {
-            //         trigger: stories,
-            //         // pin: true,
             //         invalidateOnRefresh: true,
             //         scrub: 1,
             //         // markers: true,
             //         start: 'top top',
-            //         snap: 1 / (stories.children.length - 1),
-            //         // end after scrolling the whole width of stories from the start
-            //         end: () => '+=' + (stories.offsetWidth),
+            //         // end: '+=800',
+            //         end: () =>  '+=' + ((1.4 * (stories.offsetWidth)) - document.documentElement.clientWidth)
             //     }
             // })
+            gsap.to('.App', {
+                scrollTrigger: {
+                    trigger: '.App',
+                    pin: true,
+                    markers: true,
+                    start: 'center top',
+                    end: '+=9000'
+                }
+            })
+
+        // fadeIn/Out + move the stories as we scroll
+            // move stories
+            gsap.to(stories, {
+                x: () => -((stories.scrollWidth) - document.documentElement.clientWidth) + "px",
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: stories,
+                    // pin: true,
+                    invalidateOnRefresh: true,
+                    scrub: 1,
+                    // markers: true,
+                    start: 'top top',
+                    snap: 1 / (stories.children.length - 1),
+                    // end after scrolling the whole width of stories from the start
+                    end: () => '+=' + (stories.offsetWidth),
+                }
+            })
             // fadeIn/Out stories
             // gsap.from(stories.children[1], {
             //     duration: 2,
@@ -267,46 +275,47 @@ export const Historia = () => {
 
 
     return (
-        <div className='wrapping'>
-        <div className='intro-historia'>
-            <h2 className='intro-title'>Nuestra historia</h2>
-            <h3 className='intro-subtitle'>Descubre algunos de los eventos que hemos llevado a cabo a lo largo de la agrupación </h3>
-        </div>
-        <div 
-        // ref={el => (wrapper = el)}
-         className='historia' style={{'minHeight': '100vh'}}>
-
-            {/* cancion del año */}
-            <div className='sound' ref={el => (sound = el)}>
-                <svg className='note' viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M21,3V15.5A3.5,3.5 0 0,1 17.5,19A3.5,3.5 0 0,1 14,15.5A3.5,3.5 0 0,1 17.5,12C18.04,12 18.55,12.12 19,12.34V6.47L9,8.6V17.5A3.5,3.5 0 0,1 5.5,21A3.5,3.5 0 0,1 2,17.5A3.5,3.5 0 0,1 5.5,14C6.04,14 6.55,14.12 7,14.34V6L21,3Z" />
-                </svg>
-                {/* song */}
-                {list.map((el) => (
-                    <Single song={el.song} />
-                ))}
+        <div className='wrapping' ref={el => (wrapper2 = el)}>
+            <div className='intro-historia'>
+                <h2 className='intro-title'>Nuestra historia</h2>
+                <h3 className='intro-subtitle'>Descubre algunos de los eventos que hemos llevado a cabo a lo largo de la agrupación </h3>
             </div>
 
-            {/* para cada fecha */}
-            <div className='stories' ref={el => (stories = el)}>
-                <Story title={list[0].story.title} paragraph={<Content1 />} image={list[0].story.image} />
-                <Story title={list[1].story.title} paragraph={<Content2 />} image={list[1].story.image} />
-                <Story title={list[2].story.title} paragraph={<Content3 />} image={list[2].story.image} />
-                <Story title={list[3].story.title} paragraph={<Content4 />} image={list[3].story.image} />
-            </div>
+            <div 
+            ref={el => (wrapper = el)}
+            className='historia' style={{'minHeight': '100vh'}}>
 
-            {/* linea de fechas */}
-            <div className='line' ref={el => (line = el)}>
-                {/* fechas */}
-                <div className='years' ref={el => (years = el)}>
+                {/* cancion del año */}
+                <div className='sound' ref={el => (sound = el)}>
+                    <svg className='note' viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M21,3V15.5A3.5,3.5 0 0,1 17.5,19A3.5,3.5 0 0,1 14,15.5A3.5,3.5 0 0,1 17.5,12C18.04,12 18.55,12.12 19,12.34V6.47L9,8.6V17.5A3.5,3.5 0 0,1 5.5,21A3.5,3.5 0 0,1 2,17.5A3.5,3.5 0 0,1 5.5,14C6.04,14 6.55,14.12 7,14.34V6L21,3Z" />
+                    </svg>
+                    {/* song */}
                     {list.map((el) => (
-                        <div className='circle'>
-                            <Date date={el.date} />
-                        </div>
+                        <Single song={el.song} />
                     ))}
                 </div>
+
+                {/* para cada fecha */}
+                <div className='stories' ref={el => (stories = el)}>
+                    <Story title={list[0].story.title} paragraph={<Content1 />} image={list[0].story.image} />
+                    <Story title={list[1].story.title} paragraph={<Content2 />} image={list[1].story.image} />
+                    <Story title={list[2].story.title} paragraph={<Content3 />} image={list[2].story.image} />
+                    <Story title={list[3].story.title} paragraph={<Content4 />} image={list[3].story.image} />
+                </div>
+
+                {/* linea de fechas */}
+                <div className='line' ref={el => (line = el)}>
+                    {/* fechas */}
+                    <div className='years' ref={el => (years = el)}>
+                        {list.map((el) => (
+                            <div className='circle'>
+                                <Date date={el.date} />
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
-        </div>
         </div>
     )
 }
