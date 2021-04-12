@@ -10,6 +10,7 @@ import intro from './images/intro.jpg';
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+import { wrap } from 'gsap/gsap-core';
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -104,7 +105,49 @@ export const Historia = () => {
     // functions
     const slide = () => {
 
-        console.log(stories.offsetWidth);
+        // console.log(stories.offsetWidth);
+
+        // timeline
+        const scrollTimeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: wrapper,
+                start: 'top center',
+                end: 'bottom top+=200',
+                markers: true,
+                scrub: 2
+            }
+        });
+
+        scrollTimeline
+        .from(sound, {
+            autoAlpha: 0,
+            duration: 1
+        })
+        .to(years.children[0], {
+            duration: 1,
+            scale: 0.8,
+            x: '-=100',
+        })
+        .to(years.children[0], {
+            duration: 1,
+            autoAlpha: 0,
+            x: '-=100',
+        })
+        .to(stories, {
+            x: () => -((stories.scrollWidth) - document.documentElement.clientWidth)/3 + "px",
+            ease: 'none',
+            duration: 2
+        }, '>-2')
+        .to(sound, {
+            autoAlpha: 0,
+            duration: 1
+        })
+        .to(stories.children[1].children, {
+            duration: 2,
+            y: -900,
+        })
+
+
 
         // testing
         // gsap.to(line, {
@@ -173,33 +216,36 @@ export const Historia = () => {
             //         end: () =>  '+=' + ((1.4 * (stories.offsetWidth)) - document.documentElement.clientWidth)
             //     }
             // })
-            gsap.to('.App', {
-                scrollTrigger: {
-                    trigger: '.App',
-                    pin: true,
-                    markers: true,
-                    start: 'center top',
-                    end: '+=9000'
-                }
-            })
+
+            // const vh = (coef) => window.innerHeight * (coef/100)
+
+            // gsap.to('.App', {
+            //     scrollTrigger: {
+            //         trigger: '.App',
+            //         pin: true,
+            //         markers: true,
+            //         start: 'top+=' + vh(90) + ' top',
+            //         end: '+=9000'
+            //     }
+            // })
 
         // fadeIn/Out + move the stories as we scroll
             // move stories
-            gsap.to(stories, {
-                x: () => -((stories.scrollWidth) - document.documentElement.clientWidth) + "px",
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: stories,
-                    // pin: true,
-                    invalidateOnRefresh: true,
-                    scrub: 1,
-                    // markers: true,
-                    start: 'top top',
-                    snap: 1 / (stories.children.length - 1),
-                    // end after scrolling the whole width of stories from the start
-                    end: () => '+=' + (stories.offsetWidth),
-                }
-            })
+            // gsap.to(stories, {
+            //     x: () => -((stories.scrollWidth) - document.documentElement.clientWidth) + "px",
+            //     ease: 'none',
+            //     scrollTrigger: {
+            //         trigger: stories,
+            //         // pin: true,
+            //         invalidateOnRefresh: true,
+            //         scrub: 1,
+            //         // markers: true,
+            //         start: 'top top',
+            //         snap: 1 / (stories.children.length - 1),
+            //         // end after scrolling the whole width of stories from the start
+            //         end: () => '+=' + (stories.offsetWidth),
+            //     }
+            // })
             // fadeIn/Out stories
             // gsap.from(stories.children[1], {
             //     duration: 2,
