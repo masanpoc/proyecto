@@ -13,6 +13,17 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 export const Feed = () => {
+
+    useEffect(() => {
+        return () => {
+            ScrollTrigger.getAll().forEach((instance) => {
+              instance.kill();
+            });
+            // This in case a scroll animation is active while the route is updated
+            gsap.killTweensOf(window);
+          };
+    }, [])
+
     return (
         <div className='feed'>
             <HistoriaFeed  />

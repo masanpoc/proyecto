@@ -13,6 +13,7 @@ import gsap from 'gsap';
 
 
 
+
 function App() {
    // constant variables
 
@@ -24,6 +25,8 @@ function App() {
   const [active, setActive] = useState(false);
 
    // useEffect definitions
+  
+
   //  commented out this and the <intro /> element
   //  useEffect(() => {
   //    intro();

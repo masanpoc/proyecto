@@ -16,7 +16,7 @@ gsap.registerPlugin(ScrollToPlugin);
 
 const list = [
     {
-        song: ' ',
+        song: 'Canción referente a ese año - Autores - genero de la cancion o año ...',
         story: {
             title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque nisl leo molestie ipsum, lacus. Curabitur donec cras.',
             image: {
@@ -27,7 +27,7 @@ const list = [
         date: 'May 2015'
     },
     {
-        song: '',
+        song: 'Canción referente a ese año - Autores',
         story: {
             title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque nisl leo molestie ipsum, lacus. Curabitur donec cras.',
             image: {
@@ -49,7 +49,7 @@ const list = [
         date: 'May 2015'
     },
     {
-        song: '',
+        song: 'Canción referente a ese año - Autores',
         story: {
             title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque nisl leo molestie ipsum, lacus. Curabitur donec cras.',
             image: {
@@ -76,9 +76,17 @@ export const Historia = () => {
 
 
     // useEffect definitions
-    // useEffect(() => {
-    //     slide()
-    // }, [])
+    useEffect(() => {
+        slide()
+        return () => {
+            ScrollTrigger.getAll().forEach((instance) => {
+              instance.kill();
+            });
+            // This in case a scroll animation is active while the route is updated
+            gsap.killTweensOf(window);
+          };
+    }, [])
+
 
     useEffect(() => {
         // timeoutId for debounce mechanism
@@ -105,97 +113,143 @@ export const Historia = () => {
     // functions
     const slide = () => {
 
+        const vh = (coef) => window.innerHeight * (coef/100);
+        const vw = (coef) => window.innerWidth * (coef/100);
+
         // console.log(stories.offsetWidth);
 
-        // timeline
-        const scrollTimeline = gsap.timeline({
-            scrollTrigger: {
-                trigger: wrapper,
-                start: 'top top',
-                end: 'bottom top-=8000',
-                markers: true,
-                scrub: 2,
-                snap: 1 / (4 - 1)
-            }
-        });
 
-        scrollTimeline
-        // .from(sound, {
+        // playing songs/moving them
+        // gsap.to(sound.children[0].children, {
+        //     x: -vw(27.5),
+        //     duration: 10,
+        //     repeat: -1,
+        //     ease: 'none'
+        // })
+
+        // // timeline
+        // const scrollTimeline = gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: wrapper,
+        //         start: 'top top',
+        //         end: 'bottom top-=8000',
+        //         markers: true,
+        //         scrub: 2,
+        //         snap: 1 / (4 - 1)
+        //     }
+        // });
+
+        // scrollTimeline
+
+        // // fading out first story
+        // .to(wrapper, {
+        //     ease: 'none',
+        //     xPercent: -25,
+        //     duration: 2
+        // })
+        // .to(sound.children[0], {
         //     autoAlpha: 0,
-        //     duration: 1
-        // })
-        .to(stories.children[0], {
-            autoAlpha: 0,
-            duration: 2
-        })
-        .to(years.children[0], {
-            scale: 0.2,
-            duration: 2
-        }, '>-2')
-        .to(wrapper, {
-            ease: 'none',
-            xPercent: -25,
-            duration: 2
-        }, '>-2')
-        .from(years.children[1], {
-            scale: 2,
-            duration: 2
-        }, '>-2')
-        .from(stories.children[1], {
-            autoAlpha: 0,
-            duration: 2
-        }, '>-2')
-        // .to(sound, {
+        //     duration: 2
+        // }, '>-2')
+        // .to(stories.children[0], {
         //     autoAlpha: 0,
-        //     duration: 1
+        //     duration: 2
+        // }, '>-2')
+        // .to(years.children[0], {
+        //     scale: 0.2,
+        //     duration: 2
+        // }, '>-2')
+        
+
+        // // fading in second story
+        // .from(sound.children[1], {
+        //     autoAlpha: 0,
+        //     duration: 2
+        // }, '>-2')
+        // .from(stories.children[1], {
+        //     autoAlpha: 0,
+        //     duration: 2
+        // }, '>-2')
+        // .from(years.children[1], {
+        //     scale: 2,
+        //     duration: 2
+        // }, '>-2')
+        
+        
+        
+        // // esto para la mobile version
+        // // .to(stories.children[1].children, {
+        // //     duration: 2,
+        // //     y: -900,
+        // // })
+
+        // // fading out second story
+        // .to(wrapper, {
+        //     ease: 'none',
+        //     xPercent: -50,
+        //     duration: 2
         // })
-        // .to(stories.children[1].children, {
-        //     duration: 2,
-        //     y: -900,
+        // .to(sound.children[1], {
+        //     autoAlpha: 0,
+        //     duration: 2
+        // }, '>-2')
+        // .to(stories.children[1], {
+        //     autoAlpha: 0,
+        //     duration: 2
+        // }, '>-2')
+        // .to(years.children[1], {
+        //     scale: 0.2,
+        //     duration: 2
+        // }, '>-2')
+
+        // // fading in third story
+        // .from(sound.children[2], {
+        //     scale: 2,
+        //     duration: 2
+        // }, '>-2')
+        // .from(years.children[2], {
+        //     scale: 2,
+        //     duration: 2
+        // }, '>-2')
+        // .from(stories.children[2], {
+        //     autoAlpha: 0,
+        //     duration: 2
+        // }, '>-2')
+
+        // // fading out third story
+        // .to(wrapper, {
+        //     ease: 'none',
+        //     xPercent: -75,
+        //     duration: 2
         // })
-        .to(stories.children[1], {
-            autoAlpha: 0,
-            duration: 2
-        })
-        .to(years.children[1], {
-            scale: 0.2,
-            duration: 2
-        }, '>-2')
-        .to(wrapper, {
-            ease: 'none',
-            xPercent: -50,
-            duration: 2
-        }, '>-2')
-        .from(years.children[2], {
-            scale: 2,
-            duration: 2
-        }, '>-2')
-        .from(stories.children[2], {
-            autoAlpha: 0,
-            duration: 2
-        }, '>-2')
-        .to(stories.children[2], {
-            autoAlpha: 0,
-            duration: 2
-        })
-        .to(years.children[2], {
-            scale: 0.2,
-            duration: 2
-        }, '>-2')
-        .to(wrapper, {
-            ease: 'none',
-            xPercent: -75,
-            duration: 2
-        }, '>-2')
-        .from(years.children[3], {
-            scale: 2,
-            duration: 2
-        }, '>-2')
-        .from(stories.children[3], {
-            autoAlpha: 0,
-            duration: 2
-        }, '>-2')
-        // if we add an ending 
+        // .to(sound.children[2], {
+        //     autoAlpha: 0,
+        //     duration: 2
+        // }, '>-2')
+        // .to(stories.children[2], {
+        //     autoAlpha: 0,
+        //     duration: 2
+        // }, '>-2')
+        // .to(years.children[2], {
+        //     scale: 0.2,
+        //     duration: 2
+        // }, '>-2')
+        
+        // // fading in fourth story
+        // .from(sound.children[3], {
+        //     scale: 2,
+        //     duration: 2
+        // }, '>-2')
+        // .from(years.children[3], {
+        //     scale: 2,
+        //     duration: 2
+        // }, '>-2')
+        // .from(stories.children[3], {
+        //     autoAlpha: 0,
+        //     duration: 2
+        // }, '>-2')
+
+        // if we add an ending // more slides
         // .to(stories.children[3], {
         //     autoAlpha: 0,
         //     duration: 2
@@ -237,152 +291,291 @@ export const Historia = () => {
         //     }
         // })
 
+        // pinning the whole page
+        if(window.innerWidth>760) {
+            // pinning
+            gsap.to('.App', {
+                scrollTrigger: {
+                    trigger: '.App',
+                    pin: true,
+                    // markers: true,
+                    start: 'top+=' + vh(90) + ' top',
+                    end: '+=9000'
+                }
+            })
+            // running timeline
+             // timeline
+            const scrollTimeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: wrapper,
+                    start: 'top top',
+                    end: 'bottom top-=8000',
+                    // markers: true,
+                    scrub: 2,
+                    snap: 1 / (4 - 1)
+                }
+            });
 
-        // scrolling down current story
-        // gsap.to(stories.children[0].children, {
-        //     duration: 2,
-        //     y: -900,
-        //     scrollTrigger: {
-        //         trigger: stories,
-        //         markers: true,
-        //         start: 'center-=100 center', 
-        //         end: 'bottom-=100 center', 
-        //         scrub: 1
-        //     }
-        // })
+            scrollTimeline
 
-        // fadeIn/Out everything
-            // const tlStory = gsap.timeline({
-            // });
-            // tlStory
-            // .from(sound, {
-            //     duration: 1,
-            //     autoAlpha: 0  
-            // })
-            // .from(stories, {
-            //     duration: 1,
-            //     autoAlpha: 0  
-            // }, 0)
-            // .from(line, {
-            //     duration: 1,
-            //     autoAlpha: 0  
-            // }, 0)
-            // .to(wrapper, {
-            //     duration: 2,
-            //     autoAlpha: 0.5  
-            // }, 2)
+            // fading out first story
+            .to(wrapper, {
+                ease: 'none',
+                xPercent: -25,
+                duration: 2
+            })
+            .to(sound.children[0], {
+                autoAlpha: 0,
+                duration: 2
+            }, '>-2')
+            .to(stories.children[0], {
+                autoAlpha: 0,
+                duration: 2
+            }, '>-2')
+            .to(years.children[0], {
+                scale: 0.2,
+                duration: 2
+            }, '>-2')
+            
+            // fading in second story
+            .from(sound.children[1], {
+                autoAlpha: 0,
+                duration: 2
+            }, '>-2')
+            .from(stories.children[1], {
+                autoAlpha: 0,
+                duration: 2
+            }, '>-2')
+            .from(years.children[1], {
+                scale: 2,
+                duration: 2
+            }, '>-2')
+
+            // fading out second story
+            .to(wrapper, {
+                ease: 'none',
+                xPercent: -50,
+                duration: 2
+            })
+            .to(sound.children[1], {
+                autoAlpha: 0,
+                duration: 2
+            }, '>-2')
+            .to(stories.children[1], {
+                autoAlpha: 0,
+                duration: 2
+            }, '>-2')
+            .to(years.children[1], {
+                scale: 0.2,
+                duration: 2
+            }, '>-2')
+
+            // fading in third story
+            .from(sound.children[2], {
+                scale: 2,
+                duration: 2
+            }, '>-2')
+            .from(years.children[2], {
+                scale: 2,
+                duration: 2
+            }, '>-2')
+            .from(stories.children[2], {
+                autoAlpha: 0,
+                duration: 2
+            }, '>-2')
+
+            // fading out third story
+            .to(wrapper, {
+                ease: 'none',
+                xPercent: -75,
+                duration: 2
+            })
+            .to(sound.children[2], {
+                autoAlpha: 0,
+                duration: 2
+            }, '>-2')
+            .to(stories.children[2], {
+                autoAlpha: 0,
+                duration: 2
+            }, '>-2')
+            .to(years.children[2], {
+                scale: 0.2,
+                duration: 2
+            }, '>-2')
+            
+            // fading in fourth story
+            .from(sound.children[3], {
+                scale: 2,
+                duration: 2
+            }, '>-2')
+            .from(years.children[3], {
+                scale: 2,
+                duration: 2
+            }, '>-2')
+            .from(stories.children[3], {
+                autoAlpha: 0,
+                duration: 2
+            }, '>-2')
+        }
 
 
-        // Pin the whole div during all the scrolling
-            // gsap.to(wrapper, {
-            //     scrollTrigger: {
-            //         trigger: wrapper,
-            //         pin: true,
-            //         invalidateOnRefresh: true,
-            //         scrub: 1,
-            //         // markers: true,
-            //         start: 'top top',
-            //         // end: '+=800',
-            //         end: () =>  '+=' + ((1.4 * (stories.offsetWidth)) - document.documentElement.clientWidth)
-            //     }
-            // })
-
-            const vh = (coef) => window.innerHeight * (coef/100)
-
+        if(window.innerWidth<760) {
+            // pinning
             gsap.to('.App', {
                 scrollTrigger: {
                     trigger: '.App',
                     pin: true,
                     markers: true,
-                    start: 'top+=' + vh(90) + ' top',
+                    start: 'top+=' + vh(120) + ' top',
                     end: '+=9000'
                 }
             })
 
-        // fadeIn/Out + move the stories as we scroll
-            // move stories
-            // gsap.to(stories, {
-            //     x: () => -((stories.scrollWidth) - document.documentElement.clientWidth) + "px",
-            //     ease: 'none',
-            //     scrollTrigger: {
-            //         trigger: stories,
-            //         // pin: true,
-            //         invalidateOnRefresh: true,
-            //         scrub: 1,
-            //         // markers: true,
-            //         start: 'top top',
-            //         snap: 1 / (stories.children.length - 1),
-            //         // end after scrolling the whole width of stories from the start
-            //         end: () => '+=' + (stories.offsetWidth),
-            //     }
-            // })
-            // fadeIn/Out stories
-            // gsap.from(stories.children[1], {
-            //     duration: 2,
-            //     autoAlpha: 0,
-            //     scrollTrigger: {
-            //         trigger: stories.children[1],
-            //         start: () => 'top+=' + (stories.scrollWidth / 4) + ' center',
-            //         end: 'top+=' + (2 * (stories.scrollWidth / 4)) +  ' center',
-            //         toggleActions: "play reverse play reverse"
-            //     }
-            // })
+            // running timeline
+            
+            // timeline
+            const scrollTimeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: wrapper,
+                    start: 'top top',
+                    end: 'bottom top-=4000',
+                    markers: true,
+                    scrub: 1,
+                    // snap: 1 / (4 - 1)
+                }
+            });
 
-        // fadeIn/Out + move <--> current song
-            // fadeIn/Out first song (not the svg)
-            // gsap.from(sound.children[1], {
-            //     duration: 2,
-            //     autoAlpha: 0,
-            //     scrollTrigger: {
-            //         trigger: stories.children[1],
-            //         start: () => 'top+=' + (stories.scrollWidth / 4) + ' center',
-            //         end: 'top+=' + (2 * (stories.scrollWidth / 4)) +  ' center',
-            //         // scrub: 2,
-            //         // markers: true,
-            //         toggleActions: "play reverse play reverse"
-            //     }
-            // })
-            // move the current song (using useState) from right to left
-            // gsap.to(sound.children[0], {
-            //     duration: 6,
-            //     x: '-' + (window.innerWidth / 5) ,
-            //     repeat: -1,
-            //     scrollTrigger: {
-            //         trigger: stories.children[0],
-            //         start: () => 'top+=' + (stories.scrollWidth / 4) + ' center',
-            //         end: 'top+=' + (2 * (stories.scrollWidth / 4)) +  ' center',
-            //         // scrub: 2,
-            //         markers: true,
-            //         toggleActions: "play reverse play reverse"
-            //     }
-            // })
-       
-        // move + scale <--> current year/date
-            // first move backwards
-            // gsap.to(years.children[0], {
-            //     duration: 5,
-            //     scale: 0.8,
-            //     x: '-=100',
-            //     scrollTrigger: {
-            //         trigger: stories.children[0],
-            //         start: () => 'top+=' + (stories.scrollWidth / 4) + ' center',
-            //         end: 'top+=' + (2 * (stories.scrollWidth / 4)) +  ' center',
-            //         scrub: true
-            //     }
-            // })
-            // second move backwards
-            // gsap.to(years.children[0], {
-            //     duration: 5,
-            //     autoAlpha: 0,
-            //     x: '-=100',
-            //     scrollTrigger: {
-            //         immediateRender: false, 
-            //         trigger: stories.children[0],
-            //         start: () => 'top+=' + (2.2 * (stories.scrollWidth / 4)) + ' center',
-            //         end: 'top+=' + (3 * (stories.scrollWidth / 4)) +  ' center',
-            //         scrub: true
-            //     }
-            // })
+            scrollTimeline
+
+            // scrolling up first story
+            .to(stories.children[0].children, {
+                duration: 20,
+                y: -vh(150),
+                ease: 'power2.in'
+            })
+
+            // fading out first story
+            .to(wrapper, {
+                ease: 'none',
+                xPercent: -25,
+                duration: 2
+            })
+            .to(sound.children[0], {
+                autoAlpha: 0,
+                duration: 2
+            }, '>-2')
+            .to(stories.children[0], {
+                autoAlpha: 0,
+                duration: 2
+            }, '>-2')
+            .to(years.children[0], {
+                scale: 0.2,
+                duration: 2
+            }, '>-2')
+            
+
+            // fading in second story
+            .from(sound.children[1], {
+                autoAlpha: 0,
+                duration: 2
+            }, '>-2')
+            .from(stories.children[1], {
+                autoAlpha: 0,
+                duration: 2
+            }, '>-2')
+            .from(years.children[1], {
+                scale: 2,
+                duration: 2
+            }, '>-2')
+
+            // scrolling up second story
+            .to(stories.children[1].children, {
+                duration: 20,
+                y: -vh(150),
+                ease: 'power2.in'
+            })
+
+            // fading out second story
+            .to(wrapper, {
+                ease: 'none',
+                xPercent: -50,
+                duration: 2
+            })
+            .to(sound.children[1], {
+                autoAlpha: 0,
+                duration: 2
+            }, '>-2')
+            .to(stories.children[1], {
+                autoAlpha: 0,
+                duration: 2
+            }, '>-2')
+            .to(years.children[1], {
+                scale: 0.2,
+                duration: 2
+            }, '>-2')
+
+            // fading in third story
+            .from(sound.children[2], {
+                scale: 2,
+                duration: 2
+            }, '>-2')
+            .from(years.children[2], {
+                scale: 2,
+                duration: 2
+            }, '>-2')
+            .from(stories.children[2], {
+                autoAlpha: 0,
+                duration: 2
+            }, '>-2')
+
+            // scrolling up third story
+            .to(stories.children[2].children, {
+                duration: 20,
+                y: -vh(150),
+                ease: 'power2.in'
+            })
+
+            // fading out third story
+            .to(wrapper, {
+                ease: 'none',
+                xPercent: -75,
+                duration: 2
+            })
+            .to(sound.children[2], {
+                autoAlpha: 0,
+                duration: 2
+            }, '>-2')
+            .to(stories.children[2], {
+                autoAlpha: 0,
+                duration: 2
+            }, '>-2')
+            .to(years.children[2], {
+                scale: 0.2,
+                duration: 2
+            }, '>-2')
+            
+            // fading in fourth story
+            .from(sound.children[3], {
+                scale: 2,
+                duration: 2
+            }, '>-2')
+            .from(years.children[3], {
+                scale: 2,
+                duration: 2
+            }, '>-2')
+            .from(stories.children[3], {
+                autoAlpha: 0,
+                duration: 2
+            }, '>-2')
+
+            // scrolling up fourth story
+            .to(stories.children[3].children, {
+                duration: 20,
+                y: -vh(150),
+                ease: 'power2.in'
+            })
+
+        }    
 
         
     }
