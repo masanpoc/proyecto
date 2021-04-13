@@ -103,24 +103,26 @@
             margin-left: 40vw;
             margin-top: 4vh;
             overflow: hidden;
-            .note {
-                height: 5vw;
-                width: 5vw;
-                color: black;
-                position: absolute;
-                left: 3.5vw;
-                top: 1vw
-            }
-            .single {
-                @include flex-column();
-                font-family: 'Roboto';
-                align-items: flex-start;
-                width: 200vw;
-                font-size: 0.8em;
-                height: 7.5vw;
-                margin: 0 5% 0 0;
-                position: absolute;
-                left: 11vw;
+            .group-song {
+                .note {
+                    height: 5vw;
+                    width: 5vw;
+                    color: black;
+                    position: absolute;
+                    left: 3.5vw;
+                    top: 1vw
+                }
+                .single {
+                    @include flex-column();
+                    font-family: 'Roboto';
+                    align-items: flex-start;
+                    width: 200vw;
+                    font-size: 0.8em;
+                    height: 7.5vw;
+                    margin: 0 5% 0 0;
+                    position: absolute;
+                    left: 11vw;
+                }
             }
         }
         .stories {
@@ -231,15 +233,17 @@
                 height: 5vh;
                 margin-top: 5vh;
                 margin-left: 55vw;
-                .note {
-                    height: 2vw;
-                    width: 2vw;
-                    left: 16vw;
-                    top: 0.4vh;
-                }
-                .single {
-                    height: 2.5vw;
-                    left: 19vw;
+                .group-song {
+                    .note {
+                        height: 2vw;
+                        width: 2vw;
+                        left: 16vw;
+                        top: 0.4vh;
+                    }
+                    .single {
+                        height: 2.5vw;
+                        left: 19vw;
+                    }
                 }
             }
             .stories {
@@ -293,17 +297,17 @@
                 }
             }
             .line {
-                width: 100vw;
+                width: 400vw;
                 height: 5vh;
                 margin: 10vh 0 0 0;
                 .years {
-                    // width: 2000vw;
+                    width: 400vw;
                     left: calc(50vw - 3vw);
                     top: calc(2.5vh - 3vw);     
                     .circle {
                         width: 6vw;
                         height: 6vw;
-                        // margin: 0 100vw 0 0;
+                        margin: 0 94vw 0 0;
                     }
                 }
             }

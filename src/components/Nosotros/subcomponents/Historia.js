@@ -112,48 +112,111 @@ export const Historia = () => {
             scrollTrigger: {
                 trigger: wrapper,
                 start: 'top top',
-                // end: 'bottom top+=200',
-                // markers: true,
-                // scrub: 2
+                end: 'bottom top-=8000',
+                markers: true,
+                scrub: 2,
+                snap: 1 / (4 - 1)
             }
         });
 
         scrollTimeline
-        .from(sound, {
+        // .from(sound, {
+        //     autoAlpha: 0,
+        //     duration: 1
+        // })
+        .to(stories.children[0], {
             autoAlpha: 0,
-            duration: 1
+            duration: 2
         })
         .to(years.children[0], {
-            duration: 1,
-            scale: 0.8,
-            x: '-=100',
-        })
-        .to(years.children[0], {
-            duration: 1,
-            autoAlpha: 0,
-            x: '-=100',
-        })
+            scale: 0.2,
+            duration: 2
+        }, '>-2')
         .to(wrapper, {
-            // x: () => -((stories.scrollWidth) - document.documentElement.clientWidth)/3 + "px",
             ease: 'none',
             xPercent: -25,
             duration: 2
         }, '>-2')
-        .to(sound, {
-            autoAlpha: 0,
-            duration: 1
-        })
-        .to(stories.children[1].children, {
-            duration: 2,
-            y: -900,
-        })
-        .to(wrapper, {
-            xPercent: -50,
-            ease: 'none',
+        .from(years.children[1], {
+            scale: 2,
             duration: 2
-        }, )
-
-
+        }, '>-2')
+        .from(stories.children[1], {
+            autoAlpha: 0,
+            duration: 2
+        }, '>-2')
+        // .to(sound, {
+        //     autoAlpha: 0,
+        //     duration: 1
+        // })
+        // .to(stories.children[1].children, {
+        //     duration: 2,
+        //     y: -900,
+        // })
+        .to(stories.children[1], {
+            autoAlpha: 0,
+            duration: 2
+        })
+        .to(years.children[1], {
+            scale: 0.2,
+            duration: 2
+        }, '>-2')
+        .to(wrapper, {
+            ease: 'none',
+            xPercent: -50,
+            duration: 2
+        }, '>-2')
+        .from(years.children[2], {
+            scale: 2,
+            duration: 2
+        }, '>-2')
+        .from(stories.children[2], {
+            autoAlpha: 0,
+            duration: 2
+        }, '>-2')
+        .to(stories.children[2], {
+            autoAlpha: 0,
+            duration: 2
+        })
+        .to(years.children[2], {
+            scale: 0.2,
+            duration: 2
+        }, '>-2')
+        .to(wrapper, {
+            ease: 'none',
+            xPercent: -75,
+            duration: 2
+        }, '>-2')
+        .from(years.children[3], {
+            scale: 2,
+            duration: 2
+        }, '>-2')
+        .from(stories.children[3], {
+            autoAlpha: 0,
+            duration: 2
+        }, '>-2')
+        // if we add an ending 
+        // .to(stories.children[3], {
+        //     autoAlpha: 0,
+        //     duration: 2
+        // })
+        // .to(years.children[3], {
+        //     scale: 0.2,
+        //     duration: 2
+        // }, '>-2')
+        // .to(wrapper, {
+        //     ease: 'none',
+        //     xPercent: -100,
+        //     duration: 2
+        // }, '>-2')
+        // .from(years.children[4], {
+        //     scale: 2,
+        //     duration: 2
+        // }, '>-2')
+        // .from(stories.children[4], {
+        //     autoAlpha: 0,
+        //     duration: 2
+        // }, '>-2')
 
 
         // testing
@@ -231,7 +294,7 @@ export const Historia = () => {
                     trigger: '.App',
                     pin: true,
                     markers: true,
-                    start: 'top+=' + vh(120) + ' top',
+                    start: 'top+=' + vh(90) + ' top',
                     end: '+=9000'
                 }
             })
@@ -340,12 +403,14 @@ export const Historia = () => {
 
                 {/* cancion del año */}
                 <div className='sound' ref={el => (sound = el)}>
-                    <svg className='note' viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M21,3V15.5A3.5,3.5 0 0,1 17.5,19A3.5,3.5 0 0,1 14,15.5A3.5,3.5 0 0,1 17.5,12C18.04,12 18.55,12.12 19,12.34V6.47L9,8.6V17.5A3.5,3.5 0 0,1 5.5,21A3.5,3.5 0 0,1 2,17.5A3.5,3.5 0 0,1 5.5,14C6.04,14 6.55,14.12 7,14.34V6L21,3Z" />
-                    </svg>
                     {/* song */}
                     {list.map((el) => (
-                        <Single song={el.song} />
+                        <div className='group-song'>
+                            <svg className='note' viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M21,3V15.5A3.5,3.5 0 0,1 17.5,19A3.5,3.5 0 0,1 14,15.5A3.5,3.5 0 0,1 17.5,12C18.04,12 18.55,12.12 19,12.34V6.47L9,8.6V17.5A3.5,3.5 0 0,1 5.5,21A3.5,3.5 0 0,1 2,17.5A3.5,3.5 0 0,1 5.5,14C6.04,14 6.55,14.12 7,14.34V6L21,3Z" />
+                            </svg>
+                            <Single song={el.song} />
+                        </div>
                     ))}
                 </div>
 
