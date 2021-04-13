@@ -76,9 +76,9 @@ export const Historia = () => {
 
 
     // useEffect definitions
-    useEffect(() => {
-        slide()
-    }, [])
+    // useEffect(() => {
+    //     slide()
+    // }, [])
 
     useEffect(() => {
         // timeoutId for debounce mechanism
@@ -111,10 +111,10 @@ export const Historia = () => {
         const scrollTimeline = gsap.timeline({
             scrollTrigger: {
                 trigger: wrapper,
-                start: 'top center',
-                end: 'bottom top+=200',
-                markers: true,
-                scrub: 2
+                start: 'top top',
+                // end: 'bottom top+=200',
+                // markers: true,
+                // scrub: 2
             }
         });
 
@@ -133,9 +133,10 @@ export const Historia = () => {
             autoAlpha: 0,
             x: '-=100',
         })
-        .to(stories, {
-            x: () => -((stories.scrollWidth) - document.documentElement.clientWidth)/3 + "px",
+        .to(wrapper, {
+            // x: () => -((stories.scrollWidth) - document.documentElement.clientWidth)/3 + "px",
             ease: 'none',
+            xPercent: -25,
             duration: 2
         }, '>-2')
         .to(sound, {
@@ -146,6 +147,12 @@ export const Historia = () => {
             duration: 2,
             y: -900,
         })
+        .to(wrapper, {
+            xPercent: -50,
+            ease: 'none',
+            duration: 2
+        }, )
+
 
 
 
@@ -217,17 +224,17 @@ export const Historia = () => {
             //     }
             // })
 
-            // const vh = (coef) => window.innerHeight * (coef/100)
+            const vh = (coef) => window.innerHeight * (coef/100)
 
-            // gsap.to('.App', {
-            //     scrollTrigger: {
-            //         trigger: '.App',
-            //         pin: true,
-            //         markers: true,
-            //         start: 'top+=' + vh(90) + ' top',
-            //         end: '+=9000'
-            //     }
-            // })
+            gsap.to('.App', {
+                scrollTrigger: {
+                    trigger: '.App',
+                    pin: true,
+                    markers: true,
+                    start: 'top+=' + vh(120) + ' top',
+                    end: '+=9000'
+                }
+            })
 
         // fadeIn/Out + move the stories as we scroll
             // move stories
