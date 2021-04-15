@@ -275,8 +275,6 @@ $left-disc: ($image-width)/(2) ;
         }
         
         .lista {
-            // @include complete();
-
             height: 100%;
             background: transparent;
             margin: 15% 5% 15% 5%;
@@ -286,78 +284,80 @@ $left-disc: ($image-width)/(2) ;
             // border: 6px solid green;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            .obra {
-                position: relative;
+            grid-auto-rows: 400px;
+            .obra-wrapper {
+                margin: 0;
+                width: 100%;
+                height: 100%;
                 @include flex-column();
-                justify-self: center;
                 justify-content: flex-start;
-                // height: 40vh;
-                width: 70%;
-                margin: 10% 2.5%;
-                // border: 1px solid black;
-                // padding-top: 15%;
-                // background-color: grey;
-                // border-radius: 5%;
-                
-                .photo {
+                .obra {
                     position: relative;
-                    height: 25vh;
-                    // width: 80%;
-                    // height: $image-height;
-                    // width: $image-width;
-                    height: 25vh;
-                    width: 25vh;
-                    background-size: cover;
-                    z-index: 2;
-                    .none {
-                        display: none;
-                    }
-                    .circle-disc {
-                        z-index: 3;
-                        position: absolute;
-                        top: $top-disc;
-                        left: $left-disc;
-                        height: 30px;
-                        width: 30px;
-                        background-color: white;
-                        border: 2px solid rgba(0, 0, 0, 0.623);
-                        border-radius: 50%;
-                        transform: translateY(-50%) translateX(-50%);
-                    }
-                    .button-to-play {
-                        cursor: pointer;
-                        display: none;
-                        position: absolute;
-                        z-index: 4;
-                        transform: translateY(-50%) translateX(-50%);
-                        top: $top-disc;
-                        left: $left-disc;
-                        .play-figure {
-                            color: rgb(255, 255, 255);
-                            height: 150px;
-                            width: 150px;
+                    @include flex-column();
+                    justify-self: center;
+                    justify-content: flex-start;
+                    width: 70%;
+                    margin: 10% 2.5%;
+                    
+                    .photo {
+                        position: relative;
+                        height: 25vh;
+                        height: 25vh;
+                        width: 25vh;
+                        background-size: cover;
+                        z-index: 2;
+                        @include flex-column();
+                        .button-to-play {
+                            cursor: pointer;
+                            z-index: 4;
+                            @include flex-column();
+                            .outline {
+                                height: 70px;
+                                width: 70px;
+                                border: 1px solid white;
+                                background: rgba(0, 0, 0, 0.562);
+                                border-radius: 50%;
+                                @include flex-column();
+                                .play-figure {
+                                    color: rgb(255, 255, 255);
+                                    height: 80%;
+                                    width: 80%;
+                                }
+                                .pause-figure {
+                                    color: rgb(255, 255, 255);
+                                    height: 80%;
+                                    width: 80%;
+                                }
+                            }
+                            
                         }
+                        
                     }
-                }
-                .titulo {
-                    margin-top: 7.5%;
-                    font-size: 1em;
-                    width: 25vh;
-                    color: rgba(255, 255, 255, 0.9);
-                    // text-align: left;
-                }
-                .autor {
-                    margin-top: 2.5%;
-                    // text-align: left;
-                    width: 25vh;
-                    color: #b3b3b3;
-                    font-size: 0.9em;
-                }
-                .paginate-2 {
-                    margin: 7.5% 0 7.5% 0;
+                    .shadow {
+                        box-shadow: inset 0 0 0 100px rgba(0, 0, 0, 0.637);
+                    }
+                    .titulo {
+                        margin-top: 7.5%;
+                        font-size: 1em;
+                        width: 25vh;
+                        color: rgba(255, 255, 255, 0.9);
+                        // text-align: left;
+                    }
+                    .autor {
+                        margin-top: 2.5%;
+                        // text-align: left;
+                        width: 25vh;
+                        color: #b3b3b3;
+                        font-size: 0.9em;
+                    }
+                    .paginate-2 {
+                        margin: 7.5% 0 7.5% 0;
+                    }
+                    
                 }
                 
             }
+            
         }
         
         .scrolling {
@@ -436,9 +436,11 @@ $left-disc: ($image-width)/(2) ;
                 margin-top: 5%;
                 margin-bottom: 5%;
                 grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-                .obra {
-                    height: 100%;
-                    margin: 17.5% 2.5% 17.5% 2.5%;
+                .obra-wrapper {
+                    .obra {
+                        height: 100%;
+                        margin: 17.5% 2.5% 17.5% 2.5%;
+                    }
                 }
             }
             .filtros {
