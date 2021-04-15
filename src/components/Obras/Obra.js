@@ -3,7 +3,7 @@ import {PlayingContext} from './PlayingContext';
 import './Obra.scss';
 import gsap from 'gsap';
 
-export const Obra = ({obra, number}) => {
+export const Obra = ({obra}) => {
     const [active, setActive] = useContext(PlayingContext);
     // constant variables
 
@@ -17,17 +17,54 @@ export const Obra = ({obra, number}) => {
     const [playing, setPlaying] = useState(false);
 
     useEffect(() => {
+        if(obra.play) {
+            setActive(prevState => [...prevState, [obra.titulo, false]]);
+        }
+        
+    }, [])
+
+    // useEffect(() => {
+    //     console.log(playing)
+    // }, [playing])
+
+    useEffect(() => {
          // every time we update our active numbers
         if(obra.play) {
-            console.log(number);
-            // if this element number is active --> set the playing to true
-            if(active[number][1]) {
-                setPlaying(true);
+            console.log(active);
+            // looking for this number whether it's true or false
+
+            const matchPlaying = (el) => {
+                // only once matched
+                if(el[0]===obra.titulo) {
+                    // if this number is active --> set the playing to true
+                    if(el[1]) {
+                        setPlaying(true);
+                    }
+                    // else set the playing to false
+                    else {
+                        setPlaying(false);
+                    }
+                }
             }
-            // else set the playing to false
-            else {
-                setPlaying(false);
-            }
+
+            active.forEach(matchPlaying);
+
+            // for(let i=0; i<active.length; i++) {
+                
+            //     if(active[i][0]===number) {
+                    
+                    
+            //         if(active[i][1]) {
+            //             console.log(active[i][0])
+            //             setPlaying(true);
+            //         }
+                    
+            //         else {
+            //             setPlaying(false);
+            //         }
+            //     }
+            // }
+             
         }
     }, [active])
 
@@ -37,14 +74,14 @@ export const Obra = ({obra, number}) => {
         
         // if we clicked play (it was not playing)
         if(!playing) {
-            // set active this number and set the rest inactive
+            // set this number true and set the rest false
            
             let copy = active.map((el, i)=> {
-                if(i===number) {
-                    return [i, true]
+                if(el[0]===obra.titulo) {
+                    return [obra.titulo, true]
                 }
                 else {
-                    return [i, false]
+                    return [el[0], false]
                 }
             });
 
@@ -54,12 +91,15 @@ export const Obra = ({obra, number}) => {
 
         // if we clicked pause (it was playing)
         else {
-            // set inactive just this number
+            // set inactive all numbers
             let copy2 = active.map((el, i) => {
-                if(i===number) {
-                    return [i, false]
+                if(el[0]===obra.titulo) {
+                    return [obra.titulo, false]
                 }
-                return null;
+                else {
+                    return [el[0], false];
+                }
+                
             });
 
             setActive(copy2);

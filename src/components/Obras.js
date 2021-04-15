@@ -662,7 +662,6 @@ const lista = [
 export const Obras = () => {
 
     // constant variables
-
     // useRef definitions
 
     // useState definitions
@@ -867,7 +866,7 @@ export const Obras = () => {
                 <PlayingProvider>
                     <div className='lista' style={{'minHeight': '100vh'}}>
                         {currentSongs.map((el, i) => (
-                            <Obra key={el.titulo} obra={el} number={i} />
+                            <Obra key={el.titulo} obra={el} />
                         ))}
                     </div>
                 </PlayingProvider>
