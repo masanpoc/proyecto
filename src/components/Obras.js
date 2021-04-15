@@ -671,6 +671,9 @@ export const Obras = () => {
     const [checkValue, setCheckValue] = useState(false);
     const [orderValue, setOrderValue] = useState('');
 
+    // current Number
+    const [currentNumber, setCurrentNumber] = useState(1);
+
     const [currentPage, setCurrentPage] = useState(1);
     const [songsPerPage] = useState(12);
 
@@ -773,6 +776,28 @@ export const Obras = () => {
         ));
     }
 
+    // scroll when paginating
+    const scrollWindow = () => {
+        
+
+        const vh = (coef) => window.innerHeight * (coef/100);
+
+        if(window.innerWidth<760) {
+            window.scroll({
+                top: vh(100),
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
+        else {
+            window.scroll({
+                top: vh(70),
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
+    }
+
     // order list
     const order = () => {
         if(orderValue==='') {
@@ -786,12 +811,18 @@ export const Obras = () => {
         }
     }
 
+    // update current page
+    const updatingPage = (number) => {
+        setCurrentNumber(number);
+    }
     
     // Change page
     const paginate = (pageNumber) => {
         setCurrentPage(pageNumber);
+        scrollWindow();
     }
 
+ 
 
     return (
         <div className='body-hidden'>
@@ -860,7 +891,7 @@ export const Obras = () => {
 
                 <Pagination songsPerPage={songsPerPage}
                     totalSongs={list.length}
-                    paginate={paginate} row={'center'}
+                    paginate={paginate} row={'center'} updatingPage={updatingPage} currentNumber={currentNumber}
                 />
 
                 <PlayingProvider>
@@ -869,11 +900,11 @@ export const Obras = () => {
                             <Obra key={el.titulo} obra={el} />
                         ))}
                     </div>
-                </PlayingProvider>
+                </PlayingProvider> 
 
                 <Pagination songsPerPage={songsPerPage}
                     totalSongs={list.length}
-                    paginate={paginate} row={'center-2'}
+                    paginate={paginate} row={'center-2'} updatingPage={updatingPage} currentNumber={currentNumber}
                 />
             </div>
         </div>

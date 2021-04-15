@@ -30,7 +30,7 @@ export const Obra = ({obra}) => {
     useEffect(() => {
          // every time we update our active numbers
         if(obra.play) {
-            console.log(active);
+            // console.log(active);
             // looking for this number whether it's true or false
 
             const matchPlaying = (el) => {
