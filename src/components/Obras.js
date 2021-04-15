@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {Obra} from './Obras/Obra';
+import { PlayingProvider } from './Obras/PlayingContext';
 import './Obras/Obra.scss';
 import gsap from 'gsap';
 import {Pagination} from './Obras/Pagination';
@@ -863,11 +864,13 @@ export const Obras = () => {
                     paginate={paginate} row={'center'}
                 />
 
-                <div className='lista' style={{'minHeight': '100vh'}}>
-                    {currentSongs.map((el, i) => (
-                        <Obra key={el.titulo} obra={el} />
-                    ))}
-                </div>
+                <PlayingProvider>
+                    <div className='lista' style={{'minHeight': '100vh'}}>
+                        {currentSongs.map((el, i) => (
+                            <Obra key={el.titulo} obra={el} number={i} />
+                        ))}
+                    </div>
+                </PlayingProvider>
 
                 <Pagination songsPerPage={songsPerPage}
                     totalSongs={list.length}

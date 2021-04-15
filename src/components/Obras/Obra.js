@@ -1,9 +1,10 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useContext } from 'react';
+import {PlayingContext} from './PlayingContext';
 import './Obra.scss';
 import gsap from 'gsap';
 
-export const Obra = ({obra}) => {
-
+export const Obra = ({obra, number}) => {
+    const [active, setActive] = useContext(PlayingContext);
     // constant variables
 
     // useRef definitions
@@ -46,6 +47,22 @@ export const Obra = ({obra}) => {
 
     const handleClick = () => {
         setPlaying(!playing)
+        
+        if(playing) {
+            setActive(prevState => ({
+                ...prevState,
+                number: true
+            }))
+            
+            console.log(active, number)
+        }
+        else {
+            // setActive(prevState => ({
+
+            // }))
+            
+            console.log(active, number)
+        }
     }
 
     return (
