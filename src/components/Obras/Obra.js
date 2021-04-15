@@ -16,54 +16,80 @@ export const Obra = ({obra, number}) => {
     const [hovering, setHovering] = useState(false);
     const [playing, setPlaying] = useState(false);
 
-    // useEffect(() => {
-    //     if(obra.play) {
-    //     }
-    // }, [])
-
     useEffect(() => {
-        if(hovering) {
-            songIn()
-        } else {
-            songOut()    
+         // every time we update our active numbers
+        if(obra.play) {
+            console.log(number);
+            // if this element number is active --> set the playing to true
+            if(active[number][1]) {
+                setPlaying(true);
+            }
+            // else set the playing to false
+            else {
+                setPlaying(false);
+            }
         }
-    }, [hovering])
+    }, [active])
 
-    // functions
-    const songIn = () => {
-        // gsap.to(playButton, {
-        //     scale: 1.1,
-        //     duration: 1
-        // })
-    }
-
-
-    const songOut = () => {
-        // gsap.to(playButton, {
-        //     scale: 1,
-        //     duration: 1
-        // })
-    }
+    
 
     const handleClick = () => {
-        setPlaying(!playing)
         
-        if(playing) {
-            setActive(prevState => ({
-                ...prevState,
-                number: true
-            }))
-            
-            console.log(active, number)
-        }
-        else {
-            // setActive(prevState => ({
+        // if we clicked play (it was not playing)
+        if(!playing) {
+            // set active this number and set the rest inactive
+           
+            let copy = active.map((el, i)=> {
+                if(i===number) {
+                    return [i, true]
+                }
+                else {
+                    return [i, false]
+                }
+            });
 
-            // }))
-            
-            console.log(active, number)
+            setActive(copy);
+
+        }
+
+        // if we clicked pause (it was playing)
+        else {
+            // set inactive just this number
+            let copy2 = active.map((el, i) => {
+                if(i===number) {
+                    return [i, false]
+                }
+                return null;
+            });
+
+            setActive(copy2);
+
         }
     }
+
+    // useEffect(() => {
+    //     if(hovering) {
+    //         songIn()
+    //     } else {
+    //         songOut()    
+    //     }
+    // }, [hovering])
+
+    // functions
+    // const songIn = () => {
+    //     // gsap.to(playButton, {
+    //     //     scale: 1.1,
+    //     //     duration: 1
+    //     // })
+    // }
+
+
+    // const songOut = () => {
+    //     // gsap.to(playButton, {
+    //     //     scale: 1,
+    //     //     duration: 1
+    //     // })
+    // }
 
     return (
         <div className='obra-wrapper'>
