@@ -227,7 +227,7 @@ ul {
             position: absolute;
             background: rgb(56, 56, 56);
             height: 20vh;
-            width: 60vw;
+            width: 65vw;
           }
           .info-image {
             position: absolute;
@@ -361,7 +361,7 @@ ul {
             left: 0;
             z-index: 42;
             height: 20vh;
-            width: 60vw;
+            width: 65vw;
           }
           .item-3-image {
             position: absolute;
@@ -419,7 +419,7 @@ ul {
         .mask {
           @include mask-style();
           height: 21vh;
-          width: 70vw;
+          width: 75vw;
           z-index: 2;
           top: 60vh;
           left: 20vw;

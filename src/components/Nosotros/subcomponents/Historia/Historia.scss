@@ -44,6 +44,14 @@
     font-display: swap;
   }
 
+  @font-face {
+    font-family: 'Proza';
+    src: url('../../../../fonts/ProzaLibre-Regular.woff2') format('woff2'),
+        url('../../../../fonts/ProzaLibre-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
 
 @mixin flex-row {
     display: flex;
@@ -88,6 +96,62 @@
         }
        
     }
+    .first-slide {
+        margin: 0;
+        background: white;
+        height: 100vh;
+        width: 100vw;
+        z-index: 4;
+        box-shadow: inset 0 0 0 5000px rgba(0, 0, 0, 0.582);
+        position: absolute;
+        top: 90vh;
+        background: url(../images/first-slide.jpg);
+        background-size: cover;
+        background-position: top;
+        color: white;
+        @include flex-column();
+        justify-content: flex-start;
+        gap: 30vh;
+        .first-headers {
+            // border: 1px solid white;
+            margin-top: 25vh;
+            width: 80%;
+            .first-h2 {
+                font-family: 'Proza';
+                font-weight: lighter;
+                font-size: 1.4em;
+                font-style: italic;
+                
+            }
+            .first-h3 {
+                margin-top: 10%;
+                font-family: 'Proza';
+                font-weight: lighter;
+                opacity: 0.8;
+                font-size: 0.9em;
+            }
+        }
+        .first-button {
+            
+            cursor: pointer;
+            box-shadow: inset 0 0 2px 2px rgba(12, 12, 12, 0.5);
+            height: 15vh;
+            width: 15vh;
+            border-radius: 50%;
+            @include flex-column();
+            color: black;
+            background: rgba(195, 233, 255, 0.89);
+            .first-h5 {
+                // border: 1px solid black;
+                // width: 80%;
+                text-align: center;
+                font-family: 'Sansita';
+                font-size: 1.4em;
+                font-weight: lighter;
+            }
+        }
+    }
+
     .historia {
         margin: 0;
         background: white;
@@ -215,6 +279,7 @@
 @media (min-width: 760px) {
     .wrapping {
         height: 185vh;
+        
         .intro-historia {
             height: 45vh;
             justify-content: center;
@@ -231,6 +296,30 @@
                 width: 70%;
                 padding: 5% 0 2.5% 0;
                 
+            }
+        }
+        .first-slide {
+            top: 65vh;
+            gap: 20vh;
+            .first-headers {
+                // border: 1px solid white;
+                margin-top: 25vh;
+                width: 80%;
+                .first-h2 {
+                    font-size: 2.8em;
+                    
+                }
+                .first-h3 {
+                    margin-top: 2.5%;
+                    font-size: 1.6em;
+                }
+            }
+            .first-button {
+                height: 12.5vh;
+                width: 12.5vh;
+                .first-h5 {
+                    font-size: 1.8em;
+                }
             }
         }
         .historia {

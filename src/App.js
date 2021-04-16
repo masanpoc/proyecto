@@ -28,9 +28,9 @@ function App() {
   
 
   //  commented out this and the <intro /> element
-  //  useEffect(() => {
-  //    intro();
-  //  }, [])
+   useEffect(() => {
+     intro();
+   }, [])
   
 
   // functions
@@ -73,7 +73,7 @@ function App() {
   return ( 
     // we use router to render the matching route (handle different pages) 
     <Router >
-      {/* <Intro /> */}
+      <Intro />
       <div ref={el => (App=el)} className="App">
         
         {/* header */}

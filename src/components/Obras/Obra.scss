@@ -303,9 +303,8 @@ $left-disc: ($image-width)/(2) ;
                     
                     .photo {
                         position: relative;
-                        height: 25vh;
-                        height: 25vh;
-                        width: 25vh;
+                        height: 30vh;
+                        width: 30vh;
                         background-size: cover;
                         z-index: 2;
                         @include flex-column();
@@ -442,6 +441,10 @@ $left-disc: ($image-width)/(2) ;
                     .obra {
                         height: 100%;
                         margin: 17.5% 2.5% 17.5% 2.5%;
+                        .photo {
+                            height: 25vh;
+                            width: 25vh;
+                        }
                     }
                 }
             }

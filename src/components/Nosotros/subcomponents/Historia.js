@@ -72,6 +72,7 @@ export const Historia = () => {
     let stories = useRef();
     let line = useRef();
     let years = useRef();
+    let firstSlide = useRef();
     
 
 
@@ -119,13 +120,7 @@ export const Historia = () => {
         // console.log(stories.offsetWidth);
 
 
-        // playing songs/moving them
-        // gsap.to(sound.children[0].children, {
-        //     x: -vw(27.5),
-        //     duration: 10,
-        //     repeat: -1,
-        //     ease: 'none'
-        // })
+        
 
         // // timeline
         // const scrollTimeline = gsap.timeline({
@@ -293,6 +288,51 @@ export const Historia = () => {
 
         // pinning the whole page
         if(window.innerWidth>760) {
+            // playing songs/moving them
+            gsap.fromTo(sound.children[0].children, {
+                    x: vw(30),
+                    duration: 25,
+                    ease: 'none'
+                },
+                {
+                    x: -vw(50),
+                    duration: 25,
+                    repeat: -1,
+                    ease: 'none'
+            });
+            gsap.fromTo(sound.children[1].children, {
+                    x: vw(30),
+                    duration: 25,
+                    ease: 'none'
+                },
+                {
+                    x: -vw(50),
+                    duration: 25,
+                    repeat: -1,
+                    ease: 'none'
+            });
+            gsap.fromTo(sound.children[2].children, {
+                    x: vw(30),
+                    duration: 25,
+                    ease: 'none'
+                },
+                {
+                    x: -vw(50),
+                    duration: 25,
+                    repeat: -1,
+                    ease: 'none'
+            });
+            gsap.fromTo(sound.children[3].children, {
+                    x: vw(30),
+                    duration: 25,
+                    ease: 'none'
+                },
+                {
+                    x: -vw(50),
+                    duration: 25,
+                    repeat: -1,
+                    ease: 'none'
+            });
             // pinning
             gsap.to('.App', {
                 scrollTrigger: {
@@ -300,7 +340,8 @@ export const Historia = () => {
                     pin: true,
                     // markers: true,
                     start: 'top+=' + vh(90) + ' top',
-                    end: '+=9000'
+                    // default end is bottom top
+                    end: '+=8000'
                 }
             })
             // running timeline
@@ -308,8 +349,8 @@ export const Historia = () => {
             const scrollTimeline = gsap.timeline({
                 scrollTrigger: {
                     trigger: wrapper,
-                    start: 'top top',
-                    end: 'bottom top-=8000',
+                    start: 'top+=500 top',
+                    end: 'bottom top-=6000',
                     // markers: true,
                     scrub: 2,
                     snap: 1 / (4 - 1)
@@ -420,14 +461,61 @@ export const Historia = () => {
 
 
         if(window.innerWidth<760) {
+
+            // playing songs/moving them
+            gsap.fromTo(sound.children[0].children, {
+                x: vw(60),
+                duration: 15,
+                ease: 'none'
+            },
+            {
+                x: -vw(120),
+                duration: 30,
+                repeat: -1,
+                ease: 'none'
+            });
+            gsap.fromTo(sound.children[1].children, {
+                x: vw(30),
+                duration: 25,
+                ease: 'none'
+            },
+            {
+                x: -vw(50),
+                duration: 25,
+                repeat: -1,
+                ease: 'none'
+            });
+            gsap.fromTo(sound.children[2].children, {
+                x: vw(30),
+                duration: 25,
+                ease: 'none'
+            },
+            {
+                x: -vw(50),
+                duration: 25,
+                repeat: -1,
+                ease: 'none'
+            });
+            gsap.fromTo(sound.children[3].children, {
+                x: vw(30),
+                duration: 25,
+                ease: 'none'
+            },
+            {
+                x: -vw(50),
+                duration: 25,
+                repeat: -1,
+                ease: 'none'
+            });
+
             // pinning
             gsap.to('.App', {
                 scrollTrigger: {
                     trigger: '.App',
                     pin: true,
-                    markers: true,
+                    // markers: true,
                     start: 'top+=' + vh(120) + ' top',
-                    end: '+=9000'
+                    end: '+=10000'
                 }
             })
 
@@ -437,11 +525,10 @@ export const Historia = () => {
             const scrollTimeline = gsap.timeline({
                 scrollTrigger: {
                     trigger: wrapper,
-                    start: 'top top',
-                    end: 'bottom top-=4000',
-                    markers: true,
-                    scrub: 1,
-                    // snap: 1 / (4 - 1)
+                    start: 'top+=50 top',
+                    end: 'bottom top-=8000',
+                    // markers: true,
+                    scrub: 0.5
                 }
             });
 
@@ -449,135 +536,142 @@ export const Historia = () => {
 
             // scrolling up first story
             .to(stories.children[0].children, {
-                duration: 20,
+                duration: 10,
                 y: -vh(150),
-                ease: 'power2.in'
+                ease: 'power2.inOut'
             })
 
             // fading out first story
             .to(wrapper, {
                 ease: 'none',
                 xPercent: -25,
-                duration: 2
+                duration: 5
             })
             .to(sound.children[0], {
                 autoAlpha: 0,
-                duration: 2
-            }, '>-2')
+                duration: 5
+            }, '>-5')
             .to(stories.children[0], {
                 autoAlpha: 0,
-                duration: 2
-            }, '>-2')
+                duration: 5
+            }, '>-5')
             .to(years.children[0], {
                 scale: 0.2,
-                duration: 2
-            }, '>-2')
+                duration: 5
+            }, '>-5')
             
 
             // fading in second story
             .from(sound.children[1], {
                 autoAlpha: 0,
-                duration: 2
-            }, '>-2')
+                duration: 5
+            }, '>-5')
             .from(stories.children[1], {
                 autoAlpha: 0,
-                duration: 2
-            }, '>-2')
+                duration: 5
+            }, '>-5')
             .from(years.children[1], {
                 scale: 2,
-                duration: 2
-            }, '>-2')
+                duration: 5
+            }, '>-5')
 
             // scrolling up second story
             .to(stories.children[1].children, {
-                duration: 20,
+                duration: 10,
                 y: -vh(150),
-                ease: 'power2.in'
+                ease: 'power2.inOut'
             })
 
             // fading out second story
             .to(wrapper, {
                 ease: 'none',
                 xPercent: -50,
-                duration: 2
+                duration: 5
             })
             .to(sound.children[1], {
                 autoAlpha: 0,
-                duration: 2
-            }, '>-2')
+                duration: 5
+            }, '>-5')
             .to(stories.children[1], {
                 autoAlpha: 0,
-                duration: 2
-            }, '>-2')
+                duration: 5
+            }, '>-5')
             .to(years.children[1], {
                 scale: 0.2,
-                duration: 2
-            }, '>-2')
+                duration: 5
+            }, '>-5')
 
             // fading in third story
             .from(sound.children[2], {
                 scale: 2,
-                duration: 2
-            }, '>-2')
+                duration: 5
+            }, '>-5')
             .from(years.children[2], {
                 scale: 2,
-                duration: 2
-            }, '>-2')
+                duration: 5
+            }, '>-5')
             .from(stories.children[2], {
                 autoAlpha: 0,
-                duration: 2
-            }, '>-2')
+                duration: 5
+            }, '>-5')
 
             // scrolling up third story
             .to(stories.children[2].children, {
-                duration: 20,
+                duration: 10,
                 y: -vh(150),
-                ease: 'power2.in'
+                ease: 'power2.inOut'
             })
 
             // fading out third story
             .to(wrapper, {
                 ease: 'none',
                 xPercent: -75,
-                duration: 2
+                duration: 5
             })
             .to(sound.children[2], {
                 autoAlpha: 0,
-                duration: 2
-            }, '>-2')
+                duration: 5
+            }, '>-5')
             .to(stories.children[2], {
                 autoAlpha: 0,
-                duration: 2
-            }, '>-2')
+                duration: 5
+            }, '>-5')
             .to(years.children[2], {
                 scale: 0.2,
-                duration: 2
-            }, '>-2')
+                duration: 5
+            }, '>-5')
             
             // fading in fourth story
             .from(sound.children[3], {
                 scale: 2,
-                duration: 2
-            }, '>-2')
+                duration: 5
+            }, '>-5')
             .from(years.children[3], {
                 scale: 2,
-                duration: 2
-            }, '>-2')
+                duration: 5
+            }, '>-5')
             .from(stories.children[3], {
                 autoAlpha: 0,
-                duration: 2
-            }, '>-2')
+                duration: 5
+            }, '>-5')
 
             // scrolling up fourth story
             .to(stories.children[3].children, {
-                duration: 20,
+                duration: 10,
                 y: -vh(150),
-                ease: 'power2.in'
+                ease: 'power2.inOut'
             })
 
         }    
 
         
+    }
+
+    const fadeOut = () => {
+        gsap.to(firstSlide, {
+            autoAlpha: 0,
+            duration: 2
+        })
     }
 
 
@@ -588,6 +682,16 @@ export const Historia = () => {
             <div className='intro-historia'>
                 <h2 className='intro-title'>Nuestra historia</h2>
                 <h3 className='intro-subtitle'>Descubre algunos de los eventos que hemos llevado a cabo a lo largo de la agrupación </h3>
+            </div>
+
+            <div className='first-slide' ref={el => (firstSlide = el)}>
+                <div className='first-headers'>
+                    <h2 className='first-h2'>Nuestro recorrido musical</h2>
+                    <h3 className='first-h3'>Conciertos, viajes, obras... y mucho más!</h3>
+                </div>
+                <div className='first-button' onClick={fadeOut}>
+                    <h5 className='first-h5'>Ver</h5>
+                </div>
             </div>
 
             <div 
@@ -608,7 +712,7 @@ export const Historia = () => {
                 </div>
 
                 {/* para cada fecha */}
-                <div className='stories' ref={el => (stories = el)}>
+                <div className='stories' ref={el => (stories = el)}> 
                     <Story title={list[0].story.title} paragraph={<Content1 />} image={list[0].story.image} />
                     <Story title={list[1].story.title} paragraph={<Content2 />} image={list[1].story.image} />
                     <Story title={list[2].story.title} paragraph={<Content3 />} image={list[2].story.image} />

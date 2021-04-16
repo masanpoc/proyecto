@@ -82,7 +82,7 @@
         height: 70vh;
         background: url(../images/intro.jpg);
         background-size: cover;
-        background-position: top;
+        background-position: center;
         @include flex-column();
         justify-content: center;
         color: rgba(255, 255, 255, 0.767);
@@ -194,6 +194,7 @@
         p {
             margin: 0 7.5% 0 7.5%;
             padding: 2.5% 0;
+            font-size: 1.15em;
         }
         .c-header {
             font-size: 1.9em;
@@ -219,7 +220,7 @@
         }
 
         .conocenos-wrapper {
-            margin: 0 25%;
+            margin: 0 22.5%;
             background: rgba(195, 233, 255, 0.75);
             .c-objetivos {
                 background: white;

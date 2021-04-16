@@ -8,10 +8,10 @@ export const HistoriaFeed = () => {
 
 
     // useEffect definitions
-    // useEffect(() => {
-    //     slide();
+    useEffect(() => {
+        slide();
         
-    // }, [])
+    }, [])
 
     // useRef definitions
     let imageMove = useRef();

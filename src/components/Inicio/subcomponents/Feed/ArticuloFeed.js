@@ -9,10 +9,10 @@ export const ArticuloFeed = () => {
 
     
     // useEffect definitions
-    // useEffect(() => {
-    //     slide();
+    useEffect(() => {
+        slide();
         
-    // }, [])
+    }, [])
 
     // useRef definitions
     let imageMove = useRef();
@@ -47,32 +47,32 @@ export const ArticuloFeed = () => {
             duration: 1,
             yPercent: 50,
             xPercent: 50
-        })
-        .from(linkMove, {
-            autoAlpha: 0,
-            duration: 1,
-            yPercent: 100,
         }, '<')
         .from(maskMove, {
-            yPercent: -110,
+            yPercent: 110,
             ease: 'power1.out',
             duration: 1
         })
         .from(imageMove, {
             scale: 1.2,
-            yPercent: -150,
+            yPercent: 150,
             ease: 'power2.out',
             duration: 1.5
+        })
+        .from(linkMove, {
+            autoAlpha: 0,
+            duration: 1,
+            yPercent: 100,
         })
 
     }
     
     return (
         <div className='item-4'>
-            <h2 className='header-4'ref={el=>(headMove=el)} >Echa un vistazo a nuestro último artículo publicado</h2>
+            <h2 className='header-4'ref={el=>(headMove=el)} >Echa un vistazo a nuestros artículos</h2>
            
             <div className='content-4' ref={el=>(contentMove=el)}>
-                <h3 className='head'>La importancia de aprender música</h3>
+                <h3 className='head'>Enriquécete leyendo a nuestros músicos</h3>
                 <div className='text'>
                     <p>iam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim iptione voluptatem sequi nesciunt. </p>
                     <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p>
@@ -92,7 +92,7 @@ export const ArticuloFeed = () => {
                 <svg className='arrow' viewBox="0 0 24 24">
                     <path fill="currentColor" d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" />
                 </svg>
-                <Link className='link' to='/articulos'>Ver articulo</Link>
+                <Link className='link' to='/articulos'>Ver articulos</Link>
             </span>
         </div>
     )
