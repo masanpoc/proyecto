@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState, useContext } from 'react';
 import {PlayingContext} from './PlayingContext';
 import './Obra.scss';
 import gsap from 'gsap';
+import useSound from 'use-sound';
 
 export const Obra = ({obra}) => {
     const [active, setActive] = useContext(PlayingContext);
@@ -15,6 +16,8 @@ export const Obra = ({obra}) => {
     // useState definitions
     const [hovering, setHovering] = useState(false);
     const [playing, setPlaying] = useState(false);
+    const [play, { stop }] = useSound(obra.source, { volume: 0.25 });
+
 
     useEffect(() => {
         if(obra.play) {
@@ -23,9 +26,21 @@ export const Obra = ({obra}) => {
         
     }, [])
 
-    // useEffect(() => {
-    //     console.log(playing)
-    // }, [playing])
+    useEffect(() => {
+        if(obra.play) {
+            if(playing) {
+                 play();
+            }
+            else {
+                stop();
+            }
+        }
+        return () => { 
+            if(obra.play) {
+                stop();
+            }
+        }
+    }, [playing])
 
     useEffect(() => {
          // every time we update our active numbers
@@ -128,7 +143,7 @@ export const Obra = ({obra}) => {
                             <div className='outline'>
                                 {playing ?
                                     <svg className='pause-figure' viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M14,19H18V5H14M6,19H10V5H6V19Z" />
+                                        <path fill="currentColor" d="M3,3V21H21V3" />
                                     </svg>
                                     :
                                     <svg className='play-figure' viewBox="0 0 24 24">

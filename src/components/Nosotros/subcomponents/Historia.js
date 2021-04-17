@@ -341,7 +341,8 @@ export const Historia = () => {
                     // markers: true,
                     start: 'top+=' + vh(90) + ' top',
                     // default end is bottom top
-                    end: '+=8000'
+                    end: '+=8000',
+                    onUpdate: ({progress, isActive}) => {console.log(progress, isActive)}
                 }
             })
             // running timeline
@@ -350,8 +351,9 @@ export const Historia = () => {
                 scrollTrigger: {
                     trigger: wrapper,
                     start: 'top+=500 top',
-                    end: 'bottom top-=6000',
-                    // markers: true,
+                    // end: 'bottom top-=6000',
+                    end: 'bottom+=6000 top',
+                    markers: true,
                     scrub: 2,
                     snap: 1 / (4 - 1)
                 }
@@ -363,7 +365,8 @@ export const Historia = () => {
             .to(wrapper, {
                 ease: 'none',
                 xPercent: -25,
-                duration: 2
+                duration: 2,
+                // onComplete: () => {console.log('fading out 1')}
             })
             .to(sound.children[0], {
                 autoAlpha: 0,
@@ -515,7 +518,8 @@ export const Historia = () => {
                     pin: true,
                     // markers: true,
                     start: 'top+=' + vh(120) + ' top',
-                    end: '+=10000'
+                    end: '+=10000',
+                    onUpdate: ({progress, isActive}) => {console.log(progress, isActive)}
                 }
             })
 

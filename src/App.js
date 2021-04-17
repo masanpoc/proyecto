@@ -3,12 +3,15 @@ import React, { useState, useRef, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link, Redirect, useLocation, withRouter} from 'react-router-dom';
 import {Intro} from './components/Intro/Intro';
 import {Inicio} from './components/Inicio/Inicio';
-import {Articulos} from './components/Articles/Articulos';
 import {Obras} from './components/Obras';
-// import {Nosotros} from './components/Nosotros/Nosotros';
 import {Historia} from './components/Nosotros/subcomponents/Historia';
 import {Conocenos} from './components/Nosotros/subcomponents/Conocenos';
 import {Proyectos} from './components/Nosotros/subcomponents/Proyectos';
+import {Lista} from './components/Articles/Lista';
+import {Articulo1} from './components/Articles/Lista/Articulo1';
+import {Articulo2} from './components/Articles/Lista/Articulo2';
+import {Articulo3} from './components/Articles/Lista/Articulo3';
+import {Articulo4} from './components/Articles/Lista/Articulo4';
 import gsap from 'gsap';
 
 
@@ -28,9 +31,9 @@ function App() {
   
 
   //  commented out this and the <intro /> element
-   useEffect(() => {
-     intro();
-   }, [])
+  //  useEffect(() => {
+  //    intro();
+  //  }, [])
   
 
   // functions
@@ -73,7 +76,7 @@ function App() {
   return ( 
     // we use router to render the matching route (handle different pages) 
     <Router >
-      <Intro />
+      {/* <Intro /> */}
       <div ref={el => (App=el)} className="App">
         
         {/* header */}
@@ -137,16 +140,24 @@ function App() {
         <Switch>
          
           <Route path='/' exact component={Inicio} />
-          <Route path='/articulos' exact component={Articulos} />
+          {/* <Route path='/articulos' exact component={Articulos} /> */}
           <Route path='/obras' component={Obras} />
           {/* <Route path='/nosotros' exact component={Nosotros} /> */}
           <Route path='/nosotros/historia' component={Historia} />
           <Route path='/nosotros/conocenos' component={Conocenos} />
           <Route path='/nosotros/proyectos' component={Proyectos} />
+          
+          <Route path='/articulos' exact component={Lista} />
+          <Route path='/articulos/1'  component={Articulo1} />
+          <Route path='/articulos/2' component={Articulo2} />
+          <Route path='/articulos/3' component={Articulo3} />
+          <Route path='/articulos/4' component={Articulo4} />
+          <Route path="/articulos/*">
+            <Redirect to="/articulos" />
+          </Route>
           <Route path="*">
             <Redirect to="/" />
           </Route>
-          
         </Switch>
       </ScrollToTop>
 
