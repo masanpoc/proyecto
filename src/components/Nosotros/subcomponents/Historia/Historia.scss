@@ -99,7 +99,7 @@
     .first-slide {
         margin: 0;
         background: white;
-        height: 100vh;
+        height: 110vh;
         width: 100vw;
         z-index: 4;
         box-shadow: inset 0 0 0 5000px rgba(0, 0, 0, 0.582);
@@ -299,8 +299,9 @@
             }
         }
         .first-slide {
-            top: 65vh;
+            top: 60vh;
             gap: 20vh;
+            height: 110vh;
             .first-headers {
                 // border: 1px solid white;
                 margin-top: 25vh;

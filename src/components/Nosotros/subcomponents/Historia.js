@@ -5,12 +5,11 @@ import { Single } from './Historia/Single';
 import { Story } from './Historia/Story';
 import { Date } from './Historia/Date';
 import { Content1, Content2, Content3, Content4 } from './Historia/Content';
-
+import mix from './Historia/Sounds/mix-historia.mp3';
+import useSound from 'use-sound';
 import intro from './images/intro.jpg';
-
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-import { wrap } from 'gsap/gsap-core';
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -65,6 +64,20 @@ const list = [
 export const Historia = () => {
     // constant definitions
 
+    const spriteMap = {
+        one: [0, 152000],
+        two: [153000, 215000],
+        three: [368000, 141000],
+        four: [509000, 83000]
+    };
+
+    // useState definitions
+    const [progression, setProgression] = useState(0);
+    const [active, setActive] = useState(false);
+
+    
+    const [play] = useSound(mix, { sprite: spriteMap, volume: 0.25 });
+
     // useRef definitions
     let wrapper = useRef();
     let wrapper2 = useRef();
@@ -78,7 +91,7 @@ export const Historia = () => {
 
     // useEffect definitions
     useEffect(() => {
-        slide()
+        // slide();
         return () => {
             ScrollTrigger.getAll().forEach((instance) => {
               instance.kill();
@@ -108,6 +121,46 @@ export const Historia = () => {
         }
     }, [])
 
+    useEffect(() => {
+
+        console.log(progression);
+
+        // intervals
+        // we are playing with pause and play, maybe fade?
+
+
+        if(window.innerWidth>760) {
+
+             // if we are on the first slide
+            //  we play the first song if it is not playing!
+        
+
+            // if we are on the second slide coming from the left
+            // we pause the first song and the third song?? and we play the second song
+
+            // logic in case pause is not possible
+            // if we are on the second slide coming from the right
+            // we pause the first song
+        
+            // if we are on the third slide
+
+            // if we are on the fourth slide
+        }
+        else {
+
+        }
+
+    }, [progression])
+
+    useEffect(() => {
+        console.log(active);
+
+        // if it is active -> volume: 0.4 and play
+
+        // if it is not active -> volume: 0 and stop
+
+    }, [active])
+
     // useState definitions
     
 
@@ -117,176 +170,6 @@ export const Historia = () => {
         const vh = (coef) => window.innerHeight * (coef/100);
         const vw = (coef) => window.innerWidth * (coef/100);
 
-        // console.log(stories.offsetWidth);
-
-
-        
-
-        // // timeline
-        // const scrollTimeline = gsap.timeline({
-        //     scrollTrigger: {
-        //         trigger: wrapper,
-        //         start: 'top top',
-        //         end: 'bottom top-=8000',
-        //         markers: true,
-        //         scrub: 2,
-        //         snap: 1 / (4 - 1)
-        //     }
-        // });
-
-        // scrollTimeline
-
-        // // fading out first story
-        // .to(wrapper, {
-        //     ease: 'none',
-        //     xPercent: -25,
-        //     duration: 2
-        // })
-        // .to(sound.children[0], {
-        //     autoAlpha: 0,
-        //     duration: 2
-        // }, '>-2')
-        // .to(stories.children[0], {
-        //     autoAlpha: 0,
-        //     duration: 2
-        // }, '>-2')
-        // .to(years.children[0], {
-        //     scale: 0.2,
-        //     duration: 2
-        // }, '>-2')
-        
-
-        // // fading in second story
-        // .from(sound.children[1], {
-        //     autoAlpha: 0,
-        //     duration: 2
-        // }, '>-2')
-        // .from(stories.children[1], {
-        //     autoAlpha: 0,
-        //     duration: 2
-        // }, '>-2')
-        // .from(years.children[1], {
-        //     scale: 2,
-        //     duration: 2
-        // }, '>-2')
-        
-        
-        
-        // // esto para la mobile version
-        // // .to(stories.children[1].children, {
-        // //     duration: 2,
-        // //     y: -900,
-        // // })
-
-        // // fading out second story
-        // .to(wrapper, {
-        //     ease: 'none',
-        //     xPercent: -50,
-        //     duration: 2
-        // })
-        // .to(sound.children[1], {
-        //     autoAlpha: 0,
-        //     duration: 2
-        // }, '>-2')
-        // .to(stories.children[1], {
-        //     autoAlpha: 0,
-        //     duration: 2
-        // }, '>-2')
-        // .to(years.children[1], {
-        //     scale: 0.2,
-        //     duration: 2
-        // }, '>-2')
-
-        // // fading in third story
-        // .from(sound.children[2], {
-        //     scale: 2,
-        //     duration: 2
-        // }, '>-2')
-        // .from(years.children[2], {
-        //     scale: 2,
-        //     duration: 2
-        // }, '>-2')
-        // .from(stories.children[2], {
-        //     autoAlpha: 0,
-        //     duration: 2
-        // }, '>-2')
-
-        // // fading out third story
-        // .to(wrapper, {
-        //     ease: 'none',
-        //     xPercent: -75,
-        //     duration: 2
-        // })
-        // .to(sound.children[2], {
-        //     autoAlpha: 0,
-        //     duration: 2
-        // }, '>-2')
-        // .to(stories.children[2], {
-        //     autoAlpha: 0,
-        //     duration: 2
-        // }, '>-2')
-        // .to(years.children[2], {
-        //     scale: 0.2,
-        //     duration: 2
-        // }, '>-2')
-        
-        // // fading in fourth story
-        // .from(sound.children[3], {
-        //     scale: 2,
-        //     duration: 2
-        // }, '>-2')
-        // .from(years.children[3], {
-        //     scale: 2,
-        //     duration: 2
-        // }, '>-2')
-        // .from(stories.children[3], {
-        //     autoAlpha: 0,
-        //     duration: 2
-        // }, '>-2')
-
-        // if we add an ending // more slides
-        // .to(stories.children[3], {
-        //     autoAlpha: 0,
-        //     duration: 2
-        // })
-        // .to(years.children[3], {
-        //     scale: 0.2,
-        //     duration: 2
-        // }, '>-2')
-        // .to(wrapper, {
-        //     ease: 'none',
-        //     xPercent: -100,
-        //     duration: 2
-        // }, '>-2')
-        // .from(years.children[4], {
-        //     scale: 2,
-        //     duration: 2
-        // }, '>-2')
-        // .from(stories.children[4], {
-        //     autoAlpha: 0,
-        //     duration: 2
-        // }, '>-2')
-
-
-        // testing
-        // gsap.to(line, {
-        //     duration: 3,
-        //     x: 550,
-        //     scrollTrigger: {
-        //         trigger: line,
-        //         markers: true,
-        //         end: '+=9000'
-        //     }
-        // })
-        // gsap.to(sound, {
-        //     scrollTrigger: {
-        //         trigger: sound,
-        //         pin: true,
-        //         markers: true
-        //     }
-        // })
-
-        // pinning the whole page
         if(window.innerWidth>760) {
             // playing songs/moving them
             gsap.fromTo(sound.children[0].children, {
@@ -342,7 +225,10 @@ export const Historia = () => {
                     start: 'top+=' + vh(90) + ' top',
                     // default end is bottom top
                     end: '+=8000',
-                    onUpdate: ({progress, isActive}) => {console.log(progress, isActive)}
+                    onUpdate: ({progress, isActive}) => {
+                        setProgression(progress);
+                        setActive(isActive);
+                    }
                 }
             })
             // running timeline
@@ -547,19 +433,22 @@ export const Historia = () => {
 
             // fading out first story
             .to(wrapper, {
-                ease: 'none',
+                ease: 'power2.inOut',
                 xPercent: -25,
                 duration: 5
             })
             .to(sound.children[0], {
+                ease: 'power2.inOut',
                 autoAlpha: 0,
                 duration: 5
             }, '>-5')
             .to(stories.children[0], {
+                ease: 'power2.inOut',
                 autoAlpha: 0,
                 duration: 5
             }, '>-5')
             .to(years.children[0], {
+                ease: 'power2.inOut',
                 scale: 0.2,
                 duration: 5
             }, '>-5')
@@ -567,14 +456,17 @@ export const Historia = () => {
 
             // fading in second story
             .from(sound.children[1], {
+                ease: 'power2.inOut',
                 autoAlpha: 0,
                 duration: 5
             }, '>-5')
             .from(stories.children[1], {
+                ease: 'power2.inOut',
                 autoAlpha: 0,
                 duration: 5
             }, '>-5')
             .from(years.children[1], {
+                ease: 'power2.inOut',
                 scale: 2,
                 duration: 5
             }, '>-5')
@@ -588,33 +480,39 @@ export const Historia = () => {
 
             // fading out second story
             .to(wrapper, {
-                ease: 'none',
+                ease: 'power2.inOut',
                 xPercent: -50,
                 duration: 5
             })
             .to(sound.children[1], {
+                ease: 'power2.inOut',
                 autoAlpha: 0,
                 duration: 5
             }, '>-5')
             .to(stories.children[1], {
+                ease: 'power2.inOut',
                 autoAlpha: 0,
                 duration: 5
             }, '>-5')
             .to(years.children[1], {
+                ease: 'power2.inOut',
                 scale: 0.2,
                 duration: 5
             }, '>-5')
 
             // fading in third story
             .from(sound.children[2], {
+                ease: 'power2.inOut',
                 scale: 2,
                 duration: 5
             }, '>-5')
             .from(years.children[2], {
+                ease: 'power2.inOut',
                 scale: 2,
                 duration: 5
             }, '>-5')
             .from(stories.children[2], {
+                ease: 'power2.inOut',
                 autoAlpha: 0,
                 duration: 5
             }, '>-5')
@@ -628,33 +526,39 @@ export const Historia = () => {
 
             // fading out third story
             .to(wrapper, {
-                ease: 'none',
+                ease: 'power2.inOut',
                 xPercent: -75,
                 duration: 5
             })
             .to(sound.children[2], {
+                ease: 'power2.inOut',
                 autoAlpha: 0,
                 duration: 5
             }, '>-5')
             .to(stories.children[2], {
+                ease: 'power2.inOut',
                 autoAlpha: 0,
                 duration: 5
             }, '>-5')
             .to(years.children[2], {
+                ease: 'power2.inOut',
                 scale: 0.2,
                 duration: 5
             }, '>-5')
             
             // fading in fourth story
             .from(sound.children[3], {
+                ease: 'power2.inOut',
                 scale: 2,
                 duration: 5
             }, '>-5')
             .from(years.children[3], {
+                ease: 'power2.inOut',
                 scale: 2,
                 duration: 5
             }, '>-5')
             .from(stories.children[3], {
+                ease: 'power2.inOut',
                 autoAlpha: 0,
                 duration: 5
             }, '>-5')
@@ -672,10 +576,13 @@ export const Historia = () => {
     }
 
     const fadeOut = () => {
+        
         gsap.to(firstSlide, {
             autoAlpha: 0,
-            duration: 2
+            duration: 1
         })
+        slide();
+        play({ id: 'three' });
     }
 
 
