@@ -48,22 +48,6 @@ export const Obra = ({obra}) => {
             }
 
             active.forEach(matchPlaying);
-
-            // for(let i=0; i<active.length; i++) {
-                
-            //     if(active[i][0]===number) {
-                    
-                    
-            //         if(active[i][1]) {
-            //             console.log(active[i][0])
-            //             setPlaying(true);
-            //         }
-                    
-            //         else {
-            //             setPlaying(false);
-            //         }
-            //     }
-            // }
              
         }
     }, [active])

@@ -47,33 +47,32 @@ import Brahms from './Obras/Images/Brahms.jpg';
 import Otros from './Obras/Images/Otros.jpg';
 import Cortona from './Obras/Images/Cortona.jpg';
 
+import Gloria from './Obras/Sound/Gloria_Vivaldi.mp3';
+import Badinerie from './Obras/Sound/Badinerie.mp3';
+import Primavera from './Obras/Sound/Primavera_Allegro.mp3';
+import Bist_du from './Obras/Sound/Bist_du_bei_mir.mp3';
+
 const lista = [
     {
         titulo: 'Beatus Vir',
         autor: 'Vivaldi',
         url: Vivaldi,
         genero: 'Barroco',
-        play: true
+        play: false
     },
     {
         titulo: 'Gloria',
         autor: 'Vivaldi',
         url: Vivaldi,
         genero: 'Barroco',
-        play: true
+        play: true, 
+        source: Gloria
     },
     {
         titulo: 'Concierto en Sol Mayor op.3 no. 3 RV 310 para violín y orquesta',
         autor: 'Vivaldi',
         url: Vivaldi,
         genero: 'Barroco',
-        play: true
-    },
-    {
-        titulo: 'Prueba filtro',
-        autor: 'Bach',
-        url: Bach,
-        genero: 'Clasicismo',
         play: false
     },
     {
@@ -81,21 +80,22 @@ const lista = [
         autor: 'Vivaldi',
         url: Vivaldi,
         genero: 'Barroco',
-        play: true
+        play: true,
+        source: Primavera
     },
     {
         titulo: 'Sinfonia (El Mesias)',
         autor: 'Haendel',
         url: Haendel,
         genero: 'Barroco',
-        play: true
+        play: false
     },
     {
         titulo: 'Pifa (El Mesias)',
         autor: 'Haendel',
         url: Haendel,
         genero: 'Barroco',
-        play: true
+        play: false
     },
     {
         titulo: 'He shall feed his flock (El Mesias)',
@@ -200,14 +200,16 @@ const lista = [
         autor: 'Bach',
         url: Bach,
         genero: 'Barroco',
-        play: false
+        play: true,
+        source: Badinerie
     },
     {
         titulo: 'Bist du bei Mir',
         autor: 'Bach',
         url: Bach,
         genero: 'Barroco',
-        play: false
+        play: true,
+        source: Bist_du
     },
     {
         titulo: 'O Jesulein Süss BWV 493',
