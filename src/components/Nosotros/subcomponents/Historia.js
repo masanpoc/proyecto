@@ -65,18 +65,19 @@ export const Historia = () => {
     // constant definitions
 
     const spriteMap = {
-        one: [0, 152000],
+        one: [2000, 152000],
         two: [153000, 215000],
-        three: [368000, 141000],
-        four: [509000, 83000]
+        three: [367000, 141000],
+        four: [507000, 83000]
     };
 
     // useState definitions
     const [progression, setProgression] = useState(0);
     const [active, setActive] = useState(false);
+    const [selection, setSelection] = useState(0);
 
     
-    const [play] = useSound(mix, { sprite: spriteMap, volume: 0.25 });
+    const [play, { stop }] = useSound(mix, { sprite: spriteMap, volume: 0.25 });
 
     // useRef definitions
     let wrapper = useRef();
@@ -122,6 +123,32 @@ export const Historia = () => {
     }, [])
 
     useEffect(() => {
+        if(selection==1) {
+            console.log('play song 1');
+            stop();
+            play({ id: 'one'})
+        }
+        else if(selection==2) {
+            console.log('play song 2');
+            stop();
+            play({ id: 'two'})
+        }
+        else if(selection==3) {
+            console.log('play 3')
+            stop();
+            play({ id: 'three'})
+        }
+        else if(selection==4) {
+            console.log('play 4')
+            stop();
+            play({ id: 'four'})
+        }
+        else {
+            stop();
+        }
+    }, [selection])
+
+    useEffect(() => {
 
         console.log(progression);
 
@@ -131,23 +158,48 @@ export const Historia = () => {
 
         if(window.innerWidth>760) {
 
-             // if we are on the first slide
-            //  we play the first song if it is not playing!
-        
+            // if we are on the first slide
+            if(progression>0 && progression<0.3) {
+                setSelection(1);
+            }
+            
+            else if(progression>0.3 && progression<0.5) {
+                setSelection(2);
+            }
 
-            // if we are on the second slide coming from the left
-            // we pause the first song and the third song?? and we play the second song
+            else if(progression>0.5 && progression<0.7) {
+                setSelection(3);
+            }
 
-            // logic in case pause is not possible
-            // if we are on the second slide coming from the right
-            // we pause the first song
-        
-            // if we are on the third slide
+            else if(progression>0.7 && progression<0.9) {
+                setSelection(4);
+            }
 
-            // if we are on the fourth slide
+            else {
+                setSelection(0);
+            }
         }
-        else {
+        if(window.innerWidth<760) {
+            // if we are on the first slide
+            if(progression>0 && progression<0.18) {
+                setSelection(1);
+            }
+            
+            else if(progression>0.18 && progression<0.4) {
+                setSelection(2);
+            }
 
+            else if(progression>0.4 && progression<0.65) {
+                setSelection(3);
+            }
+
+            else if(progression>0.65 && progression<0.9) {
+                setSelection(4);
+            }
+
+            else {
+                setSelection(0);
+            }
         }
 
     }, [progression])
@@ -239,7 +291,7 @@ export const Historia = () => {
                     start: 'top+=500 top',
                     // end: 'bottom top-=6000',
                     end: 'bottom+=6000 top',
-                    markers: true,
+                    // markers: true,
                     scrub: 2,
                     snap: 1 / (4 - 1)
                 }
@@ -428,7 +480,7 @@ export const Historia = () => {
             .to(stories.children[0].children, {
                 duration: 10,
                 y: -vh(150),
-                ease: 'power2.inOut'
+                ease: 'none'
             })
 
             // fading out first story
@@ -475,7 +527,7 @@ export const Historia = () => {
             .to(stories.children[1].children, {
                 duration: 10,
                 y: -vh(150),
-                ease: 'power2.inOut'
+                ease: 'none'
             })
 
             // fading out second story
@@ -521,7 +573,7 @@ export const Historia = () => {
             .to(stories.children[2].children, {
                 duration: 10,
                 y: -vh(150),
-                ease: 'power2.inOut'
+                ease: 'none'
             })
 
             // fading out third story
@@ -567,7 +619,7 @@ export const Historia = () => {
             .to(stories.children[3].children, {
                 duration: 10,
                 y: -vh(150),
-                ease: 'power2.inOut'
+                ease: 'none'
             })
 
         }    
@@ -582,7 +634,7 @@ export const Historia = () => {
             duration: 1
         })
         slide();
-        play({ id: 'three' });
+        setSelection(1);
     }
 
 
