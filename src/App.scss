@@ -184,11 +184,67 @@ html {
   // footer 
   .footer {
     @include flex-row();
-    gap: 10%;
+    justify-content: flex-start;
+    gap: 15%;
     height: 25vh;
     color: #fff;
     font-family: 'Open Sans';
     background: #222;
+    * {
+      color: #fff;
+    }
+    .logo-minified {
+      // border: 1px solid whitesmoke;
+      // margin-right: 5vw;
+      margin-left: 5vw;
+      
+    }
+    .email {
+      // border: 1px solid whitesmoke;
+      cursor: pointer;
+      // margin-left: 5vw;
+      .email-link {
+        @include flex-row();
+        gap: 1.5vh;
+        .email-icon {
+          height: 3vh;
+          width: 3vh;
+          fill: #fff;
+        }
+        .email-text {
+          font-weight: lighter;
+          text-decoration: underline;
+        }
+      }
+    }
+    .social-media {
+      margin-left: 7.5vw;
+      @include flex-row();
+      cursor: pointer;
+      gap: 3vh;
+      // border: 1px solid white;
+      height: 100%;
+      margin-bottom: 11vh;
+      .facebook {
+        .facebook-link {
+          
+          .facebook-icon {
+            height: 4vh;
+            width: 4vh;
+            fill: #fff;
+          }
+        }
+      }
+      .instagram {
+        .instagram-link {
+          .instagram-icon {
+            height: 4vh;
+            width: 4vh;
+            fill: #fff;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -321,10 +377,45 @@ html {
     .footer {
       height: 70vh;
       @include flex-column();
-    gap: 15%;
+      flex-direction: column-reverse;
+      gap: 20%;
+      justify-content: flex-end;
+      .logo-minified {
+        margin-left: 0;
+        width: 70%;
+      }
+      .email {
+        .email-link {
+          .email-icon {
+          }
+          .email-text {
+          }
+        }
+      }
+      .social-media {
+        margin-left: 55vw;
+        margin-top: 10vh;
+        height: auto;
+        margin-bottom: 0vh;
+        .facebook {
+          .facebook-link {
+            
+            .facebook-icon {
+              height: 5vh;
+              width: 5vh;
+            }
+          }
+        }
+        .instagram {
+          .instagram-link {
+            .instagram-icon {
+              height: 5vh;
+              width: 5vh;
+            }
+          }
+        }
+      }
     }
-      
-    
   }
 }
 
