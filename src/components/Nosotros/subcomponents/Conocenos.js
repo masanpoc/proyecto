@@ -26,7 +26,7 @@ export const Conocenos = () => {
                         </p>
                     </div>
                     <div className='img-group'>
-                        <img className='img' alt='img-objetivos' src={obj} />
+                        <img className='img-1' alt='img-objetivos' src={obj} />
                         <figcaption className='img-caption'>Concierto, directora, violinistas... Febrero 2020, Oviedo</figcaption>
                     </div>
                     <div className='content'>
@@ -37,7 +37,7 @@ export const Conocenos = () => {
                         </p>
                     </div>
                     <div className='img-group'>
-                        <img className='img' alt='img-objetivos' src={obj} />
+                        <img className='img-1' alt='img-objetivos' src={obj} />
                         <figcaption className='img-caption'>Concierto, directora, violinistas... Febrero 2020, Oviedo</figcaption>
                     </div>
                     <div className='content'>
@@ -105,7 +105,7 @@ export const Conocenos = () => {
                         </p>
                     </div>
                     <div className='img-group'>
-                        <img className='img' alt='img-actividad-1' src={obj} ></img>
+                        <img className='img-3' alt='img-actividad-1' src={obj} ></img>
                         <figcaption className='img-caption'>Concierto, directora, violinistas... Febrero 2020, Oviedo</figcaption>
                     </div>
                     
@@ -116,7 +116,7 @@ export const Conocenos = () => {
                         <p className='p-content'>Augue cursus. Posuere turpis et habitant turpis odio mus augue nullam amet. Parturient tempor, lectus placerat scelerisque sollicitudin adipiscing eleifend. Ut ut sagittis adipiscing id orci volutpat platea lacus. Et, laoreet ipsum fermentum purus viverra auctor.  </p>
                     </div>
                     <div className='img-group'>
-                        <img className='img' alt='img-actividad-2' src={directora} ></img>
+                        <img className='img-4' alt='img-actividad-2' src={directora} ></img>
                         <figcaption className='img-caption'>Concierto, directora, violinistas... Febrero 2020, Oviedo</figcaption>
                     </div>
                     

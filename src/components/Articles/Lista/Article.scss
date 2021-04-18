@@ -71,7 +71,7 @@
 .intro-article-wrapper {
     @include flex-column();
     justify-content: flex-start;
-    
+    background: rgba(195, 233, 255, 0.75);
     .introduction {
         background: url('./Fotos/intro-art1.jpg');
         width: 100%;
@@ -111,14 +111,19 @@
     }
     .article-wrapper {
         width: 100%;
-        margin-top: 5vh;
+        margin-top: 40%;
+        margin-bottom: 40%;
+        background: white;
+        box-shadow: 0 0 2px 0 grey;
         .article-bg {  
+            
             .article-written {
                 margin-top: 7vh;
-                margin-left: 8.5vw;
-                margin-right: 8vw;
+                margin-left: 5vw;
+                margin-right: 5vw;
                 margin-bottom: 20vh;
                 text-align: left;
+                
                 // background: black;
                 @include flex-column();
                 .intro-article {
@@ -152,11 +157,12 @@
                     }
                     .title {
                         font-family: 'Playfair Display';
-                        font-size: 1.4em;
+                        font-size: 1.5em;
                         margin: 5% 0;
                     }
                     .subtitle {
                         font-family: 'Exo';
+                        font-size: 1.3em;
                     }
                     .writer {
                         @include flex-row();
@@ -189,7 +195,7 @@
                         margin: 15% 0;
                         .image {
                             height: auto;
-                            width: 80vw;
+                            width: 50vw;
                         }
                         .caption {
                             margin-top: 7.5%;
@@ -227,6 +233,7 @@
                         font-weight: lighter;
                         line-height: 165%;
                         margin: 10% 0;
+                        font-size: 1.05em;
                     }
                 }
 
@@ -294,10 +301,12 @@
                     }
                     .icons {
                         border: 1px solid #b1b1b1;
-                        width: fit-content;
+                        width: 50vw;
+
                         // height: 6vh;
                         @include flex-row();
-                        justify-content: flex-end;
+                        gap: 7%;
+                        height: 10vh;
                         margin-left: auto;
                         margin-top: 5vh;
                         .icon {
@@ -371,6 +380,7 @@
 
 @media (min-width: 760px) {
     .intro-article-wrapper {
+        background: none;
         .introduction {
             height: 45vh;
             justify-content: center;
@@ -395,6 +405,8 @@
             margin: 0;
             @include flex-column();
             width: 100%;
+            // background: white;
+            // box-shadow: 0 0 2px 0 grey;
             .article-bg {
                 // margin-top: 10vh;
                 width: 55vw;
@@ -595,10 +607,11 @@
                         .icons {
                             padding: 1%;
                             border: 1px solid #b1b1b1;
-                            width: fit-content;
+                            width: 12.5vw;
+                            height: 6.5vh;
                             // height: 6vh;
                             @include flex-row();
-                            justify-content: flex-end;
+                            gap: 10%;
                             margin-left: auto;
                             margin-top: 5vh;
                             .icon {
@@ -658,6 +671,7 @@
                             font-family: 'Lato';
                             font-style: italic;
                             font-size: 1.35em;
+                            line-height: 145%;
                             margin: 5% 5% 7.5% 5%;
                         }
                     }
