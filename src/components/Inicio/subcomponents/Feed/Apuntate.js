@@ -37,19 +37,19 @@ export const Apuntate = () => {
         slidetl
         .from(headMove, {
             autoAlpha: 0,
-            duration: 1,
+            duration: 0.75,
             yPercent: -50,
             xPercent: -50
         })
         .from(contentMove, {
             autoAlpha: 0,
-            duration: 1,
+            duration: 0.75,
             yPercent: 50,
             xPercent: 50
         })
         .from(linkMove, {
             autoAlpha: 0,
-            duration: 1,
+            duration: 0.75,
             yPercent: 100,
         }, '<')
         .from(maskMove, {

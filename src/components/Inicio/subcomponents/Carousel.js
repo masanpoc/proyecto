@@ -186,6 +186,7 @@ export const Carousel = () => {
             fadeOut(3, 0.5);
             fadeIn(0, 1);
         }   else {
+            console.log('resized');
             setState({isActive1: true});
             for(let i=0; i<4; i++) {
                 gsap.to(imageList.children[i], {

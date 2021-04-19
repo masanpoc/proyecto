@@ -63,7 +63,7 @@ export const Intro = () => {
             )
         timeline
         .to(magnifier, {
-        delay: 2.5,
+        delay: 1.5,
         scale: 1,
         duration: 3, 
         motionPath: {
@@ -286,7 +286,7 @@ export const Intro = () => {
         })
 
         .to(magnifier, {
-            delay: 3,
+            delay: 2,
             autoAlpha: 0,
             duration: 1
         })

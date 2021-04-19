@@ -1,6 +1,6 @@
 import './App.scss';
 import React, { useState, useRef, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link, Redirect, useLocation, withRouter} from 'react-router-dom';
+import { HashRouter as Router, Switch, Route, Link, Redirect, useLocation, withRouter} from 'react-router-dom';
 import {Intro} from './components/Intro/Intro';
 import {Inicio} from './components/Inicio/Inicio';
 import {Obras} from './components/Obras';
@@ -63,7 +63,7 @@ function App() {
     })
    //  total duration of the intro animation == duration of the delay
     gsap.set(App, {
-      delay: 15.5,
+      delay: 13.5,
      css: {
        overflow: 'visible',
        height: 'auto'
