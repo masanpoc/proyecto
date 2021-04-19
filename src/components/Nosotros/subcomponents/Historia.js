@@ -65,8 +65,8 @@ export const Historia = () => {
     // constant definitions
 
     const spriteMap = {
-        one: [2000, 152000],
-        two: [153000, 215000],
+        one: [2000, 150000],
+        two: [152000, 215000],
         three: [367000, 141000],
         four: [507000, 83000]
     };
@@ -146,6 +146,7 @@ export const Historia = () => {
         else {
             stop();
         }
+        console.log(selection);
     }, [selection])
 
     useEffect(() => {
@@ -179,7 +180,8 @@ export const Historia = () => {
                 setSelection(0);
             }
         }
-        if(window.innerWidth<760) {
+        else {
+            console.log('checking')
             // if we are on the first slide
             if(progression>0 && progression<0.18) {
                 setSelection(1);
