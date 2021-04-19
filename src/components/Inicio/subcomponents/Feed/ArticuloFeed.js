@@ -38,13 +38,13 @@ export const ArticuloFeed = () => {
         slidetl
         .from(headMove, {
             autoAlpha: 0,
-            duration: 0.75,
+            duration: 1,
             yPercent: -50,
             xPercent: -50
         })
         .from(contentMove, {
             autoAlpha: 0,
-            duration: 0.75,
+            duration: 1,
             yPercent: 50,
             xPercent: 50
         }, '<')
@@ -61,7 +61,7 @@ export const ArticuloFeed = () => {
         })
         .from(linkMove, {
             autoAlpha: 0,
-            duration: 0.75,
+            duration: 1,
             yPercent: 100,
         })
 

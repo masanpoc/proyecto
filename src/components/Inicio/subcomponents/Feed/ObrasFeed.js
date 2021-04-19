@@ -39,13 +39,13 @@ export const ObrasFeed = () => {
         slidetl
         .from(headMove, {
             autoAlpha: 0,
-            duration: 0.75,
+            duration: 1,
             yPercent: -50,
             xPercent: -50
         })
         .from(contentMove, {
             autoAlpha: 0,
-            duration: 0.75,
+            duration: 1,
             yPercent: 50,
             xPercent: 50
         }, 0)
@@ -66,7 +66,7 @@ export const ObrasFeed = () => {
         })
         .from(linkMove, {
             autoAlpha: 0,
-            duration: 0.75,
+            duration: 1,
             yPercent: 100,
         }, '>0.5')
         
