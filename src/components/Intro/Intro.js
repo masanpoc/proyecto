@@ -54,8 +54,19 @@ export const Intro = () => {
             duration: 0, 
             motionPath: {
               path: [{x:+200, y:500}],
-      
             }
+        })
+        gsap.to(magnifier, {
+            duration:1,
+            autoAlpha: 1
+        })
+        gsap.to(authors, {
+            duration: 1,
+            autoAlpha: 1
+        })
+        gsap.to(sentences, {
+            duration:1,
+            autoAlpha: 1
         })
 
         const timeline = gsap.timeline(
@@ -357,7 +368,7 @@ export const Intro = () => {
                 <div className='segment'></div>
             </div>
             {/* animacion de efecto lupa */}
-            <div ref={el => (magnifier=el)} className='magnifier'>
+            <div ref={el => (magnifier=el)} className='magnifier'> 
                 <img ref={el => (image=el)} className='image' src={IntroPic} alt='header' />
             </div>
             {/* transicion de letras de autores x4 */}

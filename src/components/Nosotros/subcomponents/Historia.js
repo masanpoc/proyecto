@@ -73,18 +73,18 @@ export const Historia = () => {
 
     // useState definitions
     const [progression, setProgression] = useState(0);
-    const [active, setActive] = useState(false);
+    // const [active, setActive] = useState(false);
     const [selection, setSelection] = useState(0);
+
+    const windowWidth = window.innerWidth;
 
     
     const [play, { stop }] = useSound(mix, { sprite: spriteMap, volume: 0.25 });
 
     // useRef definitions
     let wrapper = useRef();
-    let wrapper2 = useRef();
     let sound = useRef();
     let stories = useRef();
-    let line = useRef();
     let years = useRef();
     let firstSlide = useRef();
     
@@ -103,62 +103,63 @@ export const Historia = () => {
     }, [])
 
 
-    // useEffect(() => {
-    //     // timeoutId for debounce mechanism
-    //     let timeoutId = null;
-    //     const resizeListener = () => {
-    //       // prevent execution of previous setTimeout
-    //       clearTimeout(timeoutId);
-    //       // refresh after 150 milliseconds
-    //       timeoutId = setTimeout(() => window.location.reload(false), 150);
-    //     };
-    //     // set resize listener
-    //     window.addEventListener('resize', resizeListener);
+    useEffect(() => {
+        // timeoutId for debounce mechanism
+        let timeoutId = null;
+        const resizeListener = () => {
+          // prevent execution of previous setTimeout
+          clearTimeout(timeoutId);
+          // refresh after 150 milliseconds
+          timeoutId = setTimeout(() => window.location.reload(false), 150);
+        };
+        // set resize listener
+        window.addEventListener('resize', resizeListener);
     
-    //     // clean up function
-    //     return () => {
-    //       // remove resize listener
-    //       window.removeEventListener('resize', resizeListener);
-    //     }
-    // }, [])
+        // clean up function
+        return () => {
+          // remove resize listener
+          window.removeEventListener('resize', resizeListener);
+        }
+    }, [])
 
     useEffect(() => {
+        console.log('changin0');
         if(selection==1) {
-            console.log('play song 1');
+            // console.log('play song 1');
             stop();
             play({ id: 'one'})
         }
         else if(selection==2) {
-            console.log('play song 2');
+            // console.log('play song 2');
             stop();
             play({ id: 'two'})
         }
         else if(selection==3) {
-            console.log('play 3')
+            // console.log('play 3')
             stop();
             play({ id: 'three'})
         }
         else if(selection==4) {
-            console.log('play 4')
+            // console.log('play 4')
             stop();
             play({ id: 'four'})
         }
         else {
             stop();
         }
-        console.log(selection);
+        // console.log(selection);
     }, [selection])
 
     useEffect(() => {
 
-        console.log(progression);
+        
 
         // intervals
         // we are playing with pause and play, maybe fade?
 
 
-        if(window.innerWidth>760) {
-
+        if(windowWidth > 760) {
+            // console.log(progression, windowWidth);
             // if we are on the first slide
             if(progression>0 && progression<0.3) {
                 setSelection(1);
@@ -177,11 +178,13 @@ export const Historia = () => {
             }
 
             else {
-                setSelection(0);
+                if(selection!==0) {
+                    setSelection(0);
+                }
             }
         }
-        else {
-            console.log('checking')
+        if(windowWidth < 760) {
+            // console.log(progression, windowWidth);
             // if we are on the first slide
             if(progression>0 && progression<0.18) {
                 setSelection(1);
@@ -200,20 +203,22 @@ export const Historia = () => {
             }
 
             else {
-                setSelection(0);
+                if(selection!==0) {
+                    setSelection(0);
+                }
             }
         }
 
     }, [progression])
 
-    useEffect(() => {
-        console.log(active);
+    // useEffect(() => {
+    //     // console.log(active);
 
-        // if it is active -> volume: 0.4 and play
+    //     // if it is active -> volume: 0.4 and play
 
-        // if it is not active -> volume: 0 and stop
+    //     // if it is not active -> volume: 0 and stop
 
-    }, [active])
+    // }, [active])
 
     // useState definitions
     
@@ -279,9 +284,9 @@ export const Historia = () => {
                     start: 'top+=' + vh(90) + ' top',
                     // default end is bottom top
                     end: '+=8000',
-                    onUpdate: ({progress, isActive}) => {
+                    onUpdate: ({progress}) => {
                         setProgression(progress);
-                        setActive(isActive);
+                        // setActive(isActive);
                     }
                 }
             })
@@ -459,7 +464,10 @@ export const Historia = () => {
                     // markers: true,
                     start: 'top+=' + vh(120) + ' top',
                     end: '+=10000',
-                    onUpdate: ({progress, isActive}) => {console.log(progress, isActive)}
+                    onUpdate: ({progress}) => {
+                        setProgression(progress);
+                        // setActive(isActive);                       
+                    }
                 }
             })
 
@@ -643,7 +651,7 @@ export const Historia = () => {
 
 
     return (
-        <div className='wrapping' ref={el => (wrapper2 = el)}>
+        <div className='wrapping' >
             <div className='intro-historia'>
                 <h2 className='intro-title'>Nuestra historia</h2>
                 <h3 className='intro-subtitle'>Descubre algunos de los eventos que hemos llevado a cabo a lo largo de la agrupación </h3>
@@ -685,7 +693,7 @@ export const Historia = () => {
                 </div>
 
                 {/* linea de fechas */}
-                <div className='line' ref={el => (line = el)}>
+                <div className='line' >
                     {/* fechas */}
                     <div className='years' ref={el => (years = el)}>
                         {list.map((el) => (
