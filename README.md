@@ -18,7 +18,7 @@ This repository is a desktop/mobile React app built with create-react-app that h
 
 Libraries used: GSAP, Use-Sound
 
-Feel free to clone this repo and copy any piece of code you might find a good idea for your projects (styles, components, state logic...). 
+Feel free to clone this repo and copy any piece of code you might find want to include in your projects (e.g.: styles, components, state logic...). 
 
 There is still pending work to be done, most of it animation-related:
   -The carousel starts incorrectly but works properly
