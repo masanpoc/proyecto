@@ -1,1 +1,28 @@
-Website built for young musicians
+Website template built for musicians
+
+DESCRIPTION
+
+Link - mariocirer.com // masanpoc.github.io/proyecto/ 
+(deployed with gh-pages)
+
+This repository is a desktop/mobile React app built with create-react-app that has the following useful to have components:
+
+-Responsive Carousel with Autoplay
+-Article
+-Audio player
+-Storyline with pinning and audio play/based on scroll-position
+-Intro with magnifier effect + split word effect
+-Responsive menu
+-Responsive footer
+-Consistent design across sections (fonts, dimensions, color palette...)  
+
+Libraries used: GSAP, Use-Sound
+
+Feel free to clone this repo and copy any piece of code you might find a good idea for your projects (styles, components, state logic...). 
+
+There is still pending work to be done, most of it animation-related:
+  -The carousel starts incorrectly but works properly
+  -The intro doesn't load smoothly and stops/freezes for a moment
+  -Audio sprites of the storyline section take some seconds to load in mobile devices
+
+You shouldn't have any problem cloning this repo and running npm start to start the app.
