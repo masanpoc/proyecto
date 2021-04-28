@@ -1,6 +1,6 @@
-* Website template built for musicians *
+# **Website template built for musicians**
 
-DESCRIPTION
+# DESCRIPTION
 
 Link - https://mariocirer.com // https://masanpoc.github.io/proyecto/
 (deployed with gh-pages)
