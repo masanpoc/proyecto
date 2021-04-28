@@ -1,4 +1,4 @@
-Website template built for musicians
+* Website template built for musicians *
 
 DESCRIPTION
 
