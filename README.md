@@ -9,12 +9,12 @@ This repository is a desktop/mobile React app built with create-react-app that h
 
 * Responsive Carousel with Autoplay
 * Article
--Audio player
--Storyline with pinning and audio play/based on scroll-position
--Intro with magnifier effect + split word effect
--Responsive menu
--Responsive footer
--Consistent design across sections (fonts, dimensions, color palette...)  
+* Audio player
+* Storyline with pinning and audio play/based on scroll-position
+* Intro with magnifier effect + split word effect
+* Responsive menu
+* Responsive footer
+* Consistent design across sections (fonts, dimensions, color palette...)  
 
 Libraries used: GSAP, Use-Sound
 
