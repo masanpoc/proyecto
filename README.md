@@ -7,8 +7,8 @@ Link - mariocirer.com // masanpoc.github.io/proyecto/
 
 This repository is a desktop/mobile React app built with create-react-app that has the following useful to have components:
 
--Responsive Carousel with Autoplay
--Article
+*Responsive Carousel with Autoplay
+*Article
 -Audio player
 -Storyline with pinning and audio play/based on scroll-position
 -Intro with magnifier effect + split word effect
