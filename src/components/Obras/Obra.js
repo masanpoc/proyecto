@@ -14,7 +14,7 @@ export const Obra = ({obra}) => {
     let playButton = useRef();
 
     // useState definitions
-    const [hovering, setHovering] = useState(false);
+    // const [hovering, setHovering] = useState(false);
     const [playing, setPlaying] = useState(false);
     const [play, { stop }] = useSound(obra.source, { volume: 0.25 });
 
@@ -135,7 +135,7 @@ export const Obra = ({obra}) => {
             {obra.play ?
                 <div className='obra' >
                     <div ref={el => (disc = el)} className='photo shadow' style={{'backgroundImage': `url(${obra.url})` }} 
-                        onMouseOver={()=>setHovering(true)} onMouseLeave={()=>setHovering(false)}
+                        // onMouseOver={()=>setHovering(true)} onMouseLeave={()=>setHovering(false)}
                     >   
                         
                         <button ref={el => (playButton = el)} className='button-to-play' onClick={handleClick}>

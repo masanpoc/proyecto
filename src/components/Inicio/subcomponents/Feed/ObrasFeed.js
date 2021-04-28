@@ -84,7 +84,6 @@ export const ObrasFeed = () => {
                 <h3 className='head'>Desde piezas clásicas, hasta canciones navideñas</h3>
                 <div className='text'>
                     <p>iam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim iptione voluptatem sequi nesciunt. </p>
-                    {/* <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,</p> */}
                 </div>
             </div>
             <div className='wrap'>
@@ -103,7 +102,6 @@ export const ObrasFeed = () => {
                     <path fill="currentColor" d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" />
                 </svg>
                 <Link className='link' to='/obras'>Ver selección de obras</Link>
-                {/* <a href='#none'>Ver selección de obras </a> */}
             </span>
         </div>
     )

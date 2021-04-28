@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from 'react';
 import './Intro.scss';
 import gsap from 'gsap';
 import IntroPic from '../../Images/pic-intro2.jpg';
-// import intro_pic2 from './Images/intro.jpg'; 
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
 gsap.registerPlugin(MotionPathPlugin);
 

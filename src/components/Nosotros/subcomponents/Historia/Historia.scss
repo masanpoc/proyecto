@@ -102,18 +102,15 @@
         height: 110vh;
         width: 100vw;
         z-index: 4;
-        
         position: absolute;
         top: 90vh;
         background: black;
-        
         color: white;
         @include flex-column();
         justify-content: flex-start;
         gap: 30vh;
         .first-headers {
             z-index: 4;
-            // border: 1px solid white;
             margin-top: 25vh;
             width: 80%;
             .first-h2 {
@@ -142,8 +139,6 @@
             color: black;
             background: rgba(195, 233, 255, 0.89);
             .first-h5 {
-                // border: 1px solid black;
-                // width: 80%;
                 text-align: center;
                 font-family: 'Sansita';
                 font-size: 1.4em;
@@ -153,7 +148,7 @@
     }
 
     .first-slide::before {
-        content: ""; // ::before and ::after both require content
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -182,7 +177,6 @@
             display: flex;
             justify-content: flex-start;
             overflow: hidden;
-            // border: 1px solid black;
             .group-song {
                 width: 55vw;
                 margin-left: 40vw;
@@ -190,7 +184,6 @@
                 height: 5vh;
                 position: relative;
                 overflow: hidden;
-                // border: 1px solid black;
                 .note {
                     height: 5vw;
                     width: 5vw;
@@ -318,7 +311,6 @@
             gap: 20vh;
             height: 110vh;
             .first-headers {
-                // border: 1px solid white;
                 margin-top: 25vh;
                 width: 80%;
                 .first-h2 {

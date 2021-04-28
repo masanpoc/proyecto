@@ -6,7 +6,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export const Lista = () => {
-    // constant variables
 
     // useRef definitions
     let arrow = useRef();
@@ -17,7 +16,6 @@ export const Lista = () => {
     let shadow3 = useRef();
     let crop4 = useRef();
 
-    // useState definitions
 
     // useEffect definitions
     useEffect(() => {
@@ -150,11 +148,6 @@ export const Lista = () => {
         })
 
     }, [])
-
-    // useEffect(() => {
-    //     // hover animations
-    // inspiration of portfolio yesterday
-    // }, [whateverStateOnMouse])
 
     // function definitions
 

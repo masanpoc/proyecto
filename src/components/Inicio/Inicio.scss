@@ -13,8 +13,7 @@
   }
 
 @mixin card-style {
-  // background: rgba(195, 233, 255, 0.75);
-  background: white;
+        background: white;
         width: 100vw;
         height: 85vh;
         position: relative;
@@ -22,7 +21,7 @@
 }
 
 @mixin header-style {
-  font-weight: lighter;
+          font-weight: lighter;
           font-size: 1.4em;
           background: rgba(195, 233, 255, 0.192);
           box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.123);
@@ -33,8 +32,6 @@
 }
 
 @mixin mask-style {
-  
-  // background: yellow;
   overflow: hidden;
   position: absolute;
   z-index: 2;
@@ -67,7 +64,6 @@
 
 @mixin content-style {
   position: absolute;
-  // background: rgba(245, 249, 255, 0.71);
   background: rgba(233, 247, 255, 0.6);
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.123);
   padding: 2%;
@@ -121,16 +117,20 @@ ul {
     background: white;
     .background-carousel {
       background-color: black;
+
       .carousel {
         position: relative;
         height: 56.25vh;
         width: 100vw;
         margin: 6.25vh 0 0 0;
         background-color: black;
+
         .carousel-bttn {
           display: none;
         }
+
         .image-list {
+
           * {
             object-fit: cover;
             object-position: center;
@@ -158,36 +158,22 @@ ul {
             top: 0;
             left: 300vw;
           }
+
         }
-        .limit {
-          height: 10vh;
-          width: 10vw;
-          background: yellowgreen;
-          border: 1px solid white;
-        }
+        // .limit {
+        //   height: 10vh;
+        //   width: 10vw;
+        //   background: yellowgreen;
+        //   border: 1px solid white;
+        // }
+
         .content-list {
           @include flex-column();
           
           #item {
             opacity: 0;
+
             .content-inner{
-              h3 {
-                @include flex-column();
-              }
-              :nth-child(1) {
-                margin-bottom: 3%;
-                font-size: 1em;
-                // font-family: 'PT Serif';
-                font-weight: lighter;
-                padding-top: 1%;
-                padding-left: 3%;
-                padding-right: 3%;
-              }
-              :nth-child(2) {
-                font-family: 'Milliard';
-                font-size: 0.8em;
-                padding-bottom: 2%;
-              }
               padding: 3% 3%;
               width: 100vw;
               background-color: rgba(255, 255, 255, 0.884);
@@ -195,6 +181,25 @@ ul {
               top: 35vh;
               left: 50vw;
               transform: translateX(-50%) translateY(-50%);
+
+              h3 {
+                @include flex-column();
+              }
+
+              :nth-child(1) {
+                margin-bottom: 3%;
+                font-size: 1em;
+                font-weight: lighter;
+                padding-top: 1%;
+                padding-left: 3%;
+                padding-right: 3%;
+              }
+
+              :nth-child(2) {
+                font-family: 'Milliard';
+                font-size: 0.8em;
+                padding-bottom: 2%;
+              }
             }
           }
         }
@@ -203,13 +208,14 @@ ul {
     
     .feed {
       @include flex-column();
-      // background: white;
       background: rgba(195, 233, 255, 0.75);
       font-family: 'Lora';
       text-align: left;
+
       .item-1 {
         @include card-style();
         margin: 50% 0 35% 0;
+
         .header-1 {
           @include header-style();
           padding: 2.5% 2.5% 2.5% 4%;
@@ -217,18 +223,21 @@ ul {
           margin: 0 10% 0 7.5%;
           z-index: 3;
         }
+
         .mask {
           @include mask-style();
           height: 20vh;
           width: 65vw;
           top: 15.5vh;
           right: 5vw;
+
           .bg {
             position: absolute;
             background: rgb(56, 56, 56);
             height: 20vh;
             width: 65vw;
           }
+          
           .info-image {
             position: absolute;
             left: 0;
@@ -242,21 +251,23 @@ ul {
           top: 33vh;
           z-index: 3;
           margin: 0 10% 0 9%;
+
           .head {
             @include head-style();
           }
+
           .text {
             @include text-style();
           }
 
         }
+
         .link-1 {
           @include link-style();
           width: 50vw;
           z-index: 4;
           top: 74vh;
           right: 7.5vw;
-          
         }
       }
 
@@ -268,15 +279,17 @@ ul {
           @include header-style();
           padding: 2.5% 2.5% 2.5% 4%;
         }
+
         .content-2 {
           z-index: 5;
           @include content-style();
           top: 16vh;
-          // height: ;
           margin: 0 10% 0 9%;
+          
           .head {
             @include head-style();
           }
+
           .text {
             @include text-style();
           }
@@ -286,6 +299,7 @@ ul {
           z-index: 2;
           top: 45vh;
           left: 15vw;
+
           .mask1 {
             z-index: 2;
             transform: rotate(7.5deg);
@@ -294,6 +308,7 @@ ul {
             overflow: hidden;
             position: absolute;
           }
+
           .info-image-1 {
             height: 305px;
             width: auto;
@@ -301,6 +316,7 @@ ul {
             left: -10vw;
             top: -5vh;
           }
+
           .mask2 {
             z-index: 3;
             transform: rotate(-7.5deg);
@@ -309,20 +325,22 @@ ul {
             width: 57.5vw;
             position: absolute;
           }
+
           .info-image-2 {
             height: 405px;
             width: auto;
             position: absolute;
             top: -10vh;
           }
+
           .mask3 {
-            // transform: rotate(-5deg);
             overflow: hidden;
             height: 32.5vh;
             width: 57.5vw;
             z-index: 4;
             position: absolute;
           }
+
           .info-image-3 {
             height: 355px;
             width: auto;
@@ -343,10 +361,12 @@ ul {
       .item-3 {
         margin: 35% 0 35% 0;
         @include card-style();
+
         .header-3 {
           @include header-style();
           padding: 2.5% 2.5% 2.5% 4%;
         }
+
         .mask {
           @include mask-style();
           height: 20vh;
@@ -354,6 +374,7 @@ ul {
           top: 17vh;
           left: 10vw;
           z-index: 2;
+
           .bg {
             position: absolute;
             background: rgb(56, 56, 56);
@@ -363,6 +384,7 @@ ul {
             height: 20vh;
             width: 65vw;
           }
+
           .item-3-image {
             position: absolute;
             bottom: 0;
@@ -376,16 +398,18 @@ ul {
           background: rgba(245, 249, 255, 0.71);
           @include content-style();
           top: 35vh;
-          // height: ;
           margin: 0 12.5% 0 7.5%;
           z-index: 3;
+
           .head {
             @include head-style();
           }
+
           .text {
             @include text-style();
           }
         }
+
         .link-3 {
           @include link-style();
           width: 40vw;
@@ -399,23 +423,28 @@ ul {
       .item-4 {
         margin: 35% 0 100% 0;
         @include card-style();
+
         .header-4 {
           @include header-style();
           padding: 2.5% 2.5% 2.5% 4%;
         }
+
         .content-4 {
           background: rgba(245, 249, 255, 0.71);
           @include content-style();
           top: 16vh;
           margin: 0 12.5% 0 7.5%;
           z-index: 3;
+
           .head {
             @include head-style();
           }
+
           .text {
             @include text-style();
           }
         }
+
         .mask {
           @include mask-style();
           height: 21vh;
@@ -423,6 +452,7 @@ ul {
           z-index: 2;
           top: 60vh;
           left: 20vw;
+
           .bg {
             position: absolute;
             background: rgb(56, 56, 56);
@@ -432,6 +462,7 @@ ul {
             height: 30vh;
             width: 75vw;
           }
+
           .item-4-image {
             position: absolute;
             top: 0;
@@ -441,6 +472,7 @@ ul {
             width: auto;
           }
         }
+
         .link-4 {
           @include link-style();
           width: 37.5vw;
@@ -472,27 +504,35 @@ h3, h2, h4 {
 @media (min-width: 760px) {
   .inicio {
     background: rgba(84, 102, 108, 0.075);
+
     .background-carousel {
+
       .carousel {
         margin: 0;
         height: 45vh;
+
         .image-list {
+
           * {
             height: 45vh;
           }
         }
         .content-list {
+
           #item {
             left: 0;
+            
             .content-inner {
               top: 22.5vh;
               width: fit-content;
               padding: 2%;
+
               :nth-child(1) {
                 font-size: 1.2em;
                 padding: 0;
                 margin-bottom: 2%;
               }
+
               :nth-child(2) {
                 font-size: 0.9em;
                 padding: 0;
@@ -505,31 +545,36 @@ h3, h2, h4 {
     
     .feed {
 
-      // background: rgba(255, 255, 255, 0.897);
       .item-1 {
         margin: 20% 0 20% 0;
         width: 50vw;
+
         .header-1 {
           top: 5vh;
           font-size: 1.5em;
         }
+
         .mask {
           height: 25vh;
           width: 22.5vw;
           top: 15vh;
           right: 3.5vw;
+
           .bg {
             height: 25vh;
             width: 22.5vw;
           }
+
           .info-image {
             height: 40vh;
           }
         }
+
         .content-1 {
           top: 37.5vh;
           font-size: 1em;
         }
+
         .link-1 {
           width: 18vw;
           top: 70vh;
@@ -546,14 +591,17 @@ h3, h2, h4 {
           top: 5vh;
           font-size: 1.5em;
         }
+
         .content-2 {
           font-size: 1em;
         }
+
         .wrap{
           position: absolute;
           z-index: 2;
           top: 45vh;
           left: 10vw;
+
           .mask1 {
             z-index: 2;
             transform: rotate(7.5deg);
@@ -562,6 +610,7 @@ h3, h2, h4 {
             overflow: hidden;
             position: absolute;
           }
+
           .info-image-1 {
             height: 305px;
             width: auto;
@@ -569,6 +618,7 @@ h3, h2, h4 {
             left: -10vw;
             top: -5vh;
           }
+
           .mask2 {
             z-index: 3;
             transform: rotate(-7.5deg);
@@ -577,20 +627,22 @@ h3, h2, h4 {
             width: 20vw;
             position: absolute;
           }
+
           .info-image-2 {
             height: 405px;
             width: auto;
             position: absolute;
             top: -10vh;
           }
+
           .mask3 {
-            // transform: rotate(-5deg);
             overflow: hidden;
             height: 30vh;
             width: 20vw;
             z-index: 4;
             position: absolute;
           }
+
           .info-image-3 {
             height: 355px;
             width: auto;
@@ -598,6 +650,7 @@ h3, h2, h4 {
             top: -15vh;
           }
         }
+
         .link-2 {
           width: 20vw;
           top: 62.5vh;
@@ -609,10 +662,12 @@ h3, h2, h4 {
       .item-3 {
         margin: 10% 0 20% 0;
         width: 50vw;
+
         .header-3 {
           top: 5vh;
           font-size: 1.5em;
         }
+
         .mask {
           @include mask-style();
           height: 25vh;
@@ -620,18 +675,22 @@ h3, h2, h4 {
           top: 17vh;
           left: 10vw;
           z-index: 2;
+
           .bg {
             height: 25vh;
             width: 22.5vw;
           }
+
           .item-3-image {
             height: 50vh;
           }
         }
+
         .content-3 {
           top: 40vh;
           font-size: 1em;
         }
+
         .link-3 {
           width: 14.5vw;
           top: 72vh;
@@ -643,10 +702,12 @@ h3, h2, h4 {
       .item-4 {
         margin: 10% 0 30% 0;
         width: 50vw;
+
         .header-4 {
           top: 5vh;
           font-size: 1.5em;
         }
+
         .content-4 {
           background: rgba(245, 249, 255, 0.71);
           @include content-style();
@@ -654,9 +715,11 @@ h3, h2, h4 {
           margin: 0 12.5% 0 7.5%;
           z-index: 3;
           font-size: 1em;
+
           .head {
             @include head-style();
           }
+
           .text {
             @include text-style();
           }
@@ -666,10 +729,12 @@ h3, h2, h4 {
           width: 22.5vw;
           top: 47.5vh;
           left: 5vw;
+
           .bg {
             height: 27.5vh;
             width: 22.5vw;
           }
+          
           .item-4-image {
             height: 50vh;
           }

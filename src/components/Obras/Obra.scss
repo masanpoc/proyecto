@@ -57,7 +57,6 @@
                     padding-top: 2px;
                 }
                 .page {
-                    // background-color: black;
                     color: rgba(255, 255, 255, 0.8);
                 }
                 .active {
@@ -77,27 +76,20 @@ $image-width: 180px;
 $top-disc: ($image-height)/(2) ;
 $left-disc: ($image-width)/(2) ;
 
-// @media (max-width: 760px) {
 .body-hidden {
     overflow-x: hidden;
     width: 100%;
     .introduction {
         background: url('./Images/obras-bg.jpg');
         width: 100%;
-        // background: yellow;
         background-size: cover;
         background-position: center;
         box-shadow: inset 0 0 1000px 1000px rgba(0, 0, 0, 0.644);
-        // padding-top: 5%;
-        // padding-bottom: 5%;
         color: rgba(255, 255, 255, 0.767);
         @include flex-column();
         justify-content: flex-end;
         height: 70vh;
-        // font-size: 2em;
-        // font-family: fantasy;
         .songs-header {
-            // border: 1px solid yellow;
             width: 80%;
             text-align: center;
             font-family: 'Bebas';
@@ -106,11 +98,9 @@ $left-disc: ($image-width)/(2) ;
             padding:0 0 35% 0;
         }
         .songs-subtitle {
-            // border: 1px solid green;
             width: 60%;
             font-size: 1.3em;
             text-align: center;
-            // font-family: 'Proza';
             font-family: 'Sansita';
             padding-bottom: 15%;
             padding-left: 10%;
@@ -122,9 +112,6 @@ $left-disc: ($image-width)/(2) ;
     .wrapper {
         @include complete();
         font-family: 'Proza';
-        // background: linear-gradient(#000000,  #631414 ,#000000 ); 
-        // background-attachment: local;
-        // background: white;
         background: linear-gradient(180deg, #444444, #3e3e3e, #383838, #323232, #2d2d2d, #272727, #222222, #1c1c1c, #171717, #111111, #0a0a0a, #000000, #0a0a0a, #111111, #171717, #1c1c1c, #222222, #272727, #2d2d2d, #323232, #383838, #3e3e3e, #444444);
         @include flex-column();
 
@@ -183,43 +170,31 @@ $left-disc: ($image-width)/(2) ;
                 height: 20px;
                 width: 20px;
                 cursor: pointer;
-                // display: none;
-                // border: 1px solid black;
-                // transform: rotate(90deg);
-                
             }
             .finder {
                 @include flex-column();
                 align-items: flex-start;
                 @include complete();
-                // border: 1px solid black;
                 gap: 10px;
                 .heading {
                     width: 100%;
                     font-weight: lighter;
-                    // border: 1px solid black;
                     text-align: left;
                 }
                 .searcher {
                     border: none;
                     border-radius: 2.5px;
                     padding: 1% 2%;
-                    // width: 100%;
                     box-shadow: 0 0 2px 0 gray;
                 }
             }
             .genre {
-                // @include flex-column();
-                // align-items: flex-start;
-                
                 @include flex-row();
                 justify-content: flex-start;
                 gap: 10px;
                 @include complete();
-                // border: 1px solid black;
                 .genre-head {
                     font-weight: lighter;
-                    // border: 1px solid black;
                     width: 60px;
                     text-align: left;
                 }
@@ -232,17 +207,12 @@ $left-disc: ($image-width)/(2) ;
                 }
             }
             .sorting {
-                // @include flex-column();
-                // align-items: flex-start;
-                
                 @include flex-row();
                 justify-content: flex-start;
                 gap: 10px;
                 @include complete();
-                // border: 1px solid black;
                 .sorting-head {
                     font-weight: lighter;
-                    // border: 1px solid black;
                     width: 60px;
                     text-align: left;
                 }
@@ -258,17 +228,13 @@ $left-disc: ($image-width)/(2) ;
                 @include flex-row();
                 justify-content: flex-start;
                 @include complete();
-                // border: 1px solid black;
                 gap: 15px;
-                // background-color: #A0A0A0;
-                // gap: 5%;
                 .marker-info {
                     * {
                         font-weight: lighter;
                     }
                     text-align: left;
                     width: fit-content;
-                    // border: 1px solid black;
                 }
                 .playable {
                     
@@ -282,8 +248,6 @@ $left-disc: ($image-width)/(2) ;
             margin: 15% 5% 15% 5%;
             overflow: hidden;
             width: 90%;
-            // margin-bottom: 5%;
-            // border: 6px solid green;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             grid-auto-rows: 400px;
@@ -342,11 +306,9 @@ $left-disc: ($image-width)/(2) ;
                         font-size: 1em;
                         width: 25vh;
                         color: rgba(255, 255, 255, 0.9);
-                        // text-align: left;
                     }
                     .autor {
                         margin-top: 2.5%;
-                        // text-align: left;
                         width: 25vh;
                         color: #b3b3b3;
                         font-size: 0.9em;
@@ -388,9 +350,7 @@ $left-disc: ($image-width)/(2) ;
 
 @media (min-width: 760px) {
     .body-hidden {
-        // width: 100%;
         background: rgba(84, 102, 108, 0.075);
-        // background: black;
         .introduction {
             height: 45vh;
             justify-content: center;
@@ -398,8 +358,6 @@ $left-disc: ($image-width)/(2) ;
                 font-size: 3.2em;
                 letter-spacing: 0.05em;
                 padding: 0;
-                // font-size: 2em;
-                // padding:0 0 10% 0;
             }
             .songs-subtitle {
                 text-align: center;
@@ -407,13 +365,11 @@ $left-disc: ($image-width)/(2) ;
                 padding: 0;
                 width: 60%;
                 padding: 5% 0 0 0;
-                // border: 1px solid yellow;
             }
         }
         .wrapper {
             margin: 0 15%;
             width: auto;
-            // background: linear-gradient(180deg, grey -80%, black 30%, grey 180%)
             .options {
                 padding: 1% 2%;
                 margin-top: 7.5vh;
@@ -427,7 +383,6 @@ $left-disc: ($image-width)/(2) ;
             .center {
                 margin: 10vh 0 5vh 0;
                 @include paginating();
-                // display: none;
             }
             .center-2 {
                 margin: 0 0 25vh 0;
@@ -449,8 +404,6 @@ $left-disc: ($image-width)/(2) ;
                 }
             }
             .filtros {
-                // margin: 0 5% 5% 5%;
-                // padding: 7% 7.5% 7% 7.5%;
                 margin: 5% 0 5% 0;
                 margin-top: 7.5vh;
                 padding: 3% 2.5% 2% 3%;
@@ -466,16 +419,12 @@ $left-disc: ($image-width)/(2) ;
                     top: 7%;
                     height: 15px;
                     width: 15px;
-                    // display: none;
-                    // border: 1px solid black;
                     
                 }
                 .finder {
-                    // border: 1px solid black;
                     gap: 10px;
                     .heading {
                         width: 180px;
-                        // border: 1px solid black;
                     }
                     .searcher {
                         width: 80%;
@@ -486,9 +435,7 @@ $left-disc: ($image-width)/(2) ;
                     @include flex-column();
                     align-items: flex-start;
                     gap: 10px;
-                    // border: 1px solid black;
                     .genre-head {
-                        // border: 1px solid black;
                         width: 60px;
                     }
                     .genre-option {
@@ -499,10 +446,7 @@ $left-disc: ($image-width)/(2) ;
                     @include flex-column();
                     align-items: flex-start;
                     gap: 10px;
-                
-                    // border: 1px solid black;
                     .sorting-head {
-                        // border: 1px solid black;
                         width: 110px;
                     }
                     .sorting-option {
@@ -511,10 +455,8 @@ $left-disc: ($image-width)/(2) ;
                 }
                 .available {
                     gap: 15px;
-                    // border: 1px solid black;
                     .marker-info {
                         width: 105px;
-                        // border: 1px solid green;
                     }
                     .playable {
                         

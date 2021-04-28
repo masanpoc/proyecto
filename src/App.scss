@@ -194,15 +194,11 @@ html {
       color: #fff;
     }
     .logo-minified {
-      // border: 1px solid whitesmoke;
-      // margin-right: 5vw;
       margin-left: 5vw;
       
     }
     .email {
-      // border: 1px solid whitesmoke;
       cursor: pointer;
-      // margin-left: 5vw;
       .email-link {
         @include flex-row();
         gap: 1.5vh;
@@ -222,7 +218,6 @@ html {
       @include flex-row();
       cursor: pointer;
       gap: 3vh;
-      // border: 1px solid white;
       height: 100%;
       margin-bottom: 11vh;
       .facebook {
@@ -250,10 +245,7 @@ html {
 
 .inicio {
   @include flex-column();
-  // height: 300px;
   width: 100%;
-  // background-color: black;
-  
 }
 
 

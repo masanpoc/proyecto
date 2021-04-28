@@ -73,7 +73,6 @@ export const Historia = () => {
 
     // useState definitions
     const [progression, setProgression] = useState(0);
-    // const [active, setActive] = useState(false);
     const [selection, setSelection] = useState(0);
 
     const windowWidth = window.innerWidth;
@@ -92,7 +91,6 @@ export const Historia = () => {
 
     // useEffect definitions
     useEffect(() => {
-        // slide();
         return () => {
             ScrollTrigger.getAll().forEach((instance) => {
               instance.kill();
@@ -103,51 +101,45 @@ export const Historia = () => {
     }, [])
 
 
-    useEffect(() => {
-        // timeoutId for debounce mechanism
-        let timeoutId = null;
-        const resizeListener = () => {
-          // prevent execution of previous setTimeout
-          clearTimeout(timeoutId);
-          // refresh after 150 milliseconds
-          timeoutId = setTimeout(() => window.location.reload(false), 150);
-        };
-        // set resize listener
-        window.addEventListener('resize', resizeListener);
+    // useEffect(() => {
+    //     // timeoutId for debounce mechanism
+    //     let timeoutId = null;
+    //     const resizeListener = () => {
+    //       // prevent execution of previous setTimeout
+    //       clearTimeout(timeoutId);
+    //       // refresh after 150 milliseconds
+    //       timeoutId = setTimeout(() => window.location.reload(false), 150);
+    //     };
+    //     // set resize listener
+    //     window.addEventListener('resize', resizeListener);
     
-        // clean up function
-        return () => {
-          // remove resize listener
-          window.removeEventListener('resize', resizeListener);
-        }
-    }, [])
+    //     // clean up function
+    //     return () => {
+    //       // remove resize listener
+    //       window.removeEventListener('resize', resizeListener);
+    //     }
+    // }, [])
 
     useEffect(() => {
-        console.log('changin0');
         if(selection==1) {
-            // console.log('play song 1');
             stop();
             play({ id: 'one'})
         }
         else if(selection==2) {
-            // console.log('play song 2');
             stop();
             play({ id: 'two'})
         }
         else if(selection==3) {
-            // console.log('play 3')
             stop();
             play({ id: 'three'})
         }
         else if(selection==4) {
-            // console.log('play 4')
             stop();
             play({ id: 'four'})
         }
         else {
             stop();
         }
-        // console.log(selection);
     }, [selection])
 
     useEffect(() => {
@@ -155,11 +147,9 @@ export const Historia = () => {
         
 
         // intervals
-        // we are playing with pause and play, maybe fade?
-
+        // we are playing with pause and play
 
         if(windowWidth > 760) {
-            // console.log(progression, windowWidth);
             // if we are on the first slide
             if(progression>0 && progression<0.3) {
                 setSelection(1);
@@ -184,7 +174,6 @@ export const Historia = () => {
             }
         }
         if(windowWidth < 760) {
-            // console.log(progression, windowWidth);
             // if we are on the first slide
             if(progression>0 && progression<0.18) {
                 setSelection(1);
@@ -220,9 +209,7 @@ export const Historia = () => {
 
     // }, [active])
 
-    // useState definitions
     
-
     // functions
     const slide = () => {
 

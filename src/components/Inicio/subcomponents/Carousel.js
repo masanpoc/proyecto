@@ -60,7 +60,7 @@ export const Carousel = () => {
     
     // useEffect definitions
     useEffect(() => {
-        // request animation frame
+        // request animation frame -> look for another solution (this is to prevent the carousel to stop moving when leaving the page)
         gsap.ticker.lagSmoothing(false);
         gsap.to(contentList.children[0], {
           opacity: 1,
@@ -186,7 +186,7 @@ export const Carousel = () => {
             fadeOut(3, 0.5);
             fadeIn(0, 1);
         }   else {
-            console.log('resized');
+            // console.log('resized');
             setState({isActive1: true});
             for(let i=0; i<4; i++) {
                 gsap.to(imageList.children[i], {
@@ -207,14 +207,6 @@ export const Carousel = () => {
 
         setState({ isActive1: false, isActive2: false, isActive3: false, isActive4: false });
         
-        // for(let i=0; i<5; i++ ) {
-        //     gsap.set(limits.children[i], {
-        //         css: {
-        //             left: (1+i)*(window.innerWidth)/10
-        //         }
-        //     });
-        // }
-        // console.log('resized')
     }
 
     return (
@@ -239,6 +231,7 @@ export const Carousel = () => {
                                 <img src={list[3].src} alt={list[3].title}></img>
                             </li>
                     </ul>
+                    {/* testing elements */}
                     {/* <div ref={el => (limits = el)}>
                     <div className='limit' id='l0'></div>
                     <div className='limit' id='l1'></div>
