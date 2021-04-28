@@ -20,7 +20,7 @@ Libraries used: GSAP, Use-Sound
 
 Feel free to clone this repo and copy any piece of code you might find want to include in your projects (e.g.: styles, components, state logic...). 
 
-There is still pending work to be done, most of it animation-related:
+There is still pending work to be done, most of it animation-related and only problematic in the deployed website:
   * The carousel starts incorrectly but works properly
   * The intro doesn't load smoothly and stops/freezes for a moment
   * Audio sprites of the storyline section take some seconds to load in mobile devices (might not be a bug)
