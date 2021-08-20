@@ -2,7 +2,7 @@
 
 # DESCRIPTION
 
-Link - https://mariocirer.com // https://masanpoc.github.io/proyecto/
+Link - https://masanpoc.github.io/proyecto/
 (deployed with gh-pages)
 
 This repository is a desktop/mobile React app built with create-react-app that has the following useful to have components:
