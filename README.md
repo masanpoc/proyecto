@@ -2,8 +2,8 @@
 
 # DESCRIPTION
 
-Link - https://masanpoc.github.io/proyecto/
-(deployed with gh-pages)
+Link - https://hungry-thompson-3ad7ef.netlify.app/#/
+(deployed with netlify)
 
 This repository is a desktop/mobile React app built with create-react-app that has the following useful to have components:
 
